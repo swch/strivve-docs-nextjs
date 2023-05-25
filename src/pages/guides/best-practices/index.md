@@ -184,5 +184,5 @@ Additionally, notification of the final status can be done out of band using exi
 
 ***
 
-### Here are detailed resource articles about Credentials:
+### More Credential Resources :
 [Resources - Credentials](/resources/credentials)
