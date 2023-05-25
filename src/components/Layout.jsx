@@ -36,7 +36,6 @@ const navigation = [
         href: '/guides/best-practices',
       },
       { title: 'Compliance', href: '/guides/compliance' },
-      { title: 'Strivve Site Tagging', href: '/guides/site-tagging' },
     ],
   },
   {
@@ -58,6 +57,7 @@ const navigation = [
         title: 'Job Progress via Polling',
         href: '/resources/progress-polling',
       },
+      { title: 'Strivve Site Tagging', href: '/resources/site-tagging' },
     ],
   },
   {
