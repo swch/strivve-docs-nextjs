@@ -30,6 +30,6 @@ If you already have access to a dedicated environment, check out the [Partner Po
 page for additional information on the portal and suggested next steps.
 
 If you have a Sandbox account, check out the (/resources/sdks/) or the 
-[Strivve Postman Samples](/resources/api-sdk/using-postman/)
+[Strivve Postman Samples](/api-sdk/using-postman/)
 
 Also, you'll want to check out the [Testing Strivve](/resources/testing/) page for information on the use of synthetic sites.
