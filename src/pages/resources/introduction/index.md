@@ -6,8 +6,8 @@ These resources provide information regarding the integration, implemenation, an
 CardSavr products.  
 
 The fastest way to get your integration up and running is to use our 
-(/resources/sdks/) or, if your environment has signing disabled, 
-you can use the (/resources/sdks/Using%20Postman/) to place your first
+[Strivve SDK's](/resources/sdks/) or, if your environment has signing disabled, 
+you can use the [Strivve Postman Samples](/resources/sdks/Using%20Postman/) to place your first
 card at a merchant site.
  
 We’ve attempted to make this documentation user-friendly but if you have any questions, 
@@ -30,6 +30,6 @@ If you already have access to a dedicated environment, check out the [Partner Po
 page for additional information on the portal and suggested next steps.
 
 If you have a Sandbox account, check out the (/resources/sdks/) or the 
-(/resources/sdks/Using%20Postman/)
+[Strivve Postman Samples](/resources/sdks/Using%20Postman/)
 
 Also, you'll want to check out the link:testing (/resources/testing/) page for information on the use of synthetic sites.
