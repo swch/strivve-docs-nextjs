@@ -2,8 +2,10 @@
 title: Postman Samples for REST API Calls
 ---
 
+## Environment Configuration
 A CardSavr environment **can be configured** to work with tools such as Postman or cURL.
-  
+
+## Postman Collection Details
 A Postman collection of requests is available along with usage instructions at 
 GitHub for the [CardSavr API Sample Postman Requests](https://github.com/swch/Strivve-SDK/tree/master/postman-samples 
 "Strivve-SDK") to aide in exploring the CardSavr API.
@@ -22,3 +24,4 @@ to place a card on a merchant site. Specifically, it walks the user through:
     * 2.4 Create account
 3. Jobs
     * 3.1 Create job
+
