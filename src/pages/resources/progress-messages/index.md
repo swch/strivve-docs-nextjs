@@ -7,7 +7,7 @@ CardSavr utilitizes a messaging system to "stream" messages to clients.  Ideally
 
 ### Status messages
 
-Job status messages can either be acquired from the /messages/place\_card\_on\_single\_site\_jobs or the /messages/cardholders endpoints. These messages contain the job\_id, the [current status](../job-progress/#job_statuses), and the percent complete of the job.  Once jobs complete they have a [termination type](../job-progress/#termination_types) which defines the final state of the job.
+Job status messages can either be acquired from the /messages/place\_card\_on\_single\_site\_jobs or the /messages/cardholders endpoints. These messages contain the job\_id, the [current status](/resources/job-progress/#job-statuses), and the percent complete of the job.  Once jobs complete they have a [termination type](/resources/job-progress/#termination-types) which defines the final state of the job.
 
 They may simply serve as a heartbeat to the client to ascertain that the job is still running. There is also a job_timeout value that lets the client know when a job is about to end, usually a result of waiting for credentials from the user.  When you consume status messages, they can only be consumed once.  Although you can always directly query the current status of a job via the jobs endpoint, old messages are not available.
 
@@ -227,7 +227,7 @@ In order to receive broadcast messaages, you must first register and set up a de
 
 Endpoint: GET /messages/place\_card\_on\_single\_site\_jobs/:job\_id/broadcasts/registrations
 
-This endpoint returns an access key that needs to be included with status queries.  You must include the cardsavr-messaging-access-key header as part of the request (also avaialble as a parameter in the [SDK](https://swch.github.io/
+This endpoint returns an access key that needs to be included with status queries.  You must include the cardsavr-messaging-access-key header as part of the request, also avaialble as a parameter in the [SDK](https://swch.github.io/)
 
 Request messages adhere to a slightly different format. 
 

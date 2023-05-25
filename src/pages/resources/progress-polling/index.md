@@ -6,11 +6,11 @@ title: Job Progress Polling
 
 CardSavr persistently stores the status of a job as it changes throughout its progress.  Ideally, a job can process without any participation from the user, but occasionally some additional user input may be necessary. In these situations, client applications may need to acquire additional security credentials (MFA codes), they may need to fix incorrect credentials, and they may wish to be notified when jobs complete, pass authentication, or even fail.  There are two kinds of messages.
 
-Although not as efficient as the [messaging system](../progress-messages/), polling the jobs endpoint directly provides a bit more statelessness.
+Although not as efficient as the [messaging system](/resources/progress-messages/), polling the jobs endpoint directly provides a bit more statelessness.
 
 ### Status updates
 
-Once a job has been requested, the [current status](../job-progress/#job_statuses) can be queried using the jobs endpoint.
+Once a job has been requested, the [current status](/resources/job-progress/#job-statuses) can be queried using the jobs endpoint.
 
 Endpoint: GET /place\_card\_on\_single\_site\_jobs/:job\_id
 
@@ -50,7 +50,7 @@ Examples:
 }
 ```
 
-Once jobs complete they have a [termination type](../job-progress/#termination_types) which defines the final state of the job.
+Once jobs complete they have a [termination type](/resources/job-progress/#termination-types) which defines the final state of the job.
 
 Example:
 
@@ -152,4 +152,4 @@ TFA Request Example:
 
 ### Credential responses
 
-All the SDKs provide simple interfaces for ensuring the correct data is PUT in the response.  The response format is the same as when using the [messaging endpoints](../progress-messages/#credential_responses).
+All the SDKs provide simple interfaces for ensuring the correct data is PUT in the response.  The response format is the same as when using the [messaging endpoints](/resources/progress-messages/#credential-responses).

@@ -4,7 +4,7 @@ title: Job Lifecycle and Progress Monitoring
 
 # Overview
 
-As single\_site\_jobs are not transactional, CardSavr clients need a way to monitor jobs as they progress.  For example, if additional information is required from the client (like a new password or tfa code), there needs to be a mechanism for the virtual browser (VBS) to make the request to the individual cardholder running the job.  There are a couple of recommended methodologies for communicating with the virtual browser: polling the job entities [directly](./progress-polling) and by subscribing to ephemeral [job and cardholder messages](./progress-messages).
+As single\_site\_jobs are not transactional, CardSavr clients need a way to monitor jobs as they progress.  For example, if additional information is required from the client (like a new password or tfa code), there needs to be a mechanism for the virtual browser (VBS) to make the request to the individual cardholder running the job.  There are a couple of recommended methodologies for communicating with the virtual browser: polling the job entities [directly](/resources/progress-polling) and by subscribing to ephemeral [job and cardholder messages](/resources/progress-messages).
 
 ## Job statuses
 
@@ -42,7 +42,7 @@ SITE\_INTERACTION\_FAILURE | CardSavr is unable to navigate the site successfull
 PROCESS\_FAILURE | An unknown backend failure - should be reported as unsuccessful
 NEVER\_STARTED | This will occur when a job is cancelled or never fully requested, but these should be ignored in webhooks and reeporting.
 
-There are a large number of job statuses for USER\_DATA\_FAILURE termination types.  This value provides important information to the client as to why a job failed. These are included in the status of the [single\_site\_job](https://swch.github.io/slate/#single-site-jobs), the status field of the final [job update](../progress-messages/), any final webhook [notifications](../notifcations/), as well as any billing reports.  Since these are constantly updated, customers should provide the status\_message to users rather than use a static list. 
+There are a large number of job statuses for USER\_DATA\_FAILURE termination types.  This value provides important information to the client as to why a job failed. These are included in the status of the [single\_site\_job](https://swch.github.io/slate/#single-site-jobs), the status field of the final [job update](/resources/progress-messages/), any final webhook [notifications](/resources/notifications/), as well as any billing reports.  Since these are constantly updated, customers should provide the status\_message to users rather than use a static list. 
 
 Status | Termination Type | Description
 |------|------------------|-------------
