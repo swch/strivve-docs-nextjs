@@ -1,5 +1,5 @@
 ---
-title: Introdcucing the CardSavr Platform
+title: Introducing the CardSavr Platform
 ---
 
 ## Credit card issuance doesn’t end at activation.
