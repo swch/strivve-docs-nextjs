@@ -157,6 +157,8 @@ function Header({ navigation }) {
           <LightLogomark className=" h-9 w-9 lg:hidden" />
           <LightLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [[data-theme=light]_&]:lg:block" />
           <DarkLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [[data-theme=dark]_&]:lg:block" />
+          <LightLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [:not(.dark)[data-theme=system]_&]:block" />
+          <DarkLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [.dark[data-theme=system]_&]:block" />
         </Link>
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
