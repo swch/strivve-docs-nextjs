@@ -79,21 +79,17 @@ cardholder authentication data when updating cards on file.
 Using a simple Username and Password credential example, integrators have the
 following options:
 
-Never save and always ask users for authentication data
-Save authentication data in CardSavr
-Save authentication data outside CardSavr
-
-Never Save and Always Ask Users for Authentication Data - Merchant
+**Never Save and Always Ask Users for Authentication Data** - Merchant
 authentication data can be acquired from users and provided to CardSavr on
 demand, use it for a single push provisioning transaction, and then remove it
 immediately after completion of the push provisioning transaction.
 
-Save Authentication Data in CardSavr - Merchant authentication data can be
+**Save Authentication Data in CardSavr** - Merchant authentication data can be
 safely stored in the CardSavr platform according to the integrator’s data
 retention policy. This allows for future card on file updates without asking
 for and acquiring merchant site authentication data.
 
-Save Authentication Data outside CardSavr - Merchant authentication data can be
+**Save Authentication Data outside CardSavr** - Merchant authentication data can be
 acquired and stored outside of the CardSavr platform. The Merchant authentication data is then provided to CardSavr for a one-time use, or stored persistently for future use, depending on integrator’s data retention policies.
 
 ## Card Payment Credentials
