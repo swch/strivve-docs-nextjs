@@ -48,7 +48,7 @@ workflows.
 
 ## Merchant Authentication Data
 Merchant authentication data provides cardholders access to their account at
-that merchant.  CardSavr stores this data in a SwitchSafe which requires the
+that merchant.  CardSavr stores this data in database encrypted fields which requires the
 integrator’s safe key portion to decrypt at the time of a card on file update.
 
 ### Acquiring Options
@@ -95,8 +95,7 @@ acquired and stored outside of the CardSavr platform. The Merchant authenticatio
 ## Card Payment Credentials
 
 Online card payment credentials represent the card on file at merchants.
-CardSavr can store the card information for merchant site updates in a
-SwitchSafe which requires the integrator’s safe key portion to decrypt at the
+CardSavr can store the card information for merchant site updates in database encrypted fields which requires the integrator’s safe key portion to decrypt at the
 time of a card on file update.
 
 ### Card Payment Credential Acquiring Options
@@ -110,11 +109,11 @@ before or during a card on file action.
 The card payment credenials can be stored according to the integrator’s data
 retention policy.
 
-## SwitchSafe Key
+## Safe Key
 
 ### Acquiring Options
 
-CardSavr holds sensitive data in a SwitchSafe object both in memory and at rest,
+CardSavr holds sensitive data in encrypted objects both in memory and at rest,
 which is encrypted by using two separate keys. CardSavr stores one of the
 required keys while the integrator or issuer holds the second key. Any card
 update action requires the integrator to provide their safe key so that, when
@@ -126,8 +125,8 @@ the key must be provided when accessing or updating those objects in the future.
 
 ### Data Retention
 
-The CardSavr platform requires the SwitchSafe key when acting upon objects
-within the platform. The integrator must retain the SwitchSafe key until all
+The CardSavr platform requires the safe key when acting upon objects
+within the platform. The integrator must retain the safe key until all
 objects that utilize that key are deleted or that key is rotated and retired by
 the integrator.
 
