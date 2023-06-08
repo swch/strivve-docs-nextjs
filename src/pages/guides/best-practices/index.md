@@ -34,16 +34,6 @@ changed at any time and customer involvement is necessary to maintain up-to-date
 credentials if they are retained or they must be provided each and every time if
 they are not retained.
 
-Another factor to consider is the use of credential storage solutions, like
-password managers, by the target customers.  These solutions come in many forms,
-with varying features, which can all be used and are independent of the CardSavr
-platform.  For instance, many people store card data and password data within
-their desktop and the mobile browsers.  Others choose to make use of desktop and
-mobile applications such as Dashlane or Lastpass for ease of use and security.
-CardSavr is built to work in combination with any of these existing solutions
-and by design does not dictate or limit the use or design of application
-workflows.
-
 # Data Types
 
 ## Merchant Authentication Data
