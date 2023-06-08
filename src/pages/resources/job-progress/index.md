@@ -6,7 +6,7 @@ title: Job Lifecycle and Progress Monitoring
 
 As single\_site\_jobs are not transactional, CardSavr clients need a way to monitor jobs as they progress.  For example, if additional information is required from the client (like a new password or tfa code), there needs to be a mechanism for the virtual browser (VBS) to make the request to the individual cardholder running the job.  There are a couple of recommended methodologies for communicating with the virtual browser: polling the job entities [directly](/resources/progress-polling) and by subscribing to ephemeral [job and cardholder messages](/resources/progress-messages).
 
-## Job statuses
+## Job Statuses
 
 As a job transitions from one status to the next, applications can query the jobs api to see the current status.  The single\_site\_job status is returned as part of a GET response, as well as within a job\_status message.  Some statuses indicate that action by the user must be taken, other statuses are simply informational and can provide important feedback to the user.  Most status changes are made by the VBS.
 
@@ -30,7 +30,7 @@ CANCEL\_REQUESTED | Yes | Job is not longer needed by the user, and can be safel
 
 There are other statuses that may be returned, but they are mostly informational.  IMPORTANT: "PENDING", "PENDING_NEWCREDS" and "PENDING_TFA" indicate that a request message has been posted for that job, and the envelope_id included in the message will be required for a response. 
 
-## Termination types
+## Termination Types
 
 Termination types are set on jobs when the complete.  A single\_site\_job can't be considered finished until a termination type is set, and once a terrmination type is set, the job cannot be resurrected (although it can be re-run using an existing cardholder, card and account credentials).  Only the first four termination types should be processed, others should be ignored in webhooks and reporting.  
 
