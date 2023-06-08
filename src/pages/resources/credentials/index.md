@@ -16,7 +16,7 @@ This credential is CardSavr specific to a user object and represents the princip
 User Credentials have multiple properties associated with them established at the time of creation of the user object.
 
 ### Name
-A CardSavr user <strong>must</strong> have a unique name or label.  This is used to identify the identity or the person or application agent using the CardSavr platform.
+A CardSavr user **must** have a unique name or label.  This is used to identify the identity or the person or application agent using the CardSavr platform.
 
 ### Password
 A password is used as one of the mechanisms to verify the authenticity of a principal identity attempting to login to 
