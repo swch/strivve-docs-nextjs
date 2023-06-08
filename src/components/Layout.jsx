@@ -46,7 +46,7 @@ const navigation = [
       { title: 'Credentials', href: '/resources/credentials' },
       { title: 'Cryptography', href: '/resources/cryptography' },
       { title: 'Credential Grants', href: '/resources/grants' },
-      { title: 'Testing', href: '/resources/testing' },
+      { title: 'Testing', href: '/shared/testing' },
       { title: 'Notifications', href: '/resources/notifications' },
       { title: 'Job Progress', href: '/resources/job-progress' },
       {
