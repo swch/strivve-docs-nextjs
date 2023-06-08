@@ -5,7 +5,7 @@ title: Job Progress Messaging
 
 CardSavr utilitizes a messaging system to "stream" messages to clients.  Ideally, a job can process without any participation from the user, but occasionally some additional user input may be necessary. In these situations, client applications may need to acquire additional security credentials (MFA codes), they may need to fix incorrect credentials, and they may wish to be notified when jobs complete, pass authentication, or even fail.  There are two kinds of messages.
 
-### Status messages
+### Status Messages
 
 Job status messages can either be acquired from the /messages/place\_card\_on\_single\_site\_jobs or the /messages/cardholders endpoints. These messages contain the job\_id, the [current status](/resources/job-progress/#job-statuses), and the percent complete of the job.  Once jobs complete they have a [termination type](/resources/job-progress/#termination-types) which defines the final state of the job.
 
@@ -51,7 +51,7 @@ Examples:
 }
 ```
 
-### Credential requests
+### Credential Requests
 
 Unlike job status messages, credential requests persist until responded to.  Each request has a type, and an envelope\_id.  This envelope\_id must accompany each response.  Credential requests have two types: tfa\_request and credential\_request.  When a request is retrieved by the client, the user should either enter in new credentials or get a tfa response from their email, text message or sometimes even mobile apps.  Once the server receives the credential response, the request is removed, and the job continues.  (For backward compatibiliy, you can still key off the request_type:  'tfa_request' always requires a tfa response, and 'credential_request' always requires a username/password, but this functionality is deprecated and will not be supported after 6/1/2023)
 
@@ -134,7 +134,7 @@ Examples:
 
 To reduce the amount of time required to complete the job, starting a job before credentials have been collected can reduce the overall user waiting time.  When this occurs, there will be a credential_request and a corresponding envelope_id that will need to be used to respond with the initial credentials.  Note that all messages with a status that starts with "PENDING" indicate that the message will be accompanied with an account_link parameter, and that data is required from the user and the job will block until responded to.
 
-### Credential responses
+### Credential Responses
 
 The most common way to respond to a message request, is through request hydration and the jobs endpoint.  By simply providing a header that contains the appropriate envelope_id ("x-cardsavr-envelope-id": "<GUID>"), responses become simple account updates.  Note that credential responses aren't always username/password (although that's most common).  The [merchant site endpoint](https://swch.github.io/slate/#merchant-sites) defines the necessary values for each merchant site. (e.g. "pin" or "email")
 
@@ -205,13 +205,13 @@ This method is not recommended since this can all be accmplished using the accou
 
 All the SDKs provide simple interfaces for ensuring the correct data is returned in the response.  There are also sample tests that walk through how to attach envelope_ids in responses.
 
-#### Querying messages by cardholder
+#### Querying Messages By Cardholder
 
 Since it is commmon for multile jobs to be running simultaneously, it is oftentimes easiest to query multiple job messages at once.  Since every job message is accompanied by its id, it's a relatively simple exercise to route the messages to the right component that manages each job.  
 
 Endpoint: GET /messages/cardholders/:cardholder\_id
 
-#### Querying messages by job
+#### Querying Messages By Job
 
 It is also possible to only query against a single job.  As with cardholder message queries, the credential requests remain as messages until a response is sent.
 
@@ -233,7 +233,7 @@ Request messages adhere to a slightly different format.
 
 Endpoint: GET /messages/place\_card\_on\_single\_site\_jobs/:job\_id/credential\_requests
 
-### Messaging architecture
+### Messaging Architecture
 
 Here is a diagram of how multiple channels can be used to monitor job status.  Note that credential requests will not work across multiple channels, only status messages.
 
