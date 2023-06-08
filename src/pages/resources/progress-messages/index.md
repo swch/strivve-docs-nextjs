@@ -205,13 +205,13 @@ This method is not recommended since this can all be accmplished using the accou
 
 All the SDKs provide simple interfaces for ensuring the correct data is returned in the response.  There are also sample tests that walk through how to attach envelope_ids in responses.
 
-#### Querying Messages By Cardholder
+#### Querying Messages by Cardholder
 
 Since it is commmon for multile jobs to be running simultaneously, it is oftentimes easiest to query multiple job messages at once.  Since every job message is accompanied by its id, it's a relatively simple exercise to route the messages to the right component that manages each job.  
 
 Endpoint: GET /messages/cardholders/:cardholder\_id
 
-#### Querying Messages By Job
+#### Querying Messages by Job
 
 It is also possible to only query against a single job.  As with cardholder message queries, the credential requests remain as messages until a response is sent.
 
