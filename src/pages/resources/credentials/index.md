@@ -3,9 +3,9 @@ title: Credentials
 ---
 
 There are multiple forms of credentials involved when using the Strivve Platform and specifically the CardSavr API.
-- <mark>User credentials</mark> represent the principal identity of the person or computer application agent using the CardSavr platform.
-- <mark>Card credentials</mark> represent the payment card being placed on merchant sites by CardSavr.
-- <mark>Merchant credentials</mark> represent the principal identity of the user using an online merchant site.
+- **User credentials** represent the principal identity of the person or computer application agent using the CardSavr platform.
+- **Card credentials** represent the payment card being placed on merchant sites by CardSavr.
+- **Merchant credentials** represent the principal identity of the user using an online merchant site.
 
 # User Credentials
 ![image info](/images/unpw-credential.png)
