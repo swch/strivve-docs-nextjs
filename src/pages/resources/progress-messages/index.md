@@ -227,7 +227,7 @@ In order to receive broadcast messaages, you must first register and set up a de
 
 Endpoint: GET /messages/place\_card\_on\_single\_site\_jobs/:job\_id/broadcasts/registrations
 
-This endpoint returns an access key that needs to be included with status queries.  You must include the cardsavr-messaging-access-key header as part of the request, also avaialble as a parameter in the [SDK](https://swch.github.io/)
+This endpoint returns an access key that needs to be included with status queries.  You must include the cardsavr-messaging-access-key header as part of the request, also avaialble as a parameter in the [SDK](https://swch.github.io/).
 
 Request messages adhere to a slightly different format. 
 
