@@ -47,7 +47,7 @@ These credentials represent a payment card, including authenticity information.
 ### Payment Credential Properties
 
 #### PCI Primary Account Number (PAN)
-Currently the 16 digit card number for a payment card.  An expanded 19 digit card number is scheduled for payment cards issued in 2020.
+The 16 digit card number for a payment card.  
 
 #### PCI Card Verification Value (CVV), (CVV2)
 This 3 or 4 digit number is used as the primary data to authorize a PAN for a transaction.
@@ -86,6 +86,9 @@ The name of the cardholder user, used to identify them with the merchant site.
 
 #### Password
 The password used to verify the authenticity of a user attempting to login to the merchant site.
+
+#### One-Time Password
+Merchant sites may challenge the cardholder for a one-time password (or code) that is sent to the cardholder device via text message or email.  In many cases, merchant sites use this method in place of a password therefore bypassing the need for the cardholder to memorize or manage a password. 
 
 ### Two Factor Authentication (TFA)
 Merchant sites may challenge the cardholder user for an additional artifact to be used ln conjunction with the password 
