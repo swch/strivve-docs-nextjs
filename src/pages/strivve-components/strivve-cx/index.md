@@ -1,8 +1,8 @@
 ---
-title: StrivveCX Component
+title: StrivveCX Components
 ---
 
-## Using StrivveCX Component
+## Using StrivveCX Components
 
 ```html
 <body>
@@ -26,7 +26,7 @@ title: StrivveCX Component
 </script>
 ```
 
-## Config
+## Configuration
 
 | name | params | description |
 |---|---|---|
@@ -41,16 +41,16 @@ title: StrivveCX Component
 
 
 
-## Card
+## Card Details
 
 | name | params | description |
 |---|---|---|
 | pan | string | Unique Personal Account Reference number for this card, to be used for card lookup. Generated automatically from PAN, expiration date, and username if using the SDK. |
-| cvv | string | - |
-| expiration_month | string | - |
-| expiration_year | string | - |
+| cvv | string | 3 or 4 digit number used as the primary data to authorize a PAN for a transaction. |
+| expiration_month | string | The last month the payment card is valid. |
+| expiration_year | string | The last year the payment card is valid. |
+| name_on_card | string | Name of the cardholder. |
 
-| name_on_card | string | - |
 ## Service, Core and Component
 We can use parts of the functions and components.
 - [Service](docs/service.md) 
