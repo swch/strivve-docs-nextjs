@@ -7,7 +7,7 @@ Strivve supports a wide range of sites from e-commerce, to subscription, to util
 
 Strivve uses tags to identify certain site criteria.  These tags can be used for different sorts of categorization such as locales or success rates.  
 
-### Available tags
+### Available Tags
 
 Tags are assigned based on their support and availability. 
 
