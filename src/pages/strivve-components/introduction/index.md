@@ -6,11 +6,11 @@ Strivve's CardSavr Platform has pre-built components that make extending your ap
 
 Of course, you can build custom cardholder experiences in whatever U/X framework is desired, by making use of the CardSavr SDK's and/or REST API's.
 
-In many cases, both for prototyping and for production applications, using Strivve's pre-built components hide the complexities of the API's and come with tested and integrated functionality, saving the ingetration and testing efforts considerably.
+In many cases, both for prototyping and for production applications, using Strivve's pre-built components hides the complexities of the API's and come with tested and integrated functionality, saving the integration and testing efforts considerably.
 
 ## Strivve Components Types
 There are two basic types of components available for use with the CardSavr Platform today.
-* CardUpdatr: which is a desktop and mobile iFrame workflow which comes with many configuration options and modes of operation.
+* CardUpdatr: A Desktop and mobile iFrame workflow which comes with many configuration options and modes of operation.
 * StrivveCX: Varying levels of customizable Javascript Components which easily drop into desktop and mobile web applications as well as native applications as reqired.
 ## CardUpdatr iFrame Drop-In Component
 
