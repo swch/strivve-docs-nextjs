@@ -8,7 +8,7 @@ CardSavr persistently stores the status of a job as it changes throughout its pr
 
 Although not as efficient as the [messaging system](/resources/progress-messages/), polling the jobs endpoint directly provides a bit more statelessness.
 
-### Status updates
+### Status Updates
 
 Once a job has been requested, the [current status](/resources/job-progress/#job-statuses) can be queried using the jobs endpoint.
 
@@ -69,7 +69,7 @@ Example:
 }
 ```
 
-### Credential requests
+### Credential Requests
 
 Credential requests occur when additional information is required from the user, and they persist until responded to.  Each request has a type, an envelope\_id and an account\_link property which contains the required properties for the response.  This envelope\_id must accompany each response. When a request is retrieved by the client, the user must complete some sort of action such as entering in new credentials, getiing a tfa text from their email or text message, or even answer securty questions.  Once the server receives the credential response, the request is removed, and the job continues.
 
@@ -150,6 +150,6 @@ TFA Request Example:
 }
 ```
 
-### Credential responses
+### Credential Responses
 
 All the SDKs provide simple interfaces for ensuring the correct data is PUT in the response.  The response format is the same as when using the [messaging endpoints](/resources/progress-messages/#credential-responses).
