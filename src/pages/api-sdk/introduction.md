@@ -32,7 +32,7 @@ This library is an implementation of the CardSavr API for Java Framework Languag
 
 ---
 
-Don't see your language bindings? E-mail Strivve
+Don't see your language bindings? [E-mail Strivve](mailto:support@strivve.com)
 
 ---
 
