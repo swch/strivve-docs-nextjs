@@ -30,11 +30,6 @@ This is just a simple api call and static webserver that demonstrates how the we
 
 Now the web application can re-establish the session using the grant and username provided by the original provisioning call.  The cardholder will be presented with a simple form for the merchant credentials of the site to place their card.  Once the form is submitted, the web application authenticates the user with the username and grant, and then posts the job as that user.  There is a messaging system the posts messages to the UI to show status, progress, and the success or failure of the job.  The form will also present additional fields to collect a new password or a two-factor authentication code.
 
-## Quick Start Section 2
-
-Hello...
-
-
 ## NodeJS SDK on GitHub
 Click to access [ Strivve NodsJS SDK @ Github  ](https://github.com/swch/Strivve-SDK)
 
