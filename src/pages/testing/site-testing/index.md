@@ -110,7 +110,8 @@ To proceed with the simulated scenario, enter "Max" for your dog's name and "Smi
 
 If you enter "Max" as the answer for your dog's name and "Smith" for your last name, the result will be a successful card placement, indicating that the security question and answers were correctly provided.
 
-![Security](/images/SS-Standard-Logon-Security.png) 
+![Security](/images/SS-Standard-Logon-Security-1.png) 
+![Security](/images/SS-Standard-Logon-Security-2.png) 
 
 A sample video of good_email & security:  [good_email + security](https://1drv.ms/v/s!ArSB8eMcy-NPjLsqAmEdZqegs43Lcw?e=9Bbckp)
 
