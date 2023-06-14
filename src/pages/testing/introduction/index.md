@@ -13,5 +13,5 @@ CardSavr environments can be configured to work with tools such as Postman, curl
 ## Synthetic Sites
 To help test Merchant Site compatabilty, Strivve uses Synthetic Sites to emulate site behaviors.  Synthetic Sites are simple responsive web applications that support a number of different interactive use cases.  For example, you can emulate a TFA (One-Time-Password) within your system.
 
-Detailed information regarding Merchant Site testing can be found in the next section: [Merchant Site Testing](/testing/site-testing)
+Detailed information regarding Merchant Site testing can be found in the next section: [Merchant Site Testing](/testing/site-testing).
 
