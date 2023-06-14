@@ -46,7 +46,6 @@ const navigation = [
       { title: 'Credentials', href: '/resources/credentials' },
       { title: 'Cryptography', href: '/resources/cryptography' },
       { title: 'Credential Grants', href: '/resources/grants' },
-      { title: 'Testing', href: '/shared/testing' },
       { title: 'Notifications', href: '/resources/notifications' },
       { title: 'Job Progress', href: '/resources/job-progress' },
       {
@@ -97,6 +96,19 @@ const navigation = [
     ],
   },
   {
+    title: 'Testing',
+    links: [
+      {
+        title: 'Introduction',
+        href: '/testing/introduction',
+      },
+      {
+        title: 'Merchant Site Testing',
+        href: '/testing/site-testing',
+      },
+    ],
+  },
+  {
     title: 'Operations and Administration',
     links: [
       { title: 'Introduction', href: '/ops-admin/introduction' },
@@ -105,7 +117,6 @@ const navigation = [
       { title: 'Cryptography', href: '/ops-admin/cryptography' },
 
       { title: 'Partner Portal', href: '/ops-admin/partner-portal' },
-      { title: 'Testing', href: '/ops-admin/testing' },
       {
         title: 'Payment Sites - Support',
         href: '/ops-admin/site-support',
