@@ -114,7 +114,7 @@ If you enter "Max" as the answer for your dog's name and "Smith" for your last n
 
 A sample video of good_email & security:  [good_email + security](https://1drv.ms/v/s!ArSB8eMcy-NPjLsqAmEdZqegs43Lcw?e=9Bbckp)
 
-# Synthetic Site - OTP
+## Synthetic Site - OTP
 CardUpdatr Tile:
 ![CardUpdatr Tile](/images/synthetic-site-tile.png) 
 
