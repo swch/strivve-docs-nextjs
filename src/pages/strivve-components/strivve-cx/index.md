@@ -2,6 +2,30 @@
 title: StrivveCX Components
 ---
 
+## Overview
+The StrivveCX Library consists of a set of secure cardholder experience (C/X) components designed for use by digital banking application users, from within any digital banking application.
+
+The primary capabilities StrivveCX provides, enables banking customer applications to easily and securely create a compelling user-experiences for banking customers across any cardholder journeys which provide simple native starter components and customizable components:
+
+* Selection of card-on-file sites from Strivve’s Sites Directory
+
+* Secure acquisition of online site account credentials with default options to allow for persisting user’s online account site credentials
+
+* Card-on-File Placement progress and results
+
+* Card-on-File Placement History, conveying where users have previously placed their cards using the CardSavr Platform
+
+* Future versions will also provide similar capability for:
+
+  * Native and customizable payment card entry/acquisition
+
+  * Native and customizable billing address entry/acquisition
+
+The library comes in the form of Javascript packages for the most popular NodeJS and browser frameworks.
+
+StrivveCX is built for use by Mobile Web and Desktop Web Applications, as well as Native Mobile applications alike.  Applications can dynamically compose and of course consume Javascript components at a minimum, or complete DOM object components also.  Optimally whether the applications are native applications or browser based applications, the StrivveCX components can provide complete components or partial object only components.  However, most applications can compose and consume StrivveCX rich DOM components by making use of the StrivveCX standard JavaScript library and runtime.
+
+
 ## Using StrivveCX Components
 
 ```html
