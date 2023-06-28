@@ -140,6 +140,3 @@ border_color | no | #000000 | color of box borders (can also be configured in Pa
 drop_shadow | no | true | draws a dropshadow around the visible area
 dynamic_height | no | false | creates a fixed height on the credit card form and the merchant credential page - this breaks the sticky notification box
 
-### Methods of Configuration
-#### Dynamic
-#### Partner Portal
