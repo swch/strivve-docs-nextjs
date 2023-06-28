@@ -74,7 +74,7 @@ financial_institution | no | first element of host, or "default" | Override the 
 top_sites | no | [] | These sites are listed first on the "select-merchants" page
 exclude_sites | no | [] | List of sites to be excluded (hostnames)
 merchant\_site_tags | no | ["usa", "prod"] | usa AND prod -- to provide "OR" functionality, tags must be listed differently. "prod", "canada,usa" means prod AND (usa OR canada) 
-coutnries_supported | no | ["USA"] | Populated in the country field of the address - if only one country, the country is assumed
+countries_supported | no | ["USA"] | Populated in the country field of the address - if only one country, the country is assumed
 
 ### User Object
 The user properties are unique to this partiular cardholder, and generally provide login and other customer specific properties necessary to assume a session.
