@@ -22,7 +22,7 @@ Overlay
 Overlay
 
 ### Embedded
-CardUpdatr can be embedded within an iframe which is a legacy method embedding within a desktop experience.  Although this method is still supported, Strivve recommends the [Mobile Application](#mobile-application), [Mobile Web Application](#mobile-web-application), and [Desktop Application](#desktop-web-application) experiences referenced in thisdocument.
+CardUpdatr can be embedded within an iframe which is a legacy method of integrating into the desktop and mobile experience.  Although this method is still supportedm Strivve recommends the [Mobile Application](#mobile-application), [Mobile Web Application](#mobile-web-application), and [Desktop Application](#desktop-web-application) experiences referenced in thisdocument.
 
 As CardUpdatr is inserted as an iframe, the boostrap library makes the insertion possible.  Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the initCardupdatr function. 
 
