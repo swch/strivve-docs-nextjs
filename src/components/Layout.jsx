@@ -165,11 +165,14 @@ function Header({ navigation }) {
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
         <Link href="/" aria-label="Home page">
-          <LightLogomark className=" h-9 w-9 lg:hidden" />
+          <LightLogomark className="[[data-theme=light]_&]lg:hidden hidden h-9 w-9" />
+          <DarkLogomark className="hidden h-9 w-9 [[data-theme=dark]_&]:lg:" />
+          <LightLogomark className="hidden h-9 w-auto [:not(.dark)[data-theme=system]_&]:sm:block" />
+          <DarkLogomark className="hidden h-9 w-auto [.dark[data-theme=system]_&]:sm:hidden" />
           <LightLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [[data-theme=light]_&]:lg:block" />
           <DarkLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [[data-theme=dark]_&]:lg:block" />
-          <LightLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [:not(.dark)[data-theme=system]_&]:block" />
-          <DarkLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [.dark[data-theme=system]_&]:block" />
+          <LightLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [:not(.dark)[data-theme=system]_&]:lg:block" />
+          <DarkLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [.dark[data-theme=system]_&]:lg:block" />
         </Link>
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
