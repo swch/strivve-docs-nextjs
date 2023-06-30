@@ -29,6 +29,8 @@ Examples:
   "account_id": 1679,
   "type": "CARD_PLACEMENT",
   "status": "AUTH",
+  "percent_complete": 20,
+  "auth_percent_complete": 40,
   "termination_type": null,
   "status_message": "Linking account.",  
   ...
@@ -43,7 +45,9 @@ Examples:
   "card_id": 1195,
   "account_id": 1679,
   "type": "CARD_PLACEMENT",
-  "status": "PENDING_TFA",
+  "status": "PENDING",
+  "percent_complete": 40,
+  "auth_percent_complete": 80,
   "termination_type": null,
   "status_message": "Additional information required, this code may be sent to your phone or email address.",  
   ...
@@ -63,6 +67,8 @@ Example:
   "account_id": 1679,
   "type": "CARD_PLACEMENT",
   "status": "SUCCESSFUL",
+  "percent_complete": 100,
+  "auth_percent_complete": 100,
   "termination_type": "BILLABLE",
   "status_message": "Your card has been placed successfully.",  
   ...
@@ -77,7 +83,7 @@ type | description
 ---- | ------------
 type | the type of message - tfa or initial\_account\_link or others
 job\_id | the job\_id for this message channel, this is important to know which merchant is requesting
-message | detailed status information about this request, it includes the same properties as a standard status message (percent_complete, status, and a status_message) -- the status_message should be shown to the users to indicate the status of each job
+message | detailed status information about this request, it includes the same properties as a standard status message (percent_complete, auth_percent_complete, status, and a status_message) -- the status_message should be shown to the users to indicate the status of each job.  percent_complete is the percent complete of the entire card placement, auth_percent_complete is the percent complete of just the account_link phase of the card placement.
 envelope\_id | a guid which must be included in the response
 account\_link | a list of proprerties that need to be collected from the client -- note that some properties are marked as secret and should be obscured when entered
 
@@ -101,6 +107,7 @@ Bad Credentials Example:
         "status": "PENDING_NEWCREDS",
         "job_timeout": 769392,
         "percent_complete": 45,
+        "auth_percent_complete": 90,
         "status_message": "The initial credentials provided were incorrect."
       },
       "account_link": [
@@ -133,9 +140,10 @@ TFA Request Example:
       "type": "tfa",
       "envelope_id": "2kRDNRFbPlf98X5S917d4w==",
       "message": {
-        "status": "PENDING_TFA",
+        "status": "PENDING",
         "job_timeout": 769392,
-        "percent_complete": 55,
+        "percent_complete": 56,
+        "auth_percent_complete": 28,
         "status_message": "Additional information required, this code may be sent to your phone or email address."
       },
       "account_link": [

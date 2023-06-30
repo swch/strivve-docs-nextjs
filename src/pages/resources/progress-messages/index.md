@@ -31,6 +31,7 @@ Examples:
   "message": {
     "status": "UPDATING",
     "percent_complete": 80,
+    "auth_percent_complete": 100,
     "job_timeout": 827027,
     "status_message": "Updating your payment method. No further action required."
   }
@@ -44,6 +45,7 @@ Examples:
   "message": {
     "status": "TIMEOUT_TFA",
     "percent_complete": 100,
+    "auth_percent_complete": 100,
     "job_timeout": 827027,
     "status_message": "Unable to automatically update your card due to invalid or missing two-factor authentication.",
     "termination_type": "USER_DATA_FAILURE"
@@ -77,8 +79,9 @@ Examples:
     }
   ],
   "message": {
-    "status": "PENDING_TFA",
-    "percent_complete": 55,
+    "status": "PENDING",
+    "percent_complete": 40,
+    "auth_percent_complete": 80,
     "job_timeout": 827027,
     "status_message": "Please acknowledge the link sent to your email or phone.",
   }
@@ -105,6 +108,7 @@ Examples:
   "message": {
     "status": "PENGING_NEWCREDS",
     "percent_complete": 45,
+    "auth_percent_complete": 90,
     "job_timeout": 827027,
     "status_message": "The credentials provided were incorrect.",
   }
@@ -125,7 +129,8 @@ Examples:
   ],
   "message": {
     "status": "PENGING",
-    "percent_complete": 60,
+    "percent_complete": 45,
+    "auth_percent_complete": 90,
     "job_timeout": 827027,
     "status_message": "The site is requiring additional information.",
   }

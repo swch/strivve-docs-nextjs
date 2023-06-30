@@ -19,12 +19,9 @@ QUEUED    | No | Job is queued and ready to be processed by the VBS.
 IN-PROGRESS | No | Job has been picked up by a VBS.
 AUTH | No | Job is authenticating with user credentials.
 PENDING\_NEWCREDS | No | New credentials are required to conintue.
-PENDING\_TFA | No | TFA required for job to continue.
 PENDING | No | Additional information required, check the account_link attribute on the credential_request to see what properties are required.
 CREDS\_RECEIVED | No | VBS has acknowledged receipt of new credentials.
-TFA\_RECEIVED | No | VBS has acknowledged receipt of tfa code.
 CREDS\_SUBMITTED | No | VBS has submitted the credentials to the site.
-TFA\_SUBMITTED | No | VBS has submitted the tfa code to the site.
 UPDATING | No | VBS is authenticated with merchant site, client application may choose to let the user navigate away.
 CANCEL\_REQUESTED | Yes | Job is not longer needed by the user, and can be safely deleted.
 
