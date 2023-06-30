@@ -5,9 +5,9 @@ import ReactPlayer from 'react-player'
 
 export function Video({ url }) {
   return (
-    <div className="player-wrapper">
+    <div className="relative">
       <ReactPlayer
-        className="relative"
+        className="react-player"
         url={url}
         config={{
           file: {
