@@ -24,15 +24,17 @@ We use machine learning technology to build a crowdsourced database of automated
 
 Strivve's patented robotic process automation technology performs the card updates on the user’s merchant site accounts and places their card on the site, on their behalf. The entire process of updating payment information online is carried out in seconds.
 
-***
+---
 
 ## CardSavr Video Explainer - Why CardSavr Exists?
-[![Why CardSavr Exists?](/images/CardUpdatrVideo.png)](https://www.youtube.com/embed/nrrJxnhE1-Y?autoplay=1&amp;enablejsapi=1&amp;wmode=opaque "Click to Watch the CardSavr Explainer Video")
 
-***
+[![Why CardSavr Exists?](/images/CardUpdatrVideo.png)](https://www.youtube.com/embed/nrrJxnhE1-Y?autoplay=1&enablejsapi=1&wmode=opaque 'Click to Watch the CardSavr Explainer Video')
+
+---
 
 ## Live Demo with CardUpdatr
+
 Place one of your Cards on file now at one of your personal payment accounts by clicking below!
 [![Click to Demo CardUpdatr Now](/images/switch_card_changes.png)](https://acmebank.customer-dev.cardupdatr.app/)
 
-Ready to learn more?  ...[Click Here to Continue](/guides/introduction)
+Ready to learn more? ...[Click Here to Continue](/guides/introduction)
