@@ -15,7 +15,7 @@ export function Video({ url }) {
               playsInline: true,
               forceVideo: true,
               forceAudio: true,
-              controls: '',
+              controls: true,
               controlslist: 'nofullscreen nodownload',
             },
           },
