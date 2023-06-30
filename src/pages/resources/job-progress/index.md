@@ -51,11 +51,9 @@ PASSWORD\_RESET\_REQUIRED | USER\_DATA\_FAILURE | Account is in a state that req
 BUNDLED_SUBSCRIPTION | USER\_DATA\_FAILURE | No card on file and billed through another subscription (e.g. Disney+)
 FREE_ACCOUNT | USER\_DATA\_FAILURE | Free accounts don't have a card on file and no paid subscrption
 ACCOUNT_LOCKED | USER\_DATA\_FAILURE | Account has been locked by previous failed login attempts
-DUPLICATE_CARD | USER\_DATA\_FAILURE | Some sites don't allow the same card placed twice
 EXPIRED_CARD | USER\_DATA\_FAILURE | 
 INVALID_CVV | USER\_DATA\_FAILURE | 
 INVALID_NETWORK | USER\_DATA\_FAILURE | Some sites only accept one brand of card (no Amex, only VISA, etc.)
-MAX\_LIMIT\_OF\_STORED\_CARDS | USER\_DATA\_FAILURE | Some sites only allow a certain number of cards
 TIMEOUT_CREDENTIALS | USER\_DATA\_FAILURE | User failed to provide new credentials in a timely manner (~4 minutes)
 TIMEOUT_TFA | USER\_DATA\_FAILURE | User failed to provide a new TFA code in a timely mannger (~4 minutes)
 TOO\_MANY\_LOGIN\_FAILURES | USER\_DATA\_FAILURE | Only one failed login is allowed
