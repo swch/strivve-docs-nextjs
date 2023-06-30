@@ -51,9 +51,7 @@ As CardUpdatr is inserted as an iframe, the boostrap library makes the insertion
 
 ### CardUpdatr SSO Video Overview
 
-    **Bryan** - *Upload the video to /public/videos folder*
-
-{% video url="/videos/cardUpdatr_sso_animation.mp4" /%}
+{% video url="/videos/cardupdatr-sso-animation.mp4" /%}
 
 ## CardUpdatr Configuration
 
