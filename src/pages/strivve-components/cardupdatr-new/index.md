@@ -274,7 +274,7 @@ The user properties are unique to this partiular cardholder, and generally provi
 
 ### Style_Template Object
 
-style_template attributes can be dynamically configured with CardUpdatr's carduupdatr-client-v2.js. They can optionally be configured in the Partner Portal, but dynamic flexibilty is sometimes preferred if running multiple brands under the same Financial Institution.
+style_template attributes can be dynamically configured with CardUpdatr's cardupdatr-client-v2.js. They can optionally be configured in the Partner Portal, but dynamic flexibilty is sometimes preferred if running multiple brands under the same Financial Institution.
 
 ```javascript
   },
