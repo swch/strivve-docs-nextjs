@@ -60,10 +60,10 @@ billing address support, but rather sites that are designed for people that resi
 
 Tag          | Effect             
 ------------ | ----------------- 
-usa          | for cardholders that run transactions on sites in the us
-canada       | for cardholders that run transactions on sites in canada
+usa          | for cardholders that support transactions on sites in the us
+canada       | for cardholders that support transactions on sites in canada
 
-* It's important to note that many cards support international billing addresses and although these sites would only be tagged both canada and us, they are oftentimes available with other international billing addresses.
+It's important to note that many cards support international billing addresses and although these sites would only be tagged both canada and us, they are oftentimes available with other international billing addresses.
 
 #### Site Types
 
