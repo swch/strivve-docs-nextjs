@@ -259,23 +259,23 @@ There are three sets of settings that can be used to customize your CardUpdatr e
 ```javascript
 {
   config : {
-    app\_container\_id: "APP_CONTAINER_ID", 
+    app_container_id: "APP_CONTAINER_ID", 
     hostname: "CARDUPDATR_HOSTNAME",  
     financial_institution: "acmecu", 
     top_sites: ["amazon.com", "apple.com", "audible.com", "hulu.com", "netflix.com", "spotify.com", "target.com", "uber.com", "venmo.com", "walgreens.com", "walmart.com"],  
-    merchant\_site\_tags: ["usa,canada", "prod"],    
+    merchant_site_tags: ["usa,canada", "prod"],    
     countries_supported: ["Canada", "USA"] 
   },
 ```         
 
 Property | Required | Default | Description 
 -------- | -------- | ------- | -----------
-app\_container_id | yes | | HTML element id that CardUpdatr is attached to
+app_container_id | yes | | HTML element id that CardUpdatr is attached to
 hostname | yes | | hostname of CardUpdatr (e.g. acmebank.customer-dev.cardupdatr.app)
 financial_institution | no | first element of host, or "default" | Override the value in the hostname (recommended for embedded)
 top_sites | no | [] | These sites are listed first on the "select-merchants" page
 exclude_sites | no | [] | List of sites to be excluded (hostnames)
-merchant\_site_tags | no | ["usa", "prod"] | usa AND prod -- to provide "OR" functionality, tags must be listed differently. "prod", "canada,usa" means prod AND (usa OR canada) 
+merchant_site_tags | no | ["usa", "prod"] | usa AND prod -- to provide "OR" functionality, tags must be listed differently. "prod", "canada,usa" means prod AND (usa OR canada) 
 coutnries_supported | no | ["USA"] | Populated in the country field of the address - if only one country, the country is assumed
 
 ### user
@@ -306,7 +306,7 @@ custom_data | no | | Data that identifies this cardholder/session.  It is posted
 
 ### style_template
 
-style_template attributes can be dynamically configured with CardUpdatr's carduupdatr-client-v2.js.  They can optionally be configured in the Partner Portal, but dynamic flexibilty is sometimes preferred if running multiple brands under the same Financial Institution.
+style_template attributes can be dynamically configured with CardUpdatr's cardupdatr-client-v2.js.  They can optionally be configured in the Partner Portal, but dynamic flexibilty is sometimes preferred if running multiple brands under the same Financial Institution.
 
 ```javascript
   },
@@ -316,7 +316,7 @@ style_template attributes can be dynamically configured with CardUpdatr's carduu
     card_description: "ACME Bank Debit Card"  
     //By default, a message that will be appended and link to the select-merchants page: "Add your $card_description to more sites"
     final_message: "Thank you for updating your card, no further action is needed. Sites may notify you that your payment ",
-    invalid\_session_url: "URL",  
+    invalid_session_url: "URL",  
     link_color: "#5e35b1",
     button_color: "#5e35b1",
     border_color: "#5e35b1",
@@ -331,7 +331,7 @@ name | no | The FI name | The name of the issuer
 page_title | no | The FI name | The title of the page
 card_description | no | Set in the Partner Portal | included in the copy 
 final_message | no | Set in the Partner Portal | A thank you message that appears after all accounts are linked
-invalid\_session\_url | no | select-merchants | Once a session ends, the user can be directed to a new page to re-authenticate
+invalid_session_url | no | select-merchants | Once a session ends, the user can be directed to a new page to re-authenticate
 link_color | no | #000000 | color of links (can also be configured in Partner Portal)
 button_color | no | #000000 | color of buttons (can also be configured in Partner Portal)
 border_color | no | #000000 | color of box borders (can also be configured in Partner Portal)
