@@ -13,7 +13,7 @@ specifically advised environments where Strivve is managing the safe_keys. This 
 managed by Strivve and applied globally for that environment.  
 
 Notifications can be assigned to an event and then mapped to a notification type:
-1.	Email
+1.	Email (required email addresses are saved with cardholders)
 2.	Webhook
 
 Each notification type has its own configuration.  For example, a webhook needs to know what 
@@ -99,10 +99,57 @@ payloads are signed using the integrator key used to create the corresponding ca
 Webhook behavior in CardSavr environments is identical between production and non-production 
 environments.
 
+### Payload Signing
+
+All payloads are signed using the same mechanism as the CardSavr API. This guarantees the source of the webhook request to protect against man-in-the-middle attacks.  Verifying the signature of the payload is optional but recommended.  Examples from our [Java](https://github.com/swch/strivve-sdk-java/blob/1db2b56a002fd5753661d0ac20ef2ddc483fdd5b/cardsavr/src/main/java/com/strivve/Signing.java#L24) and [Javaascript](https://github.com/swch/Strivve-SDK/blob/9679fa3c5b1047e67f6e36667e89156b43001a2b/src/cardsavr/CardsavrSessionCrypto.ts#L225) SDKs.
+
+Here is a coode sample that verified the signature of the incoming request using the Strivve Java SDK:
+
+```Java
+
+static class MyHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange t) throws IOException {
+
+        String input = new BufferedReader(
+            new InputStreamReader(t.getRequestBody(), StandardCharsets.UTF_8))
+                .lines()
+                .collect(Collectors.joining("\n"));
+
+        Headers headers = t.getRequestHeaders();
+        String signature = headers.getFirst("x-cardsavr-signature");
+        String nonce = headers.getFirst("x-cardsavr-nonce");
+        String authorization = headers.getFirst("x-cardsavr-authorization");
+
+        if (signature != null && nonce != null && authorization != null) {
+            try {
+                Signing.verifySignature(
+                    signature, 
+                    "http://"+t.getRequestHeaders().getFirst("Host")+t.getRequestURI(),
+                    authorization, 
+                    nonce, 
+                    new SecretKey[] {Encryption.convertRawToAESKey(Base64.getDecoder().decode(INTEGRATOR_KEY))}, 
+                    input);
+            } catch (Exception e) {
+                // Signature verification failed
+                e.printStackTrace();
+            }
+        }
+        
+        String response = "This is the response";
+        t.sendResponseHeaders(200, response.length());
+        OutputStream os = t.getResponseBody();
+        os.write(response.getBytes());
+        os.close();
+    }
+}
+
+```
+
 ### Retry Logic
 
 If the notification is not successfully delivered the CardSavr platform will retry the 
 notification in intervals of 10, 20, and 40 seconds. Should the CardSavr service experience 
 unexpected downtime, all the notifications will be sent for the entire service downtime upon 
-service restoration. If for any reason your servers are not accessible, we recommend you 
-unsubscribe from notifications. Once your the servers are up, you can subscribe to notifications again.
+service restoration. If for any reason customer webhook recipients are not accessible, we recommend you 
+unsubscribe from notifications. Once your servers are up, you can subscribe to notifications again.
