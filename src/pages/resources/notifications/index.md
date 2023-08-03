@@ -101,7 +101,7 @@ environments.
 
 ### Payload Signing
 
-All payloads are signed using the same mechanism as the CardSavr API. This guarantees the source of the webhook request to protect against man-in-the-middle attacks.  Verifying the signature of the payload is optional but recommended.  Here are some examples from our [Java](https://github.com/swch/strivve-sdk-java/blob/1db2b56a002fd5753661d0ac20ef2ddc483fdd5b/cardsavr/src/main/java/com/strivve/Signing.java#L24) and [Javaascript](https://github.com/swch/Strivve-SDK/blob/9679fa3c5b1047e67f6e36667e89156b43001a2b/src/cardsavr/CardsavrSessionCrypto.ts#L225) SDKs.
+All payloads are signed using the same mechanism as the CardSavr API. This guarantees the source of the webhook request to protect against man-in-the-middle attacks.  Verifying the signature of the payload is optional but recommended.  Here are some examples from our [Java](https://github.com/swch/strivve-sdk-java/blob/1db2b56a002fd5753661d0ac20ef2ddc483fdd5b/cardsavr/src/main/java/com/strivve/Signing.java#L24) and [Javascript](https://github.com/swch/Strivve-SDK/blob/9679fa3c5b1047e67f6e36667e89156b43001a2b/src/cardsavr/CardsavrSessionCrypto.ts#L225) SDKs.
 
 Here is a code sample that verified the signature of the incoming request using the Strivve Java SDK:
 
