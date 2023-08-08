@@ -16,7 +16,7 @@ Status | Can be set by agent | Description
 |------|---------------------|------------
 REQUESTED | Yes (this is the default) | Job is created, but has not been queued to be run.
 QUEUED    | No | Job is queued and ready to be processed by the VBS.
-IN-PROGRESS | No | Job has been picked up by a VBS.
+IN_PROGRESS | No | Job has been picked up by a VBS.
 AUTH | No | Job is authenticating with user credentials.
 PENDING\_NEWCREDS | No | New credentials are required to conintue.
 PENDING | No | Additional information required, check the account_link attribute on the credential_request to see what properties are required.
