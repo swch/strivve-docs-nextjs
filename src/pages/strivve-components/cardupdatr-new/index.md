@@ -41,7 +41,7 @@ Although inserted as an iframe, once again the boostrap library makes the insert
 
 
 ```javascript
-    <div class="container" style="background-color: deepskyblue; width: 100%; text-align: center; padding-top: 3vh; min-height: 100vh;">
+    <div class="container" style="background-color: deepskyblue; width: 100%; text-align: center; min-height: 100vh;">
     <!-- This script loads in from a .cardupdatr.app domain. -->
     <script src="https://CARDUPDATR_HOSTNAME.cardupdatr.app/cardupdatr-client-v2.js"></script>
     <!-- Empty div to initialize the iFrame which loads CardUpdatr. -->
