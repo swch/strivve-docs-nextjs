@@ -38,3 +38,35 @@ Perhaps a QA system wants to include all synthetic sites, as well as prod and be
 ```
 https://api.{{CARDSAVR-INSTANCE}}.cardsavr.io/merchant_sites?tags=beta,prod,synthetic
 ```
+
+### Non-Exhaustive Tag List
+
+Below are three categories of tags that are carefully managed by the Site Support team. Tags are meant to be fluid, but there
+are some constraints that can be relied upon:
+
+#### Site Status
+
+Tag          | Effect             
+------------ | ----------------- 
+prod         | indicates that a card can be placed reliably
+disabled     | indicates that a site it temporarily unavailable for card placements
+beta         | indicates that a site has redently been introduced to the directory and may fail in some cases
+limited      | indicates that a card can be placed "some" of the time, and is actively being investigated
+
+#### Countries
+
+Strivve supports some sites that are exclusively availabe in the US and/or Canada. This is not to be confused with
+billing address support, but rather sites that are designed for people that reside in a specific country.
+
+Tag          | Effect             
+------------ | ----------------- 
+usa          | for cardholders that support transactions on sites in the us
+canada       | for cardholders that support transactions on sites in canada
+
+It's important to note that many cards support international billing addresses and although these sites would only be tagged both canada and us, they are oftentimes available with other international billing addresses.
+
+#### Site Types
+
+Tag          | Effect
+------------ | ----------------- 
+synthetic    | applied to test sites for [UX development and testing](/testing/site-testing) - these should be filtered out in production

@@ -220,14 +220,14 @@ launchCardUpdatr can be called as a click handler from an anchor, a button or an
 Embedding works well for embedding within a desktop experience.  It can provide the CardUpdatr app with supporting instructions and may fit more seamlessly into the application or browser experience.  Although inserted as an iframe, once again the boostrap library makes the insertion much more seamless.   Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the initCardupdatr function. 
 
 ```javascript
-    <div class="container" style="background-color: deepskyblue; width: 100%; text-align: center; padding-top: 3vh; min-height: 100vh;">
+    <div class="container" style="background-color: deepskyblue; width: 100%; text-align: center; min-height: 100vh;">
     <!-- This script loads in from a .cardupdatr.app domain. -->
     <script src="https://CARDUPDATR_HOSTNAME.cardupdatr.app/cardupdatr-client-v2.js"></script>
     <!-- Empty div to initialize the iFrame which loads CardUpdatr. -->
     <div class="cardupdatr-frame" id="cardupdatr-frame"></div>
     </div>
     <script>
-      window.embedCardupdatr(settings = { 
+      window.embedCardUpdatr(settings = { 
         config: { 
           app_container_id: "cardupdatr-frame", 
           hostname: "https://CARDUPDATR_HOSTNAME.cardupdatr.app/" 
