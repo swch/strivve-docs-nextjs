@@ -65,7 +65,7 @@ Below uses the Strivve Default Styling as no overrides are provided in this exam
 </script>
 ```
 
-### Site Selection Screens
+### Site Selection Screen
 
 ![Site Selection](/images/Site_Selection.jpg)
 
@@ -103,7 +103,7 @@ StrivveCX is built for use by Mobile Web and Desktop Web Applications, as well a
 
 Below is an high-level example of building your own components.  There are three main objects the make up our component architecture:
 
-**1.** **Service Layer** - Service contains functions that are connected to API/Backend.
+1. **Service Layer** - Service contains functions that are connected to API/Backend.
 2. **Core Layer** - Orchestration interface for processing job status, submitting credentials, functions and state for compoenent.
 3. **Component Layer** - Contains functions to render components on the website.
 
