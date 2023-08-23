@@ -295,4 +295,4 @@ style_template attributes can be dynamically configured with CardUpdatr's cardup
 | border_color        | no       | #000000                   | color of merchant tile border when selected (can also be configured in Partner Portal)                                                           |
 | drop_shadow         | no       | true                      | draws a dropshadow around the visible area                                                                                |
 | dynamic_height      | no       | false                     | creates a fixed height on the credit card form and the merchant credential page - this breaks the sticky notification box |
-| spinner      | no       | false                     | The URL of the custom spinner you want CardUpdatr to use when it loads |
+| spinner      | no       | false                     | The URL of the custom spinner to use when CardUpdatr loads |
