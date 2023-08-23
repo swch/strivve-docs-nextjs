@@ -38,7 +38,7 @@ In this case CardUpdtr is inserted as an iframe, and the boostrap library makes 
 
 ### Constructing a URL
 
-There are cases when native applications that do not have access to a DOM.  In this case, there are simple mechanisms for launching webviews within apps, but generally are launched using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.
+There are cases to be considered when native applications do not have access to a DOM.  In this case, there are simple mechanisms for launching webviews within apps, but generally are launched using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.
 
 https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings={ ENDCODED\_SETTINGS\_JSON }
 
