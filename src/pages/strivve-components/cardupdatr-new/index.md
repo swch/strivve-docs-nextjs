@@ -8,36 +8,15 @@ CardUpdatr is a web drop-in component that handles the end to end experience of 
 
 {% video url="https://www.youtube.com/embed/AZAmT9hq-XE?autoplay=1&enablejsapi=1&wmode=opaque" /%}
 
-## Lauching CardUpdatr from within your Application
+## CardUpdatr Integration Techniques
 
-There are several proposed methods from which you can integrate/launch CardUpdatr from you application. The methods cover use cases from Mobile Applications, Mobile Web Applications, and Desktop Web applications.
+CardUpdatr supports embedding and launching techniques from which you can integrate CardUpdatr into your application. 
 
-### Mobile Application
+### Embedding 
 
-For mobile applications, Strivve recommends a popup using the web window url.  Both iOS and Android have simple mechanims for launching webviews within apps, but generally are launched using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.
+Embedding CardUpdatr in a webpage or webview can fit seamlessly into the application or browser experience.  
 
-https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings={ ENDCODED\_SETTINGS\_JSON }
-
-ENCODED\_SETTINGS\_JSON is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.
-
-[Here](https://github.com/swch/Strivve-SDK/tree/master/CU-iOS) is a sample iOS application that demonstrates this launching option.
-
-
-### Mobile Web Application
-
-Overlay
-
-### Desktop Web Application
-
-Overlay
-
-### Embedded
-
-Embedding works well for embedding within a desktop experience.  It can provide the CardUpdatr app with supporting instructions and may fit more seamlessly into the application or browser experience.  
-
-Although this method is supported, Strivve recommends the [Mobile Application](#mobile-application), [Mobile Web Application](#mobile-web-application), and [Desktop Application](#desktop-web-application) experiences referenced in this document.
-
-Although inserted as an iframe, once again the boostrap library makes the insertion much more seamless.   Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the initCardupdatr function. 
+In this case CardUpdtr is inserted as an iframe, and the boostrap library makes the insertion much more seamless.   Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the initCardupdatr function. 
 
 
 ```javascript
@@ -56,6 +35,15 @@ Although inserted as an iframe, once again the boostrap library makes the insert
       });
 </script>
 ```
+
+### Constructing a URL
+
+There are cases when native applications that do not have access to a DOM.  In this case, there are simple mechanisms for launching webviews within apps, but generally are launched using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.
+
+https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings={ ENDCODED\_SETTINGS\_JSON }
+
+ENCODED\_SETTINGS\_JSON is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.
+
 
 ## CardUpdatr Single-Sign On
 
@@ -302,6 +290,9 @@ style_template attributes can be dynamically configured with CardUpdatr's cardup
 | invalid_session_url | no       | select-merchants          | Once a session ends, the user can be directed to a new page to re-authenticate                                            |
 | link_color          | no       | #000000                   | color of links (can also be configured in Partner Portal)                                                                 |
 | button_color        | no       | #000000                   | color of buttons (can also be configured in Partner Portal)                                                               |
-| border_color        | no       | #000000                   | color of box borders (can also be configured in Partner Portal)                                                           |
+| button_border_radius        | no       | #000000                   | radius of button corners (can also be configured in Partner Portal)                                                               |
+| button_padding        | no       | #000000                   | controls space inside buttons (can also be configured in Partner Portal)                                                               |
+| border_color        | no       | #000000                   | color of merchant tile border when selected (can also be configured in Partner Portal)                                                           |
 | drop_shadow         | no       | true                      | draws a dropshadow around the visible area                                                                                |
 | dynamic_height      | no       | false                     | creates a fixed height on the credit card form and the merchant credential page - this breaks the sticky notification box |
+| spinner      | no       | false                     | The URL of the custom spinner you want CardUpdatr to use when it loads |
