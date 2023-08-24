@@ -16,7 +16,7 @@ CardUpdatr supports embedding and launching techniques from which you can integr
 
 Embedding CardUpdatr in a webpage or webview can fit seamlessly into the application or browser experience.  
 
-In this case CardUpdtr is inserted as an iframe, and the boostrap library makes the insertion much more seamless.   Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the initCardupdatr function. 
+In this case CardUpdtr is inserted as an iframe, and the boostrap library makes the insertion much more seamless.   Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the embedCardupdatr function. 
 
 
 ```javascript
