@@ -296,8 +296,8 @@ style_template attributes can be dynamically configured with CardUpdatr's cardup
 | invalid_session_url | no       | select-merchants          | Once a session ends, the user can be directed to a new page to re-authenticate                                            |
 | link_color          | no       | #000000                   | color of links (can also be configured in Partner Portal)                                                                 |
 | button_color        | no       | #000000                   | color of buttons (can also be configured in Partner Portal)                                                               |
-| button_border_radius        | no       | #0.25rem                   | radius of button corners (can also be configured in Partner Portal)                                                               |
-| button_padding        | no       | #0.375 0.75rem,                  | controls space inside buttons (can also be configured in Partner Portal)                                                               |
+| button_border_radius        | no       | 0.25rem                   | radius of button corners (can also be configured in Partner Portal)                                                               |
+| button_padding        | no       | 0.375 0.75rem,                  | controls space inside buttons (can also be configured in Partner Portal)                                                               |
 | border_color        | no       | #000000                   | color of merchant tile border when selected (can also be configured in Partner Portal)                                                           |
 | drop_shadow         | no       | true                      | draws a dropshadow around the visible area                                                                                |
 | dynamic_height      | no       | false                     | creates a fixed height on the credit card form and the merchant credential page - this breaks the sticky notification box |
