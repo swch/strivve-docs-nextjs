@@ -4,7 +4,7 @@ title: CardUpdatr
 
 ## Overview
 
-CardUpdatr is a web drop-in component that handles the end to end experience of updating anty card where cardholders shop and make payments online - keeping your card Top of Wallet®. CardUpdatr has a responsive design from which it can be leveraged in both Mobile Web and Desktop Web applications. There are several methods from which CardUpdatr can be integrated into your application which is covered in this section.
+CardUpdatr is a web drop-in component that handles the end to end experience of updating any card where cardholders shop and make payments online - keeping your card Top of Wallet®. CardUpdatr has a responsive design from which it can be leveraged in both Mobile Web and Desktop Web applications. There are several methods from which CardUpdatr can be integrated into your application which is covered in this section.
 
 {% video url="https://www.youtube.com/embed/AZAmT9hq-XE?autoplay=1&enablejsapi=1&wmode=opaque" /%}
 
