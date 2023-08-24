@@ -279,6 +279,8 @@ style_template attributes can be dynamically configured with CardUpdatr's cardup
     invalid_session_url: "URL",
     link_color: "#5e35b1",
     button_color: "#5e35b1",
+    button_border_radius: "4px",
+    button_padding: "0",
     border_color: "#5e35b1",
     drop_shadow: false,
     dynamic_height: true
