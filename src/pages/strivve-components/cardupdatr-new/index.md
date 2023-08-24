@@ -14,9 +14,9 @@ CardUpdatr supports embedding and launching techniques from which you can integr
 
 ### Embedding 
 
-Embedding CardUpdatr in a webpage or webview can fit seamlessly into the application or browser experience.  
+Embedding CardUpdatr in a webpage or webview can fit seamlessly into your application or browser experience.  
 
-In this case CardUpdtr is inserted as an iframe, and the boostrap library makes the insertion much more seamless.   Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the embedCardupdatr function. 
+In this case CardUpdatr is inserted as an iframe, and the boostrap library makes the insertion seamless.  Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the embedCardupdatr function. 
 
 
 ```javascript
@@ -38,11 +38,13 @@ In this case CardUpdtr is inserted as an iframe, and the boostrap library makes 
 
 ### Constructing a URL
 
-There are cases to be considered when native applications do not have access to a DOM.  In this case, there are simple mechanisms for launching webviews within apps, but generally are launched using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.
+There are cases to be considered when native applications do not have access to a DOM.  There are simple mechanisms for launching webviews within applications, and this can include using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.
 
+```
 https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings={ ENDCODED\_SETTINGS\_JSON }
+```
 
-ENCODED\_SETTINGS\_JSON is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.
+"ENCODED\_SETTINGS\_JSON" is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.
 
 
 ## CardUpdatr Single-Sign On
@@ -55,7 +57,7 @@ With CardUpdatr SSO, you can make some simple API calls to set up the cardholder
 
 ### Server Component
 
-A server component is required to create the cardholder, card and address.  There are three SDKs that support this functionality.  Java, Node and C#.  The javaascript library can also be used within a client to create the user.
+A server component is required to create the cardholder, card and address.  There are three SDKs that support this functionality.  Java, Node and C#.  The javascript library can also be used within a client to create the user.
 
 The data format for the data objects can be found on the (API/SDK reference guide)[https://swch.github.io/slate]. 
 
@@ -89,7 +91,7 @@ try {
  
 ```
 
-Every cardsavr app requires a cardsavr server and an integrator name and key.  You will also need an app username and password that the application uses to log onto the cardsavr platform using the integrator key to encrypt its payloads.  
+Every cardsavr app requires a Cardsavr server and an integrator name and key.  You will also need an app username and password that the application uses to log onto the cardsavr platform using the integrator key to encrypt its payloads.  
 
 This is accomplished within the loginAndCreateSession call.  Once logged in, the application can call createCard which creates a user and card with an attached address.  The response object contains three imporant pieces of data:
 
@@ -162,6 +164,8 @@ try {
         "\"name_on_card\":\"FirstName LastName\"," +
         "\"first_name\":\"FirstName\"," +
         "\"last_name\":\"LastName\"," +
+        "\"email\":\"foo@foo.com\"," +
+        "\"phone_number\":\"5555555555\"," +
         "\"address\":" +
             "{" +
                 "\"cardholder_ref\": {" +
