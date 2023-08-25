@@ -12,6 +12,11 @@ CardUpdatr is a web drop-in component that handles the end to end experience of 
 
 CardUpdatr supports embedding and launching techniques from which you can easily integrate it into your application. 
 
+Below is an example of the CardUpdatr journey to place cards to your top sites:
+
+![CardUpdatr ACME 1](/images/CardUpdatr_ACME_1.png)
+![CardUpdatr ACME 2](/images/CardUpdatr_ACME_2.png)
+
 ### Embedding 
 
 Embedding CardUpdatr in a webpage or webview can fit seamlessly into your application or browser experience.  
@@ -264,13 +269,13 @@ The user properties are unique to this partiular cardholder, and generally provi
 | selected_sites | no       |                   | Pre-selected site ids collected from the user using a non-CardUpdatr component                          |
 | custom_data    | no       |                   | Data that identifies this cardholder/session. It is posted via webhooks when the session is terminated. |
 
-### Style_Template Object
+### Style Object
 
 style_template attributes can be dynamically configured with CardUpdatr's cardupdatr-client-v2.js. They can optionally be configured in the Partner Portal, but dynamic flexibilty is sometimes preferred if running multiple brands under the same Financial Institution.
 
 ```javascript
   },
-  style_template : {
+  style : {
     name: "ACME Bank",
     page_title: "Update your card!",
     card_description: "ACME Bank Debit Card"
