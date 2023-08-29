@@ -239,7 +239,6 @@ CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/
 | hostname              | yes      |                                     | hostname of CardUpdatr (e.g. acmebank.customer-dev.cardupdatr.app)                                                                  |
 | financial_institution | no       | first element of host, or "default" | Override the value in the hostname (recommended for embedded)                                                                       |
 | top_sites             | no       | []                                  | These sites are listed first on the "select-merchants" page                                                                         |
-| exclude_sites         | no       | []                                  | List of sites to be excluded (hostnames)                                                                                            |
 | merchant_site_tags    | no       | ["usa", "prod"]                     | usa AND prod -- to provide "OR" functionality, tags must be listed differently. "prod", "canada,usa" means prod AND (usa OR canada) |
 | countries_supported   | no       | ["USA"]                             | Populated in the country field of the address - if only one country, the country is assumed                                         |
 
