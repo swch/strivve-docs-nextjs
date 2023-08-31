@@ -59,8 +59,9 @@ Below uses the Strivve Default Styling as no overrides are provided in this exam
         address1: 'test',
         state: 'test',
         subnational: 'WA',
-        is_primary: true,
-      },
+        is_primary: true
+      }
+    }
   });
 </script>
 ```
