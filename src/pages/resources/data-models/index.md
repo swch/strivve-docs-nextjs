@@ -3,7 +3,7 @@ title: Data Model
 ---
 
 The data model for the CardSavr platform is shown below. 
-![Data Model](/images/data_object.jpeg "Data Model")
+![Data Model](/images/Cardsavr_Data_Model.jpeg "Data Model")
 
 
 To create a card placement job, there are three data objects that must be created first. In 
