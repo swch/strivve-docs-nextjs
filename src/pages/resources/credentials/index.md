@@ -122,7 +122,7 @@ thresholds of many partners.
 ### Credential Data Protection
 ![image info](/images/PCI-DSS-networks.png)
 
-All Payment Credential types, including SAD and PII, <strong>must</strong> be protected per PCI-DSS controls. 
+All Payment Credential types, including SAD and PII, **must** be protected per PCI-DSS controls. 
 Merchant Credentials are not a concept that exists within PCI compliance. They are very sensitive information and it 
 is incumbent upon Strivve to securely store them at or above PCI-DSS compliance mechanisms.  This is necessary to 
 ensure cardholder trust with the partner and transitively Strivve is not compromised. Strive has designed and 
