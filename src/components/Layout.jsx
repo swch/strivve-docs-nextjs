@@ -166,7 +166,7 @@ function Header({ navigation }) {
       <div className="relative flex flex-grow basis-0 items-center">
         <Link href="/" aria-label="Home page">
           <LightLogomark className="[[data-theme=light]_&]lg:hidden hidden h-9 w-9" />
-          <DarkLogomark className="hidden h-9 w-9 [[data-theme=dark]_&]:lg:" />
+          <DarkLogomark className="[[data-theme=dark]_&]:lg: hidden h-9 w-9" />
           <LightLogomark className="hidden h-9 w-auto [:not(.dark)[data-theme=system]_&]:sm:block" />
           <DarkLogomark className="hidden h-9 w-auto [.dark[data-theme=system]_&]:sm:hidden" />
           <LightLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [[data-theme=light]_&]:lg:block" />
@@ -175,7 +175,7 @@ function Header({ navigation }) {
           <DarkLogo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100  [.dark[data-theme=system]_&]:lg:block" />
         </Link>
       </div>
-      <div className="relative flex flex-grow basis-0 items-center">
+      <div id="search" className="relative flex flex-grow basis-0 items-center">
         <Search />{' '}
       </div>
       <div className="relative flex flex-grow basis-0 items-center justify-center dark:text-white">

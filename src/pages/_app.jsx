@@ -67,6 +67,24 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
+        />
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
+        ></script>
+        <script type="text/javascript">
+          {`algoliasearchNetlify({
+    appId: '5LLAQUQ7EW',
+    apiKey: 'd183a709f283e8984b78b4e7ddabea26',
+    siteId: 'bfc1dbf9-5911-435c-a374-02eb19f98c6d',
+    branch: 'master',
+    selector: 'div#search',
+    openOnFocus: true,
+  });`}
+        </script>
       </Head>
       <Layout title={title} tableOfContents={tableOfContents}>
         <Component {...pageProps} />
