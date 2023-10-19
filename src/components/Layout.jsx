@@ -93,6 +93,10 @@ const navigation = [
         title: 'StrivveCX',
         href: '/strivve-components/strivve-cx',
       },
+      {
+        title: 'Password Managers',
+        href: '/strivve-components/password-managers',
+      }
     ],
   },
   {
