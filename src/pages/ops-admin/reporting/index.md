@@ -5,7 +5,7 @@ title: Reporting
 Strivve provides both API data feeds and out of the box reporting solutions to support your card placement reporting needs.  
 
 ## CardSavr Webhook Notifications
-For the best integrated reporting solution, Strivve recommends leveraging [Webhooks](https://developers.strivve.com/resources/notifications) available via the [CardSavr API](https://swch.github.io/slate/#introduction).  Webhooks provide your application the ability to receive asynchronous events for all card placement results.  By registering for these events, your application can streamline real-time results into your targeted data ingestion processes for back office applications.
+For the best integrated reporting solution, Strivve recommends leveraging [Webhooks](https://developers.strivve.com/resources/notifications) available via the [CardSavr API](https://swch.github.io/slate/#introduction).  Webhooks provide your application the ability to receive asynchronous events for all card placement results.  By registering for these events, your integration can streamline real-time results into your targeted data ingestion processes for back office applications.
 
 When [creating a cardholder](https://swch.github.io/slate/#create-cardholder), integrators can also include their own custom_data that can tie application specific details back to the back office processing when receiving notifications for a given cardholder.  This provides a tight integration from which a cardholder along with any specific attributes can be specified and fully tracked upon receiving these notifications.
 
