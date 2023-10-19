@@ -122,9 +122,13 @@ const navigation = [
 
       { title: 'Partner Portal', href: '/ops-admin/partner-portal' },
       {
+        title: 'Reporting',
+        href: '/ops-admin/reporting',
+      },
+      {
         title: 'Payment Sites - Support',
         href: '/ops-admin/site-support',
-      },
+      },      
       {
         title: 'Service Desk Support',
         href: '/ops-admin/support',
