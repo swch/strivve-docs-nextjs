@@ -11,13 +11,13 @@ When [creating a cardholder](https://swch.github.io/slate/#create-cardholder), i
 
 ## Strivve Partner Portal
 
-Each dedicated CardSavr instance includes a [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) used in the administration of your environment configuration.  Below are the out of the box reporting options that your organization may generate at any time.
+Each dedicated CardSavr instance includes a [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) used in the administration of your environment configuration.  Belsow are the out of the box reporting options that your organization may generate at any time.
 
 
 ### Merchant Reports
 Merchant Reports allow you to generate a report of all card placement activity between any specified dates. 
 
-To generate the report, simply select the start and end dates you would like and generate the report. The report will then be downloaded to your device.
+To generate the report, simply select the start and end dates and generate the report. The report will then be downloaded to your device.
 ![Reporting](/images/merchant_report_1.png ) 
 ![Reporting](/images/merchant_report_2.png ) 
 
@@ -37,7 +37,9 @@ To generate the report, simply select the start and end dates you would like and
 
 
 ### Cardholder Session Reports
-Strivve is in process of developing a cardholder session report that integrates CardUpdatr and StrivveCX UX events into session report data that will track the full Strivve UX session journey while linking to the placement transaction detail provided in thh merchant reports.
+Strivve is in process of developing a cardholder session report that details CardUpdatr or StrivveCX UX data that can track the full Strivve UX session journey while linking to the placement transaction detail provided in the merchant reports.
+
+This section will be updated once the session reporting feature is available.
 
 ### Merchant Site Reports
 The Merchant Sites report lists all Strivve supported merchant sites and their current status, as well as other relevant information. 
