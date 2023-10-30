@@ -32,7 +32,7 @@ In this case CardUpdatr is inserted as an iframe, and the boostrap library makes
     <div class="cardupdatr-frame" id="cardupdatr-frame"></div>
     </div>
     <script>
-      window.embedCardupdatr(settings = { 
+      window.embedCardUpdatr(settings = { 
         config: { 
           app_container_id: "cardupdatr-frame", 
           hostname: "https://CARDUPDATR_HOSTNAME.cardupdatr.app/" 
