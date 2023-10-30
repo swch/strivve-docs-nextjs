@@ -21,7 +21,7 @@ Below is an example of the CardUpdatr journey to place cards to your top sites:
 
 Embedding CardUpdatr in a webpage or webview can fit seamlessly into your application or browser experience.  
 
-In this case CardUpdatr is inserted as an iframe, and the boostrap library makes the insertion seamless.  Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the embedCardupdatr function. 
+In this case CardUpdatr is inserted as an iframe, and the boostrap library makes the insertion seamless.  Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the embedCardUpdatr function. 
 
 
 ```javascript
