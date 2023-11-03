@@ -212,6 +212,16 @@ By supplying the parameters in the hash value of the url, CardUpdatr will automa
 https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings={ ENDCODED\_SETTINGS\_JSON }
 ```
 
+"ENCODED\_SETTINGS\_JSON" is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.  The settings needs to at least include the user object from which the grant and card_id are specified per the example below:
+
+```javascript
+{
+  "user": {
+    "grant": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcGkuY3VzdG9tZXItZGV2LmNh.......\",
+    "card_id": 11033
+  }
+}
+```
 
 ## CardUpdatr Configuration
 
