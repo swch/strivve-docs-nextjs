@@ -43,10 +43,10 @@ In this case CardUpdatr is inserted as an iframe, and the boostrap library makes
 
 ### Constructing a URL
 
-There are cases to be considered when native applications do not have access to a DOM.  There are simple mechanisms for launching webviews within applications, and this can include using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.
+There are cases to be considered when native applications do not have access to a DOM.  There are simple mechanisms for launching webviews within applications, and this can include using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.  Note that the setting must be url encoded (no ?'s, &'s, +'s or newlines)
 
 ```
-https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings={ ENDCODED\_SETTINGS\_JSON }
+https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 ```
 
 "ENCODED\_SETTINGS\_JSON" is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.
@@ -121,9 +121,7 @@ await helper.LoginAndCreateSession(Context.accountCardholderAgentUserName, Conte
 PropertyBag cd = new PropertyBag(){{"default", new PropertyBag(){{"token", "123"}}}};
 
 ClientLogin login = await helper.CreateCard(Context.accountCardholderAgentUserName, "default", 
-    new User(){ email = "foo@foo.com", 
-                phone_number = "5555555555", 
-                custom_data = cd },
+    new Cardholder(){ custom_data = cd },
     new Card(){ first_name="Strivve", 
                 last_name="User", 
                 pan="4111111111111111", 
@@ -135,7 +133,9 @@ ClientLogin login = await helper.CreateCard(Context.accountCardholderAgentUserNa
                 city="Seattle", 
                 subnational="WA", 
                 postal_code="98006", 
-                country="USA" }
+                country="USA",
+                phone_number="5555555555",
+                email="foo@foo.com" }
 );
 await helper.CloseSession(Context.accountCardholderAgentUserName);
 log.Info("username: " + login.cardholder.username + ", grant: " + login.userCredentialGrant + ", card_id: " + login.card.id);
@@ -186,6 +186,8 @@ try {
             "\"postal_other\":\"98177-0124\"," +
             "\"country\":\"USA\"," +
             "\"is_primary\": true" +
+            "\"phone_number\": \"5555555555\"" +
+            "\"email\":\"foo@foo.com\"" +
         "}" +
     "}")).read().asJsonObject();
     response = (JsonObject)session.post("/cardsavr_cards", card, headers);
@@ -209,7 +211,7 @@ Once your application has the necessary information from the Cardsavr server, th
 By supplying the parameters in the hash value of the url, CardUpdatr will automatically log in as the cardholder, and the cardholder can then select their merchants and corresponding credentials.  This should only be done when the bootstrap configuration options are not available.
 
 ```
-https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings={ ENDCODED\_SETTINGS\_JSON }
+https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 ```
 
 "ENCODED\_SETTINGS\_JSON" is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.  The settings, which should not contain any spaces or escape characters before encoding, needs to at least include the user object from which the grant and card_id are specified:  
