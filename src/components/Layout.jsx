@@ -56,7 +56,13 @@ const navigation = [
         title: 'Job Progress via Polling',
         href: '/resources/progress-polling',
       },
-      { title: 'Strivve Site Tagging', href: '/resources/site-tagging' },
+      { 
+        title: 'Strivve Site Tagging', 
+        href: '/resources/site-tagging' },
+      {
+        title: 'Password Managers',
+        href: '/resources/password-managers',
+      }
     ],
   },
   {
@@ -79,24 +85,20 @@ const navigation = [
     ],
   },
   {
-    title: 'Card Placement Components',
+    title: 'Integrations',
     links: [
       {
         title: 'Introduction',
-        href: '/strivve-components/introduction',
+        href: '/integrations/introduction',
       },
       {
         title: 'CardUpdatr',
-        href: '/strivve-components/cardupdatr',
+        href: '/integrations/cardupdatr',
       },
       {
         title: 'StrivveCX',
-        href: '/strivve-components/strivve-cx',
+        href: '/integrations/strivve-cx',
       },
-      {
-        title: 'Password Managers',
-        href: '/strivve-components/password-managers',
-      }
     ],
   },
   {
