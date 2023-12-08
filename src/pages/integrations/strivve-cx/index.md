@@ -113,6 +113,10 @@ All three layers are fully customizable.  The below snippet is only an example o
 ```js
   const service = Strivve.createService({ api_instance: 'customer-dev' });
   
+  // This "core" code is merely a test example.  Below Strivve describes 
+  // the requirement to implement the SSO Microservice for 
+  // production usage
+  //
   const core = Strivve.createCore({
     service,
     card: {
@@ -123,11 +127,13 @@ All three layers are fully customizable.  The below snippet is only an example o
       name_on_card: 'Mvick',
     }
   });
+
   const component = Strivve.createComponent({ core });
   component.mountAccountLinkView('account-link', {
     site_id: '1',
     hide_title: false
   });
+  
   component.mountSelectSiteView('select-sites', {
     single: false,
     view: 'list',
@@ -139,6 +145,19 @@ All three layers are fully customizable.  The below snippet is only an example o
 
 ```
 
+## Strivve-cx Single-Sign On
+In order to specify the credit card, address, and contact info details into the CardSavr API, the integrator must leverage the [SSO-Microservice](/integrations/sso-microservice) from which the cardholder credentials (grant and token) are retrieved and in turn passed into the Strivve-CX component.  
+
+There is no UX in StrivveCX from which the cardholder can manually enter the card information: Strivve strongly discoverages this manual step as it results in high cardholder friction and can heavily affect cardholder adoption.
+
+```js
+  Strivve.mountLinkingJourney({
+      element_id: 'linking',
+      api_instance: 'customer-dev',
+      card_id: data.card_id,  // card_id from the SSO Microservice
+      grant: data.grant, // grant from the SSO Microservice
+    });
+```
 
 ## Summary
-This documentation is currently under construction and updates will occur on a frequent basis as Strivve works to make this solution available.  We encourage any question during this process by [Contacting Us](mailto:support@strivve.com).
+Full details of the StrivveCX library can be found [here:](https://swch.github.io/Strivve-UX-Components/?path=/docs/introduction--documentation).  Please [Contacting Us](mailto:support@strivve.com) for additional support and questions.

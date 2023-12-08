@@ -19,11 +19,12 @@ There are two basic types of components available for use with the CardSavr Plat
 ### CardUpdatr
 
 CardUpdatr operates in 3 major modes:
+* Overlay that appears on top of an existing page.
 * Web linked to and from the CardSavr platform, within any web or mobile application
 * Embedded into a page or area of a page within any web or mobile application
 * Single Sign On for pulling card and billing address details from the banking application systems to avoid cardholder friction and minimize cardholder inputs
 
-For more information, see the [CardUpdatr Documentation](/integrations/cardupdatr/).
+For more information, see the [CardUpdatr Documentation](/integrations/cardupdatr).
 
 
 ### StrivveCX
@@ -33,7 +34,7 @@ Various levels of Javascript components which can be leveraged depending on the 
 * JS Pre-Built Styled Block Components
 * JS Platform Object Components.
 
-For more information, see the [StrivveCX Components](/integrations/strivve-cx/) documentation.
+For more information, see the [StrivveCX Components](/integrations/strivve-cx) documentation.
  
 ***    
     

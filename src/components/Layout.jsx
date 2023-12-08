@@ -99,6 +99,10 @@ const navigation = [
         title: 'StrivveCX',
         href: '/integrations/strivve-cx',
       },
+      {
+        title: 'SSO Microservice',
+        href: '/integrations/sso-microservice',
+      },
     ],
   },
   {
