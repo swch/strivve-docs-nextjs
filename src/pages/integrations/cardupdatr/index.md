@@ -88,7 +88,7 @@ https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 
 {% video url="/videos/cardupdatr-sso-animation.mp4" /%}
 
-CardUpdatr is a simple way for cardholders to select the merchants they'd like to update, and then monitor the jobs as they progress. The challenge with CardUpdatr is there is a significant barrier where the cardholder must enter their entire credit card form, address, and contact info.  Many financial institutions would prefer a CardSavr integration to streamline this process, but may not want to invest the initial effort to build a user interface.
+CardUpdatr is a simple way for cardholders to select the merchants they'd like to update, and then monitor the jobs as they progress. The challenge with CardUpdatr is there is a significant barrier where the cardholder must enter their entire credit card, address, and contact info.  Many financial institutions would prefer a CardSavr integration that streamlines this process, but may not want to invest the initial effort to build a user interface.
 
 In this case, the integrator will want to implment an [SSO Microservice](\integrations\sso-microservice) from which the cardholder credentials (grant and token) can be retrieved and passed into the CardUpdatr component.
 
