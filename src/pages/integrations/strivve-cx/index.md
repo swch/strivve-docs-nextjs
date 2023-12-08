@@ -160,4 +160,4 @@ There is no UX in StrivveCX from which the cardholder can manually enter the car
 ```
 
 ## Summary
-Full details of the StrivveCX library can be found [here:](https://swch.github.io/Strivve-UX-Components/?path=/docs/introduction--documentation).  Please [Contacting Us](mailto:support@strivve.com) for additional support and questions.
+Full details of the StrivveCX library can be found [here:](https://swch.github.io/Strivve-UX-Components/?path=/docs/introduction--documentation).  Please [Contact](mailto:support@strivve.com) for additional support and questions.
