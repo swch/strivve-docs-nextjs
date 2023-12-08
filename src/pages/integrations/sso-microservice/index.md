@@ -15,7 +15,7 @@ A server component is required to create the cardholder, card and address data. 
 
 ![Backend Microservice](/images/CardUpdatr-SSO-integration.png) 
 
-The data format for the data objects can be found on the (API/SDK reference guide)[https://swch.github.io/slate]. 
+The data format for the data objects can be found on the [API/SDK reference guide](https://swch.github.io/slate). 
 
 ### Node
 
