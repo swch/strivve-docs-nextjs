@@ -96,6 +96,8 @@ With CardUpdatr SSO, you can make some simple API calls to set up the cardholder
 
 A server component is required to create the cardholder, card and address.  There are three SDKs that support this functionality.  Java, Node and C#.  The javascript library can also be used within a client to create the user.
 
+![Backend Microservice](/images/CardUpdatr-SSO-integration.png) 
+
 The data format for the data objects can be found on the (API/SDK reference guide)[https://swch.github.io/slate]. 
 
 ### Node
