@@ -155,4 +155,4 @@ String grant = response.getJsonObject("cardholder").getString("grant");
 
 ### Drop-in Component Integration
 
-Details of how to launch [StrivveCX](/integrations/strivve-cx#strivve-cx-single-sign-on) or [CardUpdatr](/integrations/cardupdatr#card-updatr-single-sign-on) can be found in those specific sections.
+Please see [StrivveCX](/integrations/strivve-cx#strivve-cx-single-sign-on) or [CardUpdatr](/integrations/cardupdatr#card-updatr-single-sign-on) that cover the details of integrating the returned credentials into the components.
