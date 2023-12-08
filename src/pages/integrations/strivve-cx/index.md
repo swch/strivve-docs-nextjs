@@ -145,7 +145,7 @@ All three layers are fully customizable.  The below snippet is only an example o
 
 ```
 
-## Strivve-cx Single-Sign On
+## StrivveCX Single-Sign On
 In order to specify the credit card, address, and contact info details into the CardSavr API, the integrator must leverage the [SSO-Microservice](/integrations/sso-microservice) from which the cardholder credentials (grant and token) are retrieved and in turn passed into the Strivve-CX component.  
 
 There is no UX in StrivveCX from which the cardholder can manually enter the card information: Strivve strongly discoverages this manual step as it results in high cardholder friction and can heavily affect cardholder adoption.
