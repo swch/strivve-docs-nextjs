@@ -5,7 +5,7 @@ title: SSO Microservice
 
 ## Single-Sign On Microservice
 
-With the use of the Strivve drop-in components, financial institutions need a CardSavr integration to streamline the proces of passing card information to the API and thus removing unnecessary friction of the cardholder having to manually enter the information.
+With the use of the Strivve drop-in components, financial institutions need a CardSavr integration to streamline the proces of passing credit card, address, and contact data to the API and thus removing unnecessary friction of the cardholder having to manually enter that data.
 
 With the SSO microserve, you can make some simple API calls to set up the cardholder, and then hand over a token and card id to the component to handle the UX card placement interaction.
 
