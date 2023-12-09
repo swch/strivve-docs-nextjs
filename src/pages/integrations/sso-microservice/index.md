@@ -3,15 +3,13 @@ title: SSO Microservice
 ---
 
 
-## Single-Sign On Microservice
+## Single Sign-On Microservice
 
-With the use of the Strivve drop-in components, financial institutions need a CardSavr integration to streamline the proces of passing credit card, address, and contact data to the API and thus removing unnecessary friction of the cardholder having to manually enter that data.
+The Single Sign-On (SSO) microservice removes the friction of requiring the cardholder to manually enter their information. After making the necessary calls to the CardSavr API to set up the cardholder, simply hand over the token and card id received from the API to a StrivveCX component or CardUpdatr integration. This will eliminate manual cardholder information entry from the UX experience.
 
-With the SSO microserve, you can make some simple API calls to set up the cardholder, and then hand over a token and card id to the component to handle the UX card placement interaction.
+### CardSavr API Interaction
 
-### Server Component
-
-A server component is required to create the cardholder, card and address data.  There are three SDKs that support this functionality.  Java, Node and C#.  The javascript library can also be used within a client to create the user.
+Calls to the CardSavr REST API are required to create the cardholder, card and address data.  There are three SDKs that support this functionality:  Java, Node and C#.  The javascript library can also be used within a client to create the cardholder.
 
 ![Backend Microservice](/images/CardUpdatr-SSO-integration.png) 
 
@@ -47,7 +45,7 @@ try {
  
 ```
 
-Every cardsavr app requires a Cardsavr server and an integrator name and key.  You will also need an app username and password that the application uses to log onto the cardsavr platform using the integrator key to encrypt its payloads.  
+Making calls to the CardSavr API requires a CardSavr server url and an integrator name and key.  You will also need an application username and password that will be used to log onto the cardsavr platform using the integrator key to encrypt its payloads.  
 
 This is accomplished within the loginAndCreateSession call.  Once logged in, the application can call createCard which creates a user and card with an attached address.  The response object contains three imporant pieces of data:
 
