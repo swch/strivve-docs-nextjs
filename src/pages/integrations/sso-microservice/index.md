@@ -45,7 +45,7 @@ try {
  
 ```
 
-Every cardsavr app requires a Cardsavr server url and an integrator name and key.  You will also need an application username and password that will be used to log onto the cardsavr platform using the integrator key to encrypt its payloads.  
+Making calls to the CardSavr API requires a CardSavr server url and an integrator name and key.  You will also need an application username and password that will be used to log onto the cardsavr platform using the integrator key to encrypt its payloads.  
 
 This is accomplished within the loginAndCreateSession call.  Once logged in, the application can call createCard which creates a user and card with an attached address.  The response object contains three imporant pieces of data:
 
