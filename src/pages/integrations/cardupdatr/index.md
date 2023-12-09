@@ -102,7 +102,7 @@ https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 
 {% video url="/videos/cardupdatr-sso-animation.mp4" /%}
 
-CardUpdatr is a simple way for cardholders to select the merchants they'd like to update, and then monitor the jobs as they progress. The challenge with CardUpdatr is there is a significant barrier where the cardholder must enter their entire credit card form, address, and contact info.  Many financial institutions would prefer a CardSavr integration to streamline this process, but may not want to invest the initial effort to build a user interface.
+CardUpdatr is a simple way for cardholders to select the merchants they'd like to update, and then monitor the jobs as they progress. The challenge with CardUpdatr is there is a significant barrier where the cardholder must enter their entire credit card, address, and contact info.  Many financial institutions would prefer a CardSavr integration that streamlines this process, but may not want to invest the initial effort to build a user interface.
 
 In this case, the integrator will want to implment the [SSO Microservice](\integrations\sso-microservice) from which the cardholder credentials (grant and token) can be retrieved and passed into the CardUpdatr component.
 
@@ -114,7 +114,7 @@ Once your application has the necessary information from the SSO microservice, t
 
 There are three configuration objects can be used to customize your CardUpdatr experience. The "user" object is for customer-specific data required to authenticate SSO users and also to provide customer-specific logging. The "config" object (some settings required) configures the FI for which CardUpdatr should run, how sites should be sorted, and which countries should be supported. "style_template" is used to dynamically configure messages, colors and background images.
 
-Please see the [CardUpdatr Integration Techniques](#cardupdatr-integration-techniques) for reference.
+Please see the [CardUpdatr Integration Techniques](/integrations/cardupdatr#cardupdatr-integration-techniques) for reference.
 
 CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/partner-portal/). For more details, please contact [E-mail Strivve](mailto:support@strivve.com).
 
