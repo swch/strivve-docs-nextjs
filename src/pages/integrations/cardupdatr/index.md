@@ -17,9 +17,9 @@ Below is an example of the CardUpdatr journey to place cards to your top sites:
 ![CardUpdatr ACME 1](/images/CardUpdatr_ACME_1.png)
 ![CardUpdatr ACME 2](/images/CardUpdatr_ACME_2.png)
 
-### Overlay
+### Overlay Embedded
 
-CardUpdatr can also be implemented as an overlay that appears on top of an existing page.
+CardUpdatr can be implemented as an overlay modal that appears on top of an existing page.  In this case, CardUpdatr is inseted into the modal as an embedded iframe.
 
 ![CardUpdatr Overlay](/images/cardupdatr_overlay.png)
 
@@ -49,11 +49,11 @@ The color and opacity of the overlay background can be adjusted by using the “
   }
  ```
 
-### Embedding 
+### Inline Embedding 
 
-Embedding CardUpdatr in a webpage or webview can fit seamlessly into your application or browser experience.  
+CardUpdatr can also be embedded inline in a webpage or webview, allowing it to fit seamlessly into your application or browser experience.  
 
-In this case CardUpdatr is inserted as an iframe, and the boostrap library makes the insertion seamless.  Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the embedCardUpdatr function. 
+Inline embedded CardUpdatr is inserted as an iframe, and the boostrap library makes the insertion seamless.  Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the embedCardUpdatr function. 
 
 
 ```javascript
@@ -75,9 +75,23 @@ In this case CardUpdatr is inserted as an iframe, and the boostrap library makes
 
 ### Launch CardUpdatr
 
-There are cases to be considered when native applications do not have access to a DOM.  There are simple mechanisms for launching webviews within applications, and this can include using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.  Note that the setting must be url encoded (no ?'s, &'s, +'s or newlines)
+The launch option is used to navigate a new or existing window to the provided CardUpdatr URL. The launchCardUpdatr function is a wrapper around the [window.open function](https://www.w3schools.com/jsref/met_win_open.asp). 
 
+launchCardUpdatr takes the following parameters:
+-settings (object containing the config, user, and style objects)
+-name ([see w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)see w3 definition)
+-specs ([see w3 definition](https://www.w3schools.com/jsref/met_win_open.asp) see w3 definition)
+
+```javascript
+window.launchCardUpdatr = function (settings, name = "_blank", specs = undefined) {
+  window.open(get_app_source(settings.config.hostname, settings.config.financial_institution) + "#settings=" + encodeURIComponent(JSON.stringify(settings)), name, specs);
+}
 ```
+
+### Launch CardUpdatr via URL
+
+There are cases to be considered when native applications do not have access to a DOM.  There are simple mechanisms for launching webviews within applications, and this can include using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.  Note that the setting must be url encoded (no ?'s, &'s, +'s or newlines). This can be accomplished in JavaScript using the encodeURIComponent function.
+
 https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 ```
 
@@ -90,34 +104,15 @@ https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 
 CardUpdatr is a simple way for cardholders to select the merchants they'd like to update, and then monitor the jobs as they progress. The challenge with CardUpdatr is there is a significant barrier where the cardholder must enter their entire credit card, address, and contact info.  Many financial institutions would prefer a CardSavr integration that streamlines this process, but may not want to invest the initial effort to build a user interface.
 
-In this case, the integrator will want to implment an [SSO Microservice](\integrations\sso-microservice) from which the cardholder credentials (grant and token) can be retrieved and passed into the CardUpdatr component.
+In this case, the integrator will want to implment the [SSO Microservice](\integrations\sso-microservice) from which the cardholder credentials (grant and token) can be retrieved and passed into the CardUpdatr component.
 
 ### Handing off Credentials to CardUpdatr
 
-Once your application has the necessary information from the SSO microservice, the application can hand off the credentials to CardUpdatr.  There are two ways to accomplish this.
-
-### Redirection 
-
-By supplying the parameters in the hash value of the url, CardUpdatr will automatically log in as the cardholder, and the cardholder can then select their merchants and corresponding credentials.  This should only be done when the bootstrap configuration options are not available.
-
-```
-https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
-```
-
-"ENCODED\_SETTINGS\_JSON" is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.  The settings, which should not contain any spaces or escape characters before encoding, needs to at least include the user object from which the grant and card_id are specified:  
-
-```javascript
-{
-  "user": {
-    "grant": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcGkuY3VzdG9tZXItZGV2LmNh.......\",
-    "card_id": 11033
-  }
-}
-```
+Once your application has the necessary information from the SSO microservice, the application can hand off the credentials to CardUpdatr.  There are two ways to accomplish this: redirection or via the CardUpdatr configuration objects.
 
 ## CardUpdatr Configuration
 
-There are three sets of settings that can be used to customize your CardUpdatr experience, separated into different configuration objects. The "user" object is for customer specific data required to authenticate SSO users and also to provide customer specific logging. The "config" object (some settings required) configures the FI for which CardUpdatr should run, how sites should be sorted, and which countries should be supported. "style_template" is used to dynamically configured messages, colors and background images.
+There are three configuration objects can be used to customize your CardUpdatr experience. The "user" object is for customer-specific data required to authenticate SSO users and also to provide customer-specific logging. The "config" object (some settings required) configures the FI for which CardUpdatr should run, how sites should be sorted, and which countries should be supported. "style_template" is used to dynamically configure messages, colors and background images.
 
 Please see the [CardUpdatr Integration Techniques](/integrations/cardupdatr#cardupdatr-integration-techniques) for reference.
 
@@ -212,6 +207,25 @@ Style attributes can be dynamically configured with CardUpdatr's cardupdatr-clie
 | drop_shadow         | no       | true                      | draws a dropshadow around the visible area                                                                                |
 | dynamic_height      | no       | false                     | creates a fixed height on the credit card form and the merchant credential page - this breaks the sticky notification box |
 | overlay_background_color | no  | rgba(0,0,0,.5)       | The color and opacity of the background.  Defaults to black with 0.5 opacity. 
+
+### Redirection 
+
+By supplying the parameters in the hash value of the url, CardUpdatr will automatically log in as the cardholder, and the cardholder can then select their merchants and corresponding credentials.  This should only be done when the bootstrap configuration options are not available.
+
+```
+https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
+```
+
+"ENCODED\_SETTINGS\_JSON" is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.  The settings, which should not contain any spaces or escape characters before encoding, needs to at least include the user object from which the grant and card_id are specified:  
+
+```javascript
+{
+  "user": {
+    "grant": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcGkuY3VzdG9tZXItZGV2LmNh.......\",
+    "card_id": 11033
+  }
+}
+```
 
 
 If you have any questions regarding this content, please [Contact Us](mailto:support@strivve.com).
