@@ -207,7 +207,7 @@ Style attributes can be dynamically configured with CardUpdatr's cardupdatr-clie
 | dynamic_height      | no       | false                     | creates a fixed height on the credit card form and the merchant credential page - this breaks the sticky notification box |
 | overlay_background_color | no  | rgba(0,0,0,.5)       | The color and opacity of the background.  Defaults to black with 0.5 opacity. 
 
-### Redirection 
+## Redirection 
 
 By supplying the parameters in the hash value of the url, CardUpdatr will automatically log in as the cardholder, and the cardholder can then select their merchants and corresponding credentials.  This should only be done when the bootstrap configuration options are not available.
 
