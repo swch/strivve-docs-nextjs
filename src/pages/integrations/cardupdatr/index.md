@@ -29,6 +29,8 @@ By default, the overlay can be closed using the X button in the top right corner
 
 The color and opacity of the overlay background can be adjusted by using the “overlay_background” property in the [Style Object](#style-object).
 
+The retrieval of the grant and card_id in the example below is provided by the [SSO Microservice](\integrations\sso-microservice).
+
 ```javascript
   window.embedCardUpdatr {
       config : {
@@ -103,7 +105,7 @@ https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 
 CardUpdatr is a simple way for cardholders to select the merchants they'd like to update, and then monitor the jobs as they progress. The challenge with CardUpdatr is there is a significant barrier where the cardholder must enter their entire credit card, address, and contact info.  Many financial institutions would prefer a CardSavr integration that streamlines this process, but may not want to invest the initial effort to build a user interface.
 
-In this case, the integrator will want to implment the [SSO Microservice](\integrations\sso-microservice) from which the cardholder credentials (grant and token) can be retrieved and passed into the CardUpdatr component.
+In this case, the integrator will want to implment the [SSO Microservice](\integrations\sso-microservice) from which the cardholder credentials (grant and card id) can be retrieved and passed into the CardUpdatr component.
 
 ### Handing off Credentials to CardUpdatr
 
