@@ -10,7 +10,7 @@ CardUpdatr is a web drop-in component that handles the end to end experience of 
 
 ## CardUpdatr Integration Techniques
 
-CardUpdatr supports embedding and launching techniques from which you can easily integrate it into your application. 
+CardUpdatr supports mutliple techniques from which you can easily integrate it into your application. 
 
 Below is an example of the CardUpdatr journey to place cards to your top sites:
 
