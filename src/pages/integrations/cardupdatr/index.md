@@ -85,7 +85,11 @@ launchCardUpdatr takes the following parameters:
 
 ```javascript
 window.launchCardUpdatr = function (settings, name = "_blank", specs = undefined) {
-  window.open(get_app_source(settings.config.hostname, settings.config.financial_institution) + "#settings=" + encodeURIComponent(JSON.stringify(settings)), name, specs);
+  window.open(
+    get_app_source(settings.config.hostname, settings.config.financial_institution) + "#settings=" + encodeURIComponent(JSON.stringify(settings)), 
+    name, 
+    specs
+  );
 }
 ```
 
