@@ -77,9 +77,9 @@ Inline embedded CardUpdatr is inserted as an iframe, and the boostrap library ma
 The launch option is used to navigate a new or existing window to the provided CardUpdatr URL. The launchCardUpdatr function is a wrapper around the [window.open function](https://www.w3schools.com/jsref/met_win_open.asp). 
 
 launchCardUpdatr takes the following parameters:
-* settings (object containing the config, user, and style objects)
-* name [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
-* specs [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
+* **settings**:  Object containing the config, user, and style objects
+* **name**:  [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
+* **specs**: [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
 
 ```javascript
 window.launchCardUpdatr = function (settings, name = "_blank", specs = undefined) {
