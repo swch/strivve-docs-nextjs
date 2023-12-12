@@ -78,13 +78,14 @@ The launch option is used to navigate a new or existing window to the provided C
 
 launchCardUpdatr takes the following parameters:
 -settings (object containing the config, user, and style objects)
--name ([See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
--specs ([See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
+-name [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
+-specs [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
 
 ### Launch CardUpdatr via URL
 
 There are cases to be considered when native applications do not have access to a DOM.  There are simple mechanisms for launching webviews within applications, and this can include using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.  Note that the setting must be url encoded (no ?'s, &'s, +'s or newlines). This can be accomplished in JavaScript using the encodeURIComponent function.
 
+```
 https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 ```
 
