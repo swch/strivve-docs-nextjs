@@ -41,11 +41,11 @@ The retrieval of the grant and card_id in the example below is provided by the [
         "financial_institution" : "testif"
       },
       user : {
-        grant,
-        card_id : URLSearchParams.get('cardID')
+        "grant": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9ey",
+        "card_id" : 12
       }, 
       style : {
-        overlay_background_color : "rbga(0,0,0,0.2)"
+        "overlay_background_color" : "rbga(0,0,0,0.2)"
       }
   }
  ```
