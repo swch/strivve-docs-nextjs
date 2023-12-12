@@ -82,11 +82,6 @@ launchCardUpdatr takes the following parameters:
 -name ([see w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)see w3 definition)
 -specs ([see w3 definition](https://www.w3schools.com/jsref/met_win_open.asp) see w3 definition)
 
-<!-- ```javascript
-window.launchCardUpdatr = function (settings, name = "_blank", specs = undefined) {
-  window.open(get_app_source(settings.config.hostname, settings.config.financial_institution) + "#settings=" + encodeURIComponent(JSON.stringify(settings)), name, specs);
-}
-``` -->
 
 ### Launch CardUpdatr via URL
 
