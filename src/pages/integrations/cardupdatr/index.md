@@ -10,7 +10,7 @@ CardUpdatr is a web drop-in component that handles the end to end experience of 
 
 ## CardUpdatr Integration Techniques
 
-CardUpdatr supports embedding and launching techniques from which you can easily integrate it into your application. 
+CardUpdatr supports mutliple techniques from which you can easily integrate it into your application. 
 
 Below is an example of the CardUpdatr journey to place cards to your top sites:
 
@@ -28,6 +28,8 @@ In order to implement the CardUpdatr overlay, use the embedCardUpdatr function a
 By default, the overlay can be closed using the X button in the top right corner. To hide the X button, add  “show: false”, to the config.
 
 The color and opacity of the overlay background can be adjusted by using the “overlay_background” property in the [Style Object](#style-object).
+
+The retrieval of the grant and card_id in the example below is provided by the [SSO Microservice](/integrations/sso-microservice).
 
 ```javascript
   window.embedCardUpdatr {
@@ -77,13 +79,17 @@ Inline embedded CardUpdatr is inserted as an iframe, and the boostrap library ma
 The launch option is used to navigate a new or existing window to the provided CardUpdatr URL. The launchCardUpdatr function is a wrapper around the [window.open function](https://www.w3schools.com/jsref/met_win_open.asp). 
 
 launchCardUpdatr takes the following parameters:
--settings (object containing the config, user, and style objects)
--name [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
--specs [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
+* **settings**:  Object containing the config, user, and style objects
+* **name**:  [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
+* **specs**: [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
 
 ```javascript
 window.launchCardUpdatr = function (settings, name = "_blank", specs = undefined) {
-  window.open(get_app_source(settings.config.hostname, settings.config.financial_institution) + "#settings=" + encodeURIComponent(JSON.stringify(settings)), name, specs);
+  window.open(
+    get_app_source(settings.config.hostname, settings.config.financial_institution) + "#settings=" + encodeURIComponent(JSON.stringify(settings)), 
+    name, 
+    specs
+  );
 }
 ```
 
@@ -103,7 +109,7 @@ https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 
 CardUpdatr is a simple way for cardholders to select the merchants they'd like to update, and then monitor the jobs as they progress. The challenge with CardUpdatr is there is a significant barrier where the cardholder must enter their entire credit card, address, and contact info.  Many financial institutions would prefer a CardSavr integration that streamlines this process, but may not want to invest the initial effort to build a user interface.
 
-In this case, the integrator will want to implment the [SSO Microservice](\integrations\sso-microservice) from which the cardholder credentials (grant and token) can be retrieved and passed into the CardUpdatr component.
+In this case, the integrator will want to implment the [SSO Microservice](/integrations/sso-microservice) from which the cardholder credentials (grant and card id) can be retrieved and passed into the CardUpdatr component.
 
 ### Handing off Credentials to CardUpdatr
 
