@@ -79,8 +79,8 @@ The launch option is used to navigate a new or existing window to the provided C
 
 launchCardUpdatr takes the following parameters:
 -settings (object containing the config, user, and style objects)
--name ([see w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)see w3 definition)
--specs ([see w3 definition](https://www.w3schools.com/jsref/met_win_open.asp) see w3 definition)
+-name ([See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
+-specs ([See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
 
 
 ### Launch CardUpdatr via URL
