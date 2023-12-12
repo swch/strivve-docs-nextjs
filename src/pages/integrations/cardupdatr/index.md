@@ -19,7 +19,7 @@ Below is an example of the CardUpdatr journey to place cards to your top sites:
 
 ### Overlay Embedded
 
-CardUpdatr can be implemented as an overlay modal that appears on top of an existing page.  In this case, CardUpdatr is inseted into the modal as an embedded iframe.
+CardUpdatr can be implemented as an overlay modal that appears on top of an existing page.  In this case, CardUpdatr is inserted into the modal as an embedded iframe.
 
 ![CardUpdatr Overlay](/images/cardupdatr_overlay.png)
 
