@@ -29,7 +29,6 @@ By default, the overlay can be closed using the X button in the top right corner
 
 The color and opacity of the overlay background can be adjusted by using the “overlay_background” property in the [Style Object](#style-object).
 
-
 ```javascript
   window.embedCardUpdatr {
       config : {
@@ -79,9 +78,8 @@ The launch option is used to navigate a new or existing window to the provided C
 
 launchCardUpdatr takes the following parameters:
 -settings (object containing the config, user, and style objects)
--name ([See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
--specs ([See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
-
+-name [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
+-specs [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
 
 ### Launch CardUpdatr via URL
 
@@ -92,7 +90,6 @@ https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 ```
 
 "ENCODED\_SETTINGS\_JSON" is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.
-
 
 ## CardUpdatr Single-Sign On
 
