@@ -190,7 +190,7 @@ Style attributes can be dynamically configured with CardUpdatr's cardupdatr-clie
     link_color: "#5e35b1",
     button_color: "#5e35b1",
     button_border_radius: "0.25rem",
-    button_padding: "0.375 0.75rem",
+    button_padding: "0.375rem 0.75rem",
     border_color: "#5e35b1",
     drop_shadow: false,
     dynamic_height: true
