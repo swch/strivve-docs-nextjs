@@ -41,11 +41,11 @@ The retrieval of the grant and card_id in the example below is provided by the [
         "financial_institution" : "testif"
       },
       user : {
-        grant,
-        card_id : URLSearchParams.get('cardID')
+        "grant": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9ey",
+        "card_id" : 12
       }, 
       style : {
-        overlay_background_color : "rbga(0,0,0,0.2)"
+        "overlay_background_color" : "rbga(0,0,0,0.2)"
       }
   }
  ```
@@ -213,7 +213,7 @@ Style attributes can be dynamically configured with CardUpdatr's cardupdatr-clie
 | dynamic_height      | no       | false                     | creates a fixed height on the credit card form and the merchant credential page - this breaks the sticky notification box |
 | overlay_background_color | no  | rgba(0,0,0,.5)       | The color and opacity of the background.  Defaults to black with 0.5 opacity. 
 
-### Redirection 
+## Redirection 
 
 By supplying the parameters in the hash value of the url, CardUpdatr will automatically log in as the cardholder, and the cardholder can then select their merchants and corresponding credentials.  This should only be done when the bootstrap configuration options are not available.
 
