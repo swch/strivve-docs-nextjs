@@ -12,7 +12,7 @@ Learn how to get CardSavr integrated quickly into your cardholder applications i
 
 {% quick-link title="Architecture guide" icon="presets" href="/guides/architecture" description="Learn how the platform is designed as well as how the security operates." /%}
 
-{% quick-link title="Components" icon="plugins" href="/strivve-components/introduction" description="Strivve Components" /%}
+{% quick-link title="Integrations" icon="plugins" href="/integrations/introduction" description="Strivve Integrations" /%}
 
 {% quick-link title="API reference" icon="theming" href="/api-sdk/introduction" description="Learn to easily customize and modify your app's visual design to fit your brand." /%}
 
