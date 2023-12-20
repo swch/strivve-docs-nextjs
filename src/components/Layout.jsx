@@ -206,7 +206,7 @@ function Header({ navigation }) {
           API's
         </Link>
         <div>&nbsp;&nbsp;&nbsp;</div>
-        <Link href="/strivve-components/introduction" aria-label="Components">
+        <Link href="/integrations/introduction" aria-label="Integrations">
           Components
         </Link>
       </div>
