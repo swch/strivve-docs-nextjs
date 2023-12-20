@@ -206,8 +206,8 @@ function Header({ navigation }) {
           API's
         </Link>
         <div>&nbsp;&nbsp;&nbsp;</div>
-        <Link href="/strivve-components/introduction" aria-label="Components">
-          Components
+        <Link href="/integrations/introduction" aria-label="Integrations">
+          Strivve Integrations
         </Link>
       </div>
       <div className="relative flex h-8 w-8 basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
