@@ -34,7 +34,7 @@ Strivve’s legacy solutions followed this workflow pattern until the concept of
 
 For example, the Strivve CardUpdatr component was orignally built to require the user to wait for the entire process to complete.  Strivve then introduced the concept of notifing the cardholder once that account linking process has completed that no further action is necessary, and they may exit or move forward to add more sites.  
 
-**Account Link Completion:**  Cardholder has option to wait for the entire process to complete or release to other tasks.
+**Account Link Completion** - Cardholder has option to wait for the entire process to complete or release to other tasks:
 ![CardUpdatr](/images/cu_account_link_complete.png) 
 
 ### User Wait Time - Releasing the Cardholder after Account Linking
@@ -58,7 +58,7 @@ Once the account linking process is complete, there is no additional interaction
 
 **MFA Prompt:**![StriveCX-4](/images/cx_account_link_progress_mfa_apple.png) 
 
-**Account Linking Complete:**  Option to browse more sites:![StriveCX-5](/images/cx_account_link_complete_apple.png) 
+**Account Linking Complete** - Option to browse more sites:![StriveCX-5](/images/cx_account_link_complete_apple.png) 
 
 #### Site Placement List
 Once one or more cards have been placed, the cardholder has access to a recent site list from which the placement history is available for view by selecting See your recent site(s).
@@ -69,14 +69,14 @@ Once the background card placement is complete, the status is updated to complet
 
 **Updated Site List:**![StriveCX-6](/images/cx_recent_sites.png) 
 
-**My Sites Page:**  Apple placing card in background:
+**My Sites Page** - Apple placing card in background:
 ![StriveCX-7](/images/cx_my_sites_1.png) 
 
-**My Sites Page:**  After Apple completes placing card in background:
+**My Sites Page** - After Apple completes placing card in background:
 ![StriveCX-8](/images/cx_my_sites_2.png) 
 
 ## Conclusion
-The focus of minimizing the User Wait Time will result in a significantly improved cardholder experience which would maximize adoption and usage of the CardSavr platform.  By releasing the cardholder after account linking, the amount of time the cardholder has to wait is reduced significantly by over 50%.  
+The focus of minimizing the User Wait Time will result in a significantly improved cardholder experience which would maximize adoption and usage of the CardSavr platform.  By releasing the cardholder after account linsking, the amount of time the cardholder has to wait is reduced significantly by over 50%.  
 
 Please [Contact Strivve](mailto:support@strivve.com) for any additional support regarding this guidance.
 
