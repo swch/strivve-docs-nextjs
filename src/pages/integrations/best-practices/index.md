@@ -42,17 +42,17 @@ Here is a brief overview of how StrivveCX releases the cardholder after account 
 #### Site Selection
 As with most solutions, the cardholder is presented with a site list from which, in this example, Apple Store is selected.
 
-![CardUpdatr](/images/select_merchant.png) 
+![StriveCX-1](/images/cx_select_merchant.png) 
 
 #### Account Linking
 During the account linking process for Apple, the cardholder enters the correct initial credential information and satisfies the MFA code sent to their device when dynamically prompted.
 
 Once the account linking process is complete, there is no additional interaction required and the cardholder may continue to select other sites while the card placement process completes in the background. 
 
-![CardUpdatr](/images/account_link_initial_apple.png) 
-![CardUpdatr](/images/account_link_progress_apple.png) 
-![CardUpdatr](/images/account_link_progress_mfa_apple.png) 
-![CardUpdatr](/images/account_link_complete_apple.png) 
+![StriveCX-2](/images/cx_account_link_initial_apple.png) 
+![StriveCX-3](/images/cx_account_link_progress_apple.png) 
+![StriveCX-4](/images/cx_account_link_progress_mfa_apple.png) 
+![StriveCX-5](/images/cx_account_link_complete_apple.png) 
 
 #### Site Placement List
 Once one or more cards have been placed, the cardholder has access to a recent site list from which the placement history is available for view by selecting See your recent site(s).
@@ -61,9 +61,9 @@ In the case of Apple, the card placement process is still in progress, while an 
 
 Once the background card placement is complete, the status is updated to completion.
 
-![CardUpdatr](/images/recent_sites.png) 
-![CardUpdatr](/images/my_sites_1.png) 
-![CardUpdatr](/images/my_sites_2.png) 
+![StriveCX-6](/images/cx_recent_sites.png) 
+![StriveCX-7](/images/cx_my_sites_1.png) 
+![StriveCX-8](/images/cx_my_sites_2.png) 
 
 ## Conclusion
 Strivve is confident that Minimizing the User Wait Time will result in a significantly improved cardholder experience which would maximize adoption and usage of the CardSavr platform.  By releasing the cardholder after account linking, the amount of time the cardholder has to wait is reduced significantly by over 50%.  
