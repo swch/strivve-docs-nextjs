@@ -103,6 +103,10 @@ const navigation = [
         title: 'SSO Microservice',
         href: '/integrations/sso-microservice',
       },
+      {
+        title: 'UX Best Practices',
+        href: '/integrations/best-practices',
+      },
     ],
   },
   {
