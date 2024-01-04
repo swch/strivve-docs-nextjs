@@ -36,7 +36,6 @@ For example, the Strivve CardUpdatr component was orignally built to require the
 
 **Account Link Completion:**  Cardholder has option to wait for the entire process to complete or release to other tasks.
 ![CardUpdatr](/images/cu_account_link_complete.png) 
-**Account Link Completion:**
 
 ### User Wait Time - Releasing the Cardholder after Account Linking
 The new StrivveCX component library has been designed to provide an enhanced cardholder experience from which the User Wait Time is minimized by releasing the cardholder’s after account linking ha been completed. 
@@ -46,7 +45,7 @@ Here is a brief overview of how StrivveCX releases the cardholder after account 
 #### Site Selection
 As with most solutions, the cardholder is presented with a site list from which, in this example, Apple Store is selected.
 
-![StriveCX-1](/images/cx_select_merchant.png) 
+**Select Merchant:**![StriveCX-1](/images/cx_select_merchant.png) 
 
 #### Account Linking
 During the account linking process for Apple, the cardholder enters the correct initial credential information and satisfies the MFA code sent to their device when dynamically prompted.
@@ -59,8 +58,7 @@ Once the account linking process is complete, there is no additional interaction
 
 **MFA Prompt:**![StriveCX-4](/images/cx_account_link_progress_mfa_apple.png) 
 
-Account Linking Complete with option to browse more sites:
-![StriveCX-5](/images/cx_account_link_complete_apple.png) 
+**Account Linking Complete:**  Option to browse more sites:![StriveCX-5](/images/cx_account_link_complete_apple.png) 
 
 #### Site Placement List
 Once one or more cards have been placed, the cardholder has access to a recent site list from which the placement history is available for view by selecting See your recent site(s).
@@ -69,13 +67,12 @@ In the case of Apple, the card placement process is still in progress, while an 
 
 Once the background card placement is complete, the status is updated to completion.
 
-Updated Site List:
-![StriveCX-6](/images/cx_recent_sites.png) 
+**Updated Site List:**![StriveCX-6](/images/cx_recent_sites.png) 
 
-My Sites Page with Apple placing card in background:
+**My Sites Page:**  Apple placing card in background:
 ![StriveCX-7](/images/cx_my_sites_1.png) 
 
-My Sites Page after Apple completes placing card in background:
+**My Sites Page:**  After Apple completes placing card in background:
 ![StriveCX-8](/images/cx_my_sites_2.png) 
 
 ## Conclusion
