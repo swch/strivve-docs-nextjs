@@ -15,6 +15,8 @@ Strivve measures user wait times, and many more performance related metrics on e
 
 Today, most customers and their cardholders benefit greatly by leveraging a user experience which completes as soon as the site account is linked.  In this way, the total User Wait Time for cardholders is significantly reduced by more than 50%, by only requiring the cardholder attention while their account linking input (aka sign in) is needed. 
 
+This document is targeted towards integrators who are chosing to author their own UX rather than using a Strivve Component.
+
 ## User Wait Time Solutions
 
 ### Card On File Processing Buckets
@@ -49,9 +51,16 @@ During the account linking process for Apple, the cardholder enters the correct 
 
 Once the account linking process is complete, there is no additional interaction required and the cardholder may continue to select other sites while the card placement process completes in the background. 
 
+Enter initial credentials:
 ![StriveCX-2](/images/cx_account_link_initial_apple.png) 
+
+Account Linking Progress:
 ![StriveCX-3](/images/cx_account_link_progress_apple.png) 
+
+MFA Prompt:
 ![StriveCX-4](/images/cx_account_link_progress_mfa_apple.png) 
+
+Account Linking Complete with option to browse more sites:
 ![StriveCX-5](/images/cx_account_link_complete_apple.png) 
 
 #### Site Placement List
@@ -61,8 +70,13 @@ In the case of Apple, the card placement process is still in progress, while an 
 
 Once the background card placement is complete, the status is updated to completion.
 
+Updated Site List:
 ![StriveCX-6](/images/cx_recent_sites.png) 
+
+My Sites Page with Apple placing card in background:
 ![StriveCX-7](/images/cx_my_sites_1.png) 
+
+My Sites Page after Apple completes placing card in background:
 ![StriveCX-8](/images/cx_my_sites_2.png) 
 
 ## Conclusion
