@@ -73,6 +73,11 @@ Once the background card placement is complete, the status is updated to complet
 **My Sites Page** - After Apple completes placing card in background:
 ![StriveCX-8](/images/cx_my_sites_2.png) 
 
+## CardSavr API 
+Please see the [CardSavr API Job Status Section](//resources/job-progress#job-statuses) which provides all the status messages the integrator receives for a card placement job.  Once the job progress has moved to "Updating", the cardholder is authenticated/linked to the merchant site from which use interaction is no longer required.
+
+Please see the [SDK's and/or REST API's Section](/api-sdk/introduction) for full information on integrating with the CardSavr API.
+
 ## Conclusion
 The focus of minimizing the User Wait Time will result in a significantly improved cardholder experience which would maximize adoption and usage of the CardSavr platform.  By releasing the cardholder after account linsking, the amount of time the cardholder has to wait is reduced significantly by over 50%.  
 
