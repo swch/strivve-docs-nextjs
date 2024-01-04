@@ -52,14 +52,11 @@ During the account linking process for Apple, the cardholder enters the correct 
 
 Once the account linking process is complete, there is no additional interaction required and the cardholder may continue to select other sites while the card placement process completes in the background. 
 
-Enter initial credentials:
-![StriveCX-2](/images/cx_account_link_initial_apple.png) 
+**Enter initial credentials:**![StriveCX-2](/images/cx_account_link_initial_apple.png) 
 
-Account Linking Progress:
-![StriveCX-3](/images/cx_account_link_progress_apple.png) 
+**Account Linking Progress:**![StriveCX-3](/images/cx_account_link_progress_apple.png) 
 
-MFA Prompt:
-![StriveCX-4](/images/cx_account_link_progress_mfa_apple.png) 
+**MFA Prompt:**![StriveCX-4](/images/cx_account_link_progress_mfa_apple.png) 
 
 Account Linking Complete with option to browse more sites:
 ![StriveCX-5](/images/cx_account_link_complete_apple.png) 
