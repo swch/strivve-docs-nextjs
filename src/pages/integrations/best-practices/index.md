@@ -15,7 +15,7 @@ Strivve measures user wait times, and many more performance related metrics on e
 
 Today, most customers and their cardholders benefit greatly by leveraging a user experience which completes as soon as the site account is linked.  In this way, the total User Wait Time for cardholders is significantly reduced by more than 50%, by only requiring the cardholder attention while their account linking input (aka sign in) is needed. 
 
-## User Wait Time
+## User Wait Time Solutions
 
 ### Card On File Processing Buckets
 
@@ -65,7 +65,10 @@ Once the background card placement is complete, the status is updated to complet
 ![CardUpdatr](/images/my_sites_1.png) 
 ![CardUpdatr](/images/my_sites_2.png) 
 
+## Conclusion
+Strivve is confident that Minimizing the User Wait Time will result in a significantly improved cardholder experience which would maximize adoption and usage of the CardSavr platform.  By releasing the cardholder after account linking, the amount of time the cardholder has to wait is reduced significantly by over 50%.  
 
+Please [contact Strivve](mailto:support@strivve.com) for any additional support regarding this guidance.
 
 
 
