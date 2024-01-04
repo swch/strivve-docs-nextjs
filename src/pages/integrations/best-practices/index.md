@@ -56,8 +56,6 @@ Once the account linking process is complete, there is no additional interaction
 
 **Account Linking Progress:**![StriveCX-3](/images/cx_account_link_progress_apple.png) 
 
-**MFA Prompt:**![StriveCX-4](/images/cx_account_link_progress_mfa_apple.png) 
-
 **Account Linking Complete** - Option to browse more sites:![StriveCX-5](/images/cx_account_link_complete_apple.png) 
 
 #### Site Placement List
