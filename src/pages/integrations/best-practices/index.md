@@ -34,8 +34,9 @@ Strivve’s legacy solutions followed this workflow pattern until the concept of
 
 For example, the Strivve CardUpdatr component was orignally built to require the user to wait for the entire process to complete.  Strivve then introduced the concept of notifing the cardholder once that account linking process has completed that no further action is necessary, and they may exit or move forward to add more sites.  
 
-Account Link Completion:  Cardholder has option to wait for the entire process to complete or release to other tasks.
+**Account Link Completion:**  Cardholder has option to wait for the entire process to complete or release to other tasks.
 ![CardUpdatr](/images/cu_account_link_complete.png) 
+**Account Link Completion:**
 
 ### User Wait Time - Releasing the Cardholder after Account Linking
 The new StrivveCX component library has been designed to provide an enhanced cardholder experience from which the User Wait Time is minimized by releasing the cardholder’s after account linking ha been completed. 
