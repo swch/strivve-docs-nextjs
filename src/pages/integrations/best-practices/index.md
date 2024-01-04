@@ -15,7 +15,7 @@ Strivve measures user wait times, and many more performance related metrics on e
 
 Today, most customers and their cardholders benefit greatly by leveraging a user experience which completes as soon as the site account is linked.  In this way, the total User Wait Time for cardholders is significantly reduced by more than 50%, by only requiring the cardholder attention while their account linking input (aka sign in) is needed. 
 
-This document is targeted towards integrators who are chosing to author their own UX rather than using a Strivve Component.
+This document is targeted towards integrators who are chosing to author their own UX using the [CardSavr API](/integrations/introduction#card-savr-api) versus a Strivve drop-in component.
 
 ## User Wait Time Solutions
 
