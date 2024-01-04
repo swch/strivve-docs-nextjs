@@ -80,9 +80,9 @@ My Sites Page after Apple completes placing card in background:
 ![StriveCX-8](/images/cx_my_sites_2.png) 
 
 ## Conclusion
-Strivve is confident that Minimizing the User Wait Time will result in a significantly improved cardholder experience which would maximize adoption and usage of the CardSavr platform.  By releasing the cardholder after account linking, the amount of time the cardholder has to wait is reduced significantly by over 50%.  
+The focus of minimizing the User Wait Time will result in a significantly improved cardholder experience which would maximize adoption and usage of the CardSavr platform.  By releasing the cardholder after account linking, the amount of time the cardholder has to wait is reduced significantly by over 50%.  
 
-Please [contact Strivve](mailto:support@strivve.com) for any additional support regarding this guidance.
+Please [Contact Strivve](mailto:support@strivve.com) for any additional support regarding this guidance.
 
 
 
