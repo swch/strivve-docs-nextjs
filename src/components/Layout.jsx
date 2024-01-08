@@ -104,8 +104,8 @@ const navigation = [
         href: '/integrations/sso-microservice',
       },
       {
-        title: 'UX Best Practices',
-        href: '/integrations/best-practices',
+        title: 'User Wait Time Optimizations',
+        href: '/integrations/user_wait_time',
       },
     ],
   },
