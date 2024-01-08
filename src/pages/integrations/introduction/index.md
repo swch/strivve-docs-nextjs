@@ -6,7 +6,7 @@ title: Strivve Integrations Introduction
 
 Full integration is provided by CardSavr [SDK's and/or REST API's](/api-sdk/introduction).  This allows complete control of the card placement experience provided by you application while authoring your own desired U/X design.
 
-Please also see Strivve's [UX Best Practices](/integrations/best-practices).
+Please also see Strivve's [Minimizing User Wait Time](/integrations/user_wait_time) document.
 
 ## Strivve Components
 
