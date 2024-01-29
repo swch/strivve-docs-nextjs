@@ -8,7 +8,7 @@ Strivve’s CardSavr Service is a Platform As A Service (PaaS) which securely pl
 
 CarSavr systems architecture utilizes a modern Cloud architecture.  It is implemented on the PCI-DSS compliant Amazon Web Services (AWS) public cloud and relies on underlying AWS services for portions of its overall security. It provides multi-tenancy infrastructure to meet the needs of Financial Institution isolation.  At a minimum this isolation is provided by AWS Virtual Private Clouds (VPC) and depending upon the isolation requirements of a Financial Institution; within dedicated AWS sub accounts. Every PCI-DSS Cardholder Data Environment (CDE) is encapsulated within a VPC.  A Financial Institution can optionally have multiple CDE’s and often do in order to segment their application development from their production environment. The following diagram illustrates a simplified view of a VPC/CDE.
 
-[![Simplified CardSavr Architecture](/images/cardSavrSimpleArchitecture.jpg)]
+![Simplified CardSavr Architecture](/images/cardSavrSimpleArchitecture.jpg)
 
 In this illustration, the CDE boundary is defined by the VPC.  Every CDE is replicated across multiple AWS availability zones in a AWS Region, including multiple instances of each component in order to provide  high availability and scalability.  Each CDE has its own exclusive AWS RDS database to store Personal Identifiable Information \(PII\), Cardholder Data \(CHD\), Sensitive Authentication Data \(SAD\) and Merchant Credentials \(MC\), All Strivve developed components are single purpose servers encapsulated in hardened Docker containers and run as a cluster of tasks under the AWS Fargate orchestration management service on AWS EC2 virtual machines.
 
