@@ -32,8 +32,8 @@ const navigation = [
         href: '/guides/architecture',
       },
       {
-        title: 'Optimizing User Wait Time',
-        href: '/guides/user-wait-time',
+        title: 'Best Practices',
+        href: '/guides/best-practices',
       },
       { title: 'Compliance', href: '/guides/compliance' },
     ],
