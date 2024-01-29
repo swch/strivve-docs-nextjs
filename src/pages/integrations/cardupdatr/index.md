@@ -119,7 +119,7 @@ Once your application has the necessary information from the SSO microservice, t
 
 There are three configuration objects can be used to customize your CardUpdatr experience. The "user" object is for customer-specific data required to authenticate SSO users and also to provide customer-specific logging. The "config" object (some settings required) configures the FI for which CardUpdatr should run, how sites should be sorted, and which countries should be supported. "style_template" is used to dynamically configure messages, colors and background images.
 
-Please see the [CardUpdatr Integration Techniques](/integrations/cardupdatr#cardupdatr-integration-techniques/) for reference.
+Please see the [CardUpdatr Integration Techniques](/integrations/cardupdatr#card-updatr-integration-techniques) for reference.
 
 CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/partner-portal/). For more details, please contact [E-mail Strivve](mailto:support@strivve.com).
 
