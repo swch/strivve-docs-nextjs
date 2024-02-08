@@ -5,9 +5,7 @@ title: SSO Microservice
 
 ## Single Sign On Microservice
 
-The Single Sign-On (SSO) microservice removes the friction of requiring the cardholder to manually enter their information. After making the necessary calls to the CardSavr API to set up the cardholder, simply hand over the token and card id received from the API to a StrivveCX component or CardUpdatr integration. This will eliminate manual cardholder information entry from the UX experience.
-
-With the SSO microserve, you can make some simple API calls to set up the cardholder, and then hand over a token and card id to the component to handle the UX card placement interaction.
+The Single Sign-On (SSO) microservice removes the friction of requiring the cardholder to manually enter their cardholder, card and address data. After making the necessary calls to the CardSavr API to set up the cardholder, simply hand over the token and card id received from the API when launching CardUpdatr. This will eliminate manual cardholder information entry from the cardholder journey experience.
 
 ### Server Component
 
@@ -155,4 +153,4 @@ String grant = response.getJsonObject("cardholder").getString("grant");
 
 ### Drop-in Component Integration
 
-[StrivveCX](/integrations/strivve-cx#strivve-cx-single-sign-on) or [CardUpdatr](/integrations/cardupdatr#card-updatr-single-sign-on) documentation covers the specifics of integrating the acquired credentials into the UX components.
+[StrivveCX](/integrations/strivve-cx#strivve-cx-single-sign-on) (comming soon) or [CardUpdatr](/integrations/cardupdatr#card-updatr-single-sign-on) documentation covers the specifics of integrating the acquired credentials into the UX components.
