@@ -17,7 +17,8 @@ Site A       | prod, usa         | This is a prod site, only available in the US
 Site B       | prod, usa, canada | This is a prod site that is available in both canada and the us.
 Site C       | disabled, canada  | This site is only available in Canada, but it is temporarily disabled
 Site D       | beta, usa         | This usa site is new, and may not have a high enough success rate to qualify as "prod", but we still encourage production customers to include it
-Site E       | synthetic         | Synthtetic sites are very useful for testing UX, as they simulate real site behvior.  They can be made to prompt for tfa codes, new credentials, or even secruity questions. 
+Site E       | prod, limited     | This site is only available in the US, where card can be placed "some" of the time, and is actively being investigated
+Site F       | synthetic         | Synthtetic sites are very useful for testing UX, as they simulate real site behvior.  They can be made to prompt for tfa codes, new credentials, or even secruity questions. 
 
 ### Query Examples
 
