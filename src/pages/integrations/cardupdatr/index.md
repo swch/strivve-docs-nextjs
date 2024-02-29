@@ -45,7 +45,7 @@ The retrieval of the grant and card_id in the example below is provided by the [
         "card_id" : 12
       }, 
       style : {
-        "overlay_background_color" : "rbga(0,0,0,0.2)"
+        "overlay_background_color" : "rgba(0,0,0,0.2)"
       }
   }
  ```
@@ -194,8 +194,8 @@ Style attributes can be dynamically configured with CardUpdatr's cardupdatr-clie
     button_border_radius: "0.25rem",
     button_padding: "0.375rem 0.75rem",
     border_color: "#5e35b1",
-    drop_shadow: false,
-    dynamic_height: true
+    drop_shadow: "false",
+    dynamic_height: "true"
   },
 ```
 
