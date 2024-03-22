@@ -56,7 +56,7 @@ CardUpdatr can also be embedded inline in a webpage or webview.  The behavior is
 
 Like the overlay, Embedded CardUpdatr is inserted as an iframe.  Simply create a containing div in your document, and the Strivve bootstrap library will attach CardUpdatr to it.  The containing div should not have a defined height, as CardUpdatr attempts to leverage almost the entire viewport. CardUpdatr has a handful of width breakpoints:
 
-1. 540px is the maximum width for mobile view - also a reasonable width for desktoop
+1. 540px is the maximum width for mobile view - also a reasonable width for desktop
 1. 270px is the minimum width in order to maintain three columns of tiles
 
 CardUpdatr will use 99.5% of the entire vertical viewport
@@ -116,7 +116,7 @@ There are three configuration objects that can be used to customize your CardUpd
 
 Please see the [CardUpdatr Integration Techniques](/integrations/cardupdatr#card-updatr-integration-techniques) for reference.
 
-CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/partner-portal/), but these settings would be overridden by dynamic properties proovided while embedding or launching. For more details, please contact [E-mail Strivve](mailto:support@strivve.com).
+CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/partner-portal/), but these settings would be overridden by dynamic properties provided while embedding or launching. For more details, please contact [E-mail Strivve](mailto:support@strivve.com).
 
 ### Config Object
 
