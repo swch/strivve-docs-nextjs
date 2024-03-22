@@ -107,7 +107,7 @@ https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 
 {% video url="/videos/cardupdatr-sso-animation.mp4" /%}
 
-Ad mentioned above, leveraging an [SSO Microservice](/integrations/sso-microservice) to collect card and billing address data creates a much better experience for your cardholders.
+As mentioned above, leveraging an [SSO Microservice](/integrations/sso-microservice) to collect card and billing address data creates a much better experience for your cardholders.
 
 When running SSO, the cardholder credentials (grant and card id) can be generated and passed into the CardUpdatr component using any of the above techniques.
 
@@ -117,7 +117,7 @@ There are three configuration objects that can be used to customize your CardUpd
 
 Please see the [CardUpdatr Integration Techniques](/integrations/cardupdatr#card-updatr-integration-techniques) for reference.
 
-CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/partner-portal/), but would be overridden by dynamic properties proovided while embedding or launching. For more details, please contact [E-mail Strivve](mailto:support@strivve.com).
+CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/partner-portal/), but these settings would be overridden by dynamic properties proovided while embedding or launching. For more details, please contact [E-mail Strivve](mailto:support@strivve.com).
 
 ### Config Object
 
