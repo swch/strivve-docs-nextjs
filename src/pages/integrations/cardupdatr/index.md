@@ -81,7 +81,7 @@ CardUpdatr will use 99.5% of the entire vertical viewport
 
 ### Launch CardUpdatr
 
-The launch option is used too launch CardUpdatr in a new or existing window with the provided CardUpdatr URL. The launchCardUpdatr function is a wrapper around the [window.open function](https://www.w3schools.com/jsref/met_win_open.asp). 
+The launch option is used to launch CardUpdatr in a new or existing window with the provided CardUpdatr URL. The launchCardUpdatr function is a wrapper around the [window.open function](https://www.w3schools.com/jsref/met_win_open.asp). 
 
 launchCardUpdatr takes the following parameters:
 * **settings**:  Object containing the config, user, and style objects
@@ -95,7 +95,7 @@ launchCardUpdatr takes the following parameters:
 ```
 ### Launch CardUpdatr via URL
 
-There may be cases where native applications do not have the ability to use javascript.  This requires that the application encoode the configuration javascript and append it to the hash value of the CardUpdatr url.  Note that the setting must be url encoded (no ?'s, &'s, +'s or newlines). This can be accomplished in JavaScript using the encodeURIComponent function.
+There may be cases where native applications do not have the ability to use javascript.  This requires that the application append the configuration json to the hash value of the CardUpdatr url.  Note that the setting must be url encoded (no ?'s, &'s, +'s or newlines). This can be accomplished in JavaScript using the encodeURIComponent function.
 
 ```javascript
 https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
