@@ -8,28 +8,30 @@ CardUpdatr is a web drop-in component that handles the end to end experience of 
 
 {% video url="https://www.youtube.com/embed/AZAmT9hq-XE?autoplay=1&enablejsapi=1&wmode=opaque" /%}
 
+CardUpdatr SSO (Single-sign On) is the recommended implementation to avoid collecting card data from the cardholder.  All implementations can leverage SSO by first running the cardholder through an [SSO Microservice](/integrations/sso-microservice), obtaining a grant and card_id, and paassing them into the CardUpdatr configuration.
+
 ## CardUpdatr Integration Techniques
 
-CardUpdatr supports mutliple techniques from which you can easily integrate it into your application. 
+CardUpdatr supports mutliple techniques from which you can easily integrate it into your application. Most integration techniques require the cardupdatr-client-v2.js boostrap library which make the integrations seamless.
 
-Below is an example of the CardUpdatr journey to place cards to your top sites:
+### Overlay Embedded
+
+CardUpdatr can be implemented as an overlay modal that appears on top of an existing page. The overlay is embedded into the body of the DOM, and this overlay can be closed at any time during the journey.  The primary advantage of this setup is a consistency between both mobile and desktop.
+
+Below is an example of the mobile CardUpdatr journey using the overlay technique:
 
 ![CardUpdatr ACME 1](/images/CardUpdatr_ACME_1.png)
 ![CardUpdatr ACME 2](/images/CardUpdatr_ACME_2.png)
 
-### Overlay Embedded
-
-CardUpdatr can be implemented as an overlay modal that appears on top of an existing page.  In this case, CardUpdatr is inserted into the modal as an embedded iframe.
+Here is an example of the desktop experience.
 
 ![CardUpdatr Overlay](/images/cardupdatr_overlay.png)
 
-In order to implement the CardUpdatr overlay, use the embedCardUpdatr function and include “overlay”: “true”, in the [Config Object](#config-object).
+In order to implement the CardUpdatr overlay, use the embedCardUpdatr function and include “overlay”: true, in the [Config Object](#config-object).
 
-By default, the overlay can be closed using the X button in the top right corner. To hide the X button, add  “show: false”, to the config.
+The overlay can be closed using the X button in the top right corner, or using the "Done" button at the end of the journey.
 
 The color and opacity of the overlay background can be adjusted by using the “overlay_background” property in the [Style Object](#style-object).
-
-The retrieval of the grant and card_id in the example below is provided by the [SSO Microservice](/integrations/sso-microservice).
 
 ```javascript
   window.embedCardUpdatr {
@@ -37,11 +39,10 @@ The retrieval of the grant and card_id in the example below is provided by the [
         "show_close_overlay_button" : false,
         "overlay" : "true",
         "app_container_id" : "container",
-        "hostname" : "test.cardupdatr.app",
-        "financial_institution" : "testif"
+        "hostname" : "testfi.test.cardupdatr.app",
       },
       user : {
-        "grant": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9ey",
+        "grant": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9ey...",
         "card_id" : 12
       }, 
       style : {
@@ -52,9 +53,13 @@ The retrieval of the grant and card_id in the example below is provided by the [
 
 ### Inline Embedding 
 
-CardUpdatr can also be embedded inline in a webpage or webview, allowing it to fit seamlessly into your application or browser experience.  
+CardUpdatr can also be embedded inline in a webpage or webview.  The behavior is similar to the overlay, but the frame scrolls with the rest of the viewport as opposed to taking over the entire screen.  
 
-Inline embedded CardUpdatr is inserted as an iframe, and the boostrap library makes the insertion seamless.  Use the code below in your page to host the CardUpdatr within an iframe.  You must create a div that has the correct height, and then pass the id of the div into the embedCardUpdatr function. 
+Like the overlay, Embedded CardUpdatr is inserted as an iframe.  Simply create a containing div in your document, and the Strivve bootstrap library will attach CardUpdatr to it.  The containing div should not have a defined height, as CardUpdatr attempts to leverage almost the entire viewport. CardUpdatr has a handful of width breakpoints:
+
+1. <540px Maximum width for mobile view - also a reasonable width for desktoop
+1. >270px In order to maintain three columns of tiles, the width can't get too narrow
+1. CardUpdatr will use 99.5% of the entire viewport
 
 
 ```javascript
@@ -76,26 +81,21 @@ Inline embedded CardUpdatr is inserted as an iframe, and the boostrap library ma
 
 ### Launch CardUpdatr
 
-The launch option is used to navigate a new or existing window to the provided CardUpdatr URL. The launchCardUpdatr function is a wrapper around the [window.open function](https://www.w3schools.com/jsref/met_win_open.asp). 
+The launch option is used too launch CardUpdatr in a new or existing window with the provided CardUpdatr URL. The launchCardUpdatr function is a wrapper around the [window.open function](https://www.w3schools.com/jsref/met_win_open.asp). 
 
 launchCardUpdatr takes the following parameters:
 * **settings**:  Object containing the config, user, and style objects
 * **name**:  [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
 * **specs**: [See w3 definition](https://www.w3schools.com/jsref/met_win_open.asp)
 
-```javascript
-window.launchCardUpdatr = function (settings, name = "_blank", specs = undefined) {
-  window.open(
-    get_app_source(settings.config.hostname, settings.config.financial_institution) + "#settings=" + encodeURIComponent(JSON.stringify(settings)), 
-    name, 
-    specs
-  );
-}
 ```
-
+        <a onClick='javascript:window.launchCardUpdatr({config: { hostname: "acmebank.customer-dev.cardupdatr.app" }, style: { button_color: "red"}})'>
+          Launch cardupdatr
+        </a>
+```
 ### Launch CardUpdatr via URL
 
-There are cases to be considered when native applications do not have access to a DOM.  There are simple mechanisms for launching webviews within applications, and this can include using native parameters to control the containing child window.  This is not difficult, but it does require the application to assemble the url itself.  Note that the setting must be url encoded (no ?'s, &'s, +'s or newlines). This can be accomplished in JavaScript using the encodeURIComponent function.
+There may be cases where native applications do not have the ability to use javascript.  This requires that the application encoode the configuration javascript and append it to the hash value of the CardUpdatr url.  Note that the setting must be url encoded (no ?'s, &'s, +'s or newlines). This can be accomplished in JavaScript using the encodeURIComponent function.
 
 ```javascript
 https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
@@ -107,21 +107,17 @@ https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 
 {% video url="/videos/cardupdatr-sso-animation.mp4" /%}
 
-CardUpdatr is a simple way for cardholders to select the merchants they'd like to update, and then monitor the jobs as they progress. The challenge with CardUpdatr is there is a significant barrier where the cardholder must enter their entire credit card, address, and contact info.  Many financial institutions would prefer a CardSavr integration that streamlines this process, but may not want to invest the initial effort to build a user interface.
+Ad mentioned above, leveraging an [SSO Microservice](/integrations/sso-microservice) to collect card and billing address data creates a much better experience for your cardholders.
 
-In this case, the integrator will want to implment the [SSO Microservice](/integrations/sso-microservice) from which the cardholder credentials (grant and card id) can be retrieved and passed into the CardUpdatr component.
-
-### Handing off Credentials to CardUpdatr
-
-Once your application has the necessary information from the SSO microservice, the application can hand off the credentials to CardUpdatr.  There are two ways to accomplish this: redirection or via the CardUpdatr configuration objects.
+When running SSO, the cardholder credentials (grant and card id) can be generated and passed into the CardUpdatr component using any of the above techniques.
 
 ## CardUpdatr Configuration
 
-There are three configuration objects can be used to customize your CardUpdatr experience. The "user" object is for customer-specific data required to authenticate SSO users and also to provide customer-specific logging. The "config" object (some settings required) configures the FI for which CardUpdatr should run, how sites should be sorted, and which countries should be supported. "style_template" is used to dynamically configure messages, colors and background images.
+There are three configuration objects that can be used to customize your CardUpdatr experience. The "user" object is for customer-specific data required to authenticate SSO users and also to provide customer-specific logging. The "config" object (some settings required) configures the FI for which CardUpdatr should run and how sites should be included and sorted. "style" is used to dynamically configure messages, colors and background images.
 
 Please see the [CardUpdatr Integration Techniques](/integrations/cardupdatr#card-updatr-integration-techniques) for reference.
 
-CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/partner-portal/). For more details, please contact [E-mail Strivve](mailto:support@strivve.com).
+CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/partner-portal/), but would be overridden by dynamic properties proovided while embedding or launching. For more details, please contact [E-mail Strivve](mailto:support@strivve.com).
 
 ### Config Object
 
@@ -130,10 +126,8 @@ CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/
   config : {
     app_container_id: "APP_CONTAINER_ID",
     hostname: "CARDUPDATR_HOSTNAME",
-    financial_institution: "acmecu",
     top_sites: ["amazon.com", "apple.com", "audible.com", "hulu.com", "netflix.com", "spotify.com", "target.com", "uber.com", "venmo.com", "walgreens.com", "walmart.com"],
-    merchant_site_tags: ["usa,canada", "prod"],
-    countries_supported: ["Canada", "USA"],
+    merchant_site_tags: ["usa,canada", "prod"]
   },
 ```
 
@@ -144,7 +138,7 @@ CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/
 | top_sites                 | no       | []                                  | These sites are listed first on the "select-merchants" page                                                                         |
 | merchant_site_tags        | no       | ["usa", "prod"]                     | usa AND prod -- to provide "OR" functionality, tags must be listed differently. "prod", "canada,usa" means prod AND (usa OR canada) |
 | overlay                   | no       | false                             | Set to "true" to turn on overlay
-| close_url                 | no       | See Description                     | Required if running as an embedded SSO user. Will default to "/#close" if running as a non-embedded SSO user.  Otherwise, defaults to "/select-merchants".  This option determines the on-click action of the "Close" button (or "Done" in certain cases) that appears on the final page after all jobs have linked the account.  If set to a custom URL, clicking the Close button will navigate to the URL.  If set to "/select-merchants", the user will be logged out and taken back to the site selection page with a new session.  If set to "none", the Close button will not appear on the page. If set to "/#close", the window will be closed. |
+| close_url                 | no       | See Description                     | close_url can either be "none" (hidden), "close" (applicable with the overlay), or a relative/absolute url that defines the start of the journey.  The various configuration permutations lead to various defaults. Will default to "close" if running as a non-embedded SSO user.  Otherwise, defaults to "/select-merchants".  This option determines the on-click action of the "Close" button (or "Done" in certain cases) that appears on the final page after all jobs have linked the account.  If set to a custom URL, clicking the Close button will navigate to the URL.  If set to "/select-merchants", the user will be logged out and taken back to the site selection page with a new session.  If set to "none", the Close button will not appear on the page. If set to "close", the window will be closed. |
 
 ### User Object
 
@@ -171,7 +165,7 @@ The user properties are unique to this partiular cardholder, and generally provi
 
 ### Style Object
 
-Style attributes can be dynamically configured with CardUpdatr's cardupdatr-client-v2.js. They can optionally be configured in the Partner Portal, but dynamic flexibilty is sometimes preferred if running multiple brands under the same Financial Institution.
+Style attributes control the look and feel of the experience. They can optionally be configured in the Partner Portal, but dynamic flexibilty is sometimes preferred if running multiple brands under the same Financial Institution.
 
 ```javascript
   },
@@ -195,25 +189,5 @@ Style attributes can be dynamically configured with CardUpdatr's cardupdatr-clie
 | button_padding        | no       | 0.375 0.75rem,                  | controls space inside buttons (can also be configured in Partner Portal)                                                               |
 | border_color        | no       | #000000                   | color of merchant tile border when selected (can also be configured in Partner Portal)                                                           |
 | overlay_background_color | no  | rgba(0,0,0,.5)       | The color and opacity of the background.  Defaults to black with 0.5 opacity. 
-
-## Redirection 
-
-By supplying the parameters in the hash value of the url, CardUpdatr will automatically log in as the cardholder, and the cardholder can then select their merchants and corresponding credentials.  This should only be done when the bootstrap configuration options are not available.
-
-```
-https://CARDUPDATR_HOSTNAME.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
-```
-
-"ENCODED\_SETTINGS\_JSON" is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.  The settings, which should not contain any spaces or escape characters before encoding, needs to at least include the user object from which the grant and card_id are specified:  
-
-```javascript
-{
-  "user": {
-    "grant": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcGkuY3VzdG9tZXItZGV2LmNh.......\",
-    "card_id": 11033
-  }
-}
-```
-
 
 If you have any questions regarding this content, please [Contact Us](mailto:support@strivve.com).
