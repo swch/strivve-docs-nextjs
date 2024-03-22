@@ -37,7 +37,7 @@ The color and opacity of the overlay background can be adjusted by using the “
   window.embedCardUpdatr {
       config : {
         "show_close_overlay_button" : false,
-        "overlay" : "true",
+        "overlay" : true,
         "app_container_id" : "container",
         "hostname" : "testfi.test.cardupdatr.app",
       },
