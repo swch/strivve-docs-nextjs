@@ -14,7 +14,7 @@ CardUpdatr SSO (Single-sign On) is the recommended implementation to avoid colle
 
 CardUpdatr supports mutliple techniques from which you can easily integrate it into your application. Most integration techniques require the cardupdatr-client-v2.js boostrap library which make the integrations seamless.
 
-### Overlay Embedded
+### Overlay Embedding
 
 CardUpdatr can be implemented as an overlay modal that appears on top of an existing page. The overlay is embedded into the body of the DOM, and this overlay can be closed at any time during the journey.  The primary advantage of this setup is a consistency between both mobile and desktop.
 
@@ -138,7 +138,7 @@ CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/
 | top_sites                 | no       | []                                  | These sites are listed first on the "select-merchants" page                                                                         |
 | merchant_site_tags        | no       | ["usa", "prod"]                     | usa AND prod -- to provide "OR" functionality, tags must be listed differently. "prod", "canada,usa" means prod AND (usa OR canada) |
 | overlay                   | no       | false                             | Set to "true" to turn on overlay
-| close_url                 | no       | See Description                     | close_url can either be "none" (hidden), "close" (applicable with the overlay), or a relative/absolute url that defines the start of the journey.  The various configuration permutations lead to various defaults. Will default to "close" if running as a non-embedded SSO user.  Otherwise, defaults to "/select-merchants".  This option determines the on-click action of the "Close" button (or "Done" in certain cases) that appears on the final page after all jobs have linked the account.  If set to a custom URL, clicking the Close button will navigate to the URL.  If set to "/select-merchants", the user will be logged out and taken back to the site selection page with a new session.  If set to "none", the Close button will not appear on the page. If set to "close", the window will be closed. |
+| close_url                 | no       | See Description                     | close_url can either be "none" (hidden), "close" (applicable with the overlay), or a relative/absolute url that defines the start of the journey.  The various configuration permutations lead to various defaults. Will default to "close" if running as a non-embedded SSO user.  Otherwise, defaults to "/select-merchants".  This option determines the on-click action of the "Close" button (or "Done" in certain cases) that appears on the final page after all jobs have linked the account.  If set to a custom URL, clicking the Close button will navigate to the URL.  If set to "/select-merchants", the user will be logged out and taken back to the site selection page with a new session.  If set to "none", the Close button will not appear on the page. If set to "close" (for embedded), the window will simply be closed. |
 
 ### User Object
 
