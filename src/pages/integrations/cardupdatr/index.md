@@ -29,7 +29,7 @@ Here is an example of the desktop experience.
 
 In order to implement the CardUpdatr overlay, use the embedCardUpdatr function and include “overlay”: true, in the [Config Object](#config-object).
 
-The overlay can be closed using the X button in the top right corner, or using the "Done" button at the end of the journey.
+The overlay can be closed using the X button in the top right corner, or using the "Done" button at the end of the journey.  Note that there is explicitly no app_container_id assigned on the config object.
 
 The color and opacity of the overlay background can be adjusted by using the “overlay_background” property in the [Style Object](#style-object).
 
@@ -38,7 +38,6 @@ The color and opacity of the overlay background can be adjusted by using the “
       config : {
         "show_close_overlay_button" : false,
         "overlay" : true,
-        "app_container_id" : "container",
         "hostname" : "testfi.test.cardupdatr.app",
       },
       user : {
@@ -133,7 +132,7 @@ CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/
 
 | Property              | Required | Default                             | Description                                                                                                                         |
 | ------------------------- | -------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| app_container_id          | yes      |                                     | HTML element id that CardUpdatr is attached to                                                                                      |
+| app_container_id          | no      |                                     | HTML element id that CardUpdatr is attached to -- this is only required when running embedded.                                                                                      |
 | hostname                  | yes      |                                     | hostname of CardUpdatr (e.g. acmebank.customer-dev.cardupdatr.app)                                                                  |
 | top_sites                 | no       | []                                  | These sites are listed first on the "select-merchants" page                                                                         |
 | merchant_site_tags        | no       | ["usa", "prod"]                     | usa AND prod -- to provide "OR" functionality, tags must be listed differently. "prod", "canada,usa" means prod AND (usa OR canada) |
