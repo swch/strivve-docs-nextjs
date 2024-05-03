@@ -11,14 +11,14 @@ Strivve uses tags to identify certain site criteria.  These tags can be used for
 
 Tags are assigned based on their support and availability. 
 
-Site         | Tags              | Effect
------------- | ----------------- | --------------------
-Site A       | prod, usa         | This is a prod site, only available in the US.  Canadian cardholders likely cannot place a card on this site
-Site B       | prod, usa, canada | This is a prod site that is available in both canada and the us.
-Site C       | disabled, canada  | This site is only available in Canada, but it is temporarily disabled
-Site D       | beta, usa         | This usa site is new, and may not have a high enough success rate to qualify as "prod", but we still encourage production customers to include it
-Site E       | prod, limited     | This site is only available in the US, where card can be placed "some" of the time, and is actively being investigated
-Site F       | synthetic         | Synthtetic sites are very useful for testing UX, as they simulate real site behvior.  They can be made to prompt for tfa codes, new credentials, or even secruity questions. 
+Site         | Tags                    | Effect
+------------ | ------------------------| --------------------
+Site A       | prod, unrestricted, usa | This is a prod site, only available in the US.  Canadian cardholders likely cannot place a card on this site
+Site B       | prod, unrestricted, usa, canada | This is a prod site that is available in both canada and the us.
+Site C       | prod, disabled, canada  | This site is only available in Canada, but it is temporarily disabled
+Site D       | prod, beta, usa         | This usa site is new, and may not have a high enough success rate to qualify as "unrestricted", but we still encourage production customers to include it
+Site E       | prod, limited           | This card can be placed "some" of the time, and is actively being investigated
+Site F       | synthetic               | Synthtetic sites are very useful for testing UX, as they simulate real site behvior.  They can be made to prompt for tfa codes, new credentials, or even secruity questions. 
 
 ### Query Examples
 
@@ -35,9 +35,9 @@ To query all prod sites AND also usa OR canada, we use a comma between the prope
 https://api.{{CARDSAVR-INSTANCE}}.cardsavr.io/merchant_sites?tags=usa,canada&tags=prod
 ```
 
-Perhaps a QA system wants to include all synthetic sites, as well as prod and beta sites:
+Perhaps a QA system wants to include all synthetic sites, as well as unrestricted and beta sites:
 ```
-https://api.{{CARDSAVR-INSTANCE}}.cardsavr.io/merchant_sites?tags=beta,prod,synthetic
+https://api.{{CARDSAVR-INSTANCE}}.cardsavr.io/merchant_sites?tags=unrestricted,beta,synthetic
 ```
 
 ### Non-Exhaustive Tag List
@@ -52,7 +52,7 @@ Tag          | Effect
 prod         | production sites that should always be visible to cardholders -- if these sites become temporarily unavailable, they will generally be restored shortly
 down         | indicates that a site is unavailable for card placements
 
-![Site States](/images/site_states.svg)
+![Site States](/images/site_states.jpg)
 *Site State Venn Diagram*
 
 #### Site States
