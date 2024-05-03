@@ -52,7 +52,9 @@ Tag          | Effect
 prod         | production sites that should always be visible to cardholders -- if these sites become temporarily unavailable, they will generally be restored shortly
 down         | indicates that a site is unavailable for card placements
 
-### Site States
+![Site States](/images/site_states.svg)
+
+#### Site States
 
 Sites tagged "prod" will also have an additional tag that indicates how sites should be displayed to cardholders.
 
