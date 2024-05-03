@@ -49,10 +49,19 @@ are some constraints that can be relied upon:
 
 Tag          | Effect             
 ------------ | ----------------- 
-prod         | indicates that a card can be placed reliably
-disabled     | indicates that a site it temporarily unavailable for card placements
-beta         | indicates that a site has redently been introduced to the directory and may fail in some cases
-limited      | indicates that a card can be placed "some" of the time, and is actively being investigated
+prod         | production sites that should always be visible to cardholders -- if these sites become temporarily unavailable, they will generally be restored shortly
+down         | indicates that a site is unavailable for card placements
+
+### Site States
+
+Sites tagged "prod" will also have an additional tag that indicates how sites should be displayed to cardholders.
+
+Tag          | Effect                                                                                | CardUpdatr Label
+------------ | --------------------------------------------------------------------------------------|------------------
+unrestricted | cards can be placed reliably 
+limited      | cards can be placed "most" of the time, and cardholders can be encouraged to try them | "Try me!" 
+beta         | simmilar to limited, but are newer sites                                              | "Beta"
+disabled     | indicates that a site it temporarily unavailable for card placements -- cardholders should be alerted that these sites are temporarily unavailable (Labeled "temporarily Unavailble" in CardUpdatr)                   | "Temporarily Unavailable"
 
 #### Countries
 
