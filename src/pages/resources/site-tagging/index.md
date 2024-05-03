@@ -53,7 +53,7 @@ prod         | production sites that should always be visible to cardholders -- 
 down         | indicates that a site is unavailable for card placements
 
 ![Site States](/images/site_states.jpg)
-*Site State Venn Diagram*
+*Site State tag relationships*
 
 #### Site States
 
