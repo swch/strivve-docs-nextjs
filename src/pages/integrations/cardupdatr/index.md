@@ -29,7 +29,7 @@ Here is an example of the desktop experience.
 
 In order to implement the CardUpdatr overlay, use the embedCardUpdatr function and include “overlay”: true, in the [Config Object](#config-object).
 
-The overlay can be closed using the X button in the top right corner, or using the "Done" button at the end of the journey.  Note that there is explicitly no app_container_id assigned on the config object.
+The overlay can be closed using the X button in the top right corner, or using the "Close" button at the end of the journey.  Note that there is explicitly no app_container_id assigned on the config object.
 
 The color and opacity of the overlay background can be adjusted by using the “overlay_background” property in the [Style Object](#style-object).
 
