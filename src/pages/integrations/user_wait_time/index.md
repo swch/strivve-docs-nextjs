@@ -25,14 +25,14 @@ This document is targeted towards integrators who are chosing to author their ow
 The account linking process of authenticating a cardholder to the merchant site requires entering initial credentials and at times responding to dynamic challenges such as MFA or a One-Time-Passcode.  This is the only group of actions which requires cardholders’ attention.
 
 #### Card Placement
-The account linking process of authenticating a cardholder to the merchant site requires entering initial credentials and at times responding to dynamic challenges such as MFA or a One-Time-Passcode.  This is the only group of actions which requires cardholders’ attention.
+The card placement process requires no cardholder interaction as the Strivve RPA system places the card as the default payment method for the given site.
 
 ### User Wait Time - Waiting for Full Process to Complete
 Early implementations of Strivve CoF workflows required cardholders to wait for the entire length of the card placement.  Data from those implementations showed that this created unnecessarily longer user wait times from which the cardholder needs to be present for the card placement to complete.
 
 Strivve’s legacy solutions followed this workflow pattern until the concept of the cardholder U/X journey simply completing once the account is successfully linked.  If the cardholder waits less, improved cardholder engagement and increases the volume of card-on-file placements.
 
-For example, the Strivve CardUpdatr component was orignally built to require the user to wait for the entire process to complete.  Strivve then introduced the concept of notifing the cardholder once that account linking process has completed that no further action is necessary, and they may exit or move forward to add more sites.  
+For example, Strivve CardUpdatr was orignally built to require the user to wait for the entire process to complete.  Strivve then introduced the concept of notifing the cardholder once that account linking process has completed that no further action is necessary, and they may exit or move forward to add more sites.  
 
 **Account Link Completion** - Cardholder has option to wait for the entire process to complete or release to other tasks:
 ![CardUpdatr](/images/cu_account_link_complete.png) 
