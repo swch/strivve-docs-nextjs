@@ -14,32 +14,45 @@ When [creating a cardholder](https://swch.github.io/slate/#create-cardholder), i
 Each dedicated CardSavr instance includes a [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) used in the administration of your environment configuration.  Belsow are the out of the box reporting options that your organization may generate at any time.
 
 
-### Merchant Reports
-Merchant Reports allow you to generate a report of all card placement activity between any specified dates. 
-
-To generate the report, simply select the start and end dates and generate the report. The report will then be downloaded to your device.
-![Reporting](/images/merchant_report_1.png ) 
-![Reporting](/images/merchant_report_2.png ) 
-
+### Transaction Reporting
+Transaction Reports allow you to generate a report of all card placement activity between any specified dates. Transaction reports can be downloaded from the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) and includes the following information:
 
 | Field Name                  | Description                                         
 |-----------------------------| ----------------------------------------------------
-| Field Name                  | Job id of the transaction                           
+| job_id                      | Job id of the transaction                           
 | bank_identification_number  | Bank id of the card associated with the placement transaction                                 
 | merchant_site_hostname      | Hostname of the merchant site the card is being place to                      
 | status                      | Resulting [status](https://swch.github.io/slate/#post-place_card_on_single_site_job-1) of the card placement transaction  
 | fi_name                     | Name of the associated financial instituion (configured in the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal))         
 | fi_lookup_key               | Key used to identify financial institution used by API (configured in the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal))
 | completed_on                | Timestamp of when card placement transaction completed
-| meta_key (not pictured)     | Comprised of the first and last initials of the [cardholder](https://swch.github.io/slate/#create-cardholder), the postal code, and the last two digits of the PAN.
-| cuid (not pictured)         | Unique ID for the [cardholder](https://swch.github.io/slate/#create-cardholder) provided by your application to the CardSavr API.  A random number will be generated if not provided.
-| custom_data (not pictured)  | Additional data that can be added to the [cardholder](https://swch.github.io/slate/#create-cardholder) by your application to the CardSavr API.  If provided, the merchant report will include this information in additional fields.
+| meta_key                    | Comprised of the first and last initials of the [cardholder](https://swch.github.io/slate/#create-cardholder), the postal code, and the last two digits of the PAN.
+| cuid          | Unique ID for the [cardholder](https://swch.github.io/slate/#create-cardholder) provided by your application to the CardSavr API.  A random number will be generated if not provided.
+| custom_data   | Additional data that can be added to the [cardholder](https://swch.github.io/slate/#create-cardholder) by your application to the CardSavr API.  If provided, the merchant report will include this information in additional fields.
 
 
-### Cardholder Session Reports
-Strivve is in process of developing a cardholder session report that details CardUpdatr or StrivveCX UX data that can track the full Strivve UX session journey while linking to the placement transaction detail provided in the merchant reports.
+### Session Reporting
+The Session Report provides a historical log of all sessions completed within a given timeframe to paint a picture of what the Cardholder actions and results were during the card-on-file workflow.
 
-This section will be updated once the session reporting feature is available.
+Session reports can be downloaded from the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) and includes the following information:
+
+| Field Name                  | Description                                         
+|-----------------------------| ----------------------------------------------------
+| cuid                        | Unique ID for the cardholder provided by FI via the CardSavr API.                             
+| fi_lookup_key               | Unique key used to identify financial institution.                     
+| select_merchants            | Timestamp of when the CardUpdatr Merchant Site List View was last visited.
+| credential_entry            | Timestamp of when the CardUpdatr Merchant Credential Entry view was last visited.     
+| missing_fields              | Timestamp where the Cardholder was prompted for missing Card or Cardholder Billing information.
+| account_credentials_submitted | Timestamp where the  Cardholder moved forward to enter credentials to start card placement.
+| successful_jobs             | Total successful card placement jobs within the session.
+| total_jobs                  | Total attempted card placement jobs within the session.
+| custom_data                 | Custom_data that can be added by FI via the CardSavr API.
+| clickstream                 | Clickstream data of all views visited by cardholder within CardUpdatr.
+| closed_on                   | Timestamp of when the session was closed
+| created_on                  | Timestamp of when the session was created
+| agent_session_id            | Session identifer for the session
+
+
 
 ### Merchant Site Reports
 The Merchant Sites report lists all Strivve supported merchant sites and their current status, as well as other relevant information. 
