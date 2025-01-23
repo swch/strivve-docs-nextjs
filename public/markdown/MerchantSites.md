@@ -1,5 +1,3 @@
-From Developer Portal
-
 ## Merchant Sites
 The Merchant Sites tab lists all merchant sites, their current active status, and the user data information that each site requires.
 

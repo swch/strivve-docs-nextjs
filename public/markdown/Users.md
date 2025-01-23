@@ -1,5 +1,3 @@
-From Developer Portal
-
 ## Users
 The users tab shows all users in the FI of the logged in user. If you are logged in to the Admin FI, you will see users for all FIs. Users can also be added, edited, or deleted here.
 

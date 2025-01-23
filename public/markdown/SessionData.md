@@ -1,5 +1,3 @@
-From Developer Portal
-
 ## Session Data
 The Session Data tab lists all active and closed cardholder sessions. A session remains open until the cardholder has been inactive for 15 minutes or clicks the Done button. 
 The clickstream object shows the overall journey of the cardholder by logging important momemnts in the CardUpdatr workflow. The clickstream object can be viewed in its entirety by clicking the View button. Additionally, the four different locations tracked in the clickstream are broken out into four separate columns in the display/report; these columns display the first time that the cardholder visited the location. The columns are defined as follows: 

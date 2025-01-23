@@ -1,5 +1,3 @@
-From Developer Portal
-
 ## Merchant Reporting
 
 The Merchant Reporting tab displays all card placement attempts and relevant data (final status, date completed, etc.)

@@ -1,5 +1,3 @@
-From Developer Portal
-
 ## Integrators
 The Integrators tab shows all integrators within the CardSavr instance (if logged in as an admin). Admin users may add, edit or delete integrators.
 

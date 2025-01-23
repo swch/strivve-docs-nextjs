@@ -1,5 +1,3 @@
-From Developer Portal
-
 ## Financial Institution
 The Financial Institution tab shows all FIs within the CardSavr instance (if logged in as an admin), as well as all notifications for that FI. Admin users may add, edit or delete financial institutions, as well as add, edit, and delete notifications for FIs.
 
