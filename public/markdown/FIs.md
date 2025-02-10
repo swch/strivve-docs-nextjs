@@ -21,8 +21,8 @@ The branding field allows for customization of branding properties in CardUpdatr
 The following properties are allowed within each of the two primary properties (nested properties are defined in separate tables):
 #### config:
 
-| Property                    | Type                          | Description                                                                                  
-| :-------------------------- | :---------------------------- | :--------------------------------------------------------------------------------------------
+|' Property                  '|' Type                        '|' Description                                     '|      
+| :-------------------------- | :---------------------------- | :-----------------------------------------------  |
 | disable_brand               | boolean                       | If true, disables CardUpdatr for this FI.                                                    
 | top_sites                   | array of strings              | Hostnames of sites to appear at the top of the site tiles selection page.                    
 | exclude_sites               | array of strings              | Hostnames of sites to be excluded from CardUpdatr site selection.                            
@@ -34,13 +34,13 @@ The following properties are allowed within each of the two primary properties (
 ###### config.email:
 The following properties customize the status update email sent to CardUpdatr users (if this notification has been created):
 
-| Property             |Type                       | Description                                                                                                   
-| ---------------------|---------------------------|--------------------------------------------------------------------------------------------------------------- 
-| footer_link_1 | object | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the left of the email footer.
-| footer_link_2 | object | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the right of the email footer.
-| sender_email_address | string | Sender email address for status update notification email.
-| footer_address | string | Mailing address to appear at the bottom of the email.
-| card_description | string | Description of card that will appear in the email text.
+|' Property              '|' Type                         '|' Description                                                                                            '|       
+| :-------------------- | :-------------------------- | :--------------------------------------------------------------------------------------------------------------- 
+| footer_link_1         | object                      | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the left of the email footer.
+| footer_link_2         | object                      | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the right of the email footer.
+| sender_email_address  | string                      | Sender email address for status update notification email.
+| footer_address        | string                      | Mailing address to appear at the bottom of the email.
+| card_description      | string                      | Description of card that will appear in the email text.
 
 #### style_template:
 
