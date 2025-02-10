@@ -56,7 +56,7 @@ The following properties customize the status update email sent to CardUpdatr us
 | button_color                    | string                   | Defines the color for all buttons.
 | button_border_radius            | string                   | Defines the border radius property for all buttons.
 | button_padding                  | string                   | Defines the padding for all buttons.
-***  
+ 
 
 ##### Delete Financial Institution
 To delete an FI, click the trash can next to the FI you would like to delete.
