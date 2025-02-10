@@ -21,12 +21,12 @@ The branding field allows for customization of branding properties in CardUpdatr
 The following properties are allowed within each of the two primary properties (nested properties are defined in separate tables):
 #### config:
 | Property                    | Type                          | Description                                                                                  |
-| ----------------------      |-------------------------------|----------------------------------------------------------------------------------------------|
-| disable_brand               | boolean                       | If true, disables CardUpdatr for this FI.                                                    
-| top_sites                   | array of strings              | Hostnames of sites to appear at the top of the site tiles selection page.                    
-| exclude_sites               | array of strings              | Hostnames of sites to be excluded from CardUpdatr site selection.                            
-| frame_ancestors             | object                        | Defines the frame ancestors for embeddable CardUpdatr. Takes a "host" and "value" property, with the host being the CardUpdatr URL and the value being the URL of the page embedding CardUpdatr                                                                                       
-| merchant_site_tags          |                               | Test text                                                                                    
+| :-------------------------- | :---------------------------- | :------------------------------------------------------------------------------------------- |
+| disable_brand               | boolean                       | If true, disables CardUpdatr for this FI.                                                    |
+| top_sites                   | array of strings              | Hostnames of sites to appear at the top of the site tiles selection page.                    |
+| exclude_sites               | array of strings              | Hostnames of sites to be excluded from CardUpdatr site selection.                            |
+| frame_ancestors             | object                        | Defines the frame ancestors for embeddable CardUpdatr. Takes a "host" and "value" property, with the host being the CardUpdatr URL and the value being the URL of the page embedding CardUpdatr |                                                                                      
+| merchant_site_tags          |                               | Test text                                                                                    |
 
 
 #test
