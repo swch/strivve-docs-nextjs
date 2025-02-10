@@ -20,23 +20,14 @@ The branding field allows for customization of branding properties in CardUpdatr
 
 The following properties are allowed within each of the two primary properties (nested properties are defined in separate tables):
 #### config:
-| Property              | Type                          | Description                                                                                  |
-| ----------------------|-------------------------------|----------------------------------------------------------------------------------------------|
-| disable_brand         | boolean                       | If true, disables CardUpdatr for this FI.                                                    |
-| top_sites             | array of strings              | Hostnames of sites to appear at the top of the site tiles selection page.                    |
-| exclude_sites         | array of strings              | Hostnames of sites to be excluded from CardUpdatr site selection.                            |
-| frame_ancestors       | object                        | Defines the frame ancestors for embeddable CardUpdatr. Takes a "host" and "value" property, with the host being the CardUpdatr URL and the value being the URL of the page embedding CardUpdatr                                                                                       |
-| merchant_site_tags    |                               | Test text                                                                                    |
+| Property                    | Type                          | Description                                                                                  |
+| ----------------------      |-------------------------------|----------------------------------------------------------------------------------------------|
+| disable_brand               | boolean                       | If true, disables CardUpdatr for this FI.                                                    
+| top_sites                   | array of strings              | Hostnames of sites to appear at the top of the site tiles selection page.                    
+| exclude_sites               | array of strings              | Hostnames of sites to be excluded from CardUpdatr site selection.                            
+| frame_ancestors             | object                        | Defines the frame ancestors for embeddable CardUpdatr. Takes a "host" and "value" property, with the host being the CardUpdatr URL and the value being the URL of the page embedding CardUpdatr                                                                                       
+| merchant_site_tags          |                               | Test text                                                                                    
 
-| Property              | Required | Default                             | Description                                                                                                                         |
-| ------------------------- | -------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| app_container_id          | no      |                                     | HTML element id that CardUpdatr is attached to -- this is only required when running embedded.                                                                                      |
-| hostname                  | yes      |                                     | Hostname of the target FI (e.g. acmebank.customer-dev.cardupdatr.app).  In the case of SSO, this hostname must match the FI hostname used to aquire the grant.                                                                  |
-| top_sites                 | no       | []                                  | These sites are listed first on the "select-merchants" page        
-| exclude_sites             | no       | []                                  | These sites are excluded from the "select-merchants" page                                                                         |
-| merchant_site_tags        | no       | ["usa", "prod"]                     | usa AND prod -- to provide "OR" functionality, tags must be listed differently. "prod", "canada,usa" means prod AND (usa OR canada) |
-| overlay                   | no       | false                             | Set to true to turn on overlay
-| close_url                 | no       | See Description                     | close_url can either be "none" (hidden), "close" (applicable with the overlay), or a relative/absolute url that defines the start of the journey.  The various configuration permutations lead to various defaults. Will default to "close" if running as a non-embedded SSO user.  Otherwise, defaults to "/select-merchants".  This option determines the on-click action of the "Close" button (or "Done" in certain cases) that appears on the final page after all jobs have linked the account.  If set to a custom URL, clicking the Close button will navigate to the URL.  If set to "/select-merchants", the user will be logged out and taken back to the site selection page with a new session.  If set to "none", the Close button will not appear on the page. If set to "close" (for embedded), the window will simply be closed. |
 
 #test
 
