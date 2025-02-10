@@ -21,8 +21,8 @@ The branding field allows for customization of branding properties in CardUpdatr
 The following properties are allowed within each of the two primary properties (nested properties are defined in separate tables):
 #### config:
 
-|' Property                  '|' Type                        '|' Description                                     '|      
-| :-------------------------- | :---------------------------- | :-----------------------------------------------  |
+| Property                    | Type                          |  Description                                            
+| :-------------------------- | :---------------------------- | :-----------------------------------------------  
 | disable_brand               | boolean                       | If true, disables CardUpdatr for this FI.                                                    
 | top_sites                   | array of strings              | Hostnames of sites to appear at the top of the site tiles selection page.                    
 | exclude_sites               | array of strings              | Hostnames of sites to be excluded from CardUpdatr site selection.                            
@@ -34,7 +34,7 @@ The following properties are allowed within each of the two primary properties (
 ###### config.email:
 The following properties customize the status update email sent to CardUpdatr users (if this notification has been created):
 
-|' Property              '|' Type                         '|' Description                                                                                            '|       
+| Property              | Type                        | Description                                                                                                   
 | :-------------------- | :-------------------------- | :--------------------------------------------------------------------------------------------------------------- 
 | footer_link_1         | object                      | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the left of the email footer.
 | footer_link_2         | object                      | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the right of the email footer.
@@ -44,18 +44,18 @@ The following properties customize the status update email sent to CardUpdatr us
 
 #### style_template:
 
-| Property                      | Type                     | Description                                                                                                      
-| ------------------------------|--------------------------|---------------------------------------------------------------------------------------------------------------- 
-| card_description              | string                   | Description of card to be used in CardUpdatr text, e.g. "ACME credit or debit card".
-| merchant_selection_message    | string                   | Message telling users to select sites to update their cards (default is: "Select the sites below to make your {{card_description}} the primary payment method.")
-| final_message                 | string                   | Final message displayed when card placement succeeds. Default is: "Your current card placements require no further interaction.  Click 'More sites' to place your card at additional sites."
-| landing_page_image_url        | string                   | The URL of the image that appears at in the center of the header.
-| favicon_url                   | string                   | Defines favicon url.
-| header_background_color       | string                   | Header background color.
-| link_color                    | string                   | Defines the color for all text links.
-| button_color                  | string                   | Defines the color for all buttons.
-| button_border_radius          | string                   | Defines the border radius property for all buttons.
-| button_padding                | string                   | Defines the padding for all buttons.
+| Property                        | Type                        | Description                                                                                                      
+| :------------------------------ | :-------------------------- | :---------------------------------------------------------------------------------------------------------------- 
+| card_description                | string                   | Description of card to be used in CardUpdatr text, e.g. "ACME credit or debit card".
+| merchant_selection_message      | string                   | Message telling users to select sites to update their cards (default is: "Select the sites below to make your {{card_description}} the primary payment method.")
+| final_message                   | string                   | Final message displayed when card placement succeeds. Default is: "Your current card placements require no further interaction.  Click 'More sites' to place your card at additional sites."
+| landing_page_image_url          | string                   | The URL of the image that appears at in the center of the header.
+| favicon_url                     | string                   | Defines favicon url.
+| header_background_color         | string                   | Header background color.
+| link_color                      | string                   | Defines the color for all text links.
+| button_color                    | string                   | Defines the color for all buttons.
+| button_border_radius            | string                   | Defines the border radius property for all buttons.
+| button_padding                  | string                   | Defines the padding for all buttons.
 ***  
 
 ##### Delete Financial Institution
