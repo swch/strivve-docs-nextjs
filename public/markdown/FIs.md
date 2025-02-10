@@ -21,7 +21,7 @@ The branding field allows for customization of branding properties in CardUpdatr
 The following properties are allowed within each of the two primary properties (nested properties are defined in separate tables):
 #### config:
 
-| Property                    | Type                          |  Description                                            
+| Property                    | Type &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;                         |  Description                                            
 | :-------------------------- | :---------------------------- | :-----------------------------------------------  
 | disable_brand               | boolean                       | If true, disables CardUpdatr for this FI.                                                    
 | top_sites                   | array of strings              | Hostnames of sites to appear at the top of the site tiles selection page.                    
@@ -44,7 +44,7 @@ The following properties customize the status update email sent to CardUpdatr us
 
 #### style_template:
 
-| Property                        | Type                        | Description                                                                                                      
+| Property                        | Type&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;                        | Description                                                                                                      
 | :------------------------------ | :-------------------------- | :---------------------------------------------------------------------------------------------------------------- 
 | card_description                | string                   | Description of card to be used in CardUpdatr text, e.g. "ACME credit or debit card".
 | merchant_selection_message      | string                   | Message telling users to select sites to update their cards (default is: "Select the sites below to make your {{card_description}} the primary payment method.")
