@@ -21,6 +21,7 @@ The branding field allows for customization of branding properties in CardUpdatr
 The following properties are allowed within each of the two primary properties (nested properties are defined in separate tables):
 #### config:
 
+[//]: <> (curently the table column widths incorrectly change when the 3rd description column wraps, so the &nbsp trick sets the width so it doesn't become smaller)
 | Property&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Type&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Description                                            
 | :-------------------------- | :---------------------------- | :-----------------------------------------------  
 | disable_brand               | boolean                       | If true, disables CardUpdatr for this FI.                                                    
@@ -34,6 +35,7 @@ The following properties are allowed within each of the two primary properties (
 ###### config.email:
 The following properties customize the status update email sent to CardUpdatr users (if this notification has been created):
 
+[//]: <> (curently the table column widths incorrectly change when the 3rd description column wraps, so the &nbsp trick sets the width so it doesn't become smaller)
 | Property&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Type&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Description                                                                                                   
 | :-------------------- | :-------------------------- | :--------------------------------------------------------------------------------------------------------------- 
 | footer_link_1         | object                      | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the left of the email footer.
@@ -45,6 +47,7 @@ The following properties customize the status update email sent to CardUpdatr us
 
 #### style_template:
 
+[//]: <> (curently the table column widths incorrectly change when the 3rd description column wraps, so the &nbsp trick sets the width so it doesn't become smaller)
 | Property&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Type&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Description                                                                                                      
 | :------------------------------ | :-------------------------- | :---------------------------------------------------------------------------------------------------------------- 
 | card_description                | string                   | Description of card to be used in CardUpdatr text, e.g. "ACME credit or debit card".
