@@ -114,3 +114,108 @@ Custom data (e.g. brand, type) that can be added according to FI need.
 ###### Delete Bin
 To delete a BIN, click the trash can next to the BIN you would like to delete.
 
+## Transaction Reporting
+
+Transaction Reporting displays all card placement attempts and relevant data (final status, date completed, etc.)
+
+You can also generate a CSV report of all card placement activity between the specified dates. If your user settings include access to all FIs ("All FIs" checkbox), this will show activity for all FIs in the instance. Otherwise, it will only show singularly assigned FI.
+
+To generate the report, simply select the beginning and ending dates you would like and click Generate Report. The report will download to your device.
+
+## Session Reporting
+
+Session Reporting lists all active and closed cardholder sessions. A session remains open until the cardholder has been inactive for 15 minutes or clicks the Done button. 
+The clickstream object shows the overall journey of the cardholder by logging important momemnts in the CardUpdatr workflow. The clickstream object can be viewed in its entirety by clicking the View button. Additionally, the four different locations tracked in the clickstream are broken out into four separate columns in the display/report; these columns display the first time that the cardholder visited the location. The columns are defined as follows: 
+
+| Column Name | Definition |
+|----------|----------|
+| Select Merchant | Upon loading of the site selection page. |
+| Missing Fields | Upon appearance of the missing fields modal (if additional information was required by the selected sites). |
+| User Data Collection | Upon loading of the user data collection page. |
+| Credential Entry | Upon loading of the credential entry page. |
+
+The number of succcessful jobs versus total jobs is also tracked. The detailed information for each job can be accessed with the View button.
+
+To generate a CSV report showing cardholder session data for a certain date range, select your beginning and ending dates and click Generate Report. The report will download to your device.
+
+### Merchant Site Report
+The Merchant Sites tab lists all merchant sites, their current active status, and the user data information that each site requires.
+
+To generate a CSV report of this data, click Generate Report. The report will download to your device.
+
+## Merchant Site Reporting
+The Merchant Sites tab lists all merchant sites, their current active status, and the user data information that each site requires.
+
+To generate a CSV report of this data, click Generate Report. The report will download to your device.
+
+## Session Reporting
+
+Session Reporting lists all active and closed cardholder sessions. A session remains open until the cardholder has been inactive for 15 minutes or clicks the Done button. 
+The clickstream object shows the overall journey of the cardholder by logging important momemnts in the CardUpdatr workflow. The clickstream object can be viewed in its entirety by clicking the View button. Additionally, the four different locations tracked in the clickstream are broken out into four separate columns in the display/report; these columns display the first time that the cardholder visited the location. The columns are defined as follows: 
+
+| Column Name | Definition |
+|----------|----------|
+| Select Merchant | Upon loading of the site selection page. |
+| Missing Fields | Upon appearance of the missing fields modal (if additional information was required by the selected sites). |
+| User Data Collection | Upon loading of the user data collection page. |
+| Credential Entry | Upon loading of the credential entry page. |
+
+The number of succcessful jobs versus total jobs is also tracked. The detailed information for each job can be accessed with the View button.
+
+To generate a CSV report showing cardholder session data for a certain date range, select your beginning and ending dates and click Generate Report. The report will download to your device.
+
+## Users
+The users tab shows all existing portal users with associated roles and assigned financial institutions.  Here users can be added, edited, and deleted.  When editing, the user can be assigned to a specific FI, or, all FIs by selecting the "All FIs" checkbox.  
+
+##### Add/Edit a User
+To edit a user, click the pencil icon beside the user you wish to edit. 
+
+###### Role
+A user's role determines their permissions within the CardSavr API. A user may have the following roles:
+
+**admin** : 
+- admins are Partner Portal-specific users that can create, edit, and delete any cardholder within the specified Financial Institution. 
+
+**cardholder_sso_agent** :
+- create cardholders
+- create cards/addresses for those cardholders
+- create accounts for those cardholders
+- post jobs for those cardholders
+- poll jobs for messages and respond to them on behalf of cardholders they created.
+
+**cardholder_agent** :
+- create cardholders
+- create cards/addresses for those cardholders
+- create accounts for those cardholders
+- post jobs for those cardholders
+- poll jobs for messages and respond to them on behalf of cardholders they created.
+
+**customer_agent** :
+- customer_agents have the same capabilities as cardholder_agents, but they can act on any cardholder within their FI (unless they are assigned to all FIs via the "All FIs" checkbox, in which case they can act on any cardholder).
+
+##### Delete User
+To delete a user, click the trash can next to the user you would like to delete.
+
+## Editing Your Info and Resetting Your Password
+To edit your user information, including your role and FI, click on your username in the top right corner and select Edit My User Info.
+You can change your password here, as well. Passwords must conform to the password requirements.
+
+## Integrators
+The Integrators tab shows all integrators within the CardSavr instance (if logged in as an admin). Admin users may add, edit or delete integrators.
+
+##### Add/Edit Integrator
+
+When you create an integrator, the intgrator key will automatically be generated. The full key can be accessed by clicking on the edit button of the integrator once it has been created.
+
+To edit an integrator, click the pencil icon beside the integrator you wish to edit.
+
+###### Name
+The name of the integrator (e.g. "acme_integrator").
+
+###### Type
+
+* application : For use with Strivve applications.
+
+##### Delete Integrator
+To delete an integrator, click the trash can next to the integrator you would like to delete.
+
