@@ -168,7 +168,7 @@ The user properties are unique to this partiular cardholder, and generally provi
 | grant          | no       |                   | Also returned by CardSavr and required for SSO                                                          |
 | card_id        | no       | user's first card | When using SSO, this is the card_id to be used for this session                                         |
 | custom_data    | no       |                   | Data that identifies this cardholder/session. It is posted via webhooks when the session is terminated. |
-| source         | no       |                   | See [Cardholder Journey Paths](/integrations/cardupdatr#carholder-journey-paths)                                                                            |
+| source         | no       |                   | See [Cardholder Journey Paths](/integrations/cardupdatr#cardholder-journey-paths)         |
 
 ### Style Object
 
@@ -197,7 +197,7 @@ Style attributes control the look and feel of the experience. They can optionall
 | overlay_background_color | no  | rgba(0,0,0,.5)       | The color and opacity of the background.  Defaults to black with 0.5 opacity. 
 
 
-### Cardholder Journey Paths
+## Cardholder Journey Paths
 Strivve provides the capability for integrated application to pass in Cardholder Journey information (or journey Sources) that enhances the available information for marketing, sales, and reporting.  This includes a fixed framework to answer the questions of How, Why, and Where the cardholder has begun their card placement journey.
 
 The information can be passed in via the [User Object](/integrations/cardupdatr#user-object) with the following format:
@@ -213,7 +213,7 @@ The information can be passed in via the [User Object](/integrations/cardupdatr#
   },
 ```
 
-#### Source Type
+### Source Type
 The **How**.  Identifies the channel or method through which the cardholder interacted.
 
 | Type Property Values           | Description                                                                                                                                   |
@@ -222,12 +222,12 @@ The **How**.  Identifies the channel or method through which the cardholder inte
 | email                          | Delivered via email confirmation.
 | sms                            | Delivered via text message.
 | push_notification              | Sent directly to the carholder's device through an app.
-| promo                          | In-ap banners or popups.
+| promo                          | In-app banners or popups.
 | qr_code                        | Accessed by scanning a QR code in physical or digital media.
-| naviation                      | Accessed through navigation actions withing the bankling app.
-| test                           | Originated from internal testing.
+| naviation                      | Accessed through the online banking app through navigations 
+| test                           | Originated from internal testing framework or tool.
 
-#### Source Category
+### Source Category
 The **Why**.  Defines the purpose or intent behind the interaction.
 
 | Category Property Values           | Description                                                                                                                                   |
@@ -239,13 +239,13 @@ The **Why**.  Defines the purpose or intent behind the interaction.
 | operational                    | Address administrative needs (e.g., updates for reissued cards).
 | other                          | Other method that can be clarified in the sub_category
 
-#### Source Sub_Category
+### Source Sub_Category
 Additional Details of The Why.  Free form text to provie any additional context if applicable.
 | Sub_Category Property Values   | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
 | <free-form text>               | Custom text used to provided any additional context for selected category
 
-#### Source Device
+### Source Device
 The **Where**.  Specifies the platform or device through which the cardholder engaged.
 
 | Device Property Values         | Description                                                                                                                                   |
@@ -258,4 +258,4 @@ The **Where**.  Specifies the platform or device through which the cardholder en
 
 
 
-If you have any questions regarding this content, please [Contact Us](mailto:support@strivve.com).
+If you have any questions regarding this content, please [Contact Us](mailto:developers@strivve.com).
