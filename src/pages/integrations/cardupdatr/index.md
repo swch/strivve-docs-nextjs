@@ -218,44 +218,44 @@ This information will be sent through the Strivve platform and made available as
 ### Source Type
 The **How**.  Identifies the channel or method through which the cardholder interacted.
 
-| Type Property Values           | Description                                                                                                                                   |
+| Property Values: type          | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
-| unknown {default}              | Used when the engagement method is not identifiable.
 | email                          | Delivered via email confirmation.
-| sms                            | Delivered via text message.
+| naviation                      | Accessed through the online banking app through navigations 
 | push_notification              | Sent directly to the carholder's device through an app.
 | promo                          | In-app banners or popups.
 | qr_code                        | Accessed by scanning a QR code in physical or digital media.
-| naviation                      | Accessed through the online banking app through navigations 
+| sms                            | Delivered via text message.
 | test                           | Originated from internal testing framework or tool.
+| unknown {default}              | Used when the engagement method is not identifiable.
 
 ### Source Category
 The **Why**.  Defines the purpose or intent behind the interaction.
 
-| Category Property Values           | Description                                                                                                                                   |
+| Property Values: category      | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
-| unknown {default}              | Used when the business intent is not identifiable.
 | activation                     | Encourage cardholders to activate new, reissued, or replaced cards.
 | card_controls                  | Promote features like locking/unlocking cards or managing spending limits.
 | card_conversion                | Support portfolio flips, product migrations, or bulk transitions.
 | operational                    | Address administrative needs (e.g., updates for reissued cards).
 | other                          | Other method that can be clarified in the sub_category
+| unknown {default}              | Used when the business intent is not identifiable.
 
 ### Source Sub_Category
 Additional Details of The Why.  Free form text to provie any additional context if applicable.
-| Sub_Category Property Values   | Description                                                                                                                                   |
+| Property Values: sub_category  | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
 | <free-form text>               | Custom text used to provided any additional context for selected category
 
 ### Source Device
 The **Where**.  Specifies the platform or device through which the cardholder engaged.
 
-| Device Property Values         | Description                                                                                                                                   |
+| Property Values: device        | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
-| Unkonwn {default}              | Used when the device type is not identifiable.
+| desktop                        | Interaction occured via a desktop.
 | mobile                         | Interaction occurred within a native mobile app.
 | mobile web                     | Interaction occured via a mobile browser.
-| desktop                        | Interaction occured via a desktop.
+| unknown {default}              | Used when the device type is not identifiable.
 
 
 
