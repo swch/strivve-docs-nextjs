@@ -242,7 +242,7 @@ The **Why**.  Defines the purpose or intent behind the interaction.
 | unknown {default}              | Used when the business intent is not identifiable.
 
 ### Source Sub_Category
-Additional Details of The Why.  Free form text to provie any additional context if applicable.
+Additional Details of **The Why**.  Free form text to provie any additional context if applicable.
 | Property Values: sub_category  | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
 | <free-form text>               | Custom text used to provided any additional context for selected category
