@@ -151,15 +151,14 @@ The user properties are unique to this partiular cardholder, and generally provi
     custom_data: {
       SCOPE: { //customer defined SCOPE is optional, but recommended to avoid collisions
         CUSTOMER_KEY: "000000000000"
-      },
     },
     source: {
       type: "undefined",
       category: "undefined",
       sub_category: "",
       device: "undefined"
-      }
     }
+  },
 
 ```
 
