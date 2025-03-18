@@ -145,16 +145,22 @@ CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/
 The user properties are unique to this partiular cardholder, and generally provide login and other customer specific properties necessary to assume a session.
 
 ```javascript
-  },
   user : {
     grant: "redacted",
     card_id: "redacted",
     custom_data: {
       SCOPE: { //customer defined SCOPE is optional, but recommended to avoid collisions
         CUSTOMER_KEY: "000000000000"
+      },
+    },
+    source: {
+      type: "undefined",
+      category: "undefined",
+      sub_category: "",
+      device: "undefined"
       }
     }
-  },
+
 ```
 
 | Property       | Required | Default           | Description                                                                                             |
@@ -162,13 +168,13 @@ The user properties are unique to this partiular cardholder, and generally provi
 | grant          | no       |                   | Also returned by CardSavr and required for SSO                                                          |
 | card_id        | no       | user's first card | When using SSO, this is the card_id to be used for this session                                         |
 | custom_data    | no       |                   | Data that identifies this cardholder/session. It is posted via webhooks when the session is terminated. |
+| source         | no       |                   | See [Cardholder Journey Paths](/integrations/cardupdatr#carholder-journey-paths)                                                                            |
 
 ### Style Object
 
 Style attributes control the look and feel of the experience. They can optionally be configured in the Partner Portal, but dynamic flexibilty is sometimes preferred if running multiple brands under the same Financial Institution.
 
 ```javascript
-  },
   style : {
     card_description: "ACME Bank Debit Card"
     //By default, a message that will be appended and link to the select-merchants page: "Add your $card_description to more sites"
@@ -189,5 +195,67 @@ Style attributes control the look and feel of the experience. They can optionall
 | button_padding        | no       | 0.375 0.75rem,                  | controls space inside buttons (can also be configured in Partner Portal)                                                               |
 | border_color        | no       | #000000                   | color of merchant tile border when selected (can also be configured in Partner Portal)                                                           |
 | overlay_background_color | no  | rgba(0,0,0,.5)       | The color and opacity of the background.  Defaults to black with 0.5 opacity. 
+
+
+### Cardholder Journey Paths
+Strivve provides the capability for integrated application to pass in Cardholder Journey information (or journey Sources) that enhances the available information for marketing, sales, and reporting.  This includes a fixed framework to answer the questions of How, Why, and Where the cardholder has begun their card placement journey.
+
+The information can be passed in via the [User Object](/integrations/cardupdatr#user-object) with the following format:
+
+```javascript
+  user : {
+    source: {
+      type: "email",
+      category: "campaign",
+      sub_category: "AMCE FI Amazon Prime Day Campaign for card on file",
+      device: "mobile"
+    }
+  },
+```
+
+#### Source Type
+The **How**.  Identifies the channel or method through which the cardholder interacted.
+
+| Type Property Values           | Description                                                                                                                                   |
+| ------------------------------ | ---------------------------------------
+| unknown {default}              | Used when the engagement method is not identifiable.
+| email                          | Delivered via email confirmation.
+| sms                            | Delivered via text message.
+| push_notification              | Sent directly to the carholder's device through an app.
+| promo                          | In-ap banners or popups.
+| qr_code                        | Accessed by scanning a QR code in physical or digital media.
+| naviation                      | Accessed through navigation actions withing the bankling app.
+| test                           | Originated from internal testing.
+
+#### Source Category
+The **Why**.  Defines the purpose or intent behind the interaction.
+
+| Category Property Values           | Description                                                                                                                                   |
+| ------------------------------ | ---------------------------------------
+| unknown {default}              | Used when the business intent is not identifiable.
+| activation                     | Encourage cardholders to activate new, reissued, or replaced cards.
+| card_controls                  | Promote features like locking/unlocking cards or managing spending limits.
+| card_conversion                | Support portfolio flips, product migrations, or bulk transitions.
+| operational                    | Address administrative needs (e.g., updates for reissued cards).
+| other                          | Other method that can be clarified in the sub_category
+
+#### Source Sub_Category
+Additional Details of The Why.  Free form text to provie any additional context if applicable.
+| Sub_Category Property Values   | Description                                                                                                                                   |
+| ------------------------------ | ---------------------------------------
+| <free-form text>               | Custom text used to provided any additional context for selected category
+
+#### Source Device
+The **Where**.  Specifies the platform or device through which the cardholder engaged.
+
+| Device Property Values         | Description                                                                                                                                   |
+| ------------------------------ | ---------------------------------------
+| Unkonwn {default}              | Used when the device type is not identifiable.
+| mobile                         | Interaction occurred within a native mobile app.
+| mobile web                     | Interaction occured via a mobile browser.
+| desktop                        | Interaction occured via a desktop.
+
+
+
 
 If you have any questions regarding this content, please [Contact Us](mailto:support@strivve.com).
