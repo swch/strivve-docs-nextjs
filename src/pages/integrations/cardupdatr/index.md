@@ -167,7 +167,7 @@ The user properties are unique to this partiular cardholder, and generally provi
 | grant          | no       |                   | Also returned by CardSavr and required for SSO                                                          |
 | card_id        | no       | user's first card | When using SSO, this is the card_id to be used for this session                                         |
 | custom_data    | no       |                   | Data that identifies this cardholder/session. It is posted via webhooks when the session is terminated. |
-| source         | no       |                   | See [Cardholder Journey Paths](/integrations/cardupdatr#cardholder-journey-paths)         |
+| source         | no       |                   | See [Cardholder Journey Paths](/integrations/cardholder-journey-paths)         |
 
 ### Style Object
 
@@ -211,9 +211,7 @@ The information can be passed in via the [User Object](/integrations/cardupdatr#
     }
   },
 ```
-This information will be sent through the Strivve platform and made available as part of the [Strivve Sesssion Reporting](/ops-admin/reporting#session-reporting) and via [Webhooks](/ops-admin/reporting#card-savr-webhook-notifications).
-
-
+This information will be sent through the Strivve platform and made available as part of the [Strivve Sesssion Reporting](/ops-admin/reporting#session-reporting) with new columns of source.type, source.category, source.subcategy, and source.device for each row.  The data is also available via [Webhooks](/ops-admin/reporting#card-savr-webhook-notifications).  
 
 ### Source Type
 The **How**.  Identifies the channel or method through which the cardholder interacted.
