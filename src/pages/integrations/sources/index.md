@@ -4,7 +4,7 @@ title: Journey Paths
 
 ## Overview
 
-Strivve provides the capability for an integrated application to pass in Cardholder Journey information (or journey *Sources*) that enhance the available information to track cardholder activity for marketing and through reporting.  This includes a fixed framework to answer the questions of How, Why, and Where the cardholder has begun their card placement journey.
+Strivve provides the capability for an integrated application to pass in Cardholder Journey information (or journey *Sources*) that enhance the available information to track cardholder activity from various call-to-actions provided to the user.  This includes a fixed framework to answer the questions of How, Why, and Where the cardholder has begun their card placement journey.
 
 The information can be passed in via the [User Object](/integrations/cardupdatr#user-object) in CardUpdatr along via the CardSavr SDK with the following format:
 
