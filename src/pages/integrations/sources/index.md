@@ -6,14 +6,14 @@ title: Journey Paths
 
 Strivve provides the capability for an integrated application to pass in Cardholder Journey information (or journey *Sources*) that delivers a fixed framework to answer the questions of How, Why, and Where the cardholder has begun their card placement journey.
 
-The information can be passed in via the [User Object](/integrations/cardupdatr#user-object) in CardUpdatr along via the CardSavr SDK with the following format:
+The information can be passed in via the [User Object](/integrations/cardupdatr#user-object) in CardUpdatr or directly via the CardSavr SDK with the following format:
 
 ```javascript
 
   source: {
     type: "email",
     category: "campaign",
-    sub_category: "AMCE FI Amazon Prime Day Campaign for card on file",
+    sub_category: "AMCE FI Amazon Prime Day Campaign for card on file",s
     device: "mobile"
   }
 
