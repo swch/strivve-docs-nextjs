@@ -6,17 +6,17 @@ title: CardUpdatr
 
 Strivve provides the capability for an integrated application to pass in Cardholder Journey information (or journey *Sources*) that enhance the available information to track cardholder activity for marketing and through reporting.  This includes a fixed framework to answer the questions of How, Why, and Where the cardholder has begun their card placement journey.
 
-The information can be passed in via the [User Object](/integrations/cardupdatr#user-object) with the following format:
+The information can be passed in via the [User Object](/integrations/cardupdatr#user-object) in CardUpdatr along via the CardSavr SDK with the following format:
 
 ```javascript
-  user : {
-    source: {
-      type: "email",
-      category: "campaign",
-      sub_category: "AMCE FI Amazon Prime Day Campaign for card on file",
-      device: "mobile"
-    }
-  },
+
+  source: {
+    type: "email",
+    category: "campaign",
+    sub_category: "AMCE FI Amazon Prime Day Campaign for card on file",
+    device: "mobile"
+  }
+
 ```
 This information will be sent through the Strivve platform and made available as part of the [Strivve Sesssion Reporting](/ops-admin/reporting#session-reporting) with new columns of source.type, source.category, source.subcategy, and source.device for each row.  The data is also available via [Webhooks](/ops-admin/reporting#card-savr-webhook-notifications).  
 
