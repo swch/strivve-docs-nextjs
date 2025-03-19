@@ -103,6 +103,10 @@ const navigation = [
         title: 'User Wait Time Optimizations',
         href: '/integrations/user_wait_time',
       },
+      {
+        title: 'Journey Paths',
+        href: '/integrations/sources',
+      },
     ],
   },
   {
