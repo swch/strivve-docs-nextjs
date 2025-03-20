@@ -18,8 +18,6 @@ The information can be passed in via the [User Object](/integrations/cardupdatr#
   }
 
 ```
-This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webook Reporting](/ops-admin/reporting) with new columns of source.type, source.category, source.subcategy, and source.device for each row.  
-
 ### Source Type
 The **How**.  Identifies the channel or method through which the cardholder interacted.
 
@@ -61,6 +59,10 @@ The **Where**.  Specifies the platform or device through which the cardholder en
 | mobile                         | Interaction occurred within a native mobile app.
 | mobile web                     | Interaction occured via a mobile browser.
 | unknown {default}              | Used when the device type is not identifiable.
+
+
+### Reporting
+This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webook Reporting](/ops-admin/reporting) with new columns of source.type, source.category, source.subcategy, and source.device for each row.  
 
 
 If you have any questions regarding this content, please [Contact Us](mailto:developers@strivve.com).
