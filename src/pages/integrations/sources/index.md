@@ -62,7 +62,14 @@ The **Where**.  Specifies the platform or device through which the cardholder en
 
 
 ### Reporting
-This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webook Reporting](/ops-admin/reporting) with new columns of source.type, source.category, source.subcategy, and source.device for each row.  
+This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webook Reporting](/ops-admin/reporting) with following new columns:
+
+| Field Name                  | Description                                         
+|-----------------------------| ----------------------------------------------------
+| source_type                 | Identifies the channel or method through which the cardholder interacted.
+| soure_category              | Defines the purpose or intent behind the interaction. 
+| source_subcategory          | Custom text to provide any additional category context if applicable. 
+| source_device               | Specifies the platform or device through which the cardholder engaged. 
 
 
 If you have any questions regarding this content, please [Contact Us](mailto:developers@strivve.com).
