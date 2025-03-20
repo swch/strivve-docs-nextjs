@@ -14,6 +14,8 @@ CardUpdatr 3.0 requires the use of the the [SSO Microservice](/integrations/sso-
 
 CardUpdatr 3.0 supports mutliple techniques from which you can easily integrate it into your application. Most integration techniques require the cardupdatr-client-v2.js boostrap library which make the integrations seamless.
 
+## CardLinks
+
 ### Overlay Embedding
 
 ### Inline Embedding 
