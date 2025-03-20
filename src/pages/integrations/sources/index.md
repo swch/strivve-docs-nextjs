@@ -62,7 +62,7 @@ The **Where**.  Specifies the platform or device through which the cardholder en
 
 
 ### Reporting
-This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webook Reporting](/ops-admin/reporting) with following new columns:
+This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webhook Reporting](/ops-admin/reporting) with following new columns:
 
 | Field Name                  | Description                                         
 |-----------------------------| ----------------------------------------------------
