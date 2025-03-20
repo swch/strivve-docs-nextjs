@@ -167,7 +167,7 @@ The user properties are unique to this partiular cardholder, and generally provi
 | grant          | no       |                   | Also returned by CardSavr and required for SSO                                                          |
 | card_id        | no       | user's first card | When using SSO, this is the card_id to be used for this session                                         |
 | custom_data    | no       |                   | Data that identifies this cardholder/session. It is posted via webhooks when the session is terminated. |
-| source         | no       |                   | See [Cardholder Journey Paths](/integrations/cardholder-journey-paths)         |
+| source         | no       |                   | See [Cardholder Journey Paths](/integrations/sources)                                                   |
 
 ### Style Object
 
