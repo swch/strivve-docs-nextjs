@@ -14,7 +14,7 @@ CardUpdatr 3.0 is Strivve's latest web drop-in component that handles the end to
 ## Obtaining Card Data using the SSO Microservice
 Leveraging the [SSO Microservice](/integrations/sso-microservice) collects the collect card and billing address data (cardId, grant) that CardUpdatr 3.0 will require upon launching.
 
-### Appearance Object
+## Appearance Object
 The Appearance object is an interface that specifies the appearance options for rendering different UI elements for CardUpdatr 3.0.
 
 ```javascript
@@ -92,7 +92,7 @@ The Appearance object is an interface that specifies the appearance options for 
     }; 
 ```
 
-### Linking Journey Object
+## Linking Journey Object
 The Linking Journey Object, referencable vai the main.min.js, is used to instantiate CardUpdatr 3.0.
 
 ```javascript
