@@ -5,7 +5,7 @@ title: StrivveCX Library
 ## Overview
 The StrivveCX Library consists of a set of secure cardholder experience (C/X) components designed for use by digital banking application users, from within any digital banking application.
 
-This library is **still under development** with the expect release comming soon.  If you are interested in any additional information or would like to be part of a pilot release, please [Contact Us](mailto:support@strivve.com).
+This library is **still under development** with the expect release comming soon.  If you are interested in any additional information or would like to be part of a pilot release, please [Contact Us](mailto:developers@strivve.com).
 
 The primary capabilities StrivveCX enables banking customer applications to easily and securely create a compelling user-experiences for banking customers across any cardholder journeys which provide simple native starter components and customizable components:
 
@@ -160,4 +160,4 @@ There is no UX in StrivveCX from which the cardholder can manually enter the car
 ```
 
 ## Summary
-Full details of the StrivveCX library can be found [here:](https://swch.github.io/Strivve-UX-Components/?path=/docs/introduction--documentation).  Please [Contact](mailto:support@strivve.com) for additional support and questions.
+Full details of the StrivveCX library can be found [here:](https://swch.github.io/Strivve-UX-Components/?path=/docs/introduction--documentation).  Please [Contact](mailto:developers@strivve.com) for additional support and questions.

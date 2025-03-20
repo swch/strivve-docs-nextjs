@@ -81,7 +81,7 @@ Please see the [SDK's and/or REST API's Section](/api-sdk/introduction) for full
 ## Conclusion
 The focus of minimizing the User Wait Time will result in a significantly improved cardholder experience which would maximize adoption and usage of the CardSavr platform.  By releasing the cardholder after account linsking, the amount of time the cardholder has to wait is reduced significantly by over 50%.  
 
-Please [Contact Strivve](mailto:support@strivve.com) for any additional support regarding this guidance.
+Please [Contact Strivve](mailto:developers@strivve.com) for any additional support regarding this guidance.
 
 
 

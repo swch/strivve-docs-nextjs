@@ -11,7 +11,7 @@ you can use the [Postman Samples](/api-sdk/using-postman) to place your first
 card at a merchant site.
 
 We’ve attempted to make this documentation user-friendly but if you have any questions,
-please contact us at support@strivve.com.
+please contact us at developers@strivve.com.
 
 ## Glossary
 

@@ -42,7 +42,7 @@ In the event of failures at any merchant site, we immediately place them on a "w
 
 We also pay close attention to the impact of our testing activities to avoid triggering account or card fatigue, which could negatively affect the cardholders' experience and GoLive testing.
 
-While we maintain continuous monitoring of these sites, we understand that issues can still occur during your own testing or pre-release beta testing. In such cases, we strongly encourage you to reach out to us immediately at support@strivve.com or through your dedicated account manager to report any issues encountered with merchant sites. We are here to assist you and address any concerns promptly.
+While we maintain continuous monitoring of these sites, we understand that issues can still occur during your own testing or pre-release beta testing. In such cases, we strongly encourage you to reach out to us immediately at developers@strivve.com or through your dedicated account manager to report any issues encountered with merchant sites. We are here to assist you and address any concerns promptly.
 
 ## User Experience Testing - Synthetic Sites
 To ensure a seamless and user-friendly experience for your cardholders, we offer user experience testing through our synthetic sites. These synthetic sites accurately replicate the behavior of real merchant sites, allowing you to preview the CardUpdatr experience or test CardSavr API calls within your custom application before launching it to your cardholders. In this section, we will provide detailed information about two of the synthetic sites available and explain how you can leverage them to gain a comprehensive understanding of the flow and functionality.

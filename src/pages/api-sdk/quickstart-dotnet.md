@@ -5,7 +5,7 @@ title: Microsoft.net Quick Start
 The Strivve DotNet library is built around a class, CardsavrSession. To start using the library, you must instantiate a new CardsavrSession object.  This requires the following items:
 
 1. API url (e.g. api.acmebank.cardsavr.io)
-1. App name (app_name) and integrator key (app_key) - these can be obtained by contacting developer-support@strivve.com
+1. App name (app_name) and integrator key (app_key) - these can be obtained by contacting developer-developers@strivve.com
 1. App username and password - also obtained from a CardSavr administrator.  Simple applications (like the quick start) require a cardholder agent, while more complex applications may require a customer agent.
 
 ```javascript

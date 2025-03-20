@@ -116,7 +116,7 @@ There are three configuration objects that can be used to customize your CardUpd
 
 Please see the [CardUpdatr Integration Techniques](/integrations/cardupdatr#card-updatr-integration-techniques) for reference.
 
-CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/partner-portal/), but these settings would be overridden by dynamic properties provided while embedding or launching. For more details, please contact [E-mail Strivve](mailto:support@strivve.com).
+CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/partner-portal/), but these settings would be overridden by dynamic properties provided while embedding or launching. For more details, please contact [E-mail Strivve](mailto:developers@strivve.com).
 
 ### Config Object
 
