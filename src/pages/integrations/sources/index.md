@@ -18,7 +18,7 @@ The information can be passed in via the [User Object](/integrations/cardupdatr#
   }
 
 ```
-This information will be sent through the Strivve platform and made available as part of the [Strivve Sesssion Reporting](/ops-admin/reporting#session-reporting) with new columns of source.type, source.category, source.subcategy, and source.device for each row.  The data is also available via [Webhooks](/ops-admin/reporting#card-savr-webhook-notifications).  
+This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webook Reporting](/ops-admin/reporting) with new columns of source.type, source.category, source.subcategy, and source.device for each row.  
 
 ### Source Type
 The **How**.  Identifies the channel or method through which the cardholder interacted.
