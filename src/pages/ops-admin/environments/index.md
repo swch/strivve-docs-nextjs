@@ -20,4 +20,4 @@ In order to simplify development debugging of applications, non production CDE i
 
 ## CDE Administration
 
-Each CDE nas a [Partner Portal](/ops-admin/partner-portal) for the partnering FI to utilize in administering thier CDE.
+Each CDE has a [Partner Portal](/ops-admin/partner-portal) for the partnering FI to utilize in administering thier CDE.
