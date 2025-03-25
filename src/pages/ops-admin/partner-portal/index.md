@@ -22,56 +22,17 @@ The Partner Portal can be accessed at `https://portal.<environment_name>.cardsav
 `https://portal.strivve-dev.cardsavr.io`. 
 
 ## Menu Items
-The following menu items are available
+The following menu items are available:
 
 | Menu Item | Functionality
 --------|-----------
-Admin User Panel | Create and delete users within the environment
-Merchant Reporting | Generate usage reports from the environment
-App Keys | Create and delete application keys
-Edit My User Info | Update your user account information
-Edit My Password | Change your password
+Users | Create and delete users within the environment
 Financial Institutions | Create and update financial institutions.  Associate BINs with financial institutions
+Merchant Sites | Lists supported merchant sites and their current active status.
+Reporting | Contains access to card-on-file transaction reports and cardholder session reports
+Integrators | Shows all integrators within the CardSavr instance (if logged in as an admin). Admin users may add, edit or delete integrators.  
+Help | Detailed help section for Partner Portal
 
-# Admin User Panel
-## Creating, Editing, and Deleting
+Detailed documentation can be found in the Partner Portal Online Help
 
-User administration is done via the Admin User Panel section of the Partner Portal.
-
-* To add a user, select the "Add User" button.  Note that roles are described here [Administrative Roles](/api-sdk/1-accessing-the-cardsavr-platform#3-configuring-application-access)
-
-* To search for a user, select the parameter to search for [email, first name, last name, 
-username, or role] and enter the search criteria
-
-* To edit or delete a user select them from the list and update their account or select delete
-
-# App Keys
-## Creating, Editing, and Deleting App Keys
-Application keys allow your applications to access the CardSavr platform.
-
-* To edit, select the key from the list using the edit button
-
-* To add an application key, select the "Add App" button
-
-# Merchant Reporting
-The merchant reporting section provides and overview of the usage by success and BINs.
-
-* You can search for a usage record by select the attribute [BIN or Status] and entering
-the search paramter
-
-* Download a CSV of your usage data by selecting the start and end dates and press "Download CSV"
-
-# Edit My User Info
-Selecting Edit My User Info allows you to update your account
-
-# Edit My Password
-Selecting Edit My Password allows you to update your password
-
-# Financial Institutions
-Financial institutions represent the organizations using the CardSavr environment. BIN information
-is attached to a Financial Institution and is added to usage reporting. 
-
-* To add, select "Add Financial Institution"
-
-* To manage BINs, select "Add Bin" associated with the Financial Institution
 
