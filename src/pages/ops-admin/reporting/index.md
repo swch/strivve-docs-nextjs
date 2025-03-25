@@ -63,12 +63,12 @@ Session reports can be downloaded from the [Partner Portal](https://developers.s
 
 
 ### Merchant Site Reports
-The Merchant Sites report lists all Strivve supported merchant sites and their current status, as well as other relevant information:
+The Merchant Sites can be downloaded from the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) and lists all Strivve supported merchant sites and their current status, as well as other relevant information:
 
 | Field Name                  | Description                                         
 |-----------------------------| ----------------------------------------------------
 | Site Name                   | Merchant site name  (example: Amazon)                          
 | Site URL                    | Merchant site URL (example: amazon.com)                     
 | Current State               | The current [availability status](/resources/site-tagging) of the given site.
-| Account Link                | Required authentication challenges for given site (for example, username + password or username + One-Time-Code)
+| Account Link                | Required authentication challenges for given site (for example, username + password or username + one-time-code)
 | Required Form Fields        | Required to place a card at the given site (card data, billing address data, email address)
