@@ -29,7 +29,7 @@ The following menu items are available:
 Users | Create and delete users within the environment
 Financial Institutions | Create and update financial institutions.  Associate BINs with financial institutions
 Merchant Sites | Lists supported merchant sites and their current active status.
-Reporting | Contains access to card-on-file transaction reports and cardholder session reports
+Reporting | Contains access to transaction and session data [reports](/ops-admin/reporting).
 Integrators | Shows all integrators within the CardSavr instance (if logged in as an admin). Admin users may add, edit or delete integrators.  
 Help | Detailed help section for Partner Portal
 
