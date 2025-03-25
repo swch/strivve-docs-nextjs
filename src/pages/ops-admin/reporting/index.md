@@ -67,8 +67,8 @@ The Merchant Sites report lists all Strivve supported merchant sites and their c
 
 | Field Name                  | Description                                         
 |-----------------------------| ----------------------------------------------------
-| Site Name                   | Merchant site name                            
-| Site URL                    | The URL to the merchant site.                     
+| Site Name                   | Merchant site name  (example: Amazon)                          
+| Site URL                    | Merchant site URL (example: amazon.com)                     
 | Current State               | The current [availability status](/resources/site-tagging) of the given site.
 | Account Link                | Required authentication challenges for given site (for example, username + password or username + One-Time-Code)
 | Required Form Fields        | Required to place a card at the given site (card data, billing address data, email address)
