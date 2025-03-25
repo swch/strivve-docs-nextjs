@@ -136,7 +136,7 @@ const navigation = [
         href: '/ops-admin/reporting',
       },
       {
-        title: 'Payment Sites - Support',
+        title: 'Sites Support',
         href: '/ops-admin/site-support',
       },      
       {
