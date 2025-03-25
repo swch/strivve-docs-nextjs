@@ -67,8 +67,8 @@ The Merchant Sites can be downloaded from the [Partner Portal](https://developer
 
 | Field Name                  | Description                                         
 |-----------------------------| ----------------------------------------------------
-| Site Name                   | Merchant site name  (example: Amazon)                          
-| Site URL                    | Merchant site URL (example: amazon.com)                     
+| Site Name                   | Merchant site name  (Amazon)                          
+| Site URL                    | Merchant site URL (amazon.com)                     
 | Current State               | The current [availability status](/resources/site-tagging) of the given site.
-| Account Link                | Required authentication challenges for given site (for example, username + password or username + one-time-code)
-| Required Form Fields        | Required to place a card at the given site (card data, billing address data, email address)
+| Account Link                | Required information to authenticate to given site (username + password, username + one-time-code, other)
+| Required Form Fields        | Required data to place a card at the given site (card and billing address data, email address)
