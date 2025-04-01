@@ -28,9 +28,8 @@ The **How**.  Identifies the channel or method through which the cardholder inte
 | push_notification              | Sent directly to the carholder's device through an app.
 | promo                          | In-app banners or popups.
 | qr_code                        | Accessed by scanning a QR code in physical or digital media.
-| sms                            | Delivered via text message.
+| instant_messaging              | Delivered via text message.
 | test                           | Originated from internal testing framework or tool.
-| unknown {default}              | Used when the engagement method is not identifiable.
 
 ### Source Category
 The **Why**.  Defines the purpose or intent behind the interaction.
@@ -39,10 +38,7 @@ The **Why**.  Defines the purpose or intent behind the interaction.
 | ------------------------------ | ---------------------------------------
 | activation                     | Encourage cardholders to activate new, reissued, or replaced cards.
 | card_controls                  | Promote features like locking/unlocking cards or managing spending limits.
-| card_conversion                | Support portfolio flips, product migrations, or bulk transitions.
-| operational                    | Address administrative needs (e.g., updates for reissued cards).
 | other                          | Other method (can be clarified in the source sub_category field)
-| unknown {default}              | Used when the business intent is not identifiable.
 
 ### Source Sub_Category
 Additional Details of **The Why**.  Custom text to provide any additional context if applicable.
@@ -58,7 +54,6 @@ The **Where**.  Specifies the platform or device through which the cardholder en
 | desktop                        | Interaction occured via a desktop browser.
 | mobile                         | Interaction occurred within a native mobile app.
 | mobile web                     | Interaction occured via a mobile browser.
-| unknown {default}              | Used when the device type is not identifiable.
 
 ### Reporting
 This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webhook Reporting](/ops-admin/reporting) with following new columns:
