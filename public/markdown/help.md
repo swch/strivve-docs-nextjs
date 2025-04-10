@@ -54,8 +54,8 @@ The following properties customize the status update email sent to CardUpdatr us
 | button_color                    | string                   | Defines the color for all buttons.
 | button_border_radius            | string                   | Defines the border radius property for all buttons.
 | button_padding                  | string                   | Defines the padding for all buttons. |
-  
-      
+
+
  ### Delete Financial Institution
 To delete an FI, click the trash can next to the FI you would like to delete.
 
@@ -89,7 +89,8 @@ Defines the interval at which the notification is sent (e.g. 1 hour would send a
 
 #### Delete Notification
 To delete a notification, click the trash can next to the notification you would like to delete.
-
+  
+---  
 ## BINs
 To view, create, edit, and delete the BINs associated with an FI, click the blue BINs button next to that FI.
 
