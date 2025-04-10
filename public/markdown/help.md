@@ -29,7 +29,8 @@ The following properties are allowed within each of the two primary properties (
 | frame_ancestors | object            | Defines the frame ancestors for embeddable CardUpdatr. Takes a "host" and "value" property, with the host being the CardUpdatr URL and the value being the URL of the page embedding CardUpdatr.
 | merchant_site_tags | array of strings  | Defines the type of sites that appear in CardUpdatr. Options are: **prod** (these sites are reliable for a production environment), **usa** (for American sites), **canada** (for Canadian sites), **synthetic** (fake sites used for testing purposes; they simulate real merchant sites)               
 | close_url       | string            | Required if running as an embedded SSO user. Will default to "close" if running as a non-embedded SSO user. Otherwise, defaults to "/select-merchants". This option determines the on-click action of the "Close" button that appears on the final page after all jobs have finished. If set to a custom URL, clicking the Close button will navigate to the URL. If set to "/select-merchants", the user will be logged out and taken back to the site selection page with a new session. If set to "none", the Close button will not appear on the page. If set to "close", the window will be closed.     
-  
+
+<br />
 
 **config.email**:
 
@@ -41,7 +42,8 @@ The following properties customize the status update email sent to CardUpdatr us
 | sender_email_address  | string  | Sender email address for status update notification email.
 | footer_address        | string  | Mailing address to appear at the bottom of the email.
 | card_description      | string  | Description of card that will appear in the email text. 
-  
+
+<br />  
 
 **style_template:**
 | Property            | Type      | Description
@@ -56,7 +58,8 @@ The following properties customize the status update email sent to CardUpdatr us
 | button_color                    | string                   | Defines the color for all buttons.
 | button_border_radius            | string                   | Defines the border radius property for all buttons.
 | button_padding                  | string                   | Defines the padding for all buttons.  
-
+<br />
+<br />
 #### Delete Financial Institution
 To delete an FI, click the trash can next to the FI you would like to delete.
 
