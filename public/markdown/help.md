@@ -22,34 +22,27 @@ The following properties are allowed within each of the two primary properties (
 #### config:
 
 [//]: <> (curently the table column widths incorrectly change when the 3rd description column wraps, so the &nbsp trick sets the width so it doesn't become smaller)
-| Property| Type| Description                                            
-| :-------------------------- | :---------------------------- | :-----------------------------------------------  
-| disable_brand               | boolean                       | If true, disables CardUpdatr for this FI.                                                    
-| top_sites                   | array of strings              | Hostnames of sites to appear at the top of the site tiles selection page.                    
-| exclude_sites               | array of strings              | Hostnames of sites to be excluded from CardUpdatr site selection.                            
-| frame_ancestors             | object                        | Defines the frame ancestors for embeddable CardUpdatr. Takes a "host" and "value" property, with the host being the CardUpdatr URL and the value being the URL of the page embedding CardUpdatr.
-| merchant_site_tags          | array of strings              | Defines the type of sites that appear in CardUpdatr. Options are: **prod** (these sites are reliable for a production environment), **usa** (for American sites), **canada** (for Canadian sites), **synthetic** (fake sites used for testing purposes; they simulate real merchant sites)               
-| close_url                   | string                        | Required if running as an embedded SSO user. Will default to "close" if running as a non-embedded SSO user. Otherwise, defaults to "/select-merchants". This option determines the on-click action of the "Close" button that appears on the final page after all jobs have finished. If set to a custom URL, clicking the Close button will navigate to the URL. If set to "/select-merchants", the user will be logged out and taken back to the site selection page with a new session. If set to "none", the Close button will not appear on the page. If set to "close", the window will be closed. |                                                              
+| Property        | Type              | Description                                            
+| ----------------| ----------------- | -----------------------------------------------  
+| disable_brand   | boolean           | If true, disables CardUpdatr for this FI.                                                    
+| top_sites       | array of strings  | Hostnames of sites to appear at the top of the site tiles selection page.                    
+| exclude_sites   | array of strings  | Hostnames of sites to be excluded from CardUpdatr site selection.                            
+| frame_ancestors | object            | Defines the frame ancestors for embeddable CardUpdatr. Takes a "host" and "value" property, with the host being the CardUpdatr URL and the value being the URL of the page embedding CardUpdatr.
+| merchant_site_tags | array of strings  | Defines the type of sites that appear in CardUpdatr. Options are: **prod** (these sites are reliable for a production environment), **usa** (for American sites), **canada** (for Canadian sites), **synthetic** (fake sites used for testing purposes; they simulate real merchant sites)               
+| close_url       | string            | Required if running as an embedded SSO user. Will default to "close" if running as a non-embedded SSO user. Otherwise, defaults to "/select-merchants". This option determines the on-click action of the "Close" button that appears on the final page after all jobs have finished. If set to a custom URL, clicking the Close button will navigate to the URL. If set to "/select-merchants", the user will be logged out and taken back to the site selection page with a new session. If set to "none", the Close button will not appear on the page. If set to "close", the window will be closed.                                                               
 
 ##### nested config properties: 
 ###### config.email:
 The following properties customize the status update email sent to CardUpdatr users (if this notification has been created):
 
-| Property2              | Type2                | Description2         
-| --------------------- | --------------------- | ---------------------
-| footer_link_1         | object                | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the left of the email footer.
-| footer_link_2         | object                | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the right of the email footer.
-| sender_email_address  | string                | Sender email address for status update notification email.
-| footer_address        | string                | Mailing address to appear at the bottom of the email.
-| card_description      | string                | Description of card that will appear in the email text. 
+| Property              | Type    | Description         
+| --------------------- | --------| ---------------------
+| footer_link_1         | object  | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the left of the email footer.
+| footer_link_2         | object  | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the right of the email footer.
+| sender_email_address  | string  | Sender email address for status update notification email.
+| footer_address        | string  | Mailing address to appear at the bottom of the email.
+| card_description      | string  | Description of card that will appear in the email text. 
 
-| Property| Type| Description                                                                                                   
-| :-------------------- | :-------------------------- | :--------------------------------------------------------------------------------------------------------------- 
-| footer_link_1         | object                      | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the left of the email footer.
-| footer_link_2         | object                      | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the right of the email footer.
-| sender_email_address  | string                      | Sender email address for status update notification email.
-| footer_address        | string                      | Mailing address to appear at the bottom of the email.
-| card_description      | string                      | Description of card that will appear in the email text. |
 
 
 #### style_template:
