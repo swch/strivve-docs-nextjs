@@ -20,7 +20,7 @@ The branding field allows for customization of branding properties in CardUpdatr
 ```javascript
 {
   config : {},
-  style_template: {}
+  style: {}
 }
 ```
 
@@ -50,7 +50,7 @@ The following properties customize the status update email sent to CardUpdatr us
 | card_description      | string  | Description of card that will appear in the email text. 
 
 
-#### **style_template :**
+#### **style :**
 | Property            | Type      | Description
 | ------------------- | --------- | --------------------
 | card_description                | string                   | Description of card to be used in CardUpdatr text, e.g. "ACME credit or debit card".
