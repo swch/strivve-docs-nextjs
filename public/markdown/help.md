@@ -43,7 +43,6 @@ The following properties customize the status update email sent to CardUpdatr us
 | footer_address        | string  | Mailing address to appear at the bottom of the email.
 | card_description      | string  | Description of card that will appear in the email text. 
 
-<br />  
 
 **style_template:**
 | Property            | Type      | Description
@@ -58,8 +57,8 @@ The following properties customize the status update email sent to CardUpdatr us
 | button_color                    | string                   | Defines the color for all buttons.
 | button_border_radius            | string                   | Defines the border radius property for all buttons.
 | button_padding                  | string                   | Defines the padding for all buttons.  
-<br />
-<br />
+
+
 #### Delete Financial Institution
 To delete an FI, click the trash can next to the FI you would like to delete.
 
@@ -70,8 +69,8 @@ Notifications are triggered by certain key events, such as the completion of a s
 Name of the notification (e.g. "CardUpdatr Session End Email").
 
 **Type**
-- email : Sends an email notification to the provided recipient when the specified event occurs. </li>
-- webhook : Posts to the provided webhook when the specified event occurs. </li>
+- email : Sends an email notification to the provided recipient when the specified event occurs. 
+- webhook : Posts to the provided webhook when the specified event occurs. 
 
 **Event**
 - session_complete : sends notification when the CardUpdatr session has completed. </li>
