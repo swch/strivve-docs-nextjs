@@ -35,6 +35,14 @@ The following properties are allowed within each of the two primary properties (
 ###### config.email:
 The following properties customize the status update email sent to CardUpdatr users (if this notification has been created):
 
+| Property2              | Type2                | Description2         
+| --------------------- | --------------------- | ---------------------
+| footer_link_1         | object                | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the left of the email footer.
+| footer_link_2         | object                | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the right of the email footer.
+| sender_email_address  | string                | Sender email address for status update notification email.
+| footer_address        | string                | Mailing address to appear at the bottom of the email.
+| card_description      | string                | Description of card that will appear in the email text. 
+
 | Property| Type| Description                                                                                                   
 | :-------------------- | :-------------------------- | :--------------------------------------------------------------------------------------------------------------- 
 | footer_link_1         | object                      | Object with "text" (i.e. display text) and "url" properties. This defines a link that will appear on the left of the email footer.
