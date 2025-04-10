@@ -20,7 +20,7 @@ The branding field allows for customization of branding properties in CardUpdatr
 ```javascript
 {
   config : {},
-  style_template: {}
+  style: {}
 }
 ```
 
