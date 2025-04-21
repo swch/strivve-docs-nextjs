@@ -200,7 +200,7 @@ The name of the integrator (e.g. "acme_integrator").
 
 ### Type
 
-* application : For use with Strivve applications.
+application : For use with Strivve applications.
 
 ### Delete Integrator
 To delete an integrator, click the trash can next to the integrator you would like to delete.
