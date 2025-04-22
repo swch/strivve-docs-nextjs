@@ -134,7 +134,7 @@ CardSavr uses an Elliptic Curve Diffie-Hellman Ephemeral \(ECDHE\) key exchange 
 
 To obtain your \(ECDHE\) key, you must first generate your own public and private elliptic curve keys using the NIST standard point 256 \(P256\) curve. Most major languages have a library or built-in class that allows you to do this \(please see the built-in Node Class for an example\).
 
-You must submit your own public key in your request to /session/login. /session/login will then respond with Cardsavr's public key in the payload. Use CardAavr's public key, along with your own private and public keys, to compute the shared secret key. Since CardSavr will execute the same process on the server, both parties will generate the same secret key, known only to them. This shared secret key MUST be used to encrypt and sign your requests post login. Please see encryption for details on encrypting your requests.
+You must submit your own public key in your request to /session/login. /session/login will then respond with Cardsavr's public key in the payload. Use CardSavr's public key, along with your own private and public keys, to compute the shared secret key. Since CardSavr will execute the same process on the server, both parties will generate the same secret key, known only to them. This shared secret key MUST be used to encrypt and sign your requests post login. Please see encryption for details on encrypting your requests.
 
 The CardSavr API SDK takes care of this generation process.  Applications which direclty use the CardSavr REST API must perform these cryptographic operations per the CardSavr API reference documentation.
 
