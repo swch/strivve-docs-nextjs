@@ -1,5 +1,5 @@
 ---
-title: CardSavr Technical Security Guide
+title: CardSavr Technical Security Overview
 ---
 
 The [Strivve CardSavr Platform](/guides/architecture) utilizes a Defense-in-Depth best practice model combined with strong cryptography rather than a hard shell and soft center strategy. Network and compute infrastructure isolation is achieved through separate Cardholder Data Environment (CDE) environments, subnets within a CDE and compute resource access schemes; implemented using AWS Accounts, AWS Virtual Private Cloud (VPC), AWS Security Groups/Identity and Access Management (IAM) and AWS Network Access Control (NACLs) respectively. 
