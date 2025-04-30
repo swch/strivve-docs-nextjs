@@ -74,7 +74,7 @@ All responses from CardSavr are encrypted by the method described in encryption.
 
 5. Decrypt decoded binary body (from step 2) using the cipher from step 4
 
-The [CardSavr API SDK](api-sdk/introduction) takes care of this decryption process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
+The [CardSavr API SDK](/api-sdk/introduction) takes care of this decryption process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
 
 #### Encryption
 CardSavr applications and CardSavr will encrypt request and response bodies, respectively, using the API Session Secret Key. As a result, the encrypted payloads can only be decrypted by CardSavr or the user.
@@ -87,7 +87,7 @@ request.body.encryptedBody = Base64-Encrypted-JSON-Body$Base64-IV
 
 To send your request, put this value into your request body object in the property encryptedBody.
 
-The [CardSavr API SDK](api-sdk/introduction) takes care of this encryption process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
+The [CardSavr API SDK](/api-sdk/introduction) takes care of this encryption process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
 
 #### Signing
 CardSavr requires signing for all requests and responses to ensure identity and integrity verification. Signing is implemented by three headers--nonce, signature, and authorization--that must be sent with each request and response.
@@ -111,12 +111,12 @@ To complete the signature, pass the string-to-sign to an HMAC SHA256 algorithm a
 
 "Signature": Base64(HMAC-SHA256(API-Session-Secret-Key, StringToSign))
 
-The [CardSavr API SDK](api-sdk/introduction) takes care of this signing process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
+The [CardSavr API SDK](/api-sdk/introduction) takes care of this signing process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
 
 #### Verification
 To verify a response, perform the same process as signing to derive the signature, base64 encodes the 256-bit result and compares it with the value in Headers.Signature.
 
-The [CardSavr API SDK](api-sdk/introduction) takes care of this verification process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
+The [CardSavr API SDK](/api-sdk/introduction) takes care of this verification process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
 
 ### Data At Rest
 CardSavr needs to persistently store confidential data including PII, CHD, SAD and MC. At a minimum, this data must be persistently stored on a temporary basis to perform payment card updates on merchant sites. Optionally, at the discretion of CardSavr applications, this data may be stored on a longer-term basis.
@@ -156,7 +156,7 @@ To obtain your (ECDHE) key, you must first generate your own public and private 
 
 You must submit your own public key in your request to /session/login. /session/login will then respond with Cardsavr's public key in the payload. Use CardSavr's public key, along with your own private and public keys, to compute the shared secret key. Since CardSavr will execute the same process on the server, both parties will generate the same secret key, known only to them. This shared secret key MUST be used to encrypt and sign your requests post login. Please see encryption for details on encrypting your requests.
 
-The [CardSavr API SDK](api-sdk/introduction) takes care of this generation process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
+The [CardSavr API SDK](/api-sdk/introduction) takes care of this generation process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
 
 #### Cardholder Safe Keys
 The per card holder Strivve Safe protecting the PCI-DSS SAD and MC data for card holder users utilizes a pair of 256-bit keys. One key, known as the environment key, is generated and managed internally by the CardSavr service. The other key, known as the Cardholder Safe Key, is generated for each card holder user. These two keys are joined together using a key derivation function resulting in a 256-bit key used to encrypt and decrypt the Strivve Safe.
@@ -190,4 +190,4 @@ The signing key and the password proof must be generated by partner applications
 ##### Password/Key Change
 To maintain PCI-DSS compliance, all non-card holder user passwords must be changed every 90 days. It is the responsibility of the partner to change the passwords and associated keys for all agent users using their own mechanisms. For all person users, the CardSavr system will require them to change their password after 90 days.
 
-The [CardSavr API SDK](api-sdk/introduction) rovides automatic password proof signing process and password key generation methods. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
+The [CardSavr API SDK](/api-sdk/introduction) rovides automatic password proof signing process and password key generation methods. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
