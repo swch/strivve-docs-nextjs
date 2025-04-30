@@ -110,8 +110,6 @@ To complete the signature, pass the string-to-sign to an HMAC SHA256 algorithm a
 #### Verification
 To verify a response, perform the same process as signing to derive the signature, base64 encodes the 256-bit result and compares it with the value in Headers.Signature.
 
-The [CardSavr API SDK](/api-sdk/introduction) takes care of this verification process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
-
 #### CardSavr SDK
 The [CardSavr API SDK](/api-sdk/introduction) takes care of the above decryption, encryption, signing, and verification processes. Applications which directly use the CardSavr REST API must perform these cryptographic operations per the [CardSavr API reference documentation](https://swch.github.io/slate/#introduction).  
 
