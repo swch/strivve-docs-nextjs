@@ -45,5 +45,5 @@ Given the sensitive nature of PCI CHD/SAD data and the cardholder’s merchant c
 
 These security mechanisms include digital signing of all requests and responses, encryption of all request and response bodies, nonce replay attack prevention and ephemeral elliptic curve key exchange. Applications that integrate directly with this API must implement these capabilities.  Applications that integrate using a language specific SDK do not have to implement these security mechanisms as they are performed by the SDK itself.
 
-To learn more about low level security mechanisms of the platform, please contact [E-mail Strivve](mailto:support@strivve.com) for access to the Strivve Technical Security Overview.
+To learn more about low level security mechanisms of the platform, please contact [E-mail Strivve](mailto:support@strivve.com) for access to the **Strivve Technical Security Overview**.
 
