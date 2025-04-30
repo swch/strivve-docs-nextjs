@@ -44,7 +44,6 @@ const navigation = [
       { title: 'Introduction', href: '/resources/introduction' },
       { title: 'Data Model', href: '/resources/data-models' },
       { title: 'Credentials', href: '/resources/credentials' },
-      { title: 'Cryptography', href: '/resources/cryptography' },
       { title: 'Credential Grants', href: '/resources/grants' },
       { title: 'Notifications', href: '/resources/notifications' },
       { title: 'Job Progress', href: '/resources/job-progress' },
