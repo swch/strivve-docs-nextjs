@@ -156,4 +156,48 @@ Integrator keys need to be rotated on a regular basis per PCI-DSS compliance. Pa
 ##### Ephemeral API Session Keys
 CardSavr uses an Elliptic Curve Diffie-Hellman Ephemeral (ECDHE) key exchange to generate an ephemeral shared secret key known to only CardSavr and the client. This key is used to encrypt, decrypt, and sign all requests and responses to and from CardSavr post login. The diagram below shows how a Diffie-Hellman key exchange is used to generate a new ephemeral API session shared secret key (using paint as a metaphor).
 
+![Eliptic Curve Diffie Hellman](/images/Diffie-Hellman_Key_Exchange.png "Key Exchange")
 
+To obtain your (ECDHE) key, you must first generate your own public and private elliptic curve keys using the NIST standard point 256 (P256) curve. Most major languages have a library or built-in class that allows you to do this (please see the built-in Node Class for example).
+
+You must submit your own public key in your request to /session/login. /session/login will then respond with Cardsavr's public key in the payload. Use CardSavr's public key, along with your own private and public keys, to compute the shared secret key. Since CardSavr will execute the same process on the server, both parties will generate the same secret key, known only to them. This shared secret key MUST be used to encrypt and sign your requests post login. Please see encryption for details on encrypting your requests.
+
+##### SDK Generation Support
+The [CardSavr API SDK](api-sdk/introduction) takes care of this generation process. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
+
+#### Cardholder Safe Keys
+The per card holder Strivve Safe protecting the PCI-DSS SAD and MC data for card holder users utilizes a pair of 256-bit keys. One key, known as the environment key, is generated and managed internally by the CardSavr service. The other key, known as the Cardholder Safe Key, is generated for each card holder user. These two keys are joined together using a key derivation function resulting in a 256-bit key used to encrypt and decrypt the Strivve Safe.
+
+##### Persistent Cardholder Safe Keys
+Cardholder Safe Keys used with persistent card holder users are generated and managed by the partner. This type of safe key is sent as a header on the post cardsavr_users endpoint with a role of cardholder to create a persistent card holder user. It is best practice to have a unique key for each card holder. You must send the persistent safe key via header for each request that involves safe-protected information (specifically, certain requests to cardsavr_users, cardsavr_accounts, carsavr_cards and place_card_on_single_site. This is listed in the documentation for each endpoint).
+
+##### Ephemeral Cardholder Safe Keys
+Cardholder safe keys used with ephemeral card holder users are generated and managed by Strivve. Ephemeral card holder users are created by not having a safe header present on the post /cardsavr_users with a role of cardholder. These types of users exist only for the short duration it takes to complete card placement during a single CardSavr session.
+
+##### Cardholder Safe Key Storage
+Partners are responsible for maintaining their own PCI compliant secure storage of persistent cardholder safe keys which improves Strivve Safe security by not having them stored within the CardSavr service.
+
+Strivve is responsible for storing short lived ephemeral cardholder safe keys in a PCI complaint manner and accomplishes this by encrypting them using AES-256-CBC with a secure key encrypting key.
+
+##### Cardholder Safe Key Rotation
+Persistent card holder safe keys need to be rotated on a regular basis per PCI-DSS compliance. This is a shared responsibility between Strivve and the partner, with rotation of the environment key being Strivve's responsibility and rotation of the cardholder safe key(s) being the partners responsibility. It is also the responsibility of the partner to generate the initial cardholder key for each persistent card holder user. Strivve recommends cardholder safe keys be rotated every year due to them not being directly subject to crypt analysis.
+
+Ephemeral card holder safe keys are not subject to key rotation due to them existing only for the short duration of an ephemeral card holder user.
+
+### Password Keys
+The password scheme used in the CardSavr service to authenticate non card holder users is based upon the strategy employed by Kerberos 5 in which the password can be converted to a signing key based upon shared information the user and the server know but which is not shared during the authentication. This type of scheme is known as a zero-knowledge proof means of proving one party knows a value, in this case the password. The key derived from the user password is used by the CardSavr application to sign material that is also known to both the application and the CardSavr API server and provide this signature with the username during login. The material used is the integrator key of the client application. The open standard PBKDF2 algorithm is employed to generate the signing key using a hash of the username as the salt and the plain text password to derive it from. The CardSavr API server has the password key stored from when the user was created, or their password was changed to use in verification.
+
+Here is pseudo code of algorithm used to verify the authenticity of a user via a password: 
+
+SigningKey = pbkdf2(SHA256, UserPassword, UserName, 5000Rounds, 256Bits); 
+passwordProof = base64(HMAC-SHA256(SigningKey, ApplicationIntegratorKey);
+
+The signing key and the password proof must be generated by partner applications. The CardSavr API SDK takes care of this generation and signing process. Applications which directly use the CardSavr REST API must perform these cryptographic operations per the CardSavr API reference documentation.
+
+##### Password/Key Change
+To maintain PCI-DSS compliance, all non-card holder user passwords must be changed every 90 days. It is the responsibility of the partner to change the passwords and associated keys for all agent users using their own mechanisms. For all person users, the CardSavr system will require them to change their password after 90 days.
+
+SDK Password Key Support
+The CardSavr API SDK provides automatic password proof signing process and password key generation methods. Applications which directly use the CardSavr REST API must perform these cryptographic operations per the CardSavr API reference documentation.
+
+The [CardSavr API SDK](api-sdk/introduction) rovides automatic password proof signing process and password key generation methods. Applications which directly use the [CardSavr REST API](https://swch.github.io/slate/#introduction) must perform these cryptographic operations per the CardSavr API reference documentation.
