@@ -2,8 +2,6 @@
 title: CardSavr Technical Security Guide
 ---
 
-# Overview
-
 The [Strivve CardSavr Platform](/guides/architecture) utilizes a Defense-in-Depth best practice model combined with strong cryptography rather than a hard shell and soft center strategy. Network and compute infrastructure isolation is achieved through separate Cardholder Data Environment (CDE) environments, subnets within a CDE and compute resource access schemes; implemented using AWS Accounts, AWS Virtual Private Cloud (VPC), AWS Security Groups/Identity and Access Management (IAM) and AWS Network Access Control (NACLs) respectively. 
 
 CardSavr processes sensitive data including Payment Card Industry (PCI) Data Security Standard (PCI-DSS) Personally Identifiable Information (PII), Card Holder Data (CHD) and Secure Authentication Data (SAD); as well as Merchant Credentials (MC)for each site a card holder has a relationship with. It is incumbent upon CardSavr to provide integrity and confidentiality of data transiting through it and persistently stored by it. PCI-DSS certified best practice cryptography is utilized within CardSavr to provide the necessary security for this data.
