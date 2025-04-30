@@ -33,7 +33,7 @@ CardSavr provides additional exfiltration security for PCI-DSS SAD and Merchant 
 #### Authorization Roles
 Authorization to access CardSavr services including cardholder data is done using roles. The combination of the authenticated application name coupled with the authenticated username is mapped to a role. Each API endpoint and specific properties of an end point, have access control restricted by role.
 
-#### Persistent Data Security Layers
+### Persistent Data Security Layers
 These layers provide access control, confidentiality and integrity to cardholder data at rest.
 
 #### Data Base Security
