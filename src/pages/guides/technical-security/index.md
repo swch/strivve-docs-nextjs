@@ -177,7 +177,7 @@ Persistent card holder safe keys need to be rotated on a regular basis per PCI-D
 
 Ephemeral card holder safe keys are not subject to key rotation due to them existing only for the short duration of an ephemeral card holder user.
 
-### Password Keys
+#### Password Keys
 The password scheme used in the CardSavr service to authenticate non card holder users is based upon the strategy employed by Kerberos 5 in which the password can be converted to a signing key based upon shared information the user and the server know but which is not shared during the authentication. This type of scheme is known as a zero-knowledge proof means of proving one party knows a value, in this case the password. The key derived from the user password is used by the CardSavr application to sign material that is also known to both the application and the CardSavr API server and provide this signature with the username during login. The material used is the integrator key of the client application. The open standard PBKDF2 algorithm is employed to generate the signing key using a hash of the username as the salt and the plain text password to derive it from. The CardSavr API server has the password key stored from when the user was created, or their password was changed to use in verification.
 
 Here is pseudo code of algorithm used to verify the authenticity of a user via a password: 
