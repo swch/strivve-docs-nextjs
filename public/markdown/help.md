@@ -125,7 +125,7 @@ Transaction Reporting displays all card placement attempts and relevant data (fi
 
 You can also generate a CSV report of all card placement activity between the specified dates. If your user settings include access to all FIs ("All FIs" checkbox), this will show activity for all FIs in the instance. Otherwise, it will only show singularly assigned FI.
 
-To generate the report, simply select the beginning and ending dates you would like and click Generate Report. The report will download to your device.
+To generate the report, simply select the beginning and ending dates you would like and click Download Report. If your reports also leverage custom_data fields, check the Expand Custom Data checkbox so the data is included in the generated report.  
 
 ### Session Reporting
 
