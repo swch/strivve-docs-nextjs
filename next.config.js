@@ -5,7 +5,7 @@ const nextConfig = {
   async headers() {
     return [
         {
-            // matching all API routes
+            // matching all API routes - this actually doesn't work as of the newest next - these are actually added via netlify.toml
             source: "/markdown/:path*",
             headers: [
                 { key: "Access-Control-Allow-Credentials", value: "true" },
