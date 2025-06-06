@@ -4,3 +4,9 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[headers]]
+  for = "/markdown/*" # you can configure the correct paths here
+  [headers.values]
+    access-control-allow-origin = "*" # see a list of allowed values here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin
+Note that, Netlify Headers won’t allow you to dynamically set. So if you wish to allow multiple origins
