@@ -153,10 +153,10 @@ The user properties are unique to this partiular cardholder, and generally provi
         CUSTOMER_KEY: "000000000000"
     },
     source: {
-      type: "undefined",
-      category: "undefined",
-      sub_category: "",
-      device: "undefined"
+      type: "text_message" | "email" | "promo" | "navigation" | "alert" | "test" | "weblink",
+      category: "card_controls" | "activation" | "campaign" | "other",
+      sub_category: "customer defined", //optional
+      device: "desktop web" | "mobile web" | "mobile app"
     }
   },
 
