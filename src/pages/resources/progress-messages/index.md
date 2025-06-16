@@ -88,6 +88,8 @@ Examples:
 }
 ```
 
+In the case of a tfa_message, not that there is a status_message as well as an account_link block in the credential request.  The value of the label in the account_link block can contain dynamic information (e.g. "enter code 54 into the YouTube app") which is critical to user messaging.
+
 ```json
 {
   "type": "initial_account_link",
@@ -168,7 +170,7 @@ or for TFA responses:
 }
 ```
 
-or for TFA messages - these should be respoonded to immediately with "ack", the job will simply block until the ack sent to their phone is replid to.
+or for TFA messages - these should be respoonded to immediately with "ack", since no response is required by the client.  In this case, you should continue to poll until the job is unblocked.
 
 ```json
 {
