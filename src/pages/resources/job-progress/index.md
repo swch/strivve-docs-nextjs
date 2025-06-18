@@ -25,7 +25,7 @@ CREDS\_SUBMITTED | No | VBS has submitted the credentials to the site.
 UPDATING | No | VBS is authenticated with merchant site, client application may choose to let the user navigate away.
 CANCEL\_REQUESTED | Yes | Job is not longer needed by the user, and can be safely deleted.
 
-There are other statuses that may be returned, but they are mostly informational.  IMPORTANT: "PENDING", "PENDING_NEWCREDS" and "PENDING\_TFA" indicate that a request message has been posted for that job, and the envelope_id included in the message will be required for a response. 
+There are other statuses that may be returned, but they are mostly informational.  IMPORTANT: "PENDING", "PENDING_NEWCREDS", "PENDING\_TFA" and "PENDING_TFA_MESSAGE" indicate that a request message has been posted for that job, and the envelope_id included in the message will be required for a response. "PENDING_TFA_MESSAGE" requests require an immmediate response of "ack" because the user is not required to send any contextual information to unblock the transaction.
 
 ## Termination Types
 
