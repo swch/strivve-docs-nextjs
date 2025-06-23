@@ -88,7 +88,7 @@ Examples:
 }
 ```
 
-In the case of a tfa_message, not that there is a status_message as well as an account_link block in the credential request.  The value of the label in the account_link block can contain dynamic information (e.g. "enter code 54 into the YouTube app") which is critical to user messaging.
+In the case of a tfa_message, note that there is a status_message as well as an account_link block in the credential request.  The value of the label in the account_link block can contain dynamic information (e.g. "enter code 54 into the YouTube app") which is critical to user messaging.
 
 ```json
 {
