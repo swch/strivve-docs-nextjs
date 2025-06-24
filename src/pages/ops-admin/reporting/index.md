@@ -30,7 +30,7 @@ Transaction Reports allow you to generate a report of all card placement activit
 | cuid          | Unique ID for the [cardholder](https://swch.github.io/slate/#create-cardholder) provided by your application to the CardSavr API.  A random number will be generated if not provided.
 | custom_data   | Additional data that can be added to the [cardholder](https://swch.github.io/slate/#create-cardholder) by your application to the CardSavr API.  If provided, the merchant report will include this information in additional fields.
 | source_type                 | Identifies the channel or method through which the cardholder interacted (see [Journey Paths](/integrations/sources)).
-| soure_category              | Defines the purpose or intent behind the interaction. (see [Journey Paths](/integrations/sources)).
+| source_category             | Defines the purpose or intent behind the interaction. (see [Journey Paths](/integrations/sources)).
 | source_subcategory          | Custom text to provide any additional category context if applicable. (see [Journey Paths](/integrations/sources)).
 | source_device               | Specifies the platform or device through which the cardholder engaged. (see [Journey Paths](/integrations/sources)).
 
