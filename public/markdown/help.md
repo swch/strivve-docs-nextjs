@@ -66,7 +66,7 @@ The following properties customize the status update email sent to CardUpdatr us
 
 
 ### Delete Financial Institution
-To delete an FI, click the trash can next to the FI you would like to delete.
+To delete an FI, click the trash can next to the FI you would like to delete.  Note that an active FI with past activity must be *Deactived* (see below) before it can be deleted.
 
 ### Add/Edit Notifications
 Notifications are triggered by certain key events, such as the completion of a session in CardUpdatr. 
@@ -116,6 +116,16 @@ Custom data (e.g. brand, type) that can be added according to FI need.
 #### Delete Bin  
 To delete a BIN, click the trash can next to the BIN you would like to delete.
 
+#### Active versus Inactive
+A Financial Institution can be set to an *Inactive* thus disabling it for any use by Cardsavr applications.  Among other use cases, if you are a customer who is billed per FI, deactivating an FI ensures you are not billed for it.  When creating an FI, the default is *Active*.
+
+To set an FI as *Inactive*, click on the "not allowed" icon next to the FI name.  To set the FI back to *Active*, click on the "refresh" icon next to the FI name.  This can also be done within the FI configuration via the "Active" combo box (set to true or false).
+
+In the FI list, you can view the FIs by Active, Inactive, or All.
+
+Upon downloading the FI report, the is an Active/Inactive column included with each FI row.
+
+
 
 ## Reporting
 
@@ -125,7 +135,7 @@ Transaction Reporting displays all card placement attempts and relevant data (fi
 
 You can also generate a CSV report of all card placement activity between the specified dates. If your user settings include access to all FIs ("All FIs" checkbox), this will show activity for all FIs in the instance. Otherwise, it will only show singularly assigned FI.
 
-To generate the report, simply select the beginning and ending dates you would like and click Download Report. If your reports also leverage custom_data fields, check the Expand Custom Data checkbox so the data is included in the generated report.  
+To generate the report, simply select the beginning and ending dates you would like and click Download Report. If your reporting also leverages custom_data fields, check the Expand Custom Data checkbox so the data is included in the generated report.  
 
 ### Session Reporting
 
