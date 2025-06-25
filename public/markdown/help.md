@@ -123,7 +123,7 @@ To set an FI as *Inactive*, click on the "not allowed" icon next to the FI name.
 
 In the FI list, you can view the FIs by Active, Inactive, or All.
 
-Upon downloading the FI report, the is an Active/Inactive column included with each FI row.
+Upon downloading the FI report, there is an Active/Inactive column included with each FI row.
 
 
 
