@@ -32,7 +32,7 @@ To begin, the Issuer provisions card-on-file datasets into the Strivve PCI-Compl
 ### Cardholder Journey
 ![Card Links Journey](/images/cardlinks_issuer_journey.png)
 
-### Call To Action path
+### Call To Action 
 ![Card Links Flow](/images/cardlinks_flow.png)
 
 ## Card and Cardholder Data
