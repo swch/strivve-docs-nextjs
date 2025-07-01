@@ -18,10 +18,9 @@ To begin, the Issuer provisions card-on-file datasets into the Strivve PCI-Compl
  - Cardholder's URL is embedded into the issuer's card-on-file marketing campaign as a primary call-to-action link, in QR code for other use cases that include a new card order, or other Cardholder use cases that can be executed outside of Digital Banking.
 - Each unique link represents the entry point for a personal card-on-file flow  
 - Cardholders are authorized by providing a response to a challenge before being allowed to select online sites for card placement.  Challenges can include CVV, CVV + Zip Code, Zip Code, PAN Last 4, PAN First 2 + Last 2).
- 
 
  ## Use Case Example
-1. The Issuer builds a campaign in their Customer Data Platform (CDP) and builds a Cardholder Targets Dataset
+1. The Issuer builds a campaign in their Customer Data Platform (CDP) and builds a Cardholder Targets Dataset (.CSV file).
 3. Using the Strivve Partner Portal, the Issuer specifies and provisions card-on-file datasets into the secure Strivve PCI-DSS compliant platform.  After the information is securely stored, the tool will return a unique Cardholder target URL for each Cardholder data record. 
 3. The resulting URLs are imported into the CDP solution by the Issuer where the URL is embedded into the Issuer’s Card-on-File marketing campaign as a primary call-to-action.
 4. Each link would represent the entry point for a personal card-on-file flow provided by CardUpdatr.
@@ -30,7 +29,10 @@ To begin, the Issuer provisions card-on-file datasets into the Strivve PCI-Compl
 7. Upon successful authorization, the Cardholder places the card on file with Strivve.
 8. The URLs (and corresponding datasets in the Strivve Platform), will expire either at the end of the Campaign, by a specified expiration date, or other configuration in the Campaign Tool.
 
-## Typical Call To Action path
+# Cardholder Journey
+![Card Links Journey](/images/ardlinks_issuer_journey.png)
+
+## Call To Action path
 ![Card Links Flow](/images/cardlinks_flow.png)
 
 ## Card and Cardholder Data
