@@ -29,10 +29,10 @@ To begin, the Issuer provisions card-on-file datasets into the Strivve PCI-Compl
 7. Upon successful authorization, the Cardholder places the card on file with Strivve.
 8. The URLs (and corresponding datasets in the Strivve Platform), will expire either at the end of the Campaign, by a specified expiration date, or other configuration in the Campaign Tool.
 
-# Cardholder Journey
+### Cardholder Journey
 ![Card Links Journey](/images/ardlinks_issuer_journey.png)
 
-## Call To Action path
+### Call To Action path
 ![Card Links Flow](/images/cardlinks_flow.png)
 
 ## Card and Cardholder Data
