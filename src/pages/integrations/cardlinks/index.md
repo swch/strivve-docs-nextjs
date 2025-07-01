@@ -12,9 +12,7 @@ The current low-cost integration method Strivve provides today is a web linked s
 
 A key response to this need is Strivve Card Links.
 
-## Objective
-
-The Issuer provisions card-on-file datasets into the Strivve PCI-Compliant Platform:
+To begin, the Issuer provisions card-on-file datasets into the Strivve PCI-Compliant Platform securely via the Strivve Partner Portal:
 
 - Strivve safely stores individual cardholder and card data and returns a unique URL for each target cardholder
  - Cardholder's URL is embedded into the issuer's card-on-file marketing campaign as a primary call-to-action link, in QR code for other use cases that include a new card order, or other Cardholder use cases that can be executed outside of Digital Banking.
