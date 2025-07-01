@@ -10,7 +10,7 @@ Many forms of these integrations come from an opportunity to pursue a new form o
 
 The current low-cost integration method Strivve provides today is a web linked solution that requires high user data input bringing a high level of cardholder undesired friction and low adoption rates.  Strivve needs a solution from which this option no longer needs to be supported.
 
-A key response to this need is Strivve CardLinks.
+A key response to this need is Strivve Card Links.
 
 ## Objective
 
@@ -33,10 +33,10 @@ The Issuer provisions card-on-file datasets into the Strivve PCI-Compliant Platf
 8. The URLs (and corresponding datasets in the Strivve Platform), will expire either at the end of the Campaign, by a specified expiration date, or other configuration in the Campaign Tool.
 
 ## Typical Call To Action path
-![CardLinks Flow](/images/cardlinks_flow.png)
+![Card Links Flow](/images/cardlinks_flow.png)
 
 ## Card and Cardholder Data
-The Card and Cardholder Data for CardLinks Engage will be published to the CardSavr platform using the Strivve Partner Portal.  The data will be provided as a .CSV file which contains all the card and cardholder details.  This information is in turn stored in the PCI-DSS compliant CardSavr platform and is securely retrieved once the URL is consumed by the Cardholder.
+The Card and Cardholder Data for Card Links Engage will be published to the CardSavr platform using the Strivve Partner Portal.  The data will be provided as a .CSV file which contains all the card and cardholder details.  This information is in turn stored in the PCI-DSS compliant CardSavr platform and is securely retrieved once the URL is consumed by the Cardholder.
 
 The makeup of the .CSV can contain the following
 - Campaign Unique Indentifer
