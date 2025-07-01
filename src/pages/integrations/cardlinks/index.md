@@ -14,19 +14,15 @@ A key response to this need is Strivve CardLinks.
 
 ## Objective
 
-Issuer provisions card-on-file datasets into the Strivve PCI-Compliant Platform
+The Issuer provisions card-on-file datasets into the Strivve PCI-Compliant Platform:
 
 - Strivve safely stores individual cardholder and card data and returns a unique URL for each target cardholder
  - Cardholder's URL is embedded into the issuer's card-on-file marketing campaign as a primary call-to-action link, in QR code for other use cases that include a new card order, or other Cardholder use cases that can be executed outside of Digital Banking.
 - Each unique link represents the entry point for a personal card-on-file flow  
-- Cardholders are authorized by providing a response to a challenge before being allowed to select online sites for card placement.  Challenges can include:
- - CVV
- - CVV + Zip Code
- - Zip Code
- - PAN Last 4
- - PAN First 2 + Last 2
+- Cardholders are authorized by providing a response to a challenge before being allowed to select online sites for card placement.  Challenges can include CVV, CVV + Zip Code, Zip Code, PAN Last 4, PAN First 2 + Last 2).
+ 
 
- ## Use Case
+ ## Use Case Example
 1. The Issuer builds a campaign in their Customer Data Platform (CDP) and builds a Cardholder Targets Dataset
 3. Using the Strivve Partner Portal, the Issuer specifies and provisions card-on-file datasets into the secure Strivve PCI-DSS compliant platform.  After the information is securely stored, the tool will return a unique Cardholder target URL for each Cardholder data record. 
 3. The resulting URLs are imported into the CDP solution by the Issuer where the URL is embedded into the Issuer’s Card-on-File marketing campaign as a primary call-to-action.
@@ -39,8 +35,8 @@ Issuer provisions card-on-file datasets into the Strivve PCI-Compliant Platform
 ## Typical Call To Action path
 ![CardLinks Flow](/images/cardlinks_flow.png)
 
-## Card Data
-The Cardholder Data for CardLinks Engage will be published to the CardSavr platform using the Strivve Partner Portal.  The data will be provided as a .CSV file which contains all the card and cardholder details.  This information is in turn stored in the PCI-DSS compliant CardSavr platform and is securely retrieved once the URL is consumed by the Cardholder.
+## Card and Cardholder Data
+The Card and Cardholder Data for CardLinks Engage will be published to the CardSavr platform using the Strivve Partner Portal.  The data will be provided as a .CSV file which contains all the card and cardholder details.  This information is in turn stored in the PCI-DSS compliant CardSavr platform and is securely retrieved once the URL is consumed by the Cardholder.
 
 The makeup of the .CSV can contain the following
 - Campaign Unique Indentifer
