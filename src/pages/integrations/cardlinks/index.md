@@ -50,4 +50,4 @@ The makeup of the .CSV can contain the following
 - Authorization Challenge Config 
 
 ## Availablity
-Strive is working to complete the development and design of Card Links and hopes to have demonstrations ready to present soon.
+Strive is working to complete the development and design of Card Links and hopes to have demonstrations ready to present soon (with integration soon  to follow).
