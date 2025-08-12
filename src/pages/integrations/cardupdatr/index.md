@@ -188,7 +188,6 @@ Style attributes control the look and feel of the experience. They can optionall
 | Property            | Required | Default                   | Description                                                                                                               |
 | ------------------- | -------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | card_description    | no       | Set in the Partner Portal | included in the copy                                                                                                      |
-| link_color          | no       | #000000                   | color of links (can also be configured in Partner Portal)                                                                 |
 | button_color        | no       | #000000                   | color of buttons (can also be configured in Partner Portal)                                                               |
 | button_border_radius        | no       | 0.25rem                   | radius of button corners (can also be configured in Partner Portal)                                                               |
 | button_padding        | no       | 0.375 0.75rem,                  | controls space inside buttons (can also be configured in Partner Portal)                                                               |
