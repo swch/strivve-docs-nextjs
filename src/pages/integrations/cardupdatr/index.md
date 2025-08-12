@@ -177,7 +177,6 @@ Style attributes control the look and feel of the experience. They can optionall
   style : {
     card_description: "ACME Bank Debit Card"
     //By default, a message that will be appended and link to the select-merchants page: "Add your $card_description to more sites"
-    link_color: "#5e35b1",
     button_color: "#5e35b1",
     button_border_radius: "0.25rem",
     button_padding: "0.375rem 0.75rem",
