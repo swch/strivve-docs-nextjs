@@ -14,7 +14,7 @@ The information can be passed in via the [User Object](/integrations/cardupdatr#
     type: "email",
     category: "campaign",
     sub_category: "AMCE FI Amazon Prime Day Campaign for card on file",s
-    device: "mobile"
+    device: "mobile_app"
   }
 
 ```
