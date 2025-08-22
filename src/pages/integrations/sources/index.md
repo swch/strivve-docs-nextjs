@@ -52,8 +52,8 @@ The **Where**.  Specifies the platform or device through which the cardholder en
 | Property Values: device        | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
 | desktop                        | Interaction occured via a desktop browser.
-| mobile                         | Interaction occurred within a native mobile app.
-| mobile web                     | Interaction occured via a mobile browser.
+| mobile_app                     | Interaction occurred within a native mobile app.
+| mobile_web                     | Interaction occured via a mobile browser.
 
 ### Reporting
 This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webhook Reporting](/ops-admin/reporting) with following new columns:
