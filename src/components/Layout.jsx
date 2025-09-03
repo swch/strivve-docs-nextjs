@@ -103,7 +103,7 @@ const navigation = [
         href: '/integrations/user_wait_time',
       },
       {
-        title: 'Cardholder Journey Sources',
+        title: 'Journey Sources',
         href: '/integrations/sources',
       },
     ],
