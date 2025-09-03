@@ -21,7 +21,7 @@ The information is passed in the [User Object](/integrations/cardupdatr#user-obj
 ### Source Type
 The **How**.  Identifies the channel or method through which the cardholder interacted.  
 
-| Type Property Values           | Description                                                                                                                                   |
+| Property Values: Type          | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
 | email                          | Delivered via email confirmation.
 | navigation                     | Accessed through the online banking app through app-specific menu options or other navigations. 
@@ -36,7 +36,7 @@ One of the pre-defined Type property values must be selected.  If a value provid
 ### Source Category
 The **Why**.  Defines the purpose or intent behind the interaction. 
 
-| Category Property Values                | Description                                                                                                                                   |
+| Property Values: Source        | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
 | activation                     | Encourage cardholders to activate new, reissued, or replaced cards.
 | card_controls                  | Promote features like locking/unlocking cards or managing spending limits.
@@ -48,7 +48,7 @@ One of the pre-defined Category property values must be selected.  If a value pr
 ### Source Sub_Category
 Additional Details of **The Why**.  Custom text to provide any additional context if applicable.
 
-| Sub_Category Property Values:  | Description                                                                                                                                  |
+| Property Values: Sub_Category  | Description                                                                                                                                  |
 | ------------------------------ | ---------------------------------------
 | free-form text                 | Custom text used to provided any additional context for selected category.
 
@@ -57,7 +57,7 @@ The maximum limit for the Sub_Category property value is 32 characters.  If a va
 ### Source Device
 The **Where**.  Specifies the platform or device through which the cardholder engaged.  
 
-| Device Property Values:        | Description                                                                                                                                   |
+| Property Values: Device       | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
 | desktop                        | Interaction occured via a desktop browser.
 | mobile_app                     | Interaction occurred within a native mobile app.
