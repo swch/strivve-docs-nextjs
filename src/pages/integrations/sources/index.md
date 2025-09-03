@@ -31,7 +31,7 @@ The **How**.  Identifies the channel or method through which the cardholder inte
 | sms                            | Delivered via text message to mobile device.
 | test                           | Originated from internal testing framework or tool.
 
-One of the pre-defined Type property values must be selected.  If a value provided does not match, an error will be logged to the web console, and the reporting output will state “unknown” in the specified field.
+One of the above pre-defined property values must be selected.  If a value provided does not match, an error will be logged to the web console, and the reporting output will state “unknown” in the specified field.
 
 ### Source Category
 The **Why**.  Defines the purpose or intent behind the interaction. 
@@ -43,7 +43,7 @@ The **Why**.  Defines the purpose or intent behind the interaction.
 | campaign                       | Broader marketing campaigns for card usage, spend growth, or education.
 | other                          | Other method (can be defined in the source_subcategory field).  For example, a category that is being used that is not listed as a current pre-defined value.  Context can then be added to the **source_sub_category** (see below).
 
-One of the pre-defined Category property values must be selected.  If a value provided does not match, an error will be logged to the web console, and the reporting output will state “unknown” in the specified field.
+One of the above pre-defined property values must be selected.  If a value provided does not match, an error will be logged to the web console, and the reporting output will state “unknown” in the specified field.
 
 ### Source Sub_Category
 Additional Details of **The Why**.  Custom text to provide any additional context if applicable.
@@ -52,7 +52,7 @@ Additional Details of **The Why**.  Custom text to provide any additional contex
 | ------------------------------ | ---------------------------------------
 | free-form text                 | Custom text used to provided any additional context for selected category.
 
-The maximum limit for the Sub_Category property value is 32 characters.  If a value exceeds the limit, it will be truncated in the reporting output.
+The maximum limit for the above property value is 32 characters.  If a value exceeds the limit, it will be truncated in the reporting output.
 
 ### Source Device
 The **Where**.  Specifies the platform or device through which the cardholder engaged.  
@@ -63,7 +63,7 @@ The **Where**.  Specifies the platform or device through which the cardholder en
 | mobile_app                     | Interaction occurred within a native mobile app.
 | mobile_web                     | Interaction occured via a mobile browser.
 
-One of the pre-defined Device property values must be selected.  If the parameter passed does not match the below, an error will be logged to the web console and internal server logs.  Strivve will in turn detect the platform where the reporting output will be assigned as ‘desktop’ or ‘mobile_web’.
+One of the above pre-defined property values must be selected.  If the parameter passed does not match the below, an error will be logged to the web console and internal server logs.  Strivve will in turn detect the platform where the reporting output will be assigned as ‘desktop’ or ‘mobile_web’.
 
 ### Reporting
 This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webhook Reporting](/ops-admin/reporting) with following new columns:
