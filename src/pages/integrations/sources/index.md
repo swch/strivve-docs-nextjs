@@ -1,12 +1,12 @@
 ---
-title: Journey Paths
+title: Journey Sources
 ---
 
 ## Overview
 
-Strivve provides the capability for an integrated application to pass in Cardholder Journey information (or journey *Sources*) that delivers a fixed framework to answer the questions of How, Why, and Where the cardholder has begun their card placement journey.
+Strivve provides the capability for an integrated application to pass in cardholder card-on-file placement journey information (journey *Sources*) that delivers a fixed framework to answer the questions of How, Why, and Where the cardholder has begun their card placement journey.
 
-The information can be passed in via the [User Object](/integrations/cardupdatr#user-object) in CardUpdatr or directly via the [CardSavr API](https://swch.github.io/slate/#create-cardholder) with the following format:
+The information can be passed in via the [User Object](/integrations/cardupdatr#user-object) in CardUpdatr or directly via the [CardSavr API](https://swch.github.io/slate/#create-cardholder) using the following example format:
 
 ```javascript
 
@@ -19,7 +19,7 @@ The information can be passed in via the [User Object](/integrations/cardupdatr#
 
 ```
 ### Source Type
-The **How**.  Identifies the channel or method through which the cardholder interacted.
+The **How**.  Identifies the channel or method through which the cardholder interacted.  
 
 | Property Values: type          | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
@@ -28,32 +28,42 @@ The **How**.  Identifies the channel or method through which the cardholder inte
 | push_notification              | Sent directly to the carholder's device through an app.
 | promo                          | In-app banners or popups.
 | qr_code                        | Accessed by scanning a QR code in physical or digital media.
-| instant_messaging              | Delivered via text message.
+| sms                            | Delivered via text message to mobile device.
 | test                           | Originated from internal testing framework or tool.
 
-### Source Category
-The **Why**.  Defines the purpose or intent behind the interaction.
+One of the pre-defined Type property values must be selected.  If a value provided does not match, an error will be logged to the web console, and the reporting output will state “unknown” in the specified field.
 
-| Property Values: category      | Description                                                                                                                                   |
+### Source Category
+The **Why**.  Defines the purpose or intent behind the interaction. 
+
+| Category Property Values                | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
 | activation                     | Encourage cardholders to activate new, reissued, or replaced cards.
 | card_controls                  | Promote features like locking/unlocking cards or managing spending limits.
-| other                          | Other method (can be clarified in the source sub_category field)
+| campaign                       | Broader marketing campaigns for card usage, spend growth, or education.
+| other                          | Other method (can be defined in the source_subcategory field).  For example, a category that is being used that is not listed as a current pre-defined value.  Context can then be added to the **source_sub_category** (see below).
+
+One of the pre-defined Category values must be selected.  If a value provided does not match, an error will be logged to the web console, and the reporting output will state “unknown” in the specified field.
 
 ### Source Sub_Category
 Additional Details of **The Why**.  Custom text to provide any additional context if applicable.
-| Property Values: sub_category  | Description                                                                                                                                   |
+
+| Sub_Category Property Values:  |  Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
-| <free-form text>               | Custom text used to provided any additional context for selected category.
+| free-form text                 | Custom text used to provided any additional context for selected category.
+
+The maximum limit is 32 characters.  If a parameter exceeds the limit, it will be truncated in the reporting output.
 
 ### Source Device
-The **Where**.  Specifies the platform or device through which the cardholder engaged.
+The **Where**.  Specifies the platform or device through which the cardholder engaged.  
 
-| Property Values: device        | Description                                                                                                                                   |
+| Device Property Values:        | Description                                                                                                                                   |
 | ------------------------------ | ---------------------------------------
 | desktop                        | Interaction occured via a desktop browser.
 | mobile_app                     | Interaction occurred within a native mobile app.
 | mobile_web                     | Interaction occured via a mobile browser.
+
+One of the pre-defined Device property values must be selected.  If the parameter passed does not match the below, an error will be logged to the web console and internal server logs, while Strivve will detect the platform where the reporting output will be assigned as ‘desktop’ or ‘mobile_web’.
 
 ### Reporting
 This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webhook Reporting](/ops-admin/reporting) with following new columns:
