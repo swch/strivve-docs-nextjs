@@ -9,7 +9,7 @@ The **Card Links** interface allows users to upload CSV files containing cardhol
 ## How It Works
 
 1. **Select Financial Institution** (if admin):
-   If you are logged in as an admin, you must select the financial institution for which you will be creating card links.
+   If you are logged in as under the admin FI, you must select the financial institution for which you will be creating card links.
 
 2. **Get Template**:
    A template CSV file containing the required header row properties can be downloaded by clicking the "Download CSV Template" button.
