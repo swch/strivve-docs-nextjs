@@ -38,7 +38,7 @@ The color and opacity of the overlay background can be adjusted by using the “
       config : {
         "show_close_overlay_button" : false,
         "overlay" : true,
-        "hostname" : "testfi.cardupdatr.customer-dev.cardsavr.io",
+        "hostname" : "testfi.customer-dev.cardupdatr.app,
       },
       user : {
         "grant": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9ey...",
@@ -64,7 +64,7 @@ CardUpdatr will use 99.5% of the entire vertical viewport
 ```javascript
     <div class="container" style="background-color: deepskyblue; width: 100%; text-align: center; min-height: 100vh;">
     <!-- This script loads in from a .cardsavr.io domain. -->
-    <script src="https://testfi.cardupdatr.customer-dev.cardsavr.io/cardupdatr-client-v2.js"></script>
+    <script src="https://testfi.customer-dev.cardupdatr.app/cardupdatr-client-v2.js"></script>
     <!-- Empty div to initialize the iFrame which loads CardUpdatr. -->
     <div class="cardupdatr-frame" id="cardupdatr-frame"></div>
     </div>
@@ -72,7 +72,7 @@ CardUpdatr will use 99.5% of the entire vertical viewport
       window.embedCardUpdatr(settings = { 
         config: { 
           app_container_id: "cardupdatr-frame", 
-          hostname: "https://testfi.cardupdatr.customer-dev.cardsavr.io/" 
+          hostname: "https://testfi.customer-dev.cardupdatr.app/" 
         } 
       });
 </script>
@@ -91,7 +91,7 @@ launchCardUpdatr takes the following parameters:
 
 ```
         <a onClick='javascript:window.launchCardUpdatr({
-          config: { hostname: "testfi.cardupdatr.customer-dev.cardsavr.io" }, style: { button_color: "red"}})'>
+          config: { hostname: "testfi.customer-dev.cardupdatr.app" }, style: { button_color: "red"}})'>
           Launch cardupdatr
         </a>
 ```
@@ -100,7 +100,7 @@ launchCardUpdatr takes the following parameters:
 There may be cases where native applications do not have the ability to use javascript.  This requires that the application append the configuration json to the hash value of the CardUpdatr url.  Note that the setting must be url encoded (no ?'s, &'s, +'s or newlines). This can be accomplished in JavaScript using the encodeURIComponent function.
 
 ```javascript
-https://testfi.cardupdatr.customer-dev.cardsavr.io/#settings=ENDCODED_SETTINGS_JSON
+https://testfi.customer-dev.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
 ```
 
 "ENCODED\_SETTINGS\_JSON" is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.
@@ -127,7 +127,7 @@ CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/
 {
   config : {
     app_container_id: "APP_CONTAINER_ID",
-    hostname: "testfi.cardupdatr.customer-dev.cardsavr.io",
+    hostname: "testfi.customer-dev.cardupdatr.app",
     top_sites: ["amazon.com", "apple.com", "audible.com", "hulu.com", "netflix.com", "spotify.com", "target.com", "uber.com", "venmo.com", "walgreens.com", "walmart.com"],
     merchant_site_tags: ["usa,canada", "prod"]
   },
@@ -136,7 +136,7 @@ CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/
 | Property              | Required | Default                             | Description                                                                                                                         |
 | ------------------------- | -------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | app_container_id          | no      |                                     | HTML element id that CardUpdatr is attached to -- this is only required when running embedded.                                                                                      |
-| hostname                  | yes      |                                     | Hostname of the target FI (e.g. testfi.cardupdatr.customer-dev.cardsavr.io).  In the case of SSO, this hostname must match the FI hostname used to aquire the grant.                                                                  |
+| hostname                  | yes      |                                     | Hostname of the target FI (e.g. testfi.customer-dev.cardupdatr.app).  In the case of SSO, this hostname must match the FI hostname used to aquire the grant.                                                                  |
 | top_sites                 | no       | []                                  | These sites are listed first on the "select-merchants" page        
 | exclude_sites             | no       | []                                  | These sites are excluded from the "select-merchants" page                                                                         |
 | merchant_site_tags        | no       | ["usa", "prod"]                     | usa AND prod -- to provide "OR" functionality, tags must be listed differently. "prod", "canada,usa" means prod AND (usa OR canada) |
