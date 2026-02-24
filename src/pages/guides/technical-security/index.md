@@ -36,128 +36,150 @@ CardSavr® operates within isolated AWS infrastructure --- separate
 accounts, VPCs, Security Groups, IAM policies, and Network Access
 Control Lists protect each Cardholder Data Environment (CDE).
 
-### In-transit protection
+**In-transit protection**. All traffic uses TLS 1.2 minimum with FIPS 140-2 Suite B ciphers. Amazon CA certificates with RSA 2048-bit keys establish secure sessions. The preferred ECDHE 256-bit cipher suite delivers perfect forward secrecy with AES-256-GCM encryption and SHA-256 hashing for integrity.
 
--   TLS 1.2 minimum
--   FIPS 140-2 Suite B ciphers
--   Amazon CA certificates with RSA 2048-bit keys
--   Preferred ECDHE 256-bit cipher suite
--   AES-256-GCM encryption
--   SHA-256 hashing
--   Perfect forward secrecy
+**Infiltration defense**. AWS Application Load Balancer with Security Group Policies and NACLs blocks unauthorized inbound traffic.
 
-### Infiltration defense
+**Exfiltration defense**. VPC subnet NACLs control outbound data movement. PCI-authorized vendors perform recurring penetration tests and network scans to verify ongoing protection.  
 
--   AWS Application Load Balancer
--   Security Group Policies
--   Network Access Control Lists (NACLs)
+**Merchant-site connections**. Autonomous browsers communicating with merchant sites enforce TLS 1.2 or 1.3 with strong cipher suites, accept only trusted Certificate Authority certificates, and reject self-signed certificates   
 
-### Exfiltration defense
-
--   VPC subnet NACL controls
--   Recurring PCI-authorized penetration testing
--   Ongoing network scans
-
-### Merchant-site connections
-
-Autonomous browsers:
-
--   Enforce TLS 1.2 or 1.3
--   Accept trusted CA certificates only
--   Reject self-signed certificates
 
 ------------------------------------------------------------------------
 
-# API Security
+# API Security: Authentication, Integrity, and Confidentialality
 
 ## Dual Identity Authentication
 
 Every API interaction requires two-factor identity verification ---
 application and user authenticate independently.
 
--   HMAC signing with 256-bit shared secret keys
--   Unique integrator keys issued via Partner Portal
--   Configurable key rotation
--   ECDHE key exchange creates ephemeral session keys
+Applications sign all requests and responses using HMAC with 256-bit shared secret keys. Each approved application receives a unique key from the CardSavr® Partner Portal, rotated per partner-configured schedules. At login, an ECDHE key exchange creates an ephemeral session key for all subsequent signing and encryption.
 
-## Zero-Knowledge Authentication
+**Zero-knowledge authentication**. Passwords never transmit over the network. CardSavr® employs a zero-knowledge proof method modeled on Kerberos 5 — user passwords generate PBKDF2 keys that sign server-provided salts for verification. An attacker intercepting traffic discovers only application and user names.
 
--   Modeled on Kerberos 5
--   PBKDF2-derived signing keys
--   Passwords never transmitted
--   Intercepted traffic reveals only usernames
 
 ------------------------------------------------------------------------
 
 ## Data Integrity and Confidentiality
 
--   HMAC signatures on every request and response
--   AES-256-GCM encryption
--   Ephemeral session keys
--   Perfect forward secrecy
+**Integrity**. HMAC signatures authenticate every request and response.
+
+**Confidentiality**. AES-256-GCM encryption using ephemeral session keys protects all payload data. Perfect forward secrecy ensures that compromising one session key reveals nothing about past or future sessions.
+
 
 ------------------------------------------------------------------------
 
 ## Write-Only Exfiltration Protection
 
--   PAN and CVV are write-only (POST only)
--   No read-back capability --- including Strivve systems
--   Referenced via Payment Account Reference (PAR)
--   Merchant credentials follow same write-only restriction
+Payment card PAN and CVV are write-only properties — POST requests only. No application, including Strivve's own systems, reads these values back. Cards are referenced via the industry-standard Payment Account Reference (PAR) mechanism. Merchant credentials follow the same write-only restriction, preventing accidental or malicious disclosure.
 
 ------------------------------------------------------------------------
+
+## Role-Based Access Control
+Authenticated application names and usernames map to specific roles. Each API endpoint and property enforces role-restricted access — no single credential grants unrestricted platform access.
+
 
 # Persistent Data Security
 
 ## Database-Level Protection
 
--   AWS Aurora Postgres RDS
--   Full-database AES-256 encryption
--   AWS KMS-managed key hierarchy
--   One key hierarchy per CDE VPC
+AWS Security Group Policies and NACLs restrict RDS database access to the CardSavr® API server and authorized Strivve tooling. NACLs at subnet boundaries provide additional packet-level control.
+
+The AWS Aurora Postgres RDS service applies full-database AES-256 encryption with keys managed by AWS Key Management Service (KMS), one key hierarchy per CDE VPC.
 
 ------------------------------------------------------------------------
 
-## The Strivve Safe
+## The Strivve Safe: Record-Level Encryption
 
-Each cardholder's data is encrypted individually using AES-256-GCM.
+Beyond database-level encryption, the Strivve Safe encrypts each cardholder's data individually using AES-256-GCM. Each encrypted blob contains credentials for every merchant site where the cardholder placed their card.
 
-Dual-key derivation via PBKDF2 from:
+**Dual-key derivation**. Each cardholder's encryption key derives from two sources mixed via PBKDF2:
 
-1.  Internal environment key (AWS KMS protected)
-2.  Partner-managed cardholder key
+1.  **Internal key** — generated and managed by CardSavr®, protected by AWS KMS
+2.  **Partner key** — generated and maintained by the partner institution
 
-Both keys required for decryption.
+Keys reside in separate environments. Compromising CardSavr® alone does not expose cardholder data. Compromising partner infrastructure alone does not expose cardholder data. Both keys are required for decryption.
 
 ------------------------------------------------------------------------
 
 ## Ephemeral Job Safe
 
--   Unique Job Safe per card placement
--   One-time encryption key
--   Self-destructs on completion
+Each card placement job creates a unique Job Safe containing card authentication data and merchant credentials. A one-time encryption key protects this data and exists only for the job's duration — the key and decrypted data self-destruct on completion.
 
 ------------------------------------------------------------------------
 
 # Cryptography
 
-## TLS Requirements
+## Data In Flight
 
--   Minimum TLS 1.2
--   Safe cipher suites only
--   Perfect forward secrecy
--   Trusted CA validation
+### TLS Protection
+All network traffic with external systems uses TLS per RFC-8447 with these requirements:
 
-## API Encryption Layer
+-   **Minimum version**: TLS 1.2 
+-   **Cipher suites**: Safe cipher suites only; preferred suites enforce perfect forward secrecy 
+-   **Certificate validation**: Only trusted Certificate Authority certificates accepted (client mode)
 
--   HMAC-SHA256 signing
--   AES-256-GCM encryption
--   ECDHE/P256 session key exchange
--   One-time session key per login
+
+### REST API Encryption Layer
+
+Beyond TLS, CardSavr® applies a second encryption layer to all API traffic. Every request and response is signed, verified, and encrypted using HMAC-SHA256 and AES-256-GCM keys.
+At login, an ECDHE/P256 key exchange generates a one-time API session key. This ephemeral key protects all subsequent traffic with perfect forward secrecy — a compromised session key reveals nothing about other sessions.
+
+![CardSavr Protected Data Flow](/images/CardSavrDataFlow.jpg "CardSavr Protected Data Flow") 
+
+
+### API Secret Key
+All encryption and signing operations use a symmetric shared 256-bit key: the API Session Secret Key.
+
+### Decryption
+Response decription follows five steps:
+1. Parse the API response.body.encryptedBody contains Base64-Encrypted-JSON$Base64-IV${Encryption-Method}.  At this time only AES-256-GCM is supported as an encryption method.
+1. Decode Base64-Encrypted-JSON-Body to binary
+1. Decode Base64-IV to binary
+1. Create an AES-256-GCM cipher using the API Session Secret Key and decoded IV
+1. Decrypt the binary body
+
+
+### Encryption
+Applications encrypt request bodies using AES-256-GCM with a 16-byte cryptographically strong initialization vector and the API Session Secret Key:
+```javascript
+request.body.encryptedBody = Base64EncryptedJSON$Base64-IV$aes-256-gcm
+```
+
+### Signing
+
+#### Authorization
+Identifies the integrator:
+```javascript
+"Authorization": "SWCH-HMAC-SHA256 Credentials=" + integrator_name
+```
+#### Nonce
+Current UTC time in milliseconds (replay attack protection):
+```javascript
+"Nonce": UTC_milliseconds
+```
+
+#### Signature
+HMAC-SHA256 of the string-to-sign, base64-encoded:
+```javascript
+StringToSign = relative_URL_path + Authorization + Nonce + request_body
+Signature = Base64(HMAC-SHA256(API_Session_Secret_Key, StringToSign))
+```
+
+### Verification
+Response verification mirrors the signing process. Calculate the expected signature and compare against the Signature response header. A mismatch indicates tampering.
+
+### CardSavr® SDK
+The CardSavr® SDK handles encryption, decryption, signing, and verification automatically. Direct REST API implementations require manual cryptographic operations per the CardSavr® API reference documentation.
+
+## Data At Rest
+
+## Cryptographic Keys
 
 ------------------------------------------------------------------------
-
 # Glossary
+## Acronyms
 
   Acronym   |   Definition
   --------- |----------------------------------------------
@@ -176,6 +198,8 @@ Both keys required for decryption.
   SDK       |Software Development Kit
   TLS       |Transport Layer Security
   VPC       |Virtual Private Cloud
+
+## Key Terms  
 
 ------------------------------------------------------------------------
 
