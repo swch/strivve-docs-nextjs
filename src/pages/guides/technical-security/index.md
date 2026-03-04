@@ -2,7 +2,7 @@
 
 # CardSavr® Technical Security Overview
 
-**Prepared by Strivve, Inc. --- Technical Security Briefing**
+**Prepared by Strivve, Inc. - Technical Security Briefing**
 
 ------------------------------------------------------------------------
 
@@ -12,17 +12,17 @@ CardSavr® protects cardholder data with defense-in-depth security:
 PCI-DSS certified cryptography, isolated AWS infrastructure, dual-key
 encryption, and zero-knowledge authentication.
 
-Sensitive data --- PAN, CVV, and merchant credentials --- never persist in readable form. Every card placement job creates its own ephemeral encryption environment that self-destructs on completion.
+Sensitive data - PAN, CVV, and merchant credentials - never persist in readable form. Every card placement job creates its own ephemeral encryption environment that self-destructs on completion.
 
 ## Security at a Glance
 
   Layer                      | Protection
   -------------------------- | --------------------------------------------
   Network                    | TLS 1.2+ with FIPS 140-2 Suite B ciphers,  perfect forward secrecy    |
-  API                        | HMAC-SHA256 signing + AES-256-GCM encryption     on every request/response
-  Authentication             | Zero-knowledge proof (Kerberos 5 model) ---     passwords never transmit
-  Storage                    | Dual-key AES-256 encryption --- keys split between Strivve and partner infrastructure
-  Card placement             | Ephemeral Job Safe --- one-time encryption key exists only for that job's duration
+  API                        | HMAC-SHA256 signing + AES-256-GCM encryption on every request/response
+  Authentication             | Zero-knowledge proof (Kerberos 5 model) - passwords never transmit
+  Storage                    | Dual-key AES-256 encryption - keys split between Strivve and partner infrastructure
+  Card placement             | Ephemeral Job Safe - one-time encryption key exists only for that job's duration
   
 
 
@@ -30,7 +30,7 @@ Sensitive data --- PAN, CVV, and merchant credentials --- never persist in reada
 
 ## Network Security: Three Layers of Isolation
 
-CardSavr® operates within isolated AWS infrastructure --- separate
+CardSavr® operates within isolated AWS infrastructure - separate
 accounts, VPCs, Security Groups, IAM policies, and Network Access
 Control Lists protect each Cardholder Data Environment (CDE).
 
@@ -323,4 +323,4 @@ Zero-Knowledge Proof     | 	Authentication confirming identity without revealing
 
 ------------------------------------------------------------------------
 
-**STRICTLY CONFIDENTIAL --- © 2026 Strivve, Inc. All rights reserved.**
+**STRICTLY CONFIDENTIAL - © 2026 Strivve, Inc. All rights reserved.**
