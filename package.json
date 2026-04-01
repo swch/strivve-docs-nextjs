@@ -46,6 +46,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-tailwindcss": "^3.18.0",
     "eslint-plugin-testing-library": "^5.11.1",
+    "fix-react2shell-next": "^1.1.4",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.1.13"

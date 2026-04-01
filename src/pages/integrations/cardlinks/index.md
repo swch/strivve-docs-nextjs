@@ -4,20 +4,13 @@ title: Card Links Engage
 
 ## Overview
 
-Strivve has experienced pre-sales scenarios with large customers who have asked for a pilot and/or production deployment which yields high conversions and material success for card on file placements at a little/no integration cost to them.
+Many issuers are in need of a product offering from Strivve that yields high conversions and material success for card on file placements at a little/no integration cost to them.
 
 Many forms of these integrations come from an opportunity to pursue a new form of revenue: Marketing budgets.  The need to provide a solution that has extremely low integration costs (or zero costs) is critical to penetrate this new form of revenue.
 
-The current low-cost integration method Strivve provides today is a web linked solution that requires high user data input bringing a high level of cardholder undesired friction and low adoption rates.  Strivve needs a solution from which this option no longer needs to be supported.
+A key response to this need is Strivve CardLinks.  Multiple methods are provided for the Issuer to provision individual cardholder and card data from which a unique URL for that cardholder is retured.  The resulting URL can be leveraged by Each unique URL represents the entry point for a personal card-on-file flow.  
 
-A key response to this need is Strivve Card Links.
-
-To begin, the Issuer provisions card-on-file datasets into the Strivve PCI-Compliant Platform securely via the Strivve Partner Portal:
-
-- Strivve safely stores individual cardholder and card data and returns a unique URL for each target cardholder
- - Cardholder's URL is embedded into the issuer's card-on-file marketing campaign as a primary call-to-action link, in QR code for other use cases that include a new card order, or other Cardholder use cases that can be executed outside of Digital Banking.
-- Each unique link represents the entry point for a personal card-on-file flow  
-- Cardholders are authorized by providing a response to a challenge before being allowed to select online sites for card placement.  Challenges can include CVV, CVV + Zip Code, Zip Code, PAN Last 4, PAN First 2 + Last 2).
+The resulting URL can then be easily leveraged into the the Issuers marketing campaigns as a primary call-to-action link.  Cardholder call-to-action options can include email, a QR code, and SMS.  Once the call-to-action is executed, Cardholders are authorized by providing a response to a challenge before being allowed to select online sites for card placement.  Challenges can include CVV, CVV + Zip Code, Zip Code, PAN Last 4, PAN First 2 + Last 2).
 
  ## Use Case Example
 1. The Issuer builds a campaign in their Customer Data Platform (CDP) and builds a Cardholder Targets Dataset (.CSV file).
