@@ -19,6 +19,9 @@ CardUpdatr operates in 3 major modes:
 For more information, see the [CardUpdatr Documentation](/integrations/cardupdatr).
 
 
+### CardLinks
+For more information, see the [CardLinks Documentation](/integrations/cardlinks).
+
 
     
 

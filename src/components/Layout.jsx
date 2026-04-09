@@ -91,6 +91,10 @@ const navigation = [
         href: '/integrations/introduction',
       },
       {
+        title: 'CardLinks',
+        href: '/integrations/cardlinks',
+      },
+      {
         title: 'CardUpdatr',
         href: '/integrations/cardupdatr',
       },
@@ -98,6 +102,7 @@ const navigation = [
         title: 'SSO Microservice',
         href: '/integrations/sso-microservice',
       },
+ 
       {
         title: 'User Wait Time Optimizations',
         href: '/integrations/user_wait_time',
