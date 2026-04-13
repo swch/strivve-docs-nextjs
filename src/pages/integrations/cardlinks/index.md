@@ -4,7 +4,7 @@ title: CardLinks
 
 ## Overview
 
-Many issuers need a card-on-file solution that drives high conversions with little to no integration cost. Strivve CardLinks is built for exactly this.Traditional integrations require significant engineering investment. CardLinks eliminates that barrier by enabling issuers to tap into a largely untapped funding source — marketing budgets — rather than IT budgets. With near-zero integration overhead, issuers can move fast and measure results directly in campaign performance.
+Many issuers need a card-on-file solution that drives high conversions with little to no integration cost. Strivve CardLinks is built for exactly this.  Traditional integrations require significant engineering investment. CardLinks eliminates that barrier by enabling issuers to tap into a largely untapped funding source — marketing budgets — rather than IT budgets. With near-zero integration overhead, issuers can move fast and measure results directly in campaign performance.
 
  ## How It Works
 CardLinks provides multiple methods for issuers to provision cardholder and card data, generating a unique, personalized URL for each cardholder. Each URL serves as a secure entry point into a card-on-file placement flow tied to that individual.
@@ -27,7 +27,7 @@ When a cardholder clicks their link, they land on a personalized page and are pr
 The result is a frictionless, personalized activation experience that issuers can launch through channels they already own — with no new integration required.
 
  ## Use Case Example
-1. The Issuer builds a campaign in their Customer Data Platform (CDP) and builds a Cardholder Targets Dataset.
+1. The Issuer builds a campaign in their Customer Data Platform (CDP) with a Cardholder Targets Dataset.
 3. Issuer specifies and provisions card-on-file datasets into the secure Strivve PCI-DSS compliant platform via the CardSavr API.  After the information is securely stored, the API will return a unique Cardholder target URL for each Cardholder data record. 
 3. The resulting URLs are imported into the CDP solution by the Issuer where the URL is embedded into the Issuer’s Card-on-File marketing campaign as a primary call-to-action.
 4. Each link would represent the entry point for a personal card-on-file flow provided by CardUpdatr.
@@ -109,7 +109,7 @@ In response to a properly formed POST request to the OnDemand endpoint containin
 | | username | string | yes | | Username for cardsavr authentication. |
 | | password | string | yes | | Password for cardsavr authentication. |
 | cardholder | | object | yes | | Cardholder information. |
-| | cuid | string | no | generated | External ID. If not provided, a random number will be generated. |
+| | cuid | string | no | generated | External Cardholder ID. If not provided, a random number will be generated. |
 | | first_name | string | yes | | Cardholder's first name. |
 | | last_name | string | yes | | Cardholder's last name. |
 | | email | string | no | | Used to send card placement notifications. |
