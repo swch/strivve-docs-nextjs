@@ -37,13 +37,13 @@ The result is a frictionless, personalized activation experience that issuers ca
 8. The URLs (and corresponding datasets in the Strivve Platform) can be configured to expire at a given timeframe specified by the Issuer.
 
 ### Cardholder Journey
-![Card Links Journey](/images/cardlinks_issuer_journey.png)
+![CardLinks Journey](/images/cardlinks_issuer_journey.png)
 
 ### Call To Action 
-![Card Links Flow](/images/cardlinks_flow.png)
+![CardLinks Flow](/images/cardlinks_flow.png)
 
 ## Card and Cardholder Data
-The Card and Cardholder Data for Card Links Engage will be published to the CardSavr platform using the Strivve CardSavr API.  This card and cardholder details.  This information is in turn stored in the PCI-DSS compliant CardSavr platform and is securely retrieved once the URL is consumed by the Cardholder.
+The Card and Cardholder Data for CardLinks Engage will be published to the CardSavr platform using the Strivve CardSavr API.  This card and cardholder details.  This information is in turn stored in the PCI-DSS compliant CardSavr platform and is securely retrieved once the URL is consumed by the Cardholder.
 
 The base information needed to create a CardLink includes:
 - Card Data 
@@ -52,9 +52,9 @@ The base information needed to create a CardLink includes:
 
 ## OnDemand CardLink API
 
-The OnDemand Card Link endpoint may be called to create a single card link. The request body consists of several separate objects. The `auth` object contains the credentials required to authenticate with CardSavr. The `expiration` object, which is optional, specifies the expiration date for the card link — if not provided, it defaults to 2 months from the current date. The `cardholder`, `card`, and `address` objects contain the necessary information to create those entities on behalf of a cardholder.
+The OnDemand CardLink endpoint may be called to create a single URL. The request body consists of several separate objects. The `auth` object contains the credentials required to authenticate with CardSavr. The `expiration` object, which is optional, specifies the expiration date for the CardLink — if not provided, it defaults to 2 months from the current date. The `cardholder`, `card`, and `address` objects contain the necessary information to create those entities on behalf of a cardholder.
 
-In response to a properly formed POST request to the OnDemand endpoint containing this information, the user will receive a card link containing a fully formed URL that can be accessed immediately.
+In response to a properly formed POST request to the OnDemand endpoint containing this information, the user will receive a CardLink containing a fully formed URL that can be accessed immediately.
 
 ### Request Body Example
 
