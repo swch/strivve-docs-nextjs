@@ -34,7 +34,7 @@ The result is a frictionless, personalized activation experience that issuers ca
 5. Campaign is launched using the CDP solution.
 6. Cardholder clicks through the call-to-action.  Upon the launch of the CardUpdatr, the Cardholder will need to respond to a challenge (whether specifying the CVV, Zip code, One-Time-Password, or other) before continuing to place cards.
 7. Upon successful authorization, the Cardholder places the card on file with Strivve.
-8. The URLs (and corresponding datasets in the Strivve Platform), will expire either at the end of the Campaign, by a specified expiration date, or other configuration in the Campaign Tool.
+8. The URLs (and corresponding datasets in the Strivve Platform) can be configured to expire at a given timeframe specified by the Issuer.
 
 ### Cardholder Journey
 ![Card Links Journey](/images/cardlinks_issuer_journey.png)
@@ -48,7 +48,7 @@ The Card and Cardholder Data for Card Links Engage will be published to the Card
 The base information needed to create a CardLink includes:
 - Card Data 
 - Cardholder Billing Address
-- Unique Cardholder reference ID (managed by the issuer)
+- Unique Cardholder reference ID (managed by the Issuer CDP)
 
 ## OnDemand CardLink API
 
@@ -56,7 +56,7 @@ The OnDemand Card Link endpoint may be called to create a single card link. The 
 
 In response to a properly formed POST request to the OnDemand endpoint containing this information, the user will receive a card link containing a fully formed URL that can be accessed immediately.
 
-### Request Body
+### Request Body Example
 
 ```json
 {
@@ -98,38 +98,58 @@ In response to a properly formed POST request to the OnDemand endpoint containin
 }
 ```
 
-### Properties
+### Auth Object
+The Auth Object is required that specifies the Cardsavr authentication credentials.
 
-| Property | Subproperty | Type | Required | Default | Description |
-|---|---|---|---|---|---|
-| auth | | object | yes | | Authentication credentials. |
-| | cardsavr_server | string | yes | | HTTPS url of the cardsavr API endpoint. |
-| | app_name | string | yes | | Integrator name. |
-| | app_key | string | yes | | Integrator key. |
-| | username | string | yes | | Username for cardsavr authentication. |
-| | password | string | yes | | Password for cardsavr authentication. |
-| cardholder | | object | yes | | Cardholder information. |
-| | cuid | string | no | generated | External Cardholder ID. If not provided, a random number will be generated. |
-| | first_name | string | yes | | Cardholder's first name. |
-| | last_name | string | yes | | Cardholder's last name. |
-| | email | string | no | | Used to send card placement notifications. |
-| expiration | | object | no | 2 months from current date | Expiration date for the request. Defaults to 2 months from the current date. |
-| | month | string | no | | Two-digit month (01-12). |
-| | day | string | no | | Day of the month (1-31). |
-| | year | string | no | | Four-digit year. |
-| address | | object | yes | | Cardholder's billing address. |
-| | address1 | string | yes | | Street address. |
-| | address2 | string | no | | Additional address info (apt, suite, etc.). |
-| | city | string | yes | | City name. |
-| | subnational | string | yes | | State or province. |
-| | postal_code | string | yes | | Zip or postal code. |
-| | country | string | yes | | Accepted values: "usa", "USA", "us", "US", "canada", "Canada", "ca", "CA". |
-| | phone_number | string | yes | | Phone number. |
-| card | | object | yes | | Card details. |
-| | reference | object | yes | | Reference object. If NULL, all other fields are required. |
-| | pan | string | conditional | | Primary account number. Required if reference is NULL. |
-| | expiration_month | string | conditional | | Two-digit expiration month. Required if reference is NULL. |
-| | expiration_year | string | conditional | | Two-digit expiration year. Required if reference is NULL. |
-| | name_on_card | string | conditional | | Name as it appears on the card. Required if reference is NULL. |
-| | nickname | string | conditional | | Display name for the card. Required if reference is NULL. |
-| | cvv | string | no | | Card verification value. |
+| Property | Type | Required | Description |
+|---|---|---|---|
+| cardsavr_server | string | yes | HTTPS url of the cardsavr API endpoint. |
+| app_name | string | yes | Integrator name. |
+| app_key | string | yes | Integrator key. |
+| username | string | yes | Username for cardsavr authentication. |
+| password | string | yes | Password for cardsavr authentication. |
+
+### Cardholder Object
+The Cardholder Object is required that specifies the Cardholder information.
+
+| Property | Type | Required | DDescription |
+|---|---|---|---|
+| cuid | string | no | External Cardholder ID. If not provided, a random number will be generated. |
+| first_name | string | yes | Cardholder's first name. |
+| last_name | string | yes | Cardholder's last name. |
+| email | string | no | Used to send card placement notifications. |
+
+### Expiration Object
+The Expiration object is optional that specifies the expiration date for the CardLink.  If not specified, CardSavr defaults it to 2 months from the current date.
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| month | string | no | Two-digit month (01-12). |
+| day | string | no | Day of the month (1-31). |
+| year | string | no | Four-digit year. |
+
+### Address Object
+The Address object is required that specifies the Cardholder's billing address.
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| address1 | string | yes | Street address. |
+| address2 | string | no | Additional address info (apt, suite, etc.). |
+| city | string | yes | City name. |
+| subnational | string | yes | State or province. |
+| postal_code | string | yes | Zip or postal code. |
+| country | string | yes | Accepted values: "usa", "USA", "us", "US", "canada", "Canada", "ca", "CA". |
+| phone_number | string | yes | Phone number. |
+
+### Card Object
+The Card object is required that specifies the Cardholder's card details
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| reference | object | yes | Reference object. If NULL, all other fields are required. |
+| pan | string | conditional | Primary account number. Required if reference is NULL. |
+| expiration_month | string | conditional | Two-digit expiration month. Required if reference is NULL. |
+| expiration_year | string | conditional | Two-digit expiration year. Required if reference is NULL. |
+| name_on_card | string | conditional | Name as it appears on the card. Required if reference is NULL. |
+| nickname | string | conditional | Display name for the card. Required if reference is NULL. |
+| cvv | string | no | Card verification value. |
