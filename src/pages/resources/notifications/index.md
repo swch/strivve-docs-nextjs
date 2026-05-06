@@ -3,23 +3,10 @@ title: Notifications
 ---
 
 ## Receive event notifications with webhooks
+Notifications can be assigned to an event and then mapped to a Webhook.  A webhook has its own configuration to where it needs to know what URL to hit.
+
 Webhooks are particularly useful for asynchronous events like card placement jobs. CardSavr uses 
 webhooks to notify your system when a card placement event completes. 
-
-Currently, only user session completion is supported.
-
-__Note__ that environments can also be set to purge ephemeral users upon session completion. This is 
-specifically advised environments where Strivve is managing the safe_keys. This setting is 
-managed by Strivve and applied globally for that environment.  
-
-Notifications can be assigned to an event and then mapped to a notification type:
-1.	Email (required email addresses are saved with cardholders)
-2.	Webhook
-
-Each notification type has its own configuration.  For example, a webhook needs to know what 
-URL to hit, and an email needs to know what address to email.
-
-**Email notifications currently must be configured by Strivve.**
 
 Webhooks require a URL to be saved via the notification endpoint.  This URL must contain all 
 the necessary security information to connect to the customer's web service.  Webhooks are 
