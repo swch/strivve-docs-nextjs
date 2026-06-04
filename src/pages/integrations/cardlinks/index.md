@@ -56,7 +56,9 @@ A .csv file, provided in the Strivve file format documented below, can be upload
 ### Input File Fields
 The upload file format must have the following schema that can support rows of up to 1000 Cardholders.  A template file is available for download from the Portal for reference.
 
-For security, the Partner Portal supports a PGP-encrypted file.  To encrypt the file, the key pair is generated via the Portal that is to be used.  The Portal as accepts non-encrypted files; however, that method is targeted for testing containing test card data.
+For security, the Partner Portal supports a PGP-encrypted file.  To encrypt the file, the key pair is generated via the Portal that is to be used.  
+
+The Portal also accepts unencrypted files; however, this method is intended for testing purposes only, using test card data. Because unencrypted files pose a security risk, we strongly recommend against generating or storing CSV files containing real customer card data in an unencrypted format.
 
 | Field Name | Description |
 |---|---|
