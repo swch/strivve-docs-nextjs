@@ -50,55 +50,127 @@ The base information needed to create a CardLink includes:
 - Cardholder Billing Address
 - Unique Cardholder reference ID (managed by the Issuer CDP)
 
-## OnDemand CardLink API
+## Using the Partner Portal
+A .csv file, provided in the Strivve file format documented below, can be uploaded via the Partner Portal and securely processed within the CardSavr platform.  Once processed, the return .csv file is returned that provides a CardLink for every cardholder provided on input.
+
+### Input File Fields
+The upload file format must have the following schema that can support rows of up to 1000 Cardholders.  A template file is available for download from the Portal for reference.
+
+For security, the Partner Portal supports a PGP-encrypted file.  To encrypt the file, the key pair is generated via the Portal that is to be used.  The Portal as accepts non-encrypted files; however, that method is targeted for testing containing test card data.
+
+| Field Name | Description |
+|---|---|
+| cardsavr_card.cvv_hash | Passing a Hash is optional if the Issuer does not have access to CVV information. This must be a SHA-256 hash with Base64 encoding of the CVV. A sample JavaScript function for generating the hash is provided below this table. |
+| cardsavr_card.cvv | Plain text CVV. Passing a CVV is optional if the Issuer does not have access to this information. |
+| cardsavr_card.customer_key | Optional external reference for identifying the card. If not provided, one will be generated. |
+| cardsavr_card.nickname | Nickname for the card (e.g., "Primary Card"). |
+| cardsavr_card.address.address1 | Street address line 1. |
+| cardsavr_card.address.address2 | Street address line 2 (optional). |
+| cardsavr_card.address.city | City. |
+| cardsavr_card.address.subnational | State, province, or region. |
+| cardsavr_card.address.country | Country (e.g., USA). |
+| cardsavr_card.address.postal_code | Postal or ZIP code. |
+| cardsavr_card.address.email | Email address of the cardholder. |
+| cardsavr_card.address.phone_number | Phone number. (Format guidance may be necessary if issues arise.) |
+| cardsavr_card.address.first_name | Cardholder's first name. |
+| cardsavr_card.address.last_name | Cardholder's last name. |
+| cardsavr_card.address.is_primary | Whether this address is the primary address for the cardholder (TRUE or FALSE). |
+
+#### CVV Hash Generation Function
+```javascript
+const generate_b64_hash_from_string = function (string) {
+    const hash = crypto.createHash("sha256");
+    hash.update(string);
+    const binary_hash = hash.digest();
+
+    return binary_hash.toString("base64");
+};
+```
+### Output File Fields
+The returned .csv file, download from the portal, provides the list of CardLink URLs with the associated customer id reference (or CUID).  Using this returned file, the CardLink information for each Cardholder can be consumed by the CDP.
+
+After processing, a new CSV file will be generated containing the results for each row in the uploaded file.
+Successful rows will contain a card link URL and expiration date. If there is any error in the creation of the
+cardholder, card, or address, a card link will not be created. Instead, the error column will contain a stringified
+object with the CUID that failed and the error(s) that occurred.
+
+Using the associated customer id reference (or CUID) passed in via the upload file, the CardLink information for each Cardholder can be consumed by the CDP.
+
+| Field Name | Description |
+|---|---|
+| cuid | The CUID of the cardholder. |
+| last_4 | The last four digits of the card number. |
+| url | The full card link URL. Clicking this link will bring the user to the verification landing page. |
+| expiration_date | The date on which the card link URL expires. |
+| error | If an error occurred while creating the cardholder, card, or address, this will be the only column populated in the row. It will contain a stringified object including the CUID and the error(s) encountered during processing. A row with an error will not have a card link URL. |
+
+
+## Using the CardSavr API
 
 The OnDemand CardLink endpoint may be called to create a single URL. The request body consists of several separate objects. The `auth` object contains the credentials required to authenticate with CardSavr. The `expiration` object, which is optional, specifies the expiration date for the CardLink — if not provided, it defaults to 2 months from the current date. The `cardholder`, `card`, and `address` objects contain the necessary information to create those entities on behalf of a cardholder.
 
-In response to a properly formed POST request to the OnDemand endpoint containing this information, the user will receive a CardLink containing a fully formed URL that can be accessed immediately.
+Full REST documentation can be found here: [CardLinks](https://swch.github.io/slate/#card-links)
 
-### Request Body Example
+#### Creating a CardLink Example
+```javascript
+const { CardsavrSession } = require("@strivve/strivve-sdk/lib/cardsavr/CardsavrJSLibrary-2.0");
 
-```json
-{
-  "auth": {
-    "cardsavr_server": "https://api.example.com",
-    "app_name": "MyIntegrator",
-    "app_key": "app_key_value",
-    "username": "config_username",
-    "password": "config_password"
-  },
-  "cardholder": {
-    "cuid": "customerid123",
-    "first_name": "Jane",
-    "last_name": "Doe",
-    "email": "jane@example.com"
-  },
-  "expiration": {
-    "month": "05",
-    "day": "15",
-    "year": "2026"
-  },
-  "address": {
-    "address1": "123 Main St",
-    "address2": "Apt 4",
-    "city": "Seattle",
-    "subnational": "WA",
-    "postal_code": "98101",
-    "country": "US",
-    "phone_number": "2065551234"
-  },
-  "card": {
-    "pan": "4111111111111111",
-    "expiration_month": "05",
-    "expiration_year": "26",
-    "name_on_card": "Jane Doe",
-    "nickname": "My Visa",
-    "cvv": "123"
-  }
+async function createOnDemandCardLink() {
+
+  // 1. Create and authenticate a session
+  const session = new CardsavrSession(
+    "https://api.YOUR_INSTANCE.cardsavr.io",
+    "your_app_key",
+    "your_app_name"
+  );
+  await session.init("your_username", "your_password");
+
+  // 2. Call createOnDemandCardLink — body, safeKey, and fi_lookup_key are all required
+  const link = await session.createOnDemandCardLink(
+    {
+      cardholder: {
+        cuid: "cardholder-unique-id-001",  // optional, random if omitted
+        first_name: "Jane",
+        last_name: "Doe"
+      },
+      card: {
+        pan: "4111111111111111",
+        expiration_month: 5,
+        expiration_year: 26,
+        name_on_card: "Jane Doe",
+        nickname: "My Visa",
+        cvv: "123"
+      },
+      expiration: {
+        month: "08",
+        day: "15",
+        year: "2026"
+    },
+      address: {
+        address1: "123 Main St",
+        city: "Seattle",
+        subnational: "WA",
+        postal_code: "98101",
+        country: "US",
+        is_primary: true,
+        email: "jane.doe@example.com",
+        phone_number: "2065551234"
+      }
+    },
+    null,                                   // safeKey — null lets Strivve manage key storage
+    "your_financial_institution_key"        // fi_lookup_key, e.g. "acmebank"
+  );
+
+  console.log("OnDemand CardLink:", link);
+  // link.cardholder_long_token can be used to build a personalized CardUpdatr URL
+
+  await session.end();
 }
+
+createOnDemandCardLink().catch(console.error);
 ```
 
-### Auth Object
+#### Auth Object
 The Auth Object is required that specifies the Cardsavr authentication credentials.
 
 | Property | Type | Required | Description |
@@ -109,7 +181,7 @@ The Auth Object is required that specifies the Cardsavr authentication credentia
 | username | string | yes | Username for cardsavr authentication. |
 | password | string | yes | Password for cardsavr authentication. |
 
-### Cardholder Object
+#### Cardholder Object
 The Cardholder Object is required that specifies the Cardholder information.
 
 | Property | Type | Required | DDescription |
@@ -119,7 +191,7 @@ The Cardholder Object is required that specifies the Cardholder information.
 | last_name | string | yes | Cardholder's last name. |
 | email | string | no | Used to send card placement notifications. |
 
-### Expiration Object
+#### Expiration Object
 The Expiration object is optional that specifies the expiration date for the CardLink.  If not specified, CardSavr defaults it to 2 months from the current date.
 
 | Property | Type | Required | Description |
@@ -128,7 +200,7 @@ The Expiration object is optional that specifies the expiration date for the Car
 | day | string | no | Day of the month (1-31). |
 | year | string | no | Four-digit year. |
 
-### Address Object
+#### Address Object
 The Address object is required that specifies the Cardholder's billing address.
 
 | Property | Type | Required | Description |
@@ -141,7 +213,7 @@ The Address object is required that specifies the Cardholder's billing address.
 | country | string | yes | Accepted values: "usa", "USA", "us", "US", "canada", "Canada", "ca", "CA". |
 | phone_number | string | yes | Phone number. |
 
-### Card Object
+#### Card Object
 The Card object is required that specifies the Cardholder's card details
 
 | Property | Type | Required | Description |
@@ -153,3 +225,35 @@ The Card object is required that specifies the Cardholder's card details
 | name_on_card | string | conditional | Name as it appears on the card. Required if reference is NULL. |
 | nickname | string | conditional | Display name for the card. Required if reference is NULL. |
 | cvv | string | no | Card verification value. |
+
+### Retrieving a CardLink Example
+In response to a properly formed POST request to the OnDemand endpoint containing this information, the user will receive a CardLink containing a fully formed URL that can be accessed immediately.
+
+```javascript
+javascriptconst { CardsavrSession } = require("@strivve/strivve-sdk/lib/cardsavr/CardsavrJSLibrary-2.0");
+
+async function getCardLink() {
+
+  // 1. Create and authenticate a session
+  const session = new CardsavrSession(
+    "https://api.YOUR_INSTANCE.cardsavr.io",
+    "your_app_key",
+    "your_app_name"
+  );
+  await session.init("your_username", "your_password");
+
+  // 2. GET a single card link by ID
+  const cardLinkId = 12345;
+  const cardLink = await session.get(`/card_links/${cardLinkId}`, {});
+  console.log("Card Link:", cardLink);
+
+  // 3. Or GET a batch filtered by cardholder ID
+  const cardLinks = await session.get("/card_links", { cardholder_ids: 67890 });
+  console.log("Card Links:", cardLinks);
+
+  await session.end();
+}
+
+getCardLink().catch(console.error);
+
+```
