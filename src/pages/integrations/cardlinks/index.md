@@ -111,7 +111,7 @@ The OnDemand CardLink endpoint may be called to create a single URL. The request
 
 Full REST documentation can be found here: [CardLinks](https://swch.github.io/slate/#card-links)
 
-### Creating a CardLink Example
+### Creating a CardLink 
 ```javascript
 const { CardsavrSession } = require("@strivve/strivve-sdk/lib/cardsavr/CardsavrJSLibrary-2.0");
 
@@ -226,7 +226,7 @@ The Card object is required that specifies the Cardholder's card details
 | nickname | string | conditional | Display name for the card. Required if reference is NULL. |
 | cvv | string | no | Card verification value. |
 
-### Retrieving a CardLink Example
+### Retrieving a CardLink 
 In response to a properly formed POST request to the OnDemand endpoint containing this information, the user will receive a CardLink containing a fully formed URL that can be accessed immediately.
 
 ```javascript
