@@ -63,7 +63,7 @@ The **Where**.  Specifies the platform or device through which the cardholder en
 | mobile_app                     | Interaction occurred within a native mobile app.
 | mobile_web                     | Interaction occured via a mobile browser.
 
-One of the above pre-defined property values must be selected.  If the parameter passed does not match the below, an error will be logged to the web console and internal server logs.  Strivve will in turn detect the platform where the reporting output will be assigned as ‘desktop’ or ‘mobile_web’.
+One of the above pre-defined property values must be selected.  Strivve will in turn detect the platform where the reporting output will be assigned as ‘desktop’ or ‘mobile_web’.  Strivve cannot detect whether the source is a mobile_app; therefore, if "mobile_app" is specified it will be honored if detected to be on a mobile device.
 
 ### Reporting
 This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webhook Reporting](/ops-admin/reporting) with following new columns:
