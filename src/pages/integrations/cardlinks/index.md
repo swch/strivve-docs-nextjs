@@ -111,7 +111,7 @@ The OnDemand CardLink endpoint may be called to create a single URL. The request
 
 Full REST documentation can be found here: [CardLinks](https://swch.github.io/slate/#card-links)
 
-#### Creating a CardLink Example
+### Creating a CardLink Example
 ```javascript
 const { CardsavrSession } = require("@strivve/strivve-sdk/lib/cardsavr/CardsavrJSLibrary-2.0");
 
