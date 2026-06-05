@@ -115,61 +115,54 @@ Full REST documentation can be found here: [CardLinks](https://swch.github.io/sl
 
 ### Creating a CardLink 
 ```javascript
-const { CardsavrSession } = require("@strivve/strivve-sdk/lib/cardsavr/CardsavrJSLibrary-2.0");
+const { CardLinksHelper } = require("@strivve/strivve-sdk/lib/cardsavr/CardsavrHelper");
 
 async function createOnDemandCardLink() {
 
-  // 1. Create and authenticate a session
-  const session = new CardsavrSession(
-    "https://api.YOUR_INSTANCE.cardsavr.io",
-    "your_app_key",
-    "your_app_name"
-  );
-  await session.init("your_username", "your_password");
+  const clh = new CardLinksHelper();
 
-  // 2. Call createOnDemandCardLink — body, safeKey, and fi_lookup_key are all required
-  const link = await session.createOnDemandCardLink(
+  const link = await clh.createCardLink(
+    // 1. auth — credentials are passed in directly; no separate session setup needed
     {
-      cardholder: {
-        cuid: "cardholder-unique-id-001",  // optional, random if omitted
-        first_name: "Jane",
-        last_name: "Doe"
-      },
-      card: {
-        pan: "4111111111111111",
-        expiration_month: 5,
-        expiration_year: 26,
-        name_on_card: "Jane Doe",
-        nickname: "My Visa",
-        cvv: "123"
-      },
-      expiration: {
-        month: "08",
-        day: "15",
-        year: "2026"
+      cardsavr_server: "https://api.YOUR_INSTANCE.cardsavr.io",
+      app_name:        "your_app_name",
+      app_key:         "your_app_key",
+      username:        "your_username",
+      password:        "your_password"
     },
-      address: {
-        address1: "123 Main St",
-        city: "Seattle",
-        subnational: "WA",
-        postal_code: "98101",
-        country: "US",
-        is_primary: true,
-        email: "jane.doe@example.com",
-        phone_number: "2065551234"
-      }
+    // 2. cardholder
+    {
+      cuid:       "cardholder-unique-id-001",  // optional, random if omitted
+      first_name: "Jane",
+      last_name:  "Doe"
     },
-    null,                                   // safeKey — null lets Strivve manage key storage
-    "your_financial_institution_key"        // fi_lookup_key, e.g. "acmebank"
+    // 3. card
+    {
+      pan:              "4111111111111111",
+      expiration_month: "05",
+      expiration_year:  "26",
+      name_on_card:     "Jane Doe",
+      nickname:         "My Visa",
+      cvv:              "123"
+    },
+    // 4. address
+    {
+      address1:     "123 Main St",
+      city:         "Seattle",
+      subnational:  "WA",
+      postal_code:  "98101",
+      country:      "US",
+      is_primary:   true,
+      email:        "jane.doe@example.com",
+      phone_number: "2065551234"
+    },
+    "your_financial_institution_key",  // fi_lookup_key, e.g. "acmebank"
+    null                               // safe_key — null lets Strivve manage key storage
   );
 
   console.log("OnDemand CardLink:", link);
   // link.cardholder_long_token can be used to build a personalized CardUpdatr URL
-
-  await session.end();
 }
-
-createOnDemandCardLink().catch(console.error);
 ```
 
 #### Auth Object
@@ -232,30 +225,53 @@ The Card object is required that specifies the Cardholder's card details
 In response to a properly formed POST request to the OnDemand endpoint containing this information, the user will receive a CardLink containing a fully formed URL that can be accessed immediately.
 
 ```javascript
-javascriptconst { CardsavrSession } = require("@strivve/strivve-sdk/lib/cardsavr/CardsavrJSLibrary-2.0");
 
-async function getCardLink() {
+ // ── Process the return value from clh.createCardLink────────────────────────────────────
 
-  // 1. Create and authenticate a session
-  const session = new CardsavrSession(
-    "https://api.YOUR_INSTANCE.cardsavr.io",
-    "your_app_key",
-    "your_app_name"
-  );
-  await session.init("your_username", "your_password");
+  // Full object for debugging / inspection
+  console.log("OnDemand CardLink:", link);
 
-  // 2. GET a single card link by ID
-  const cardLinkId = 12345;
-  const cardLink = await session.get(`/card_links/${cardLinkId}`, {});
-  console.log("Card Link:", cardLink);
+  // 1. cardholder_long_token — JWT used to build a personalized CardUpdatr URL
+  const { cardholder_long_token } = link;
 
-  // 3. Or GET a batch filtered by cardholder ID
-  const cardLinks = await session.get("/card_links", { cardholder_ids: 67890 });
-  console.log("Card Links:", cardLinks);
+  if (!cardholder_long_token) {
+    throw new Error("No cardholder_long_token in response — cannot build CardUpdatr URL");
+  }
 
-  await session.end();
+  const cardUpdatrUrl = buildCardUpdatrUrl(cardholder_long_token);
+  console.log("CardUpdatr URL:", cardUpdatrUrl);
+
+  // 2. cardholder_id — reference to the created cardholder record
+  const { cardholder_id } = link;
+  console.log("Cardholder ID:", cardholder_id);
+
+  // 3. card_id / address_id — IDs of the created card and address resources
+  const { card_id, address_id } = link;
+  console.log("Card ID:", card_id);
+  console.log("Address ID:", address_id);
+
+  return {
+    cardUpdatrUrl,
+    cardholder_id,
+    card_id,
+    address_id,
+    cardholder_long_token
+  };
 }
 
-getCardLink().catch(console.error);
+/**
+ * Builds a personalized CardUpdatr URL from a long token.
+ * The cardholder is automatically authenticated when they open this URL.
+ *
+ * @param {string} longToken - cardholder_long_token from the CardLink response
+ * @param {string} [baseUrl]  - CardUpdatr base URL (defaults to hosted Strivve instance)
+ * @returns {string} Full CardUpdatr URL ready to redirect or embed
+ */
+function buildCardUpdatrUrl(longToken, baseUrl = "https://cardupdatr.app/") {
+  const url = new URL(baseUrl);
+  url.searchParams.set("long-key", longToken);
+  return url.toString();
+}
+
 
 ```
