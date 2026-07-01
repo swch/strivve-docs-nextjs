@@ -60,23 +60,28 @@ For security, the Partner Portal supports a PGP-encrypted file.  To encrypt the 
 
 The Portal also accepts unencrypted files; however, this method is intended for testing purposes only, using test card data. Because unencrypted files pose a security risk, we strongly recommend against generating or storing CSV files containing real customer card data in an unencrypted format.
 
-| Field Name | Description |
-|---|---|
-| cardsavr_card.cvv_hash | Passing a Hash is optional if the Issuer does not have access to CVV information. This must be a SHA-256 hash with Base64 encoding of the CVV. A sample JavaScript function for generating the hash is provided below this table. |
-| cardsavr_card.cvv | Plain text CVV. Passing a CVV is optional if the Issuer does not have access to this information. |
-| cardsavr_card.customer_key | Optional external reference for identifying the card. If not provided, one will be generated. |
-| cardsavr_card.nickname | Nickname for the card (e.g., "Primary Card"). |
-| cardsavr_card.address.address1 | Street address line 1. |
-| cardsavr_card.address.address2 | Street address line 2 (optional). |
-| cardsavr_card.address.city | City. |
-| cardsavr_card.address.subnational | State, province, or region. |
-| cardsavr_card.address.country | Country (e.g., USA). |
-| cardsavr_card.address.postal_code | Postal or ZIP code. |
-| cardsavr_card.address.email | Email address of the cardholder. |
-| cardsavr_card.address.phone_number | Phone number. (Format guidance may be necessary if issues arise.) |
-| cardsavr_card.address.first_name | Cardholder's first name. |
-| cardsavr_card.address.last_name | Cardholder's last name. |
-| cardsavr_card.address.is_primary | Whether this address is the primary address for the cardholder (TRUE or FALSE). |
+| Field Name | Required | Description |
+|---|---|---|
+| cardholder.cuid | No | External reference for identifying the card to the Cardholder (e.g., a customer/cardholder ID managed within the Issuer's system). It is strongly recommended a cuid is passed in for each Cardholder to reference the returned list.  If not provided, a cuid will be generated in the returned list. |
+| cardsavr_card.pan | Yes | The 16-digit primary account number of the card. |
+| cardsavr_card.expiration_year | Yes | The 2-digit expiration year of the card. |
+| cardsavr_card.expiration_month | Yes | The 2-digit expiration month of the card.  |
+| cardsavr_card.name_on_card | No | The name on the card. |
+| cardsavr_card.cvv_hash | No | A hashed CVV may be provided in place of the raw CVV. This must be a SHA-256 hash with Base64 encoding of the CVV. A sample JavaScript function for generating the hash is provided below this table. |
+| cardsavr_card.cvv | No | Plain text CVV. Passing a CVV is optional if the Issuer does not have access to this information. |
+| cardsavr_card.customer_key | No | Reserved for future use. |
+| cardsavr_card.nickname | No | Nickname for the card (e.g., "Primary Card"). |
+| cardsavr_card.address.address1 | Yes | Street address line 1. |
+| cardsavr_card.address.address2 | No |Street address line 2. |
+| cardsavr_card.address.city | Yes | City. |
+| cardsavr_card.address.subnational | Yes | State, province, or region. |
+| cardsavr_card.address.country | Yes | Country (e.g., USA). |
+| cardsavr_card.address.postal_code | Yes | Postal or ZIP code. |
+| cardsavr_card.address.email | No | Email address of the Cardholder. |
+| cardsavr_card.address.phone_number | No | Phone number of the Cardholder. |
+| cardsavr_card.address.first_name | Yes | Cardholder's first name. |
+| cardsavr_card.address.last_name | Yes | Cardholder's last name. |
+| cardsavr_card.address.is_primary | Yes | Whether this address is the primary address for the Cardholder (TRUE or FALSE). |
 
 #### CVV Hash Generation Function
 ```javascript
