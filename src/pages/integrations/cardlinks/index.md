@@ -16,13 +16,13 @@ These URLs are designed to slot directly into existing marketing campaigns as th
  - QR Code:  Printed or displayed in physical or digital materials
 
 ## Cardholder Experience
-When a cardholder clicks their link, they land on a personalized page and are prompted to verify their identity before selecting merchant sites for card placement. Issuers can choose from several challenge types to align with their security requirements:
+When a cardholder clicks their link, they land on a personalized page and are prompted to verify their identity before selecting merchant sites for card placement. Issuers can choose from a combination several challenge types to align with their security requirements.   It is strongly recommened to use 2 challenges (for examplee, CVV + ZIP code)
 
- - CVV only
- - CVV + ZIP Code
- - ZIP Code only
+ - CVV 
+ - ZIP Code
  - PAN Last 4
- - PAN First 2 + Last 2
+ - PAN Last 5
+ - Expiration Date
 
 The result is a frictionless, personalized activation experience that issuers can launch through channels they already own — with no new integration required.
 
@@ -75,7 +75,7 @@ The Portal also accepts unencrypted files; however, this method is intended for 
 | cardsavr_card.address.address2 | No |Street address line 2. |
 | cardsavr_card.address.city | Yes | City. |
 | cardsavr_card.address.subnational | Yes | State, province, or region. |
-| cardsavr_card.address.country | Yes | Country (e.g., USA). |
+| cardsavr_card.address.country | Yes | Country ("usa", "USA", "us", "US", "canada", "Canada", "ca", "CA"). |
 | cardsavr_card.address.postal_code | Yes | Postal or ZIP code. |
 | cardsavr_card.address.email | No | Email address of the Cardholder. |
 | cardsavr_card.address.phone_number | No | Phone number of the Cardholder. |
