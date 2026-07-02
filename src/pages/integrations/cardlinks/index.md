@@ -16,9 +16,9 @@ These URLs are designed to slot directly into existing marketing campaigns as th
  - QR Code:  Printed or displayed in physical or digital materials
 
 ## Cardholder Experience
-When a cardholder clicks their link, they land on a personalized page and are prompted to verify their identity before selecting merchant sites for card placement. Issuers can choose from a combination several challenge types to align with their security requirements.   It is strongly recommened to use 2 challenges (for examplee, CVV + ZIP code)
+When a cardholder clicks their link, they land on a personalized page and are prompted to verify their identity before selecting merchant sites for card placement. Issuers can choose from a combination several challenge types to align with their security requirements.   It is strongly recommened to use 2 challenges (the default is the challenge of CVV + ZIP code)
 
- - CVV 
+ - CVV
  - ZIP Code
  - PAN Last 4
  - PAN Last 5
