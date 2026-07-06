@@ -77,7 +77,7 @@ Example:
 
 ### Credential Requests
 
-Credential requests occur when additional information is required from the user, and they persist until responded to.  Each request has a type, an envelope\_id and an account\_link property which contains the required properties for the response.  This envelope\_id must accompany each response. When a request is retrieved by the client, the user must complete some sort of action such as entering in new credentials, getiing a tfa text from their email or text message, or even answer securty questions.  Once the server receives the credential response, the request is removed, and the job continues.
+Credential requests occur when additional information is required from the user, and they persist until responded to.  Each request has a type, an envelope\_id and an account\_link property which contains the required properties for the response.  This envelope\_id must accompany each response. When a request is retrieved by the client, the user must complete some sort of action such as entering in new credentials, getting a tfa text from their email or text message, or  answering securty questions.  Once the server receives the credential response, the request is removed, and the job continues.
 
 type | description
 ---- | ------------

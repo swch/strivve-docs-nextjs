@@ -38,7 +38,7 @@ Before discussing recommendations for testing and preparing for your GoLive! Dat
 
 For our top-tier merchant sites, we have a rigorous testing process in place for CardUpdatr & CardSavr functionality. We conduct these tests bi-weekly to ensure successful placement of cardholders' credit cards on these critical merchant sites. Continuous testing and monitoring are our top priorities as they form the core of our business.
 
-In the event of failures at any merchant site, we immediately place them on a "watchlist" and closely monitor them on a daily basis for a week. Based on the results of our daily tests for these watchlist merchant sites, we make informed decisions on whether to temporarily remove the sites from the production rotation while we address the issues or to keep the site active and continue accepting production traffic
+In the event of failures at any merchant site, we immediately place them on a "watchlist" and closely monitor them on a daily basis for a week. Based on the results of our daily tests for these watchlist merchant sites, we make informed decisions on whether to temporarily remove the sites from the production rotation while we address the issues or to keep the site active and continue accepting production traffic.
 
 We also pay close attention to the impact of our testing activities to avoid triggering account or card fatigue, which could negatively affect the cardholders' experience and GoLive testing.
 
@@ -51,7 +51,7 @@ To ensure a seamless and user-friendly experience for your cardholders, we offer
 
 * **OTP Login:** In this scenario, you will only need to provide the UserID to initiate a One Time Passcode login. The subsequent flow and prompts will depend on your response to the passcode prompt.
 
-* These synthetic sites have been meticulously developed as standalone entities external to the Strivve platform. To access these sites and start testing them follow the guidelines provided below to make them available:
+* These synthetic sites have been meticulously developed as standalone entities external to the Strivve platform. To access these sites and start testing them, follow the guidelines provided below to make them available:
 
 ## Enabling Synthetic Sites
 To enable synthetic sites, follow one of these options (option one is recommended):
@@ -78,7 +78,7 @@ The SS Standard Login synthetic site is designed to simulate the most common use
 ### Option 1: GOOD_EMAIL & GOOD_PASSWORD
 If you enter "good_email" for the UserID and "good_password" for the Password, you will experience the following screens and a successful scenario:
 
-![Stardard Logon](/images/SS-Standard-Logon.png) 
+![Standard Logon](/images/SS-Standard-Logon.png) 
 
 A sample video of good_email & good_password: [good_email](https://1drv.ms/v/s!ArSB8eMcy-NPjLspzhShRN6XNR9IrQ?e=zD8vqq)
 
@@ -140,7 +140,7 @@ A sample video of good_email & 5678 (for tfa): [good_email + 5678](https://1drv.
 ## How To Use with the CardSavr API
 You can post jobs to the synthetic site just like you would to a live merchant site.
 
-First, ensure that you have all the objects need to post a job to the CardSavr API:
+First, ensure that you have all the objects needed to post a job to the CardSavr API:
 
 * User (must be created before the card or account object)
 ```json
@@ -188,6 +188,6 @@ a site_hostname=synthetic.site
 }
 ``` 
 
-Using the synthetic sites, you can test the user interactions 
-within your application 
+Using the synthetic sites, you can test the user interactions
+within your application.
 

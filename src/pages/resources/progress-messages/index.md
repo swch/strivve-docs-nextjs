@@ -3,7 +3,7 @@ title: Job Progress Messaging
 ---
 ## Overview
 
-CardSavr utilitizes a messaging system to "stream" messages to clients.  Ideally, a job can process without any participation from the user, but occasionally some additional user input may be necessary. In these situations, client applications may need to acquire additional security credentials (MFA codes), they may need to fix incorrect credentials, and they may wish to be notified when jobs complete, pass authentication, or even fail.  There are two kinds of messages.
+CardSavr utilizes a messaging system to "stream" messages to clients.  Ideally, a job can process without any participation from the user, but occasionally some additional user input may be necessary. In these situations, client applications may need to acquire additional security credentials (MFA codes), they may need to fix incorrect credentials, and they may wish to be notified when jobs complete, pass authentication, or even fail.  There are two kinds of messages.
 
 ### Status Messages
 
@@ -15,11 +15,11 @@ type | description
 ---- | ------------
 type | the type of message - this is currently always job\_status
 job\_id | the job id for this message channel
-message | a message containing data aboout this status
+message | a message containing data about this status
 message.job\_timeout | time left before this job times out (in seconds), it is appropriate to alert the cardholder a minute before their session expires. There is an initial timeout of 5 minutes for a job, but if additional information is required from the user, additional time is added to the length of the job. It is important to alert the user that time is about to expire while prompting for new credentials or a TFA code.
 message.percent\_complete | approximate percentage of the job that is completed.
 message.status | the status for this job (e.g. AUTH, UPDATING or DUPLICATE\_CARD)
-message.termination_type | (only on the final message) - the exit state for this job (BILLABLE, USER\_DATA\_FAILURE, SITE\_INTERACTION\_FAILURE, PROCESS\_FAILURE). The application should alert the clent upon receipt of one of these messages.
+message.termination_type | (only on the final message) - the exit state for this job (BILLABLE, USER\_DATA\_FAILURE, SITE\_INTERACTION\_FAILURE, PROCESS\_FAILURE). The application should alert the client upon receipt of one of these messages.
 message.status_message | a status message that should be shown to the user
 
 Examples:
@@ -55,14 +55,14 @@ Examples:
 
 ### Credential Requests
 
-Unlike job status messages, credential requests persist until responded to.  Each request has a type, and an envelope\_id.  This envelope\_id must accompany each response.  Credential requests have two types: tfa\_request and credential\_request.  When a request is retrieved by the client, the user should either enter in new credentials or get a tfa response from their email, text message or sometimes even mobile apps.  Once the server receives the credential response, the request is removed, and the job continues.  (For backward compatibiliy, you can still key off the request_type:  'tfa_request' always requires a tfa response, and 'credential_request' always requires a username/password, but this functionality is deprecated and will not be supported after 6/1/2023)
+Unlike job status messages, credential requests persist until responded to.  Each request has a type, and an envelope\_id.  This envelope\_id must accompany each response.  Credential requests have two types: tfa\_request and credential\_request.  When a request is retrieved by the client, the user should either enter in new credentials or get a tfa response from their email, text message or sometimes even mobile apps.  Once the server receives the credential response, the request is removed, and the job continues.  (For backward compatibility, you can still key off the request_type:  'tfa_request' always requires a tfa response, and 'credential_request' always requires a username/password, but this functionality is deprecated and will not be supported after 6/1/2023)
 
 type | description
 ---- | ------------
 type | the type of message - tfa\_request or credential\_request (or other types, use account_link for credential request types)
 job\_id | the job\_id for this message channel, this is important to know which merchant is requesting
 envelope\_id | a guid which must be included in the response
-account\_link | a list of proprerties that need to be collected from the client -- note that some properties are secret and should be obscured when entered
+account\_link | a list of properties that need to be collected from the client -- note that some properties are secret and should be obscured when entered
 
 Examples: 
 
@@ -108,7 +108,7 @@ In the case of a tfa_message, note that there is a status_message as well as an 
     }
   ],
   "message": {
-    "status": "PENGING_NEWCREDS",
+    "status": "PENDING_NEWCREDS",
     "percent_complete": 45,
     "auth_percent_complete": 90,
     "job_timeout": 827027,
@@ -130,7 +130,7 @@ In the case of a tfa_message, note that there is a status_message as well as an 
     }
   ],
   "message": {
-    "status": "PENGING",
+    "status": "PENDING",
     "percent_complete": 45,
     "auth_percent_complete": 90,
     "job_timeout": 827027,
@@ -143,7 +143,7 @@ To reduce the amount of time required to complete the job, starting a job before
 
 ### Credential Responses
 
-The most common way to respond to a message request, is through request hydration and the jobs endpoint.  By simply providing a header that contains the appropriate envelope_id ("x-cardsavr-envelope-id": "<GUID>"), responses become simple account updates.  Note that credential responses aren't always username/password (although that's most common).  The [merchant site endpoint](https://swch.github.io/slate/#merchant-sites) defines the necessary values for each merchant site. (e.g. "pin" or "email")
+The most common way to respond to a message request is through request hydration and the jobs endpoint.  By simply providing a header that contains the appropriate envelope_id ("x-cardsavr-envelope-id": "<GUID>"), responses become simple account updates.  Note that credential responses aren't always username/password (although that's most common).  The [merchant site endpoint](https://swch.github.io/slate/#merchant-sites) defines the necessary values for each merchant site. (e.g. "pin" or "email")
 
 Endpoint:  PUT /place\_card\_on\_single\_site\_jobs/:job\_id
 
@@ -170,7 +170,7 @@ or for TFA responses:
 }
 ```
 
-or for TFA messages - these should be respoonded to immediately with "ack", since no response is required by the client.  In this case, you should continue to poll until the job is unblocked.
+or for TFA messages - these should be responded to immediately with "ack", since no response is required by the client.  In this case, you should continue to poll until the job is unblocked.
 
 ```json
 {
@@ -208,13 +208,13 @@ Endpoint:  POST /messages/place\_card\_on\_single\_site\_jobs/job\_id:/credentia
   }
 }
 ```
-This method is not recommended since this can all be accmplished using the account and job endpoints.  
+This method is not recommended since this can all be accomplished using the account and job endpoints.  
 
 All the SDKs provide simple interfaces for ensuring the correct data is returned in the response.  There are also sample tests that walk through how to attach envelope_ids in responses.
 
 #### Querying Messages by Cardholder
 
-Since it is commmon for multile jobs to be running simultaneously, it is oftentimes easiest to query multiple job messages at once.  Since every job message is accompanied by its id, it's a relatively simple exercise to route the messages to the right component that manages each job.  
+Since it is common for multiple jobs to be running simultaneously, it is oftentimes easiest to query multiple job messages at once.  Since every job message is accompanied by its id, it's a relatively simple exercise to route the messages to the right component that manages each job.  
 
 Endpoint: GET /messages/cardholders/:cardholder\_id
 
@@ -226,15 +226,15 @@ Endpoint GET /messages/place\_card\_on\_single\_site\_jobs/:job\_id
 
 #### Broadcast Messages
 
-The broadcast message endpoints are actually available for direct consumption as well.  These messages can be used to set up monitoring services, or applications that can receive messages across multiple channels.  As most implementation do not require such complexity, there is limited SDK support.
+The broadcast message endpoints are actually available for direct consumption as well.  These messages can be used to set up monitoring services, or applications that can receive messages across multiple channels.  As most implementations do not require such complexity, there is limited SDK support.
 
 Endpoint: GET /messages/place\_card\_on\_single\_site\_jobs/:job\_id/broadcasts
 
-In order to receive broadcast messaages, you must first register and set up a dedicated channel.
+In order to receive broadcast messages, you must first register and set up a dedicated channel.
 
 Endpoint: GET /messages/place\_card\_on\_single\_site\_jobs/:job\_id/broadcasts/registrations
 
-This endpoint returns an access key that needs to be included with status queries.  You must include the cardsavr-messaging-access-key header as part of the request, also avaialble as a parameter in the [SDK](https://swch.github.io/).
+This endpoint returns an access key that needs to be included with status queries.  You must include the cardsavr-messaging-access-key header as part of the request, also available as a parameter in the [SDK](https://swch.github.io/).
 
 Request messages adhere to a slightly different format. 
 

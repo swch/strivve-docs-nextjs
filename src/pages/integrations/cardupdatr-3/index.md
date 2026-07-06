@@ -4,7 +4,7 @@ title: CardUpdatr 3.0
 
 ## Overview
 
-CardUpdatr 3.0 is Strivve's latest web drop-in component that handles the end to end experience of updating any card where cardholders shop and make payments online - keeping your card Top of Wallet®. CardUpdatr 3.0 has a responsive design from which it can be leveraged in both Mobile Web and Desktop Web applications. There are several methods from which CardUpdatr can be integrated into your application which is covered in this section.
+CardUpdatr 3.0 is Strivve's latest web drop-in component that handles the end to end experience of updating any card where cardholders shop and make payments online - keeping your card Top of Wallet®. CardUpdatr 3.0 has a responsive design from which it can be leveraged in both Mobile Web and Desktop Web applications. There are several methods from which CardUpdatr can be integrated into your application which are covered in this section.
 
 <Add CardUpdatr 3.0 vide0)>
 

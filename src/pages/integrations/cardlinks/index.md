@@ -43,7 +43,7 @@ The result is a frictionless, personalized activation experience that issuers ca
 ![CardLinks Flow](/images/cardlinks_flow.png)
 
 ## Card and Cardholder Data
-The Card and Cardholder Data for CardLinks Engage will be published to the CardSavr platform using the Strivve CardSavr API.  This card and cardholder details.  This information is in turn stored in the PCI-DSS compliant CardSavr platform and is securely retrieved once the URL is consumed by the Cardholder.
+The Card and Cardholder Data for CardLinks Engage will be published to the CardSavr platform using the Strivve CardSavr API.  This information is in turn stored in the PCI-DSS compliant CardSavr platform and is securely retrieved once the URL is consumed by the Cardholder.
 
 The base information needed to create a CardLink includes:
 - Card Data 
@@ -171,7 +171,7 @@ async function createOnDemandCardLink() {
 ```
 
 #### Auth Object
-The Auth Object is required that specifies the Cardsavr authentication credentials.
+The reqiored Auth Object specifies the Cardsavr authentication credentials.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
@@ -182,9 +182,9 @@ The Auth Object is required that specifies the Cardsavr authentication credentia
 | password | string | yes | Password for cardsavr authentication. |
 
 #### Cardholder Object
-The Cardholder Object is required that specifies the Cardholder information.
+The required Cardholder Object specifies the Cardholder information.
 
-| Property | Type | Required | DDescription |
+| Property | Type | Required | Description |
 |---|---|---|---|
 | cuid | string | no | External Cardholder ID. If not provided, a random number will be generated. |
 | first_name | string | yes | Cardholder's first name. |

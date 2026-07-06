@@ -29,7 +29,7 @@ try {
     ch.setAppSettings(cardsavr_server, app_name, app_key); 
     //Create a session for the application user (cardholder agent)
     if (await ch.loginAndCreateSession(app_username, app_password)) {
-        //Save the card on a behalf of a temporary cardholder - return their username, grant, card par
+        //Save the card on behalf of a temporary cardholder - return their username, grant, card par
         const data = await ch.createCard(app_username, 
                                          financial_institution, 
                                          cardholder_data, 
@@ -47,13 +47,13 @@ try {
 
 Making calls to the CardSavr API requires a Cardsavr server and an integrator name and key.  You will also need an app username and password that the application uses to log onto the cardsavr platform using the integrator key to encrypt its payloads.  
 
-This is accomplished within the loginAndCreateSession call.  Once logged in, the application can call createCard which creates a user and card with an attached address.  The response object contains three imporant pieces of data:
+This is accomplished within the loginAndCreateSession call.  Once logged in, the application can call createCard which creates a user and card with an attached address.  The response object contains three important pieces of data:
 
-* The ephemeral username that was created for this cardholer (attached to the cardholder object that is part of the response)
-* A one-time credential grant that can be issued to different application (usually a frontend app) to assume the role of the cardholder -- this grant expires in three minutes
+* The ephemeral username that was created for this cardholder (attached to the cardholder object that is part of the response)
+* A one-time credential grant that can be issued to a different application (usually a frontend app) to assume the role of the cardholder -- this grant expires in three minutes
 * The card_id for the created card, so the virtual browser knows which card to place
 
-Many cardsavr functions are __asyncronous__ and require await to extract the return data from the Promise.
+Many cardsavr functions are __asynchronous__ and require await to extract the return data from the Promise.
 
 ### Microsoft C Sharp
 
@@ -91,11 +91,11 @@ log.Info("username: " + login.cardholder.username + ", grant: " + login.userCred
 
 ```
 
-It's a very similar pattern and requires the same developer integrator and user credentials to set up.  You'll also notice the usage of "custom\_data", which is a gneric object that can be passed into a user object. This custom_data atribute will appear in downstrem reporting and as part of [webhook notifications](/resources/notifications/).
+It's a very similar pattern and requires the same developer integrator and user credentials to set up.  You'll also notice the usage of "custom\_data", which is a generic object that can be passed into a user object. This custom_data attribute will appear in downstream reporting and as part of [webhook notifications](/resources/notifications/).
 
 ### Java
 
-There is a corresponding [Java](https://github.com/swch/strivve-sdk-java) that accomplishes the same function:
+There is a corresponding [Java SDK](https://github.com/swch/strivve-sdk-java) that accomplishes the same function:
 
 ```java
 import javax.json.*;

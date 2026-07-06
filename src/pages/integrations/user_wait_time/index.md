@@ -13,9 +13,9 @@ This document focuses on the overall time required by the cardholder to complete
 
 Strivve measures user wait times, and many more performance related metrics on every card placement which is used to make regular improvements to Strivve operations. Regularly, there are production improvements which positively impact performance, and there are several more initiatives on our roadmap which improve the user wait time, as well as overall length of time it takes to fully place a card. 
 
-Today, most customers and their cardholders benefit greatly by leveraging a user experience which completes as soon as the site account is linked.  In this way, the total User Wait Time for cardholders is significantly reduced by more than 50%, by only requiring the cardholder attention while their account linking input (aka sign in) is needed. 
+Today, most customers and their cardholders benefit greatly by leveraging a user experience which completes as soon as the site account is linked.  In this way, the total User Wait Time for cardholders is significantly reduced by more than 50%, by only requiring the cardholder's attention while their account linking input (aka sign in) is needed. 
 
-This document is targeted towards integrators who are chosing to author their own UX using the [CardSavr API](/integrations/introduction#card-savr-api) versus a Strivve drop-in component.
+This document is targeted towards integrators who are choosing to author their own UX using the [CardSavr API](/integrations/introduction#card-savr-api) versus a Strivve drop-in component.
 
 ## User Wait Time Solutions
 
@@ -30,15 +30,15 @@ The card placement process requires no cardholder interaction as the Strivve RPA
 ### User Wait Time - Waiting for Full Process to Complete
 Early implementations of Strivve CoF workflows required cardholders to wait for the entire length of the card placement.  Data from those implementations showed that this created unnecessarily longer user wait times from which the cardholder needs to be present for the card placement to complete.
 
-Strivve’s legacy solutions followed this workflow pattern until the concept of the cardholder U/X journey simply completing once the account is successfully linked.  If the cardholder waits less, improved cardholder engagement and increases the volume of card-on-file placements.
+Strivve’s legacy solutions followed this workflow pattern until the concept of the cardholder U/X journey simply completing once the account is successfully linked.  If the cardholder waits less, engagement improves and placement volume increases.
 
-For example, Strivve CardUpdatr was orignally built to require the user to wait for the entire process to complete.  Strivve then introduced the concept of notifing the cardholder once that account linking process has completed that no further action is necessary, and they may exit or move forward to add more sites.  
+For example, Strivve CardUpdatr was originally built to require the user to wait for the entire process to complete.  Strivve then introduced the concept of notifying the cardholder once that account linking process has completed that no further action is necessary, and they may exit or move forward to add more sites.  
 
 **Account Link Completion** - Cardholder has option to wait for the entire process to complete or release to other tasks:
 ![CardUpdatr](/images/cu_account_link_complete.png) 
 
 ### User Wait Time - Releasing the Cardholder after Account Linking
-The new StrivveCX component library has been designed to provide an enhanced cardholder experience from which the User Wait Time is minimized by releasing the cardholder’s after account linking ha been completed. 
+The new StrivveCX component library has been designed to provide an enhanced cardholder experience from which the User Wait Time is minimized by releasing the cardholder’s after account linking has been completed. 
 
 Here is a brief overview of how StrivveCX releases the cardholder after account linking:
 
@@ -74,12 +74,12 @@ Once the background card placement is complete, the status is updated to complet
 ![StriveCX-8](/images/cx_my_sites_2.png) 
 
 ## CardSavr API 
-Please see the [CardSavr API Job Status Section](//resources/job-progress#job-statuses) which provides all the status messages the integrator receives for a card placement job.  Once the job progress has moved to "Updating", the cardholder is authenticated/linked to the merchant site from which use interaction is no longer required.
+Please see the [CardSavr API Job Status Section](/resources/job-progress#job-statuses) which provides all the status messages the integrator receives for a card placement job.  Once the job progress has moved to "Updating", the cardholder is authenticated/linked to the merchant site from which user interaction is no longer required.
 
-Please see the [SDK's and/or REST APIs Section](/api-sdk/introduction) for full information on integrating with the CardSavr API.
+Please see the [SDKs and/or REST APIs Section](/api-sdk/introduction) for full information on integrating with the CardSavr API.
 
 ## Conclusion
-The focus of minimizing the User Wait Time will result in a significantly improved cardholder experience which would maximize adoption and usage of the CardSavr platform.  By releasing the cardholder after account linsking, the amount of time the cardholder has to wait is reduced significantly by over 50%.  
+The focus of minimizing the User Wait Time will result in a significantly improved cardholder experience which would maximize adoption and usage of the CardSavr platform.  By releasing the cardholder after account linking, the amount of time the cardholder has to wait is reduced significantly by over 50%.  
 
 Please [Contact Strivve](mailto:support@strivve.com) for any additional support regarding this guidance.
 

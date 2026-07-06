@@ -2,17 +2,17 @@
 title: Introduction
 ---
 
-## Strivve CardSavr SDK's and REST API
+## Strivve CardSavr SDKs and REST API
 
-Strivve provides support libraries for Javascript via NodeJS, Java Runtime, and Micrsoft .Net Framework. \*\* If there are needs for additional language support, please inquire through your sales representative.
+Strivve provides support libraries for Javascript via NodeJS, Java Runtime, and Microsoft .Net Framework.  If there are needs for additional language support, please inquire through your sales representative.
 
-[Click to Jump to REST API Documenation...](https://swch.github.io/slate/#introduction)
+[Click to Jump to REST API Documentation...](https://swch.github.io/slate/#introduction)
 
-## Specific Strivve SDK's
+## Specific Strivve SDKs
 
 ### NodeJS SDK for CardSavr
 
-This library is an implementation of the CardSavr API for Node.js or web applications. It contains methods for session management; security and cryptography; and resource retrieval, creation, updating, and deleting. By mangaging CardSavr's complex security requirements automatically, the JavaScript library greatly simplifies the implementation of CardSavr in your own app.
+This library is an implementation of the CardSavr API for Node.js or web applications. It contains methods for session management; security and cryptography; and resource retrieval, creation, updating, and deleting. By managing CardSavr's complex security requirements automatically, the JavaScript library greatly simplifies the implementation of CardSavr in your own app.
 
 {% callout title="Please note!" %}
 Most methods in this library are asynchronous and therefore return resolved promises. Each method's individual documentation will specify if it is asynchronous. Take a look at the Quick Start guide to get up and running with the CardSavr library.

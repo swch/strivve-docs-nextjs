@@ -11,24 +11,24 @@ When [creating a cardholder](https://swch.github.io/slate/#create-cardholder), i
 
 ## Strivve Partner Portal
 
-Each dedicated CardSavr instance includes a [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) used in the administration of your environment configuration.  Belsow are the out of the box reporting options that your organization may generate at any time.
+Each dedicated CardSavr instance includes a [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) used in the administration of your environment configuration.  Below are the out of the box reporting options that your organization may generate at any time.
 
 
 ### Transaction Reporting
-Transaction Reports allow you to generate a report of all card placement activity between any specified dates. Transaction reports can be downloaded from the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) and includes the following information:
+Transaction Reports allow you to generate a report of all card placement activity between any specified dates. Transaction reports can be downloaded from the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) and include the following information:
 
 | Field Name                  | Description                                         
 |-----------------------------| ----------------------------------------------------
 | job_id                      | Job id of the transaction                           
 | bank_identification_number  | Bank id of the card associated with the placement transaction                                 
-| merchant_site_hostname      | Hostname of the merchant site the card is being place to                      
+| merchant_site_hostname      | Hostname of the merchant site the card is being placed to                      
 | status                      | Resulting [status](https://swch.github.io/slate/#post-place_card_on_single_site_job-1) of the card placement transaction  
-| fi_name                     | Name of the associated financial instituion (configured in the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal))         
+| fi_name                     | Name of the associated financial institution (configured in the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal))         
 | fi_lookup_key               | Key used to identify financial institution used by API (configured in the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal))
 | completed_on                | Timestamp of when card placement transaction completed
 | meta_key                    | Comprised of the first and last initials of the [cardholder](https://swch.github.io/slate/#create-cardholder), the postal code, and the last two digits of the PAN.
 | cuid          | Unique ID for the [cardholder](https://swch.github.io/slate/#create-cardholder) provided by your application to the CardSavr API.  A random number will be generated if not provided.
-| custom_data   | Additional data that can be added to the [cardholder](https://swch.github.io/slate/#create-cardholder) by your application via the CardSavr API.   Be default this data will be in the form of a JSON blob; however, the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) provides an "expand custom_data" option from which each field will be expanded into it's own column in the downloaded report if desired.
+| custom_data   | Additional data that can be added to the [cardholder](https://swch.github.io/slate/#create-cardholder) by your application via the CardSavr API.   By default this data will be in the form of a JSON blob; however, the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) provides an "expand custom_data" option from which each field will be expanded into its own column in the downloaded report if desired.
 | source_type                 | Identifies the channel or method through which the cardholder interacted (see [Journey Paths](/integrations/sources)).
 | source_category             | Defines the purpose or intent behind the interaction. (see [Journey Paths](/integrations/sources)).
 | source_subcategory          | Custom text to provide any additional category context if applicable. (see [Journey Paths](/integrations/sources)).
@@ -38,7 +38,7 @@ Transaction Reports allow you to generate a report of all card placement activit
 ### Session Reporting
 The Session Report provides a historical log of all sessions completed within a given timeframe to paint a picture of what the Cardholder actions and results were during the card-on-file workflow.
 
-Session reports can be downloaded from the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) and includes the following information:
+Session reports can be downloaded from the [Partner Portal](https://developers.strivve.com/ops-admin/partner-portal) and include the following information:
 
 | Field Name                  | Description                                         
 |-----------------------------| ----------------------------------------------------
@@ -54,9 +54,9 @@ Session reports can be downloaded from the [Partner Portal](https://developers.s
 | clickstream                 | Clickstream data of all views visited by cardholder within CardUpdatr.
 | closed_on                   | Timestamp of when the session was closed
 | created_on                  | Timestamp of when the session was created
-| agent_session_id            | Session identifer for the session
+| agent_session_id            | Session identifier for the session
 | source_type                 | Identifies the channel or method through which the cardholder interacted (see [Journey Paths](/integrations/sources)).
-| soure_category              | Defines the purpose or intent behind the interaction. (see [Journey Paths](/integrations/sources)).
+| source_category              | Defines the purpose or intent behind the interaction. (see [Journey Paths](/integrations/sources)).
 | source_subcategory          | Custom text to provide any additional category context if applicable. (see [Journey Paths](/integrations/sources)).
 | source_device               | Specifies the platform or device through which the cardholder engaged. (see [Journey Paths](/integrations/sources)).
 

@@ -2,17 +2,17 @@
 title: Environments
 ---
 
-Every PCI-DSS Cardholder Data Envrionment \(CDE\) in CardHolder is instantiated in an isolated AWS Virtual Private Cloud \(VPC\) and is accessible by a unique DNS namespace.
+Every PCI-DSS Cardholder Data Envrionment \(CDE\) is instantiated in an isolated AWS Virtual Private Cloud \(VPC\) and is accessible by a unique DNS namespace.
 
 # Per VPC CDE
 
-Each CDE is considered a seperate isolated tenant.  A partnering Financial Institution \(FI\) may have multiple CDEs in order to meet thier needs.  Typically an FI will have a minimum of two CDEs, one for development/quality assurance and another for production. The following diagram illustrates a simplified view of a VPC/CDE.
+Each CDE is considered a separate isolated tenant.  A partnering Financial Institution \(FI\) may have multiple CDEs in order to meet their needs.  Typically an FI will have a minimum of two CDEs, one for development/quality assurance and another for production. The following diagram illustrates a simplified view of a VPC/CDE.
 
 ![Simplified CardSavr Architecture](/images/cardSavrSimpleArchitecture.jpg "Simplified CardSavr Architecture") 
 
 ## CDE DNS Name Space
 
-All CDEs run under the CardSavr top level domain **cardsavr.io**. Each CDE has its own subdomain name . CardSavr API is accessed  as the subdomain **api** in the individual CDE subdomain. Example api url takes the form: `https://api.<*cde-environment-name*>.cardsavr.io/*endpoint*`.
+All CDEs run under the CardSavr top level domain **cardsavr.io**. Each CDE has its own subdomain name. CardSavr API is accessed  as the subdomain **api** in the individual CDE subdomain. Example api url takes the form: `https://api.<*cde-environment-name*>.cardsavr.io/*endpoint*`.
 
 ## Optional Non-Production CDE API Cryptography Relaxation
 
@@ -20,4 +20,4 @@ In order to simplify development debugging of applications, non production CDE i
 
 ## CDE Administration
 
-Each CDE has a [Partner Portal](/ops-admin/partner-portal) for the partnering FI to utilize in administering thier CDE.
+Each CDE has a [Partner Portal](/ops-admin/partner-portal) for the partnering FI to utilize in administering their CDE.

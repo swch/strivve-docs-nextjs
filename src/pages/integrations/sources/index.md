@@ -13,7 +13,7 @@ The information is passed in the [User Object](/integrations/cardupdatr#user-obj
   source: {
     type: "email",
     category: "campaign",
-    sub_category: "AMCE FI Amazon Prime Day Campaign for card on file",s
+    sub_category: "ACME FI Amazon Prime Day Campaign for card on file",s
     device: "mobile_app"
   }
 
@@ -50,7 +50,7 @@ Additional Details of **The Why**.  Custom text to provide any additional contex
 
 | Property Values: Sub_Category  | Description                                                                                                                                  |
 | ------------------------------ | ---------------------------------------
-| free-form text                 | Custom text used to provided any additional context for selected category.
+| free-form text                 | Custom text used to provide any additional context for selected category.
 
 The maximum limit for the above property value is 32 characters.  If a value exceeds the limit, it will be truncated in the reporting output.
 
@@ -66,12 +66,12 @@ The **Where**.  Specifies the platform or device through which the cardholder en
 One of the above pre-defined property values must be selected.  Strivve will in turn detect the platform where the reporting output will be assigned as ‘desktop’ or ‘mobile_web’.  Strivve cannot detect whether the source is a mobile_app; therefore, if "mobile_app" is specified it will be honored if detected to be on a mobile device.
 
 ### Reporting
-This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webhook Reporting](/ops-admin/reporting) with following new columns:
+This information will be sent through the Strivve platform and made available as part of the [Strivve Partner Portal and Webhook Reporting](/ops-admin/reporting) with the following new columns:
 
 | Field Name                  | Description                                         
 |-----------------------------| ----------------------------------------------------
 | source_type                 | Identifies the channel or method through which the cardholder interacted.
-| soure_category              | Defines the purpose or intent behind the interaction. 
+| source_category              | Defines the purpose or intent behind the interaction. 
 | source_subcategory          | Custom text to provide any additional category context if applicable. 
 | source_device               | Specifies the platform or device through which the cardholder engaged. 
 

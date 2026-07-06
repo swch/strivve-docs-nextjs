@@ -29,7 +29,7 @@ There are other statuses that may be returned, but they are mostly informational
 
 ## Termination Types
 
-Termination types are set on jobs when the complete.  A single\_site\_job can't be considered finished until a termination type is set, and once a terrmination type is set, the job cannot be resurrected (although it can be re-run using an existing cardholder, card and account credentials).  Only the first four termination types should be processed, others should be ignored in webhooks and reporting.  
+Termination types are set on jobs when the complete.  A single\_site\_job can't be considered finished until a termination type is set, and once a termination type is set, the job cannot be resurrected (although it can be re-run using an existing cardholder, card and account credentials).  Only the first four termination types should be processed, others should be ignored in webhooks and reporting.  
 
 Termination Type | Notes
 |-----------|--------
@@ -37,7 +37,7 @@ BILLABLE | Success
 USER\_DATA\_FAILURE | Generally a credential/card problem
 SITE\_INTERACTION\_FAILURE | CardSavr is unable to navigate the site successfully
 PROCESS\_FAILURE | An unknown backend failure - should be reported as unsuccessful
-NEVER\_STARTED | This will occur when a job is cancelled or never fully requested, but these should be ignored in webhooks and reeporting.
+NEVER\_STARTED | This will occur when a job is cancelled or never fully requested, but these should be ignored in webhooks and reporting.
 
 There are a large number of job statuses for USER\_DATA\_FAILURE termination types.  This value provides important information to the client as to why a job failed. These are included in the status of the [single\_site\_job](https://swch.github.io/slate/#single-site-jobs), the status field of the final [job update](/resources/progress-messages/), any final webhook [notifications](/resources/notifications/), as well as any billing reports.  Since these are constantly updated, customers should provide the status\_message to users rather than use a static list. 
 

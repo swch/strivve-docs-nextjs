@@ -4,15 +4,15 @@ title: CardUpdatr
 
 ## Overview
 
-CardUpdatr is a web drop-in component that handles the end to end experience of updating any card where cardholders shop and make payments online - keeping your card Top of Wallet®. CardUpdatr has a responsive design from which it can be leveraged in both Mobile Web and Desktop Web applications. There are several methods from which CardUpdatr can be integrated into your application which is covered in this section.
+CardUpdatr is a web drop-in component that handles the end to end experience of updating any card where cardholders shop and make payments online - keeping your card Top of Wallet®. CardUpdatr has a responsive design from which it can be leveraged in both Mobile Web and Desktop Web applications. There are several methods from which CardUpdatr can be integrated into your application which are covered in this section.
 
 {% video url="/videos/cardupdatr-sso-animation.mp4" /%}
 
-CardUpdatr SSO (Single-sign On) is the recommended implementation to avoid collecting card data from the cardholder.  All implementations can leverage SSO by first running the cardholder through an [SSO Microservice](/integrations/sso-microservice), obtaining a grant and card_id, and paassing them into the CardUpdatr configuration.
+CardUpdatr SSO (Single-sign On) is the recommended implementation to avoid collecting card data from the cardholder.  All implementations can leverage SSO by first running the cardholder through an [SSO Microservice](/integrations/sso-microservice), obtaining a grant and card_id, and passing them into the CardUpdatr configuration.
 
 ## CardUpdatr Integration Techniques
 
-CardUpdatr supports mutliple techniques from which you can easily integrate it into your application. Most integration techniques require the cardupdatr-client-v2.js boostrap library which make the integrations seamless.
+CardUpdatr supports multiple techniques from which you can easily integrate it into your application. Most integration techniques require the cardupdatr-client-v2.js bootstrap library which make the integrations seamless.
 
 ### Overlay Embedding
 
@@ -37,7 +37,7 @@ The color and opacity of the overlay background can be adjusted by using the “
   window.embedCardUpdatr {
       config : {
         "overlay" : true,
-        "hostname" : "testfi.customer-dev.cardupdatr.app,
+        "hostname" : "testfi.customer-dev.cardupdatr.app",
       },
       user : {
         "grant": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9ey...",
@@ -99,7 +99,7 @@ launchCardUpdatr takes the following parameters:
 There may be cases where native applications do not have the ability to use javascript.  This requires that the application append the configuration json to the hash value of the CardUpdatr url.  Note that the setting must be url encoded (no ?'s, &'s, +'s or newlines). This can be accomplished in JavaScript using the encodeURIComponent function.
 
 ```javascript
-https://testfi.customer-dev.cardupdatr.app/#settings=ENDCODED_SETTINGS_JSON
+https://testfi.customer-dev.cardupdatr.app/#settings=ENCODED_SETTINGS_JSON
 ```
 
 "ENCODED\_SETTINGS\_JSON" is simply the same json object passed in as the first parameter to launchCardUpdatr and embedCardUpdatr, only it must be url encoded.
@@ -135,7 +135,7 @@ CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/
 | Property              | Required | Default                             | Description                                                                                                                         |
 | ------------------------- | -------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | app_container_id          | no      |                                     | HTML element id that CardUpdatr is attached to -- this is only required when running embedded.                                                                                      |
-| hostname                  | yes      |                                     | Hostname of the target FI (e.g. testfi.customer-dev.cardupdatr.app).  In the case of SSO, this hostname must match the FI hostname used to aquire the grant.                                                                  |
+| hostname                  | yes      |                                     | Hostname of the target FI (e.g. testfi.customer-dev.cardupdatr.app).  In the case of SSO, this hostname must match the FI hostname used to acquire the grant.                                                                  |
 | top_sites                 | no       | []                                  | These sites are listed first on the "select-merchants" page        
 | exclude_sites             | no       | []                                  | These sites are excluded from the "select-merchants" page                                                                         |
 | merchant_site_tags        | no       | ["usa", "prod"]                     | usa AND prod -- to provide "OR" functionality, tags must be listed differently. "prod", "canada,usa" means prod AND (usa OR canada) |
@@ -145,7 +145,7 @@ CardUpdatr may also be configured statically in the [Partner Portal](/ops-admin/
 
 ### User Object
 
-The user properties are unique to this partiular cardholder, and generally provide login and other customer specific properties necessary to assume a session.
+The user properties are unique to this particular cardholder, and generally provide login and other customer specific properties necessary to assume a session.
 
 ```javascript
   user : {
@@ -174,7 +174,7 @@ The user properties are unique to this partiular cardholder, and generally provi
 
 ### Style Object
 
-Style attributes control the look and feel of the experience. They can optionally be configured in the Partner Portal, but dynamic flexibilty is sometimes preferred if running multiple brands under the same Financial Institution.
+Style attributes control the look and feel of the experience. They can optionally be configured in the Partner Portal, but dynamic flexibility is sometimes preferred if running multiple brands under the same Financial Institution.
 
 ```javascript
   style : {

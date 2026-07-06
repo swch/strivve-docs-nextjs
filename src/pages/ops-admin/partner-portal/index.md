@@ -4,16 +4,15 @@ title: Partner Portal
 
 ## Partner Portal - Administering Environments
 
-Each CardSavr environment includes an portal application used in the administration of
+Each CardSavr environment includes a portal application used in the administration of
 that environment.  This includes creating cardsavr users, configuring applications for use 
 with CardSavr and various other tasks. This portal is known as the Partner Portal 
 and is reachable over the Internet under the domain name for your environment. Strivve 
 provides the initial admin account for the customer to utilize in managing their 
-development environment. Per PCI-DSS requirements, password must be changed on first login 
+development environment. Per PCI-DSS requirements, passwords must be changed on first login 
 and every 90 days after.  This requirement to change an initial password applies to 
-all users who are people.  Automation users known as agents within CardSavr are not 
-required to changed their password on first login but must have their have their 
-passwords changed every 90 days just like all users.
+all users who are people.  Automation users known as agents within CardSavr are  
+required to changed their password on first login but must have their passwords changed every 90 days just like all users.
 
 ## Accessing
 

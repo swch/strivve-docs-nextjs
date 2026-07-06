@@ -8,7 +8,7 @@ A CardSavr environment **can be configured** to work with tools such as Postman 
 ## Postman Collection Details
 A Postman collection of requests is available along with usage instructions at 
 GitHub for the [CardSavr API Sample Postman Requests](https://github.com/swch/Strivve-SDK/tree/master/postman-samples 
-"Strivve-SDK") to aide in exploring the CardSavr API.
+"Strivve-SDK") to aid in exploring the CardSavr API.
 
 The following pages provides a step-by-step guide that shows the sequence of calls required
 to place a card on a merchant site. Specifically, it walks the user through:

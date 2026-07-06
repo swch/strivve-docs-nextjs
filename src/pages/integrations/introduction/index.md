@@ -4,13 +4,13 @@ title: Strivve Integrations Introduction
 
 ## CardSavr API
 
-Full integration is provided by CardSavr [SDK's and/or REST API's](/api-sdk/introduction).  This allows complete control of the card placement experience provided by you application while authoring your own desired U/X design.
+Full integration is provided by CardSavr [SDKs and/or REST APIs](/api-sdk/introduction).  This allows complete control of the card placement experience provided by your application while authoring your own desired U/X design.
 
 Please also see Strivve's [Minimizing User Wait Time](/integrations/user_wait_time) document.
 
 ### CardUpdatr
 
-CardUpdatr operates in 3 major modes:
+CardUpdatr operates in 4 major modes:
 * Overlay that appears on top of an existing page.
 * Web linked to and from the CardSavr platform, within any web or mobile application
 * Embedded into a page or area of a page within any web or mobile application

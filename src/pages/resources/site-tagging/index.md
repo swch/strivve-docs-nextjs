@@ -17,7 +17,7 @@ are some constraints that can be relied upon:
 Tag          | Effect             
 ------------ | ----------------- 
 prod         | production sites that should always be visible to cardholders -- if these sites become temporarily unavailable, they will generally be restored shortly
-down         | indicates that a site is unavailable for card placements and should be hidden from cardholders
+down         | site is unavailable for card placements and should be hidden from cardholders
 
 ![Site States](/images/site_states.jpg)
 *Site State tag relationships*
@@ -30,20 +30,20 @@ Tag          | Effect                                                           
 ------------ | --------------------------------------------------------------------------------------|------------------
 unrestricted | cards can be placed reliably 
 limited      | cards can be placed "most" of the time, and cardholders can be encouraged to try them | "Try me!" 
-beta         | simlar to limited, but are newer sites                                              | "Beta"
-disabled     | indicates that a site it temporarily unavailable for card placements -- cardholders should be alerted that these sites are temporarily unavailable (Labeled "temporarily Unavailble" in CardUpdatr)                   | "Temporarily Unavailable"
+beta         | similar to limited, but are newer sites                                              | "Beta"
+disabled     | site is temporarily unavailable for card placements -- cardholders should be alerted that these sites are temporarily unavailable (Labeled "Temporarily Unavailble" in CardUpdatr)                   | "Temporarily Unavailable"
 
 #### Countries
 
-Strivve supports some sites that are exclusively availabe in the US and/or Canada. This is not to be confused with
+Strivve supports some sites that are exclusively available in the US and/or Canada. This is not to be confused with
 billing address support, but rather sites that are designed for people that reside in a specific country.
 
 Tag          | Effect             
 ------------ | ----------------- 
-usa          | for cardholders that support transactions on sites in the us
-canada       | for cardholders that support transactions on sites in canada
+usa          | for cardholders that support transactions on sites in the USA
+canada       | for cardholders that support transactions on sites in Canada
 
-It's important to note that many cards support international billing addresses and although these sites would only be tagged both canada and us, they are oftentimes available with other international billing addresses.
+It's important to note that many cards support international billing addresses and although these sites would only be tagged both canada and usa, they are oftentimes available with other international billing addresses.
 
 #### Site Types
 
@@ -63,7 +63,7 @@ Site B       | prod, unrestricted, usa, canada | This is a prod site that is ava
 Site C       | prod, disabled, canada  | This site is only available in Canada, but it is temporarily disabled
 Site D       | prod, beta, usa         | This usa site is new, and may not have a high enough success rate to qualify as "unrestricted", but we still encourage production customers to include it
 Site E       | prod, limited           | This card can be placed "some" of the time, and is actively being investigated
-Site F       | synthetic               | Synthtetic sites are very useful for testing UX, as they simulate real site behvior.  They can be made to prompt for tfa codes, new credentials, or even secruity questions. 
+Site F       | synthetic               | Synthetic sites are very useful for testing UX, as they simulate real site behvior.  They can be made to prompt for tfa codes, new credentials, and secruity questions. 
 
 ### Query Examples
 

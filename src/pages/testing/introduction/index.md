@@ -3,7 +3,7 @@ title: Testing
 ---
 
 ## Testing Your Integrations
-CardSavr provides synthetic merchant sites within non-production environments .  
+CardSavr provides synthetic merchant sites within non-production environments.  
 These sites allow you to test your CardSavr integration without using live merchant sites.
 
 ## Explore CardSavr API With Postman
