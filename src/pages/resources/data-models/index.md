@@ -6,7 +6,7 @@ The data model for the CardSavr platform is shown below.
 ![Data Model](/images/Cardsavr_Data_Model.jpeg "Data Model")
 
 
-To create a card placement job, there are three data objects that must be created first. In 
+To create a card placement job, there are four data objects that must be created first. In 
 order, these are:
 
 * Cardholder - 
@@ -25,7 +25,7 @@ Represents the credentials for a merchant and is linked to a merchant
 Represents the billing address of a card
 [Addresses Endpoint](https://swch.github.io/slate/#addresses "Addresses Endpoint")
 
-Once these resources have been created, a card placement job can be create:
+Once these resources have been created, a card placement job can be created:
 
 * Job - 
 Represents the push-provisioning request to place a card as the default payment method at a merchant

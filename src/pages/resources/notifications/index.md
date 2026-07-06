@@ -3,7 +3,7 @@ title: Notifications
 ---
 
 ## Receive event notifications with webhooks
-Notifications can be assigned to an event and then mapped to a Webhook.  A webhook has its own configuration to where it needs to know what URL to hit.
+Notifications can be assigned to an event and then mapped to a Webhook.  A webhook's configuration specifies the URL to call.
 
 Webhooks are particularly useful for asynchronous events like card placement jobs. CardSavr uses 
 webhooks to notify your system when a card placement event completes. 
@@ -51,7 +51,7 @@ The data format for a job placement event is:
     }
 ```
 
-The meta_key comprised of the first and last initials of the user, the postal code, and the last 
+The meta_key is comprised of the first and last initials of the user, the postal code, and the last 
 two digits of the PAN. For cardholders that have been authenticated by the customer, the CardSavr 
 username is available and can easily be associated with the necessary contact information 
 (email, mobile number) when the webhook is processed.
@@ -65,7 +65,7 @@ Termination Type | Notes
 BILLABLE | Success
 USER\_DATA\_FAILURE | Generally a credential/card problem
 SITE\_INTERACTION\_FAILURE | Cardsavr is unable to navigate the site successfully
-PROCESS\_FAILURE | A unknown backend failure - should be reported as unsuccessful
+PROCESS\_FAILURE | An unknown backend failure - should be reported as unsuccessful
 
 The [job\_status list](/resources/job-progress/#termination-types) is frequently updated; it is advised to use the job\_status\_message for 
 unknown job_status values.  
@@ -77,7 +77,7 @@ There are only a few steps to utilize webhooks within CardSavr:
 1. Create a webhook endpoint on your server
 2. Register the webhook endpoint with a CardSavr event
 
-Webhooks can be either statically configured in the Strivve Portal, or dynamically assigend when a cardholder is created.  Webhook
+Webhooks can be either statically configured in the Strivve Portal, or dynamically assigned when a cardholder is created.  Webhook
 payloads are signed using the integrator key used to create the corresponding cardholder.  By installing a 
 [Strivve SDK](https://github.com/swch/strivve-sdk), you can [verify webhook signatures](https://github.com/swch/Strivve-SDK/blob/master/src/cardsavr/CardsavrSessionCrypto.ts#L225) for added security.  (Notice the function takes two keys, current and previous key, in case of key rotation)
 
@@ -137,7 +137,7 @@ Note that the url in the signing key is the full url (including query parameters
 
 ### Retry Logic
 
-If the notification is not successfully delivered the CardSavr platform will retry the 
+If the notification is not successfully delivered, the CardSavr platform will retry the 
 notification in intervals of 10, 20, and 40 seconds. Should the CardSavr service experience 
 unexpected downtime, all the notifications will be sent for the entire service downtime upon 
 service restoration. If for any reason customer webhook recipients are not accessible, we recommend you 

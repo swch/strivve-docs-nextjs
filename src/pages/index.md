@@ -26,7 +26,7 @@ Strivve's patented robotic process automation technology performs the card updat
 
 ---
 
-## CardSavr Video Explainer - Why CardSavr Exists?
+## CardSavr Video Explainer - Why CardSavr Exists
 
 {% video url="https://www.youtube.com/embed/nrrJxnhE1-Y?autoplay=1&enablejsapi=1&wmode=opaque" /%}
 

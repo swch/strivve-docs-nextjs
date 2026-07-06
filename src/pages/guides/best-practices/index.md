@@ -2,7 +2,7 @@
 title: Best Practices
 description: Best practices for CardSavr integration.
 ---
-At Strivve, one of the main objectives is to create an inviting, usable experiences for both our partners and their 
+At Strivve, one of the main objectives is to create an inviting, usable experience for both our partners and their 
 cardholders.  These best practices guides are intended to provide background information and inform decisions that 
 product and engineering teams will make during any CardSavr integration.
 
@@ -51,7 +51,7 @@ Integrated applications can choose to either directly acquire merchant
 authentication data from cardholders or use CardSavr components in the SDK to
 acquire merchant authentication data directly and store this data in the
 CardSavr platform.  The benefit of using CardSavr for acquisition is that
-merchant authentication data never transverses the integrator’s infrastructure.
+merchant authentication data never traverses the integrator’s infrastructure.
 
 Be aware that this data stored in CardSavr for future use may require real-time
 cardholder interaction in the event of invalid authentication data
@@ -85,7 +85,7 @@ acquired and stored outside of the CardSavr platform. The Merchant authenticatio
 ## Card Payment Credentials
 
 Online card payment credentials represent the card on file at merchants.
-CardSavr can store the card information for merchant site updates in database encrypted fields which requires the integrator’s safe key portion to decrypt at the
+CardSavr can store the card information for merchant site updates in database encrypted fields which require the integrator’s safe key portion to decrypt at the
 time of a card on file update.
 
 ### Card Payment Credential Acquiring Options
@@ -96,7 +96,7 @@ before or during a card on file action.
 
 ### Card Payment Credential Data Retention
 
-The card payment credenials can be stored according to the integrator’s data
+The card payment credentials can be stored according to the integrator’s data
 retention policy.
 
 ## Safe Key
@@ -144,8 +144,8 @@ practices appropriate for the business.
 
 Updating the payment method at a merchant with a new card is a multi-step process. Generally, these steps can be 
 separated into two phases.  Authentication and updating.  In the authentication phase, the CardSavr platform attempts 
-to authenticates against the merchant site.  Once authenticated, the CardSavr platform moves to the updating phase 
-where it places the new card as the default payment on the merchant site. While the updating phases is completely 
+to authenticate against the merchant site.  Once authenticated, the CardSavr platform moves to the updating phase 
+where it places the new card as the default payment on the merchant site. While the updating phase is completely 
 automatic, the authentication phase may require user interaction in cases where incorrect credentials have been 
 supplied or the merchant provides a challenge response to the user. 
 
@@ -153,7 +153,7 @@ In general, a more detailed look at the authentication phase involves:
 
 1.	Acquiring the merchants to update from the user, your backend system, or those stored in CardSavr.
 2.	Acquiring the credentials for each merchant if they are not already stored in CardSavr.
-3.	Allowing CardSavr to authentication against each merchant site and either succeed or responded with a challenge 
+3.	Allowing CardSavr to authenticate against each merchant site and either succeed or respond with a challenge 
 request (invalid credentials, MFA)
 4.	Informing the user of any merchant specific notifications that may occur (merchants may provide a separate 
 notification directly to their user letting them know that their payment method has been updated)
@@ -162,12 +162,12 @@ part for that merchant
 6.	When the updating phase is complete, the CardSavr platform will provide an update via webhook that can be used to 
 notify the user of the final status.
 
-CardSavr handles of the complexity associated with authentication and provides a process indicator but the user 
+CardSavr handles all of the complexity associated with authentication and provides a process indicator but the user 
 experience should account for the various scenarios that can happen.  
 
 Additionally, notification of the final status can be done out of band using existing notification patterns.
 
 ***
 
-### More Credential Resources :
+### More Credential Resources:
 [Resources - Credentials](/resources/credentials)
