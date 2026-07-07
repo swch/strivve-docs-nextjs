@@ -70,7 +70,7 @@ const navigation = [
       { title: 'Introduction', href: '/api-sdk/introduction' },
       { title: 'Javascript SDK', href: '/api-sdk/quickstart-nodejs' },
       {
-        title: 'Microsoft.Net SDK',
+        title: 'Microsoft .Net SDK',
         href: '/api-sdk/quickstart-dotnet',
       },
       {

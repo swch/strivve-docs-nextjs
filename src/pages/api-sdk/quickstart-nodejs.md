@@ -2,7 +2,7 @@
 title: NodeJS Quick Start
 ---
 
-The Strivve Javascript SDK library is built around a class, CardsavrSession. To start using the library, you must instantiate a new CardsavrSession object.  This requires the following items:
+The Strivve JavaScript SDK library is built around a class, CardsavrSession. To start using the library, you must instantiate a new CardsavrSession object.  This requires the following items:
 
 1. API url (e.g. api.acmebank.cardsavr.io)
 1. App name (app_name) and integrator key (app_key) - these can be obtained by contacting developers@strivve.com

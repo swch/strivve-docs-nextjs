@@ -4,7 +4,7 @@ pageTitle: CardSavr Developer Docs - Accelerate Online Payment Volumes.
 description: Dominate Top of Wallet online payments from your banking applications all in one simple integration.
 ---
 
-Learn how to get CardSavr integrated quickly into your cardholder applications in less than a few days. {% .lead %}
+Learn how to get CardSavr integrated quickly into your cardholder applications in just a few days. {% .lead %}
 
 {% quick-links %}
 
