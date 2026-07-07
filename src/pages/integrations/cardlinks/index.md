@@ -192,7 +192,7 @@ The required Cardholder Object specifies the Cardholder information.
 | email | string | no | Used to send card placement notifications. |
 
 #### Expiration Object
-The Expiration object is optional that specifies the expiration date for the CardLink.  If not specified, CardSavr defaults it to 2 months from the current date.
+The optional Expiration object specifies the expiration date for the CardLink.  If not specified, CardSavr defaults it to 2 months from the current date.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
@@ -201,7 +201,7 @@ The Expiration object is optional that specifies the expiration date for the Car
 | year | string | no | Four-digit year. |
 
 #### Address Object
-The Address object is required that specifies the Cardholder's billing address.
+The required Address object specifies the Cardholder's billing address.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
@@ -214,7 +214,7 @@ The Address object is required that specifies the Cardholder's billing address.
 | phone_number | string | yes | Phone number. |
 
 #### Card Object
-The Card object is required that specifies the Cardholder's card details
+The required Card object specifies the Cardholder's card details.
 
 | Property | Type | Required | Description |
 |---|---|---|---|

@@ -65,7 +65,7 @@ const navigation = [
     ],
   },
   {
-    title: "Platform SDK's and REST API",
+    title: "Platform SDKs and REST API",
     links: [
       { title: 'Introduction', href: '/api-sdk/introduction' },
       { title: 'Javascript SDK', href: '/api-sdk/quickstart-nodejs' },
@@ -211,7 +211,7 @@ function Header({ navigation }) {
         </Link>
         <div>&nbsp;&nbsp;&nbsp;</div>
         <Link href="/api-sdk/introduction" aria-label="API Reference">
-          API's
+          APIs
         </Link>
         <div>&nbsp;&nbsp;&nbsp;</div>
         <Link href="/integrations/introduction" aria-label="Integrations">

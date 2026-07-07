@@ -18,7 +18,7 @@ Learn how to get CardSavr integrated quickly into your cardholder applications i
 
 {% /quick-links %}
 
-The **CardSavr Platform** is a hybrid cloud platform built for card-on-file placements with U/X components, SDK's and a REST API built to help cardholders seamlessly update their new or reissued cards anywhere they pay online. Cardholders access CardSavr’s updating experience in the issuer’s various digital web and mobile experiences.
+The **CardSavr Platform** is a hybrid cloud platform built for card-on-file placements with U/X components, SDKs and a REST API built to help cardholders seamlessly update their new or reissued cards anywhere they pay online. Cardholders access CardSavr’s updating experience in the issuer’s various digital web and mobile experiences.
 
 We use machine learning technology to build a crowdsourced database of automated robotic processes that can be performed on existing merchant sites. CardSavr does not require any opt-in integration with individual payment sites (aka billers and/or merchants).
 

@@ -33,7 +33,7 @@ of cardholder\_agent or customer\_agent, for the purpose of Single Sign On.
 There are multiple roles with different access authorization privileges for API services.  A User is only ever 
 assigned one role and only one role.  Roles can be reassigned by a user with a higher level of authorization role, 
 such that it has sufficient privileges to do so.  However role reassignment does not take effect until the next time 
-that particular user logins into the platform.  The following roles are available for partner usage:
+that particular user logs in into the platform.  The following roles are available for partner usage:
 
 - **admin:** Most privileged user. This is typically a real person.
 - **cardholder_agent:** A user restricted to creating cardholder users.  This is intended for front end applications performing creation of a cardholder user and acquiring a credential grant for them.

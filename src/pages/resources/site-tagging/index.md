@@ -35,7 +35,7 @@ disabled     | site is temporarily unavailable for card placements -- cardholder
 
 #### Countries
 
-Strivve supports some sites that are exclusively available in the US and/or Canada. This is not to be confused with
+Strivve supports some sites that are exclusively available in the USA and/or Canada. This is not to be confused with
 billing address support, but rather sites that are designed for people that reside in a specific country.
 
 Tag          | Effect             

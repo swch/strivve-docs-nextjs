@@ -59,7 +59,7 @@ To create a second administration, select "User Admin" from the top menu, then "
 ## 3 - Configuring application access
 
 Like administrators, each application that connects to the CardSavr environment must have 
-its own user account.  These applications utilize specific roles within CarSavr referred to
+its own user account.  These applications utilize specific roles within CardSavr referred to
 as agent roles.  
 
 To create an application account, select "User Admin" from the top menu, then "Add User", and finally select the
@@ -86,5 +86,5 @@ cust_internal | Internal tooling like provisioning systems
 The CardSavr platform provides multi-tenant capabilities for those organizations that serve multiple financial
 institutions.  Before using CardSavr you'll need to create a financial institution.  
 
-To create a finanaicl instituion, select "Financial Institution" from the top menu, then "Add Financial Institution", 
+To create a financial institution, select "Financial Institution" from the top menu, then "Add Financial Institution", 
 and finally fill out the Name andand alternate lookup fields before saving.

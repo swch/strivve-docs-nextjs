@@ -16,7 +16,7 @@ All CDEs run under the CardSavr top level domain **cardsavr.io**. Each CDE has i
 
 ## Optional Non-Production CDE API Cryptography Relaxation
 
-In order to simplify development debugging of applications, non production CDE instances can be configured to accept both API digitallly signed and encrypted requests/response as well as plaintext \(non digitally signed and encrypted requests/responses\) over TLS secured connections.  This enables the use of tools such as Postman to experiment with the CardSavr API along with easy dumpting of network traffic for analysis and debugging.  This API capability is restricted to non production CDE instances and can be requested for these types of CDE environments. 
+In order to simplify development debugging of applications, non production CDE instances can be configured to accept both API digitally signed and encrypted requests/response as well as plaintext \(non digitally signed and encrypted requests/responses\) over TLS secured connections.  This enables the use of tools such as Postman to experiment with the CardSavr API along with easy dumping of network traffic for analysis and debugging.  This API capability is restricted to non production CDE instances and can be requested for these types of CDE environments. 
 
 ## CDE Administration
 

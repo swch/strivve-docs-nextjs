@@ -28,7 +28,7 @@ operations.  CardSavr is PCI-DSS compliant.
 
 # Development Processes
 The CardSavr service supports your development model with multiple environments for each phase of development.  For 
- example; sandbox, dev, and production environments are configurable. For testing, non-production environments are 
+ example: sandbox, dev, and production environments are configurable. For testing, non-production environments are 
  equipped with synthetic sites allowing you to test without impacting live merchant sites.
 
 

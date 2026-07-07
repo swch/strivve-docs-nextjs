@@ -84,7 +84,7 @@ export function Hero() {
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
                 Placing cards in the Top of Wallet Position has never been
-                easier. In fact, its a MUST HAVE to compete for payment volume
+                easier. In fact, it's a MUST HAVE to compete for payment volume
                 for any issuer or co-brand card program.
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
