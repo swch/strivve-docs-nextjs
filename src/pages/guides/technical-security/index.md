@@ -20,7 +20,7 @@ Sensitive data - PAN, CVV, and merchant credentials - never persist in readable 
   -------------------------- | --------------------------------------------
   Network                    | TLS 1.2+ with FIPS 140-2 Suite B ciphers,  perfect forward secrecy    |
   API                        | HMAC-SHA256 signing + AES-256-GCM encryption on every request/response
-  Authentication             | Zero-knowledge proof (Kerberos 5 model) - passwords never transmit
+  Authentication             | Zero-knowledge proof (Kerberos 5 model) - passwords are never transmitted
   Storage                    | Dual-key AES-256 encryption - keys split between Strivve and partner infrastructure
   Card placement             | Ephemeral Job Safe - one-time encryption key exists only for that job's duration
   
@@ -40,12 +40,12 @@ Control Lists protect each Cardholder Data Environment (CDE).
 
 **Exfiltration defense**. VPC subnet NACLs control outbound data movement. PCI-authorized vendors perform recurring penetration tests and network scans to verify ongoing protection.  
 
-**Merchant-site connections**. Autonomous browsers communicating with merchant sites enforce TLS 1.2 or 1.3 with strong cipher suites, accept only trusted Certificate Authority certificates, and reject self-signed certificates   
+**Merchant-site connections**. Autonomous browsers communicating with merchant sites enforce TLS 1.2 or 1.3 with strong cipher suites, accept only trusted Certificate Authority certificates, and reject self-signed certificates.   
 
 
 ------------------------------------------------------------------------
 
-## API Security: Authentication, Integrity, and Confidentialality
+## API Security: Authentication, Integrity, and Confidentiality
 
 ### Dual Identity Authentication
 
@@ -131,9 +131,9 @@ At login, an ECDHE/P256 key exchange generates a one-time API session key. This 
 All encryption and signing operations use a symmetric shared 256-bit key: the API Session Secret Key.
 
 ### Decryption
-Response decription follows five steps:
-1. Parse the API response.body.encryptedBody contains Base64-Encrypted-JSON$Base64-IV${Encryption-Method}.  At this time only AES-256-GCM is supported as an encryption method.
-1. Decode Base64-Encrypted-JSON-Body to binary
+Response decryption follows five steps:
+1. Parse the API response; body.encryptedBody contains Base64-Encrypted-JSON$Base64-IV${Encryption-Method}.  At this time only AES-256-GCM is supported as an encryption method.
+1. Decode Base64-Encrypted-JSON to binary
 1. Decode Base64-IV to binary
 1. Create an AES-256-GCM cipher using the API Session Secret Key and decoded IV
 1. Decrypt the binary body
@@ -199,7 +199,7 @@ Partners generate integrator keys via the Partner Portal or programmatically via
 **Ephemeral session keys**. CardSavr® uses ECDHE key exchange to generate ephemeral shared secrets known only to the server and the client. Both parties derive identical keys through Diffie-Hellman exchange — the shared secret never transmits over the network.
 Clients generate their own public/private elliptic curve keys using the NIST P256 curve, submit the public key to /session/login, and receive CardSavr®'s public key in the response. The shared secret key computed from this exchange protects all subsequent requests.
 
-![Eliptic Curve Diffie Hellman](/images/Diffie-Hellman_Key_Exchange.png "Key Exchange")
+![Elliptic Curve Diffie-Hellman](/images/Diffie-Hellman_Key_Exchange.png "Key Exchange")
 
 ### Cardholder Safe Keys
 The per-cardholder Strivve Safe uses a pair of 256-bit keys:
@@ -214,7 +214,7 @@ Key derivation functions combine both keys into a single 256-bit encryption/decr
 **Ephemeral keys**. Strivve generates and manages ephemeral safe keys for cardholders created without safe headers. These users exist only for the duration of a single card placement session.
 
 **Key storage**. Partners maintain PCI-compliant secure storage of persistent cardholder safe keys in their own infrastructure. This separation strengthens Strivve Safe security — CardSavr® never stores persistent partner-managed keys.
-Strivve stores short-lived ephemeral keys in PCI-compliant manner, encrypted using AES-256-GCM with a secure key-encrypting key.
+Strivve stores short-lived ephemeral keys in a PCI-compliant manner, encrypted using AES-256-GCM with a secure key-encrypting key.
 
 **Key rotation**. PCI-DSS compliance requires regular rotation — a shared responsibility:
 * Strivve rotates environment keys
@@ -237,7 +237,7 @@ The CardSavr® SDK automates signing key and password proof generation. Direct R
 
 ------------------------------------------------------------------------
 # Glossary
-## Acronyms
+## Terms
 
   Acronym   |   Definition
   --------- |----------------------------------------------
@@ -286,7 +286,7 @@ CardSavr® Partner Portal | 	Web admin interface for managing integrator keys an
 Cardholder Safe Key	     | 256-bit partner-managed key combined with environment key to encrypt the Strivve Safe
 Defense-in-Depth	       | Multiple independent security layers — failure of one layer does not compromise the system
 Dual-Key Encryption	     | Two independently managed keys must combine to decrypt cardholder data
-Ephemeral Key	           | One-time key existing only for a single session or job, then self-destructs
+Ephemeral Key	           | One-time key existing only for a single session or job, then self-destructing
 Environment Key	         | 256-bit internal key (AWS KMS-protected) — one half of the Strivve Safe dual-key
 Integrator	             | An approved application authorized to access CardSavr® APIs
 Integrator Key           | 	256-bit shared secret for initial API authentication before session key exchange
