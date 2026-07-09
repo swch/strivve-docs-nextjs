@@ -4,7 +4,7 @@ title: CardLinks
 
 ## Overview
 
-Many issuers need a card-on-file solution that drives high conversions with little to no integration cost. Strivve CardLinks is built for exactly this.  Traditional integrations require significant engineering investment. CardLinks eliminates that barrier by enabling issuers to tap into a largely untapped funding source — marketing budgets — rather than IT budgets. With near-zero integration overhead, issuers can move fast and measure results directly in campaign performance.
+Many issuers need a card-on-file solution that drives high conversions with little to no integration cost. Strivve CardLinks is built for exactly this.  Traditional integrations require significant engineering investment. With near-zero integration overhead, issuers can move fast and measure results directly in campaign performance.
 
  ## How It Works
 CardLinks provides multiple methods for issuers to provision cardholder and card data, generating a unique, personalized URL for each cardholder. Each URL serves as a secure entry point into a card-on-file placement flow tied to that individual.
