@@ -2,7 +2,7 @@
 title: CardSavr Architecture
 ---
 
-Strivve’s CardSavr Service is a Platform As A Service (PaaS) which securely places payment cards on merchant sites on behalf of, and with explicit authorization of, Card Issuers and their cardholders. It uses Rebotic Process Automation to perform this task.  CardSavr is PCI-DSS 3.1 compliant.  
+Strivve’s CardSavr Service is a Platform As A Service (PaaS) which securely places payment cards on merchant sites on behalf of, and with explicit authorization of, Card Issuers and their cardholders. It uses Rebotic Process Automation to perform this task.  CardSavr is PCI-DSS 4.0 compliant.  
 
 ## Simplified View of the CardSavr Service Architecture
 
