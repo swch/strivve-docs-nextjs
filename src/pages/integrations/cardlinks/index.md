@@ -16,7 +16,7 @@ These URLs are designed to slot directly into existing marketing campaigns as th
  - QR Code:  Printed or displayed in physical or digital materials
 
 ## Cardholder Experience
-When a cardholder clicks their link, they land on a personalized page and are prompted to verify their identity before selecting merchant sites for card placement. Issuers can configure from a combination several challenge types to align with their security requirements.   It is strongly recommened to use 2 challenges (the default is the challenge of CVV + ZIP code)
+When a cardholder clicks their link, they land on a personalized page and are prompted to verify their identity before selecting merchant sites for card placement. Issuers can configure from a combination several challenge types to align with their security requirements.   It is strongly recommened to use 2 challenges (the default is the challenge of CVV + ZIP code), and the Partner Portal help documents how this can be configured for a given FI.
 
  - CVV
  - ZIP Code
@@ -24,7 +24,7 @@ When a cardholder clicks their link, they land on a personalized page and are pr
  - PAN Last 5
  - Expiration Date
 
-The result is a frictionless, personalized activation experience that issuers can launch through channels they already own — with no new integration required.
+The result is a frictionless, personalized activation experience that issuers can launch through channels they already own — with no new integration required.  
 
  ## Use Case Example
 1. The Issuer builds a campaign in their Customer Data Platform (CDP) with a Cardholder Targets Dataset.
@@ -59,6 +59,8 @@ The upload file format must have the following schema that can support rows of u
 For security, the Partner Portal supports a PGP-encrypted file.  To encrypt the file, the key pair is generated via the Portal that is to be used.  
 
 The Portal also accepts unencrypted files; however, this method is intended for testing purposes only, using test card data. Because unencrypted files pose a security risk, we strongly recommend against generating or storing CSV files containing real customer card data in an unencrypted format.
+
+The Partner Portal Help documents are this all can be configured for a given FI, and a blank .csv template with the below fields can also be downloaded.
 
 | Field Name | Required | Description |
 |---|---|---|
