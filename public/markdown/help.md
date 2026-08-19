@@ -55,7 +55,7 @@ The following properties customize the behavior of CardLinks and CSV uploads for
 | Property              | Type    | Description         
 | --------------------- | --------| ---------------------
 | encryption            | string  | Possible values are "none" and "pgp". This defines the encryption type that the CSV uploads for CardLinks will use. Defaults to "none".
-| validation_options    | array of strings  | Defines what Card values will be used to validate a CardLink. Possible values are "cvv", "postal_code", "last_5", "expiration_date". If this property is used, atleast one value is needed.
+| validation_options    | array of strings  | Defines what Card values will be used to validate a CardLink. Possible values are "cvv", "postal_code", "last_5", "expiration_date". If this property is used, atleast one value is needed. Defaults to ["cvv", "postal_code"].
 
 
 #### style :
