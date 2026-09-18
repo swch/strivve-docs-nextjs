@@ -24,9 +24,6 @@ We use machine learning technology to build a crowdsourced database of automated
 
 Strivve's patented robotic process automation technology performs the card updates on the user’s merchant site accounts and places their card on the site, on their behalf. The entire process of updating payment information online is carried out in seconds.
 
-<!-- Place new cardupdatr video example here -->
-
-
 ## CardUpdatr
 
 Place one of your Cards on file now at one of your personal payment accounts by clicking below!
