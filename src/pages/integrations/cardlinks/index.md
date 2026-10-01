@@ -139,7 +139,7 @@ async function createOnDemandCardLink() {
     },
     // 2. cardholder
     {
-      cuid:       "cardholder-unique-id-001",  // optional, random if omitted
+      cuid:       "cardholder-unique-id-001",  
       first_name: "Jane",
       last_name:  "Doe"
     },
@@ -147,7 +147,7 @@ async function createOnDemandCardLink() {
     {
       pan:              "4111111111111111",
       expiration_month: "05",
-      expiration_year:  "26",
+      expiration_year:  "29",                  
       name_on_card:     "Jane Doe",
       nickname:         "My Visa",
       cvv:              "123"
@@ -167,8 +167,15 @@ async function createOnDemandCardLink() {
     null                               // safe_key — null lets Strivve manage key storage
   );
 
-  console.log("OnDemand CardLink:", link);
-  // link.cardholder_long_token can be used to build a personalized CardUpdatr URL
+  if (!link) {
+    console.error("Failed to create OnDemand CardLink (see logged error above).");
+    return;
+  }
+
+  // The SDK returns the raw CardsavrSessionResponse (statusCode, headers, body, call);
+  // the card link data itself is in link.body.
+  console.log("OnDemand CardLink:", link.body);
+  // link.body.cardholder_long_token can be used to build a personalized CardUpdatr URL
 }
 ```
 
@@ -228,57 +235,51 @@ The required Card object specifies the Cardholder's card details.
 | nickname | string | conditional | Display name for the card. Required if reference is NULL. |
 | cvv | string | no | Card verification value. |
 
+#### FI Key
+The key/reference to the configured Financial Institution.  For example, "acmebank"
+
+#### Safe Key
+Optional - for future use.
+
 ### Retrieving a CardLink 
 In response to a properly formed POST request to the OnDemand endpoint containing this information, the user will receive a CardLink containing a fully formed URL that can be accessed immediately.
 
 ```javascript
+const { CardsavrHelper } = require("@strivve/strivve-sdk/lib/cardsavr/CardsavrHelper");
 
- // ── Process the return value from clh.createCardLink────────────────────────────────────
+async function getCardLink(card_link_id) {
 
-  // Full object for debugging / inspection
-  console.log("OnDemand CardLink:", link);
-
-  // 1. cardholder_long_token — JWT used to build a personalized CardUpdatr URL
-  const { cardholder_long_token } = link;
-
-  if (!cardholder_long_token) {
-    throw new Error("No cardholder_long_token in response — cannot build CardUpdatr URL");
-  }
-
-  const cardUpdatrUrl = buildCardUpdatrUrl(cardholder_long_token);
-  console.log("CardUpdatr URL:", cardUpdatrUrl);
-
-  // 2. cardholder_id — reference to the created cardholder record
-  const { cardholder_id } = link;
-  console.log("Cardholder ID:", cardholder_id);
-
-  // 3. card_id / address_id — IDs of the created card and address resources
-  const { card_id, address_id } = link;
-  console.log("Card ID:", card_id);
-  console.log("Address ID:", address_id);
-
-  return {
-    cardUpdatrUrl,
-    cardholder_id,
-    card_id,
-    address_id,
-    cardholder_long_token
+  // 1. auth — same credentials as createCardLink
+  const auth = {
+    cardsavr_server: "https://api.YOUR_INSTANCE.cardsavr.io",
+    app_name:        "your_app_name",
+    app_key:         "your_app_key",
+    username:        "your_username",
+    password:        "your_password"
   };
-}
 
-/**
- * Builds a personalized CardUpdatr URL from a long token.
- * The cardholder is automatically authenticated when they open this URL.
- *
- * @param {string} longToken - cardholder_long_token from the CardLink response
- * @param {string} [baseUrl]  - CardUpdatr base URL (defaults to hosted Strivve instance)
- * @returns {string} Full CardUpdatr URL ready to redirect or embed
- */
-function buildCardUpdatrUrl(longToken, baseUrl = "https://cardupdatr.app/") {
-  const url = new URL(baseUrl);
-  url.searchParams.set("long-key", longToken);
-  return url.toString();
-}
+  try {
+    const chHelper = CardsavrHelper.getInstance();
+    chHelper.setAppSettings(auth.cardsavr_server, auth.app_name, auth.app_key);
+    const session = await chHelper.loginAndCreateSession(auth.username, auth.password);
 
+    // 2. headers — hydrate the linked card and its cardholder into the response
+    const headers = {
+      "x-cardsavr-hydration": JSON.stringify(["card", "card.cardholder"])
+    };
+  
+    // 3. request — a numeric id is appended to the path: GET /card_links/{id}
+    const link = await session.get("/card_links", card_link_id, headers);
+
+    // Like createCardLink, this returns the raw CardsavrSessionResponse;
+    // the card link data itself is in link.body.
+    console.log("CardLink:", link.body);
+    return link.body;
+
+  } catch (err) {
+    CardsavrHelper.handleError(err);
+    return undefined;
+  }
+}
 
 ```
