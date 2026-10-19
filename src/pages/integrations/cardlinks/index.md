@@ -118,6 +118,8 @@ Using the associated customer id reference (or CUID) passed in via the upload fi
 
 The OnDemand CardLink endpoint may be called to create a single URL. The request body consists of several separate objects. The `auth` object contains the credentials required to authenticate with CardSavr. The `expiration` object, which is optional, specifies the expiration date for the CardLink — if not provided, it defaults to 2 months from the current date. The `cardholder`, `card`, and `address` objects contain the necessary information to create those entities on behalf of a cardholder.
 
+The 'username' must be configured with Admin priveleges to use this API.
+
 Full REST documentation can be found here: [CardLinks](https://swch.github.io/slate/#card-links)
 
 ### Creating a CardLink 
