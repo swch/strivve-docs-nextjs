@@ -11,7 +11,7 @@ webhooks to notify your system when a card placement event completes.
 Webhooks require a URL to be saved via the notification endpoint.  This URL must contain all 
 the necessary security information to connect to the customer's web service.  Webhooks are 
 also currently configured by Strivve. The notification endpoint reference is available under 
-the [API/SDK](https://swch.github.io/slate) section.
+the [API/SDK](https://swch.github.io/slate/#create-notification) documentation.
 
 ### Job Placement Completion Event
 
