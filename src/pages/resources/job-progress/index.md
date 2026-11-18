@@ -6,7 +6,7 @@ title: Job Lifecycle and Progress Monitoring
 
 As single\_site\_jobs are not transactional, CardSavr clients need a way to monitor jobs as they progress.  For example, if additional information is required from the client (like a new password or tfa code), there needs to be a mechanism for the virtual browser (VBS) to make the request to the individual cardholder running the job.  There are a couple of recommended methodologies for communicating with the virtual browser: polling the job entities [directly](/resources/progress-polling) and by subscribing to ephemeral [job and cardholder messages](/resources/progress-messages).
 
-## Job Statuses
+## Job Status Reference
 
 As a job transitions from one status to the next, applications can query the jobs api to see the current status.  The single\_site\_job status is returned as part of a GET response, as well as within a job\_status message.  Some statuses indicate that action by the user must be taken, other statuses are simply informational and can provide important feedback to the user.  Most status changes are made by the VBS.
 
