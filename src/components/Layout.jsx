@@ -102,11 +102,6 @@ const navigation = [
         title: 'SSO Microservice',
         href: '/integrations/sso-microservice',
       },
- 
-      {
-        title: 'User Wait Time Optimizations',
-        href: '/integrations/user_wait_time',
-      },
       {
         title: 'Journey Sources',
         href: '/integrations/sources',
